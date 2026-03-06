@@ -20,6 +20,9 @@ use InvoiceForge\Security\Validator;
 use InvoiceForge\PostTypes\InvoicePostType;
 use InvoiceForge\PostTypes\ClientPostType;
 use InvoiceForge\Services\NumberingService;
+use InvoiceForge\Services\TaxService;
+use InvoiceForge\Models\LineItem;
+use InvoiceForge\Repositories\LineItemRepository;
 use InvoiceForge\Utilities\Logger;
 
 // Prevent direct access
@@ -67,6 +70,22 @@ class InvoiceAjaxHandler
     private NumberingService $numberingService;
 
     /**
+     * Line item repository.
+     *
+     * @since 1.1.0
+     * @var LineItemRepository
+     */
+    private LineItemRepository $lineItemRepo;
+
+    /**
+     * Tax calculation service.
+     *
+     * @since 1.1.0
+     * @var TaxService
+     */
+    private TaxService $taxService;
+
+    /**
      * Logger instance.
      *
      * @since 1.0.0
@@ -79,21 +98,27 @@ class InvoiceAjaxHandler
      *
      * @since 1.0.0
      *
-     * @param Nonce            $nonce            Nonce handler.
-     * @param Sanitizer        $sanitizer        Sanitizer instance.
-     * @param Validator        $validator        Validator instance.
-     * @param NumberingService $numberingService Numbering service.
+     * @param Nonce              $nonce            Nonce handler.
+     * @param Sanitizer          $sanitizer        Sanitizer instance.
+     * @param Validator          $validator        Validator instance.
+     * @param NumberingService   $numberingService Numbering service.
+     * @param LineItemRepository $lineItemRepo     Line item repository.
+     * @param TaxService         $taxService       Tax calculation service.
      */
     public function __construct(
         Nonce $nonce,
         Sanitizer $sanitizer,
         Validator $validator,
-        NumberingService $numberingService
+        NumberingService $numberingService,
+        LineItemRepository $lineItemRepo,
+        TaxService $taxService
     ) {
         $this->nonce = $nonce;
         $this->sanitizer = $sanitizer;
         $this->validator = $validator;
         $this->numberingService = $numberingService;
+        $this->lineItemRepo = $lineItemRepo;
+        $this->taxService = $taxService;
         
         // Initialize logger
         try {
@@ -116,6 +141,7 @@ class InvoiceAjaxHandler
         add_action('wp_ajax_invoiceforge_delete_invoice', [$this, 'deleteInvoice']);
         add_action('wp_ajax_invoiceforge_get_invoice', [$this, 'getInvoice']);
         add_action('wp_ajax_invoiceforge_get_invoices', [$this, 'getInvoices']);
+        add_action('wp_ajax_invoiceforge_get_tax_rates', [$this, 'getTaxRates']);
     }
 
     /**
@@ -293,9 +319,64 @@ class InvoiceAjaxHandler
             update_post_meta($post_id, '_invoice_date', $invoice_date);
             update_post_meta($post_id, '_invoice_due_date', $due_date);
             update_post_meta($post_id, '_invoice_status', $status);
-            update_post_meta($post_id, '_invoice_total_amount', $total_amount);
             update_post_meta($post_id, '_invoice_currency', $currency);
             update_post_meta($post_id, '_invoice_notes', $notes);
+
+            // Save terms and conditions
+            $terms = isset($_POST['terms']) ? $this->sanitizer->textarea($_POST['terms']) : '';
+            update_post_meta($post_id, '_invoice_terms', $terms);
+
+            // Save internal notes
+            $internal_notes = isset($_POST['internal_notes']) ? $this->sanitizer->textarea($_POST['internal_notes']) : '';
+            update_post_meta($post_id, '_invoice_internal_notes', $internal_notes);
+
+            // Save discount
+            $discount_type  = isset($_POST['discount_type']) ? $this->sanitizer->option($_POST['discount_type'], ['', 'percentage', 'fixed'], '') : '';
+            $discount_value = isset($_POST['discount_value']) ? $this->sanitizer->money($_POST['discount_value']) : 0;
+            update_post_meta($post_id, '_invoice_discount_type', $discount_type);
+            update_post_meta($post_id, '_invoice_discount_value', $discount_value);
+
+            // --- Line Items ---
+            $this->lineItemRepo->deleteByInvoice($post_id);
+
+            $rawItems = isset($_POST['line_items']) && is_array($_POST['line_items']) ? $_POST['line_items'] : [];
+            $lineItems = [];
+
+            foreach ($rawItems as $order => $rawItem) {
+                if (!is_array($rawItem)) {
+                    continue;
+                }
+
+                $item = LineItem::fromArray($rawItem);
+                $item->id = 0; // Always insert fresh
+                $item->invoice_id = $post_id;
+                $item->item_order = (int) $order;
+                $lineItems[] = $item;
+            }
+
+            // Calculate totals via TaxService
+            $calculated = $this->taxService->calculateInvoice($lineItems);
+
+            foreach ($calculated['items'] as $item) {
+                $this->lineItemRepo->save($item);
+            }
+
+            // Apply discount
+            $invoiceSubtotal = $calculated['subtotal'];
+            $invoiceTax = $calculated['tax'];
+            $invoiceTotal = $calculated['total'];
+
+            if ($discount_type === 'percentage' && $discount_value > 0) {
+                $discountAmount = round($invoiceSubtotal * ($discount_value / 100), 2);
+                $invoiceTotal = round($invoiceTotal - $discountAmount, 2);
+            } elseif ($discount_type === 'fixed' && $discount_value > 0) {
+                $invoiceTotal = round($invoiceTotal - $discount_value, 2);
+            }
+
+            // Store computed totals
+            update_post_meta($post_id, '_invoice_subtotal', $invoiceSubtotal);
+            update_post_meta($post_id, '_invoice_tax', $invoiceTax);
+            update_post_meta($post_id, '_invoice_total_amount', max(0, $invoiceTotal));
 
             $this->log('info', 'Invoice saved successfully', ['post_id' => $post_id]);
 
@@ -508,20 +589,64 @@ class InvoiceAjaxHandler
         $client_id = (int) get_post_meta($invoice_id, '_invoice_client_id', true);
         $client = $client_id ? get_post($client_id) : null;
 
+        // Load line items
+        $lineItems = $this->lineItemRepo->findByInvoice($invoice_id);
+        $lineItemsArray = array_map(fn(LineItem $item) => $item->toArray(), $lineItems);
+
         return [
-            'id'           => $invoice_id,
-            'title'        => $post->post_title,
-            'number'       => get_post_meta($invoice_id, '_invoice_number', true),
-            'client_id'    => $client_id,
-            'client_name'  => $client ? $client->post_title : '',
-            'date'         => get_post_meta($invoice_id, '_invoice_date', true),
-            'due_date'     => get_post_meta($invoice_id, '_invoice_due_date', true),
-            'status'       => get_post_meta($invoice_id, '_invoice_status', true) ?: 'draft',
-            'total_amount' => (float) get_post_meta($invoice_id, '_invoice_total_amount', true),
-            'currency'     => get_post_meta($invoice_id, '_invoice_currency', true) ?: 'USD',
-            'notes'        => get_post_meta($invoice_id, '_invoice_notes', true),
-            'created_at'   => $post->post_date,
-            'updated_at'   => $post->post_modified,
+            'id'              => $invoice_id,
+            'title'           => $post->post_title,
+            'number'          => get_post_meta($invoice_id, '_invoice_number', true),
+            'client_id'       => $client_id,
+            'client_name'     => $client ? $client->post_title : '',
+            'date'            => get_post_meta($invoice_id, '_invoice_date', true),
+            'due_date'        => get_post_meta($invoice_id, '_invoice_due_date', true),
+            'status'          => get_post_meta($invoice_id, '_invoice_status', true) ?: 'draft',
+            'subtotal'        => (float) get_post_meta($invoice_id, '_invoice_subtotal', true),
+            'tax'             => (float) get_post_meta($invoice_id, '_invoice_tax', true),
+            'total_amount'    => (float) get_post_meta($invoice_id, '_invoice_total_amount', true),
+            'currency'        => get_post_meta($invoice_id, '_invoice_currency', true) ?: 'USD',
+            'notes'           => get_post_meta($invoice_id, '_invoice_notes', true),
+            'terms'           => get_post_meta($invoice_id, '_invoice_terms', true),
+            'internal_notes'  => get_post_meta($invoice_id, '_invoice_internal_notes', true),
+            'discount_type'   => get_post_meta($invoice_id, '_invoice_discount_type', true),
+            'discount_value'  => (float) get_post_meta($invoice_id, '_invoice_discount_value', true),
+            'line_items'      => $lineItemsArray,
+            'created_at'      => $post->post_date,
+            'updated_at'      => $post->post_modified,
         ];
+    }
+
+    /**
+     * Get available tax rates via AJAX.
+     *
+     * @since 1.1.0
+     *
+     * @return void
+     */
+    public function getTaxRates(): void
+    {
+        try {
+            if (!$this->nonce->checkAjaxReferer('invoiceforge_admin', 'nonce', false)) {
+                wp_send_json_error(['message' => __('Security check failed.', 'invoiceforge')], 403);
+                return;
+            }
+
+            if (!$this->canEditInvoices()) {
+                wp_send_json_error(['message' => __('Unauthorized.', 'invoiceforge')], 403);
+                return;
+            }
+
+            $taxRateRepo = $this->taxService->getTaxRateRepository();
+            $rates = $taxRateRepo->findAllActive();
+
+            $ratesArray = array_map(fn($rate) => $rate->toArray(), $rates);
+
+            wp_send_json_success(['tax_rates' => $ratesArray]);
+
+        } catch (\Exception $e) {
+            $this->log('error', 'Exception in getTaxRates', ['exception' => $e->getMessage()]);
+            wp_send_json_error(['message' => __('An unexpected error occurred.', 'invoiceforge')], 500);
+        }
     }
 }

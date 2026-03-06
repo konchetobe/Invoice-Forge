@@ -20,7 +20,10 @@ use InvoiceForge\Ajax\InvoiceAjaxHandler;
 use InvoiceForge\Ajax\ClientAjaxHandler;
 use InvoiceForge\PostTypes\InvoicePostType;
 use InvoiceForge\PostTypes\ClientPostType;
+use InvoiceForge\Repositories\LineItemRepository;
+use InvoiceForge\Repositories\TaxRateRepository;
 use InvoiceForge\Services\NumberingService;
+use InvoiceForge\Services\TaxService;
 use InvoiceForge\Security\Nonce;
 use InvoiceForge\Security\Capabilities;
 use InvoiceForge\Security\Sanitizer;
@@ -182,6 +185,15 @@ final class Plugin
             $this->container->resolve('logger')
         ));
 
+        // Repositories
+        $this->container->register('line_item_repo', fn(): LineItemRepository => new LineItemRepository());
+        $this->container->register('tax_rate_repo', fn(): TaxRateRepository => new TaxRateRepository());
+
+        // Tax service
+        $this->container->register('tax_service', fn(): TaxService => new TaxService(
+            $this->container->resolve('tax_rate_repo')
+        ));
+
         // Post types
         $this->container->register('invoice_post_type', fn(): InvoicePostType => new InvoicePostType(
             $this->container->resolve('nonce'),
@@ -210,7 +222,9 @@ final class Plugin
             $this->container->resolve('nonce'),
             $this->container->resolve('sanitizer'),
             $this->container->resolve('validator'),
-            $this->container->resolve('numbering')
+            $this->container->resolve('numbering'),
+            $this->container->resolve('line_item_repo'),
+            $this->container->resolve('tax_service')
         ));
 
         $this->container->register('client_ajax', fn(): ClientAjaxHandler => new ClientAjaxHandler(

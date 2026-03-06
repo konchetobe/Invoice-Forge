@@ -203,10 +203,25 @@
                 invoice_date: $form.find('[name="invoice_date"]').val(),
                 due_date: $form.find('[name="due_date"]').val(),
                 status: $form.find('[name="status"]').val(),
-                total_amount: $form.find('[name="total_amount"]').val(),
                 currency: $form.find('[name="currency"]').val(),
-                notes: $form.find('[name="notes"]').val()
+                notes: $form.find('[name="notes"]').val(),
+                terms: $form.find('[name="terms"]').val(),
+                internal_notes: $form.find('[name="internal_notes"]').val(),
+                discount_type: $form.find('[name="discount_type"]').val(),
+                discount_value: $form.find('[name="discount_value"]').val() || 0
             };
+
+            // Serialize line items
+            var lineItems = {};
+            $form.find('#invoiceforge-items-body .invoiceforge-line-item-row').each(function(index) {
+                var $row = $(this);
+                var prefix = 'line_items[' + index + ']';
+                lineItems[prefix + '[description]'] = $row.find('[name$="[description]"]').val() || '';
+                lineItems[prefix + '[quantity]'] = $row.find('[name$="[quantity]"]').val() || 1;
+                lineItems[prefix + '[unit_price]'] = $row.find('[name$="[unit_price]"]').val() || 0;
+                lineItems[prefix + '[tax_rate_id]'] = $row.find('[name$="[tax_rate_id]"]').val() || '';
+            });
+            $.extend(formData, lineItems);
             
             // Add new client fields if mode is 'new'
             if (clientMode === 'new') {

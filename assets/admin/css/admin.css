@@ -479,6 +479,205 @@
     max-width: 800px;
 }
 
+/* ========================================
+   Line Items Table
+======================================== */
+.invoiceforge-line-items-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--if-font-size-sm);
+}
+
+.invoiceforge-line-items-table thead th {
+    padding: var(--if-space-3) var(--if-space-3);
+    text-align: left;
+    font-weight: 600;
+    font-size: var(--if-font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--if-gray-500);
+    background: var(--if-gray-50);
+    border-bottom: 1px solid var(--if-gray-200);
+}
+
+.invoiceforge-line-items-table tbody td {
+    padding: var(--if-space-2) var(--if-space-3);
+    vertical-align: middle;
+    border-bottom: 1px solid var(--if-gray-100);
+}
+
+.invoiceforge-line-items-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.invoiceforge-line-items-table .col-description {
+    width: 40%;
+}
+
+.invoiceforge-line-items-table .col-qty {
+    width: 10%;
+    min-width: 80px;
+}
+
+.invoiceforge-line-items-table .col-price {
+    width: 15%;
+    min-width: 100px;
+}
+
+.invoiceforge-line-items-table .col-tax {
+    width: 18%;
+    min-width: 120px;
+}
+
+.invoiceforge-line-items-table .col-total {
+    width: 12%;
+    min-width: 90px;
+    text-align: right;
+    font-family: "SF Mono", SFMono-Regular, Consolas, monospace;
+    font-weight: 600;
+    color: var(--if-gray-800);
+}
+
+.invoiceforge-line-items-table .col-actions {
+    width: 5%;
+    text-align: center;
+}
+
+.invoiceforge-line-items-table .invoiceforge-form-input,
+.invoiceforge-line-items-table .invoiceforge-form-select {
+    padding: var(--if-space-1) var(--if-space-2);
+    font-size: var(--if-font-size-sm);
+}
+
+.invoiceforge-item-total {
+    font-family: "SF Mono", SFMono-Regular, Consolas, monospace;
+    font-weight: 600;
+    color: var(--if-gray-800);
+    display: inline-block;
+    min-width: 70px;
+    text-align: right;
+}
+
+.invoiceforge-btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    background: none;
+    border: 1px solid transparent;
+    border-radius: var(--if-radius-sm);
+    cursor: pointer;
+    color: var(--if-gray-400);
+    transition: all var(--if-transition-fast);
+}
+
+.invoiceforge-btn-icon:hover {
+    background: var(--if-error-light, #fee2e2);
+    color: var(--if-error);
+    border-color: var(--if-error);
+}
+
+.invoiceforge-btn-icon .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+.invoiceforge-empty-items {
+    text-align: center;
+    padding: var(--if-space-8);
+    color: var(--if-gray-400);
+}
+
+.invoiceforge-empty-items p {
+    margin: 0;
+    font-size: var(--if-font-size-sm);
+}
+
+/* ========================================
+   Totals Summary
+======================================== */
+.invoiceforge-totals-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--if-space-6);
+    flex-wrap: wrap;
+}
+
+.invoiceforge-totals-discount {
+    flex: 1;
+    min-width: 200px;
+}
+
+.invoiceforge-totals-summary {
+    min-width: 260px;
+}
+
+.invoiceforge-summary-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.invoiceforge-summary-table td {
+    padding: var(--if-space-2) var(--if-space-3);
+    font-size: var(--if-font-size-sm);
+}
+
+.invoiceforge-summary-table td:first-child {
+    color: var(--if-gray-600);
+    text-align: left;
+}
+
+.invoiceforge-summary-table td:last-child {
+    text-align: right;
+    min-width: 100px;
+}
+
+.invoiceforge-summary-table .invoiceforge-total-row td {
+    border-top: 2px solid var(--if-gray-200);
+    padding-top: var(--if-space-3);
+    font-size: var(--if-font-size-base);
+}
+
+.invoiceforge-summary-table .invoiceforge-total-row .invoiceforge-amount {
+    color: var(--if-primary);
+    font-size: var(--if-font-size-lg);
+}
+
+.invoiceforge-discount-amount {
+    color: var(--if-error);
+}
+
+/* ========================================
+   Small Button Variant
+======================================== */
+.invoiceforge-btn-sm {
+    padding: var(--if-space-1) var(--if-space-3);
+    font-size: var(--if-font-size-xs);
+}
+
+.invoiceforge-btn-sm .dashicons {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+    margin-right: 2px;
+}
+
+@media (max-width: 768px) {
+    .invoiceforge-line-items-table .col-tax {
+        display: none;
+    }
+    .invoiceforge-line-items-table thead th.col-tax {
+        display: none;
+    }
+    .invoiceforge-totals-grid {
+        flex-direction: column;
+    }
+}
+
 .invoiceforge-form-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

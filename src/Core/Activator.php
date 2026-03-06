@@ -13,6 +13,8 @@ declare(strict_types=1);
 
 namespace InvoiceForge\Core;
 
+use InvoiceForge\Database\Schema;
+use InvoiceForge\Repositories\TaxRateRepository;
 use InvoiceForge\Utilities\Logger;
 
 // Prevent direct access
@@ -26,6 +28,7 @@ if (!defined('ABSPATH')) {
  * This class is responsible for:
  * - Creating default options
  * - Setting up initial database entries
+ * - Creating custom database tables
  * - Registering capabilities
  * - Creating required directories
  * - Flushing rewrite rules
@@ -47,10 +50,27 @@ class Activator
     {
         self::createOptions();
         self::createDirectories();
+        self::createDatabaseTables();
         self::registerCapabilities();
         self::setActivationFlag();
         self::flushRewriteRules();
         self::logActivation();
+    }
+
+    /**
+     * Create custom database tables and seed defaults.
+     *
+     * @since 1.1.0
+     *
+     * @return void
+     */
+    private static function createDatabaseTables(): void
+    {
+        Schema::createTables();
+
+        // Seed default tax rates
+        $taxRateRepo = new TaxRateRepository();
+        $taxRateRepo->seedDefaults();
     }
 
     /**

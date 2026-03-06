@@ -15,6 +15,9 @@ namespace InvoiceForge\Admin\Pages;
 
 use InvoiceForge\PostTypes\InvoicePostType;
 use InvoiceForge\PostTypes\ClientPostType;
+use InvoiceForge\Repositories\LineItemRepository;
+use InvoiceForge\Repositories\TaxRateRepository;
+use InvoiceForge\Models\LineItem;
 
 // Prevent direct access
 if (!defined('ABSPATH')) {
@@ -82,6 +85,17 @@ class InvoicesPage
         $currencies = $this->getCurrencies();
         $countries = $this->getCountries();
 
+        // Load tax rates for the editor dropdown
+        $taxRateRepo = new TaxRateRepository();
+        $tax_rates = array_map(fn($r) => $r->toArray(), $taxRateRepo->findAllActive());
+
+        // Load line items for existing invoice
+        $line_items = [];
+        if ($invoice_id > 0) {
+            $lineItemRepo = new LineItemRepository();
+            $line_items = array_map(fn(LineItem $item) => $item->toArray(), $lineItemRepo->findByInvoice($invoice_id));
+        }
+
         include INVOICEFORGE_PLUGIN_DIR . 'templates/admin/invoice-editor.php';
     }
 
@@ -120,19 +134,25 @@ class InvoicesPage
         $client = $client_id ? get_post($client_id) : null;
 
         return [
-            'id'           => $invoice_id,
-            'title'        => $post->post_title,
-            'number'       => get_post_meta($invoice_id, '_invoice_number', true),
-            'client_id'    => $client_id,
-            'client_name'  => $client ? $client->post_title : '',
-            'date'         => get_post_meta($invoice_id, '_invoice_date', true),
-            'due_date'     => get_post_meta($invoice_id, '_invoice_due_date', true),
-            'status'       => get_post_meta($invoice_id, '_invoice_status', true) ?: 'draft',
-            'total_amount' => (float) get_post_meta($invoice_id, '_invoice_total_amount', true),
-            'currency'     => get_post_meta($invoice_id, '_invoice_currency', true) ?: 'USD',
-            'notes'        => get_post_meta($invoice_id, '_invoice_notes', true),
-            'created_at'   => $post->post_date,
-            'updated_at'   => $post->post_modified,
+            'id'             => $invoice_id,
+            'title'          => $post->post_title,
+            'number'         => get_post_meta($invoice_id, '_invoice_number', true),
+            'client_id'      => $client_id,
+            'client_name'    => $client ? $client->post_title : '',
+            'date'           => get_post_meta($invoice_id, '_invoice_date', true),
+            'due_date'       => get_post_meta($invoice_id, '_invoice_due_date', true),
+            'status'         => get_post_meta($invoice_id, '_invoice_status', true) ?: 'draft',
+            'subtotal'       => (float) get_post_meta($invoice_id, '_invoice_subtotal', true),
+            'tax'            => (float) get_post_meta($invoice_id, '_invoice_tax', true),
+            'total_amount'   => (float) get_post_meta($invoice_id, '_invoice_total_amount', true),
+            'currency'       => get_post_meta($invoice_id, '_invoice_currency', true) ?: 'USD',
+            'notes'          => get_post_meta($invoice_id, '_invoice_notes', true),
+            'terms'          => get_post_meta($invoice_id, '_invoice_terms', true),
+            'internal_notes' => get_post_meta($invoice_id, '_invoice_internal_notes', true),
+            'discount_type'  => get_post_meta($invoice_id, '_invoice_discount_type', true),
+            'discount_value' => (float) get_post_meta($invoice_id, '_invoice_discount_value', true),
+            'created_at'     => $post->post_date,
+            'updated_at'     => $post->post_modified,
         ];
     }
 
