@@ -1,0 +1,45 @@
+{
+    "name": "invoiceforge/invoiceforge",
+    "description": "A production-grade WordPress invoice management plugin with payment gateways, client portal, multi-currency support, and compliance-ready templates.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "InvoiceForge Team",
+            "email": "hello@invoiceforge.io"
+        }
+    ],
+    "require": {
+        "php": ">=8.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "phpstan/phpstan": "^1.10",
+        "squizlabs/php_codesniffer": "^3.7",
+        "wp-coding-standards/wpcs": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "InvoiceForge\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "InvoiceForge\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "phpcs": "phpcs --standard=WordPress src/",
+        "phpcbf": "phpcbf --standard=WordPress src/",
+        "phpstan": "phpstan analyse src/ --level=6",
+        "test": "phpunit"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

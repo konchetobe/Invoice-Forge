@@ -1,0 +1,1146 @@
+/**
+ * InvoiceForge Admin Styles
+ * Modern SaaS-style design with gradients, shadows, and clean layout
+ *
+ * @package InvoiceForge
+ * @since 1.0.0
+ */
+
+/* ========================================
+   CSS Variables / Design Tokens
+======================================== */
+:root {
+    /* Primary colors - Professional Blue/Purple */
+    --if-primary: #6366f1;
+    --if-primary-dark: #4f46e5;
+    --if-primary-light: #818cf8;
+    --if-primary-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+
+    /* Secondary colors */
+    --if-secondary: #64748b;
+    --if-secondary-dark: #475569;
+    --if-secondary-light: #94a3b8;
+
+    /* Status colors */
+    --if-success: #10b981;
+    --if-success-light: #d1fae5;
+    --if-warning: #f59e0b;
+    --if-warning-light: #fef3c7;
+    --if-error: #ef4444;
+    --if-error-light: #fee2e2;
+    --if-info: #3b82f6;
+    --if-info-light: #dbeafe;
+
+    /* Invoice status colors */
+    --if-status-draft: #64748b;
+    --if-status-draft-bg: #f1f5f9;
+    --if-status-sent: #3b82f6;
+    --if-status-sent-bg: #dbeafe;
+    --if-status-paid: #10b981;
+    --if-status-paid-bg: #d1fae5;
+    --if-status-overdue: #ef4444;
+    --if-status-overdue-bg: #fee2e2;
+    --if-status-cancelled: #6b7280;
+    --if-status-cancelled-bg: #f3f4f6;
+
+    /* Neutral colors */
+    --if-white: #ffffff;
+    --if-gray-50: #f9fafb;
+    --if-gray-100: #f3f4f6;
+    --if-gray-200: #e5e7eb;
+    --if-gray-300: #d1d5db;
+    --if-gray-400: #9ca3af;
+    --if-gray-500: #6b7280;
+    --if-gray-600: #4b5563;
+    --if-gray-700: #374151;
+    --if-gray-800: #1f2937;
+    --if-gray-900: #111827;
+
+    /* Typography */
+    --if-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --if-font-size-xs: 0.75rem;
+    --if-font-size-sm: 0.875rem;
+    --if-font-size-base: 1rem;
+    --if-font-size-lg: 1.125rem;
+    --if-font-size-xl: 1.25rem;
+    --if-font-size-2xl: 1.5rem;
+    --if-font-size-3xl: 1.875rem;
+
+    /* Spacing */
+    --if-space-1: 0.25rem;
+    --if-space-2: 0.5rem;
+    --if-space-3: 0.75rem;
+    --if-space-4: 1rem;
+    --if-space-5: 1.25rem;
+    --if-space-6: 1.5rem;
+    --if-space-8: 2rem;
+    --if-space-10: 2.5rem;
+    --if-space-12: 3rem;
+
+    /* Border radius */
+    --if-radius-sm: 0.25rem;
+    --if-radius: 0.5rem;
+    --if-radius-lg: 0.75rem;
+    --if-radius-xl: 1rem;
+    --if-radius-full: 9999px;
+
+    /* Shadows */
+    --if-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --if-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --if-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --if-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --if-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    /* Transitions */
+    --if-transition-fast: 150ms ease;
+    --if-transition: 200ms ease;
+    --if-transition-slow: 300ms ease;
+}
+
+/* ========================================
+   Base / Reset
+======================================== */
+.invoiceforge-wrap {
+    font-family: var(--if-font-family);
+    color: var(--if-gray-800);
+    line-height: 1.5;
+    padding: var(--if-space-6);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.invoiceforge-wrap * {
+    box-sizing: border-box;
+}
+
+.invoiceforge-wrap h1,
+.invoiceforge-wrap h2,
+.invoiceforge-wrap h3,
+.invoiceforge-wrap h4 {
+    margin: 0 0 var(--if-space-4);
+    font-weight: 600;
+    color: var(--if-gray-900);
+}
+
+/* ========================================
+   Page Header
+======================================== */
+.invoiceforge-page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--if-space-6);
+    padding-bottom: var(--if-space-6);
+    border-bottom: 1px solid var(--if-gray-200);
+}
+
+.invoiceforge-page-title {
+    font-size: var(--if-font-size-2xl);
+    font-weight: 700;
+    background: var(--if-primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+.invoiceforge-page-title span {
+    font-weight: 400;
+    color: var(--if-gray-500);
+    -webkit-text-fill-color: var(--if-gray-500);
+}
+
+.invoiceforge-page-actions {
+    display: flex;
+    gap: var(--if-space-3);
+}
+
+/* ========================================
+   Buttons
+======================================== */
+.invoiceforge-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--if-space-2);
+    padding: var(--if-space-2) var(--if-space-4);
+    font-size: var(--if-font-size-sm);
+    font-weight: 500;
+    line-height: 1.5;
+    text-decoration: none;
+    border: none;
+    border-radius: var(--if-radius);
+    cursor: pointer;
+    transition: all var(--if-transition);
+    white-space: nowrap;
+}
+
+.invoiceforge-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+}
+
+.invoiceforge-btn-primary {
+    background: var(--if-primary-gradient);
+    color: var(--if-white);
+    box-shadow: var(--if-shadow-md);
+}
+
+.invoiceforge-btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--if-shadow-lg);
+    color: var(--if-white);
+}
+
+.invoiceforge-btn-secondary {
+    background: var(--if-white);
+    color: var(--if-gray-700);
+    border: 1px solid var(--if-gray-300);
+}
+
+.invoiceforge-btn-secondary:hover {
+    background: var(--if-gray-50);
+    color: var(--if-gray-900);
+}
+
+.invoiceforge-btn-danger {
+    background: var(--if-error);
+    color: var(--if-white);
+}
+
+.invoiceforge-btn-danger:hover {
+    background: #dc2626;
+}
+
+.invoiceforge-btn-success {
+    background: var(--if-success);
+    color: var(--if-white);
+}
+
+.invoiceforge-btn-success:hover {
+    background: #059669;
+}
+
+.invoiceforge-btn-sm {
+    padding: var(--if-space-1) var(--if-space-3);
+    font-size: var(--if-font-size-xs);
+}
+
+.invoiceforge-btn-lg {
+    padding: var(--if-space-3) var(--if-space-6);
+    font-size: var(--if-font-size-base);
+}
+
+.invoiceforge-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.invoiceforge-btn .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* ========================================
+   Cards
+======================================== */
+.invoiceforge-card {
+    background: var(--if-white);
+    border-radius: var(--if-radius-lg);
+    box-shadow: var(--if-shadow);
+    border: 1px solid var(--if-gray-200);
+    overflow: hidden;
+    transition: box-shadow var(--if-transition);
+}
+
+.invoiceforge-card:hover {
+    box-shadow: var(--if-shadow-md);
+}
+
+.invoiceforge-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--if-space-4) var(--if-space-5);
+    border-bottom: 1px solid var(--if-gray-200);
+    background: var(--if-gray-50);
+}
+
+.invoiceforge-card-title {
+    font-size: var(--if-font-size-lg);
+    font-weight: 600;
+    margin: 0;
+    color: var(--if-gray-900);
+}
+
+.invoiceforge-card-body {
+    padding: var(--if-space-5);
+}
+
+.invoiceforge-card-footer {
+    padding: var(--if-space-4) var(--if-space-5);
+    border-top: 1px solid var(--if-gray-200);
+    background: var(--if-gray-50);
+}
+
+/* ========================================
+   Stats Grid (Dashboard)
+======================================== */
+.invoiceforge-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--if-space-5);
+    margin-bottom: var(--if-space-6);
+}
+
+.invoiceforge-stat-card {
+    background: var(--if-white);
+    border-radius: var(--if-radius-lg);
+    padding: var(--if-space-5);
+    box-shadow: var(--if-shadow);
+    border: 1px solid var(--if-gray-200);
+    transition: all var(--if-transition);
+}
+
+.invoiceforge-stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--if-shadow-lg);
+}
+
+.invoiceforge-stat-card.stat-primary {
+    background: var(--if-primary-gradient);
+    color: var(--if-white);
+    border: none;
+}
+
+.invoiceforge-stat-card.stat-primary .invoiceforge-stat-label {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.invoiceforge-stat-card.stat-primary .invoiceforge-stat-value {
+    color: var(--if-white);
+}
+
+.invoiceforge-stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--if-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--if-space-3);
+    background: var(--if-gray-100);
+    color: var(--if-primary);
+}
+
+.invoiceforge-stat-card.stat-primary .invoiceforge-stat-icon {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--if-white);
+}
+
+.invoiceforge-stat-icon .dashicons {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+}
+
+.invoiceforge-stat-label {
+    font-size: var(--if-font-size-sm);
+    color: var(--if-gray-500);
+    margin-bottom: var(--if-space-1);
+}
+
+.invoiceforge-stat-value {
+    font-size: var(--if-font-size-2xl);
+    font-weight: 700;
+    color: var(--if-gray-900);
+}
+
+/* ========================================
+   Dashboard Grid
+======================================== */
+.invoiceforge-dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--if-space-6);
+}
+
+@media (max-width: 1200px) {
+    .invoiceforge-dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   Tables
+======================================== */
+.invoiceforge-table-wrap {
+    overflow-x: auto;
+}
+
+.invoiceforge-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--if-font-size-sm);
+}
+
+.invoiceforge-table th {
+    background: var(--if-gray-50);
+    padding: var(--if-space-3) var(--if-space-4);
+    text-align: left;
+    font-weight: 600;
+    color: var(--if-gray-600);
+    border-bottom: 1px solid var(--if-gray-200);
+    white-space: nowrap;
+}
+
+.invoiceforge-table td {
+    padding: var(--if-space-4);
+    border-bottom: 1px solid var(--if-gray-100);
+    color: var(--if-gray-700);
+}
+
+.invoiceforge-table tbody tr {
+    transition: background var(--if-transition-fast);
+}
+
+.invoiceforge-table tbody tr:hover {
+    background: var(--if-gray-50);
+}
+
+.invoiceforge-table-empty {
+    text-align: center;
+    padding: var(--if-space-12) !important;
+    color: var(--if-gray-500);
+}
+
+.invoiceforge-table-actions {
+    display: flex;
+    gap: var(--if-space-2);
+}
+
+.invoiceforge-table-link {
+    color: var(--if-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.invoiceforge-table-link:hover {
+    color: var(--if-primary-dark);
+    text-decoration: underline;
+}
+
+/* ========================================
+   Status Badges
+======================================== */
+.invoiceforge-status {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--if-space-1);
+    padding: var(--if-space-1) var(--if-space-2);
+    font-size: var(--if-font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: var(--if-radius-full);
+}
+
+.invoiceforge-status-draft {
+    background: var(--if-status-draft-bg);
+    color: var(--if-status-draft);
+}
+
+.invoiceforge-status-sent {
+    background: var(--if-status-sent-bg);
+    color: var(--if-status-sent);
+}
+
+.invoiceforge-status-paid {
+    background: var(--if-status-paid-bg);
+    color: var(--if-status-paid);
+}
+
+.invoiceforge-status-overdue {
+    background: var(--if-status-overdue-bg);
+    color: var(--if-status-overdue);
+}
+
+.invoiceforge-status-cancelled {
+    background: var(--if-status-cancelled-bg);
+    color: var(--if-status-cancelled);
+}
+
+/* ========================================
+   Forms
+======================================== */
+.invoiceforge-form {
+    max-width: 800px;
+}
+
+.invoiceforge-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--if-space-5);
+}
+
+@media (max-width: 768px) {
+    .invoiceforge-form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.invoiceforge-form-group {
+    margin-bottom: var(--if-space-5);
+}
+
+.invoiceforge-form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.invoiceforge-form-label {
+    display: block;
+    font-size: var(--if-font-size-sm);
+    font-weight: 500;
+    color: var(--if-gray-700);
+    margin-bottom: var(--if-space-2);
+}
+
+.invoiceforge-form-label .required {
+    color: var(--if-error);
+}
+
+.invoiceforge-form-input,
+.invoiceforge-form-select,
+.invoiceforge-form-textarea {
+    width: 100%;
+    padding: var(--if-space-2) var(--if-space-3);
+    font-size: var(--if-font-size-sm);
+    line-height: 1.5;
+    color: var(--if-gray-800);
+    background: var(--if-white);
+    border: 1px solid var(--if-gray-300);
+    border-radius: var(--if-radius);
+    transition: border-color var(--if-transition), box-shadow var(--if-transition);
+}
+
+.invoiceforge-form-input:focus,
+.invoiceforge-form-select:focus,
+.invoiceforge-form-textarea:focus {
+    outline: none;
+    border-color: var(--if-primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.invoiceforge-form-input:disabled,
+.invoiceforge-form-select:disabled,
+.invoiceforge-form-textarea:disabled {
+    background: var(--if-gray-100);
+    cursor: not-allowed;
+}
+
+.invoiceforge-form-input.error,
+.invoiceforge-form-select.error,
+.invoiceforge-form-textarea.error {
+    border-color: var(--if-error);
+}
+
+.invoiceforge-form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.invoiceforge-form-help {
+    font-size: var(--if-font-size-xs);
+    color: var(--if-gray-500);
+    margin-top: var(--if-space-1);
+}
+
+.invoiceforge-form-error {
+    font-size: var(--if-font-size-xs);
+    color: var(--if-error);
+    margin-top: var(--if-space-1);
+}
+
+.invoiceforge-form-section {
+    margin-bottom: var(--if-space-8);
+}
+
+.invoiceforge-form-section-title {
+    font-size: var(--if-font-size-lg);
+    font-weight: 600;
+    color: var(--if-gray-900);
+    margin-bottom: var(--if-space-4);
+    padding-bottom: var(--if-space-2);
+    border-bottom: 1px solid var(--if-gray-200);
+}
+
+/* ========================================
+   Editor Layout
+======================================== */
+.invoiceforge-editor-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: var(--if-space-6);
+    align-items: start;
+}
+
+@media (max-width: 1024px) {
+    .invoiceforge-editor-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.invoiceforge-editor-main {
+    /* Main content area */
+}
+
+.invoiceforge-editor-sidebar {
+    position: sticky;
+    top: 32px;
+}
+
+.invoiceforge-editor-sidebar .invoiceforge-card {
+    margin-bottom: var(--if-space-4);
+}
+
+/* ========================================
+   Filters & Search
+======================================== */
+.invoiceforge-filters {
+    display: flex;
+    align-items: center;
+    gap: var(--if-space-4);
+    margin-bottom: var(--if-space-5);
+    flex-wrap: wrap;
+}
+
+.invoiceforge-search {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+    max-width: 400px;
+}
+
+.invoiceforge-search-input {
+    width: 100%;
+    padding: var(--if-space-2) var(--if-space-3) var(--if-space-2) var(--if-space-10);
+    border: 1px solid var(--if-gray-300);
+    border-radius: var(--if-radius);
+    font-size: var(--if-font-size-sm);
+    transition: all var(--if-transition);
+}
+
+.invoiceforge-search-input:focus {
+    outline: none;
+    border-color: var(--if-primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.invoiceforge-search-icon {
+    position: absolute;
+    left: var(--if-space-3);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--if-gray-400);
+}
+
+.invoiceforge-filter-tabs {
+    display: flex;
+    gap: var(--if-space-1);
+    background: var(--if-gray-100);
+    padding: var(--if-space-1);
+    border-radius: var(--if-radius);
+}
+
+.invoiceforge-filter-tab {
+    padding: var(--if-space-2) var(--if-space-3);
+    font-size: var(--if-font-size-sm);
+    font-weight: 500;
+    color: var(--if-gray-600);
+    background: transparent;
+    border: none;
+    border-radius: var(--if-radius-sm);
+    cursor: pointer;
+    transition: all var(--if-transition-fast);
+}
+
+.invoiceforge-filter-tab:hover {
+    color: var(--if-gray-900);
+}
+
+.invoiceforge-filter-tab.active {
+    background: var(--if-white);
+    color: var(--if-primary);
+    box-shadow: var(--if-shadow-sm);
+}
+
+.invoiceforge-filter-tab .count {
+    font-size: var(--if-font-size-xs);
+    color: var(--if-gray-500);
+    margin-left: var(--if-space-1);
+}
+
+/* ========================================
+   Toast Notifications
+======================================== */
+.invoiceforge-toast-container {
+    position: fixed;
+    top: 32px;
+    right: var(--if-space-4);
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    gap: var(--if-space-3);
+    max-width: 400px;
+}
+
+.invoiceforge-toast {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--if-space-3);
+    padding: var(--if-space-4);
+    background: var(--if-white);
+    border-radius: var(--if-radius-lg);
+    box-shadow: var(--if-shadow-lg);
+    border-left: 4px solid var(--if-primary);
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.invoiceforge-toast.success {
+    border-left-color: var(--if-success);
+}
+
+.invoiceforge-toast.error {
+    border-left-color: var(--if-error);
+}
+
+.invoiceforge-toast.warning {
+    border-left-color: var(--if-warning);
+}
+
+.invoiceforge-toast-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.invoiceforge-toast-content {
+    flex: 1;
+}
+
+.invoiceforge-toast-title {
+    font-weight: 600;
+    color: var(--if-gray-900);
+    margin-bottom: var(--if-space-1);
+}
+
+.invoiceforge-toast-message {
+    font-size: var(--if-font-size-sm);
+    color: var(--if-gray-600);
+}
+
+.invoiceforge-toast-close {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    color: var(--if-gray-400);
+    cursor: pointer;
+    padding: 0;
+}
+
+.invoiceforge-toast-close:hover {
+    color: var(--if-gray-600);
+}
+
+/* ========================================
+   Loading States
+======================================== */
+.invoiceforge-loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.invoiceforge-loading::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: inherit;
+}
+
+.invoiceforge-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--if-gray-200);
+    border-top-color: var(--if-primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.invoiceforge-btn .invoiceforge-spinner {
+    width: 14px;
+    height: 14px;
+    border-width: 2px;
+}
+
+/* ========================================
+   Empty States
+======================================== */
+.invoiceforge-empty-state {
+    text-align: center;
+    padding: var(--if-space-12);
+}
+
+.invoiceforge-empty-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--if-space-4);
+    background: var(--if-gray-100);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--if-gray-400);
+}
+
+.invoiceforge-empty-icon .dashicons {
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+}
+
+.invoiceforge-empty-title {
+    font-size: var(--if-font-size-lg);
+    font-weight: 600;
+    color: var(--if-gray-900);
+    margin-bottom: var(--if-space-2);
+}
+
+.invoiceforge-empty-text {
+    color: var(--if-gray-500);
+    margin-bottom: var(--if-space-6);
+}
+
+/* ========================================
+   Settings Page
+======================================== */
+.invoiceforge-settings-nav {
+    display: flex;
+    gap: var(--if-space-1);
+    margin-bottom: var(--if-space-6);
+    border-bottom: 1px solid var(--if-gray-200);
+    padding-bottom: 1px;
+}
+
+.invoiceforge-settings-nav a {
+    padding: var(--if-space-3) var(--if-space-4);
+    font-size: var(--if-font-size-sm);
+    font-weight: 500;
+    color: var(--if-gray-600);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: all var(--if-transition-fast);
+}
+
+.invoiceforge-settings-nav a:hover {
+    color: var(--if-gray-900);
+}
+
+.invoiceforge-settings-nav a.active {
+    color: var(--if-primary);
+    border-bottom-color: var(--if-primary);
+}
+
+.invoiceforge-settings-form .form-table {
+    margin-top: 0;
+}
+
+.invoiceforge-settings-form .form-table th {
+    padding-left: 0;
+    font-weight: 500;
+}
+
+/* Image upload */
+.invoiceforge-image-upload {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--if-space-4);
+}
+
+.invoiceforge-image-preview {
+    width: 150px;
+    height: 100px;
+    border: 2px dashed var(--if-gray-300);
+    border-radius: var(--if-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--if-gray-50);
+}
+
+.invoiceforge-image-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Danger zone */
+.invoiceforge-danger-zone {
+    border: 1px solid var(--if-error-light);
+    border-radius: var(--if-radius-lg);
+    padding: var(--if-space-5);
+    margin-top: var(--if-space-8);
+}
+
+.invoiceforge-danger-zone h3 {
+    color: var(--if-error);
+    margin-bottom: var(--if-space-2);
+}
+
+/* ========================================
+   Quick Actions
+======================================== */
+.invoiceforge-quick-actions {
+    display: flex;
+    gap: var(--if-space-3);
+    flex-wrap: wrap;
+}
+
+.invoiceforge-quick-action {
+    display: flex;
+    align-items: center;
+    gap: var(--if-space-2);
+    padding: var(--if-space-3) var(--if-space-4);
+    background: var(--if-white);
+    border: 1px solid var(--if-gray-200);
+    border-radius: var(--if-radius);
+    font-size: var(--if-font-size-sm);
+    font-weight: 500;
+    color: var(--if-gray-700);
+    text-decoration: none;
+    transition: all var(--if-transition);
+}
+
+.invoiceforge-quick-action:hover {
+    border-color: var(--if-primary);
+    color: var(--if-primary);
+    transform: translateY(-1px);
+    box-shadow: var(--if-shadow-md);
+}
+
+.invoiceforge-quick-action .dashicons {
+    color: var(--if-primary);
+}
+
+/* ========================================
+   Modal
+======================================== */
+.invoiceforge-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--if-transition);
+}
+
+.invoiceforge-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.invoiceforge-modal {
+    background: var(--if-white);
+    border-radius: var(--if-radius-xl);
+    box-shadow: var(--if-shadow-xl);
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow: auto;
+    transform: scale(0.9);
+    transition: transform var(--if-transition);
+}
+
+.invoiceforge-modal-overlay.active .invoiceforge-modal {
+    transform: scale(1);
+}
+
+.invoiceforge-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--if-space-4) var(--if-space-5);
+    border-bottom: 1px solid var(--if-gray-200);
+}
+
+.invoiceforge-modal-title {
+    font-size: var(--if-font-size-lg);
+    font-weight: 600;
+    margin: 0;
+}
+
+.invoiceforge-modal-close {
+    background: none;
+    border: none;
+    color: var(--if-gray-400);
+    cursor: pointer;
+    padding: var(--if-space-1);
+}
+
+.invoiceforge-modal-body {
+    padding: var(--if-space-5);
+}
+
+.invoiceforge-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--if-space-3);
+    padding: var(--if-space-4) var(--if-space-5);
+    border-top: 1px solid var(--if-gray-200);
+}
+
+/* ========================================
+   Currency & Amount Display
+======================================== */
+.invoiceforge-amount {
+    font-family: "SF Mono", SFMono-Regular, Consolas, monospace;
+    font-weight: 600;
+}
+
+.invoiceforge-amount-positive {
+    color: var(--if-success);
+}
+
+.invoiceforge-amount-negative {
+    color: var(--if-error);
+}
+
+/* ========================================
+   Pagination
+======================================== */
+.invoiceforge-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: var(--if-space-4);
+    padding-top: var(--if-space-4);
+    border-top: 1px solid var(--if-gray-200);
+}
+
+.invoiceforge-pagination-info {
+    font-size: var(--if-font-size-sm);
+    color: var(--if-gray-500);
+}
+
+.invoiceforge-pagination-buttons {
+    display: flex;
+    gap: var(--if-space-2);
+}
+
+/* ========================================
+   Responsive Adjustments
+======================================== */
+@media (max-width: 782px) {
+    .invoiceforge-wrap {
+        padding: var(--if-space-4);
+    }
+
+    .invoiceforge-page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--if-space-4);
+    }
+
+    .invoiceforge-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .invoiceforge-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .invoiceforge-search {
+        max-width: none;
+    }
+
+    .invoiceforge-filter-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+}
+
+/* ========================================
+   Print Styles
+======================================== */
+@media print {
+    .invoiceforge-wrap {
+        padding: 0;
+    }
+
+    .invoiceforge-btn,
+    .invoiceforge-filters,
+    .invoiceforge-toast-container {
+        display: none !important;
+    }
+
+    .invoiceforge-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}
+
+/* ========================================
+   WordPress Admin Overrides
+======================================== */
+.invoiceforge-wrap .wp-list-table th,
+.invoiceforge-wrap .wp-list-table td {
+    padding: var(--if-space-3) var(--if-space-4);
+}
+
+.invoiceforge-wrap .notice {
+    margin: var(--if-space-4) 0;
+    border-radius: var(--if-radius);
+}
+
+/* Fix for WP admin bar offset */
+@media screen and (min-width: 783px) {
+    .invoiceforge-toast-container {
+        top: 64px;
+    }
+}

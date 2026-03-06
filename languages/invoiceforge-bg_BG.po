@@ -1,0 +1,357 @@
+# Bulgarian translations for InvoiceForge WordPress Plugin.
+# Copyright (C) 2026 InvoiceForge
+# This file is distributed under the same license as the InvoiceForge package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: InvoiceForge 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-05 12:00+0000\n"
+"PO-Revision-Date: 2026-03-05 12:00+0000\n"
+"Last-Translator: InvoiceForge Team\n"
+"Language-Team: Bulgarian\n"
+"Language: bg_BG\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# Dashboard
+msgid "Dashboard"
+msgstr "Табло"
+
+msgid "Total Revenue"
+msgstr "Общ приход"
+
+msgid "Outstanding"
+msgstr "Неизплатени"
+
+msgid "Total Invoices"
+msgstr "Общо фактури"
+
+msgid "Total Clients"
+msgstr "Общо клиенти"
+
+msgid "Quick Actions"
+msgstr "Бързи действия"
+
+msgid "Recent Invoices"
+msgstr "Скорошни фактури"
+
+msgid "Recent Clients"
+msgstr "Скорошни клиенти"
+
+# Invoices
+msgid "Invoices"
+msgstr "Фактури"
+
+msgid "Invoice"
+msgstr "Фактура"
+
+msgid "New Invoice"
+msgstr "Нова фактура"
+
+msgid "Edit Invoice"
+msgstr "Редактиране на фактура"
+
+msgid "Invoice Details"
+msgstr "Детайли на фактурата"
+
+msgid "Invoice Title"
+msgstr "Заглавие на фактура"
+
+msgid "Invoice Date"
+msgstr "Дата на фактура"
+
+msgid "Due Date"
+msgstr "Падеж"
+
+msgid "Total Amount"
+msgstr "Обща сума"
+
+msgid "Currency"
+msgstr "Валута"
+
+msgid "Notes"
+msgstr "Бележки"
+
+msgid "Create Invoice"
+msgstr "Създай фактура"
+
+msgid "Delete Invoice"
+msgstr "Изтрий фактура"
+
+msgid "Invoice Info"
+msgstr "Информация за фактурата"
+
+msgid "Invoice #:"
+msgstr "Фактура №:"
+
+msgid "Created:"
+msgstr "Създадена:"
+
+# Invoice Statuses
+msgid "Status"
+msgstr "Статус"
+
+msgid "Draft"
+msgstr "Чернова"
+
+msgid "Sent"
+msgstr "Изпратена"
+
+msgid "Paid"
+msgstr "Платена"
+
+msgid "Overdue"
+msgstr "Просрочена"
+
+msgid "Cancelled"
+msgstr "Анулирана"
+
+msgid "All"
+msgstr "Всички"
+
+# Clients
+msgid "Clients"
+msgstr "Клиенти"
+
+msgid "Client"
+msgstr "Клиент"
+
+msgid "New Client"
+msgstr "Нов клиент"
+
+msgid "Edit Client"
+msgstr "Редактиране на клиент"
+
+msgid "Add New Client"
+msgstr "Добави нов клиент"
+
+msgid "Select Existing Client"
+msgstr "Избери съществуващ клиент"
+
+msgid "Select a client..."
+msgstr "Изберете клиент..."
+
+msgid "New Client Details"
+msgstr "Данни за нов клиент"
+
+msgid "Personal Information"
+msgstr "Лична информация"
+
+msgid "First Name"
+msgstr "Име"
+
+msgid "Last Name"
+msgstr "Фамилия"
+
+msgid "Company"
+msgstr "Фирма"
+
+msgid "Email"
+msgstr "Имейл"
+
+msgid "Phone"
+msgstr "Телефон"
+
+msgid "Create Client"
+msgstr "Създай клиент"
+
+msgid "Delete Client"
+msgstr "Изтрий клиент"
+
+# Address
+msgid "Address"
+msgstr "Адрес"
+
+msgid "Street Address"
+msgstr "Улица"
+
+msgid "City"
+msgstr "Град"
+
+msgid "State / Province"
+msgstr "Област"
+
+msgid "ZIP / Postal Code"
+msgstr "Пощенски код"
+
+msgid "Country"
+msgstr "Държава"
+
+msgid "Select a country..."
+msgstr "Изберете държава..."
+
+msgid "+ Add Address (Optional)"
+msgstr "+ Добави адрес (по желание)"
+
+# Billing
+msgid "Billing Information"
+msgstr "Информация за фактуриране"
+
+msgid "Tax ID / VAT Number"
+msgstr "ЕИК / ДДС номер"
+
+# Statistics
+msgid "Statistics"
+msgstr "Статистика"
+
+# Settings
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "General"
+msgstr "Общи"
+
+msgid "Advanced"
+msgstr "Разширени"
+
+msgid "Company Information"
+msgstr "Информация за фирмата"
+
+msgid "Company Name"
+msgstr "Име на фирма"
+
+msgid "Company Email"
+msgstr "Имейл на фирма"
+
+msgid "Company Phone"
+msgstr "Телефон на фирма"
+
+msgid "Company Address"
+msgstr "Адрес на фирма"
+
+msgid "Company Logo"
+msgstr "Лого на фирма"
+
+msgid "Language"
+msgstr "Език"
+
+msgid "Default (Site Language)"
+msgstr "По подразбиране (Език на сайта)"
+
+msgid "English (US)"
+msgstr "Английски (САЩ)"
+
+msgid "English (UK)"
+msgstr "Английски (Великобритания)"
+
+msgid "Bulgarian (Български)"
+msgstr "Български"
+
+msgid "Save Settings"
+msgstr "Запази настройките"
+
+# Actions
+msgid "Save"
+msgstr "Запази"
+
+msgid "Save Changes"
+msgstr "Запази промените"
+
+msgid "Cancel"
+msgstr "Отказ"
+
+msgid "Delete"
+msgstr "Изтрий"
+
+msgid "Edit"
+msgstr "Редактирай"
+
+msgid "View"
+msgstr "Преглед"
+
+msgid "Search"
+msgstr "Търсене"
+
+msgid "Back to List"
+msgstr "Обратно към списъка"
+
+# Messages
+msgid "Saving..."
+msgstr "Запазване..."
+
+msgid "Saved!"
+msgstr "Запазено!"
+
+msgid "An error occurred. Please try again."
+msgstr "Възникна грешка. Моля, опитайте отново."
+
+msgid "Network error. Please try again."
+msgstr "Мрежова грешка. Моля, опитайте отново."
+
+msgid "Security check failed."
+msgstr "Проверката за сигурност не бе успешна."
+
+msgid "Please fill in all required fields."
+msgstr "Моля, попълнете всички задължителни полета."
+
+msgid "Please enter a valid email address."
+msgstr "Моля, въведете валиден имейл адрес."
+
+msgid "Are you sure you want to delete this item?"
+msgstr "Сигурни ли сте, че искате да изтриете този елемент?"
+
+msgid "Client created successfully."
+msgstr "Клиентът е създаден успешно."
+
+msgid "Client updated successfully."
+msgstr "Клиентът е обновен успешно."
+
+msgid "Client deleted successfully."
+msgstr "Клиентът е изтрит успешно."
+
+msgid "Invoice created successfully."
+msgstr "Фактурата е създадена успешно."
+
+msgid "Invoice updated successfully."
+msgstr "Фактурата е обновена успешно."
+
+msgid "Invoice deleted successfully."
+msgstr "Фактурата е изтрита успешно."
+
+# Countries (Bulgaria highlighted)
+msgid "Bulgaria"
+msgstr "България"
+
+msgid "United States"
+msgstr "САЩ"
+
+msgid "United Kingdom"
+msgstr "Великобритания"
+
+msgid "Germany"
+msgstr "Германия"
+
+msgid "France"
+msgstr "Франция"
+
+# Empty states
+msgid "No invoices found."
+msgstr "Няма намерени фактури."
+
+msgid "No clients found."
+msgstr "Няма намерени клиенти."
+
+msgid "Create your first invoice"
+msgstr "Създайте първата си фактура"
+
+msgid "Add your first client"
+msgstr "Добавете първия си клиент"
+
+# Misc
+msgid "required"
+msgstr "задължително"
+
+msgid "Optional"
+msgstr "По желание"
+
+msgid "Loading..."
+msgstr "Зареждане..."
+
+msgid "Line items will be available in a future update."
+msgstr "Позициите ще бъдат налични в бъдеща версия."
+
+msgid "Select..."
+msgstr "Изберете..."
