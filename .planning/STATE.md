@@ -32,6 +32,7 @@
 - **Security:** Comprehensive validation, nonces, and encryption from Phase 1A
 - **Database:** Custom tables for line items and tax rates
 - **Integration:** WooCommerce order-to-invoice mapping
+- **Roadmap authority:** .planning/ROADMAP.md is the sole authoritative roadmap; root-level duplicate and PDF exports removed (quick-1-001)
 
 ### Active TODOs
 - Create Phase 3 implementation plan (Payment Gateways)
@@ -51,3 +52,6 @@
 - Security is paramount for financial data handling
 
 ## Session Continuity
+
+**Last session:** 2026-03-14T16:37:19Z
+**Stopped at:** Completed quick-1-001-PLAN.md (root directory cleanup)
