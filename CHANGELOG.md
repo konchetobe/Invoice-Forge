@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.1.4] - 2026-03-14
+
+### Fixed
+- Fixed a fatal error when clicking "Download PDF" by restoring the missing `downloadPdf` and `previewPdf` methods in `InvoiceAjaxHandler.php`.
+- Fixed the "Send Email" AJAX network error by correctly routing the method call to `sendInvoice` instead of `sendInvoiceEmail` in the `EmailService`.
+
+---
+
 ## [1.1.3] - 2026-03-14
 
 ### Fixed

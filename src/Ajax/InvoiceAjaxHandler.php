@@ -629,6 +629,164 @@ class InvoiceAjaxHandler
     }
 
     /**
+     * Download PDF via AJAX.
+     *
+     * @since 1.1.0
+     *
+     * @return void
+     */
+    public function downloadPdf(): void
+    {
+        try {
+            if (!isset($_GET['nonce']) || !wp_verify_nonce($_GET['nonce'], 'invoiceforge_ajax')) {
+                wp_die(__('Security check failed.', 'invoiceforge'));
+            }
+
+            if (!$this->canEditInvoices()) {
+                wp_die(__('Unauthorized.', 'invoiceforge'));
+            }
+
+            $invoice_id = isset($_GET['invoice_id']) ? $this->sanitizer->absint($_GET['invoice_id']) : 0;
+
+            if ($invoice_id <= 0) {
+                wp_die(__('Invalid invoice ID.', 'invoiceforge'));
+            }
+
+            $pdfService = new \InvoiceForge\Services\PdfService($this->logger ?? new \InvoiceForge\Utilities\Logger());
+            $pdfService->generate($invoice_id, 'D'); // Will output directly and structure exit
+            exit;
+            
+        } catch (\Exception $e) {
+            $this->log('error', 'Exception in downloadPdf', ['exception' => $e->getMessage()]);
+            wp_die(__('An error occurred while generating the PDF.', 'invoiceforge'));
+        }
+    }
+
+    /**
+     * Preview PDF via AJAX in browser inline.
+     *
+     * @since 1.1.0
+     *
+     * @return void
+     */
+    public function previewPdf(): void
+    {
+        try {
+            if (!isset($_GET['nonce']) || !wp_verify_nonce($_GET['nonce'], 'invoiceforge_ajax')) {
+                wp_die(__('Security check failed.', 'invoiceforge'));
+            }
+
+            if (!$this->canEditInvoices()) {
+                wp_die(__('Unauthorized.', 'invoiceforge'));
+            }
+
+            $invoice_id = isset($_GET['invoice_id']) ? $this->sanitizer->absint($_GET['invoice_id']) : 0;
+
+            if ($invoice_id <= 0) {
+                wp_die(__('Invalid invoice ID.', 'invoiceforge'));
+            }
+
+            $pdfService = new \InvoiceForge\Services\PdfService($this->logger ?? new \InvoiceForge\Utilities\Logger());
+            $pdfService->generate($invoice_id, 'I'); // Inline preview
+            exit;
+
+        } catch (\Exception $e) {
+            $this->log('error', 'Exception in previewPdf', ['exception' => $e->getMessage()]);
+            wp_die(__('An error occurred while previewing the PDF.', 'invoiceforge'));
+        }
+    }
+
+    /**
+     * Send Invoice Email via AJAX.
+     *
+     * @since 1.1.0
+     *
+     * @return void
+     */
+    public function sendInvoiceEmail(): void
+    {
+        try {
+            if (!$this->nonce->checkAjaxReferer('invoiceforge_admin', 'nonce', false)) {
+                wp_send_json_error(['message' => __('Security check failed.', 'invoiceforge')], 403);
+                return;
+            }
+
+            if (!$this->canEditInvoices()) {
+                wp_send_json_error(['message' => __('Unauthorized.', 'invoiceforge')], 403);
+                return;
+            }
+
+            $invoice_id = isset($_POST['invoice_id']) ? $this->sanitizer->absint($_POST['invoice_id']) : 0;
+
+            if ($invoice_id <= 0) {
+                wp_send_json_error(['message' => __('Invalid invoice ID.', 'invoiceforge')], 400);
+                return;
+            }
+
+            $logger = $this->logger ?? new \InvoiceForge\Utilities\Logger();
+            $pdfService = new \InvoiceForge\Services\PdfService($logger);
+            $emailService = new \InvoiceForge\Services\EmailService($logger, $pdfService);
+
+            $result = $emailService->sendInvoice($invoice_id);
+
+            if ($result) {
+                wp_send_json_success(['message' => __('Email sent successfully.', 'invoiceforge')]);
+            } else {
+                wp_send_json_error(['message' => __('Failed to send email. Check error logs for more details.', 'invoiceforge')], 500);
+            }
+
+        } catch (\Exception $e) {
+            $this->log('error', 'Exception in sendInvoiceEmail', ['exception' => $e->getMessage()]);
+            wp_send_json_error(['message' => __('An unexpected error occurred.', 'invoiceforge')], 500);
+        }
+    }
+
+    /**
+     * Send Reminder Email via AJAX.
+     *
+     * @since 1.1.0
+     *
+     * @return void
+     */
+    public function sendReminder(): void
+    {
+        try {
+            if (!$this->nonce->checkAjaxReferer('invoiceforge_admin', 'nonce', false)) {
+                wp_send_json_error(['message' => __('Security check failed.', 'invoiceforge')], 403);
+                return;
+            }
+
+            if (!$this->canEditInvoices()) {
+                wp_send_json_error(['message' => __('Unauthorized.', 'invoiceforge')], 403);
+                return;
+            }
+
+            $invoice_id = isset($_POST['invoice_id']) ? $this->sanitizer->absint($_POST['invoice_id']) : 0;
+
+            if ($invoice_id <= 0) {
+                wp_send_json_error(['message' => __('Invalid invoice ID.', 'invoiceforge')], 400);
+                return;
+            }
+
+            $logger = $this->logger ?? new \InvoiceForge\Utilities\Logger();
+            $pdfService = new \InvoiceForge\Services\PdfService($logger);
+            $emailService = new \InvoiceForge\Services\EmailService($logger, $pdfService);
+
+            $result = $emailService->sendReminder($invoice_id);
+
+            if ($result) {
+                wp_send_json_success(['message' => __('Reminder sent successfully.', 'invoiceforge')]);
+            } else {
+                wp_send_json_error(['message' => __('Failed to send reminder. Check error logs for more details.', 'invoiceforge')], 500);
+            }
+
+        } catch (\Exception $e) {
+            $this->log('error', 'Exception in sendReminder', ['exception' => $e->getMessage()]);
+            wp_send_json_error(['message' => __('An unexpected error occurred.', 'invoiceforge')], 500);
+        }
+    }
+
+    /**
      * Get available tax rates via AJAX.
      *
      * @since 1.1.0
