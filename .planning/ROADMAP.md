@@ -7,18 +7,19 @@ This document outlines the complete implementation plan for InvoiceForge, organi
 | Phase | Name | Status | Description |
 |-------|------|--------|-------------|
 | 1A | Foundation & Core Architecture | ✅ Complete | Plugin skeleton, CPTs, admin UI |
-| 1B | Line Items & Calculations | 🔲 Pending | Custom tables, line items, tax calculations |
-| 1C | PDF Generation & Email | 🔲 Pending | mPDF integration, email service |
-| 1D | Dashboard & Analytics | 🔲 Pending | Overview dashboard, basic stats |
-| 2 | Payment Gateways | 🔲 Pending | Stripe, PayPal, Revolut, MyPos |
-| 3 | Client Portal | 🔲 Pending | Client login, invoice viewing, payments |
-| 4 | Multi-Currency | 🔲 Pending | Currency support, exchange rates |
-| 5 | Payment Plans | 🔲 Pending | Partial payments, deposits, installments |
-| 6 | SMS Notifications | 🔲 Pending | Twilio integration, SMS templates |
-| 7 | Advanced Templates | 🔲 Pending | Template system, PDF customization |
-| 8 | Tax Compliance | 🔲 Pending | EU VAT, UK, US tax handling |
-| 9 | Reports & Exports | 🔲 Pending | Financial reports, CSV/Excel export |
-| 10 | Recurring Invoices | 🔲 Pending | WP Cron, scheduling, automation |
+| 1B | Line Items & Calculations | ✅ Complete | Custom tables, line items, tax calculations |
+| 1C | PDF Generation & Email | ✅ Complete | mPDF integration, email service |
+| 1D | Dashboard & Analytics | ✅ Complete | Overview dashboard, basic stats |
+| 2 | WooCommerce Integration | ✅ Complete | WooCommerce order-to-invoice mapping |
+| 3 | Payment Gateways | 🔲 Pending | Stripe, PayPal, Revolut, MyPos |
+| 4 | Client Portal | 🔲 Pending | Client login, invoice viewing, payments |
+| 5 | Multi-Currency | 🔲 Pending | Currency support, exchange rates |
+| 6 | Payment Plans | 🔲 Pending | Partial payments, deposits, installments |
+| 7 | SMS Notifications | 🔲 Pending | Twilio integration, SMS templates |
+| 8 | Advanced Templates | 🔲 Pending | Template system, PDF customization |
+| 9 | Tax Compliance | 🔲 Pending | EU VAT, UK, US tax handling |
+| 10 | Reports & Exports | 🔲 Pending | Financial reports, CSV/Excel export |
+| 11 | Recurring Invoices | 🔲 Pending | WP Cron, scheduling, automation |
 
 ---
 
@@ -260,7 +261,7 @@ This document outlines the complete implementation plan for InvoiceForge, organi
 
 ---
 
-## Phase 3: Client Portal
+## Phase 4: Client Portal
 
 **Goal**: Allow clients to view invoices, make payments, and manage their account.
 
@@ -290,7 +291,7 @@ This document outlines the complete implementation plan for InvoiceForge, organi
 
 ---
 
-## Phase 4: Multi-Currency
+## Phase 5: Multi-Currency
 
 **Goal**: Support multiple currencies with automatic exchange rate updates.
 
@@ -312,7 +313,7 @@ This document outlines the complete implementation plan for InvoiceForge, organi
 
 ---
 
-## Phase 5: Payment Plans
+## Phase 6: Payment Plans
 
 **Goal**: Support partial payments, deposits, and installment plans.
 
@@ -334,7 +335,7 @@ This document outlines the complete implementation plan for InvoiceForge, organi
 
 ---
 
-## Phase 6: SMS Notifications
+## Phase 7: SMS Notifications
 
 **Goal**: Send SMS notifications for key events using Twilio.
 
@@ -356,7 +357,7 @@ This document outlines the complete implementation plan for InvoiceForge, organi
 
 ---
 
-## Phase 7: Advanced Templates
+## Phase 8: Advanced Templates
 
 **Goal**: Customizable invoice and email templates for different regions/styles.
 
@@ -380,7 +381,7 @@ This document outlines the complete implementation plan for InvoiceForge, organi
 
 ---
 
-## Phase 8: Tax Compliance
+## Phase 9: Tax Compliance
 
 **Goal**: Handle tax requirements for different regions (EU VAT, UK, US).
 
@@ -402,7 +403,7 @@ This document outlines the complete implementation plan for InvoiceForge, organi
 
 ---
 
-## Phase 9: Reports & Exports
+## Phase 10: Reports & Exports
 
 **Goal**: Comprehensive financial reports with export capabilities.
 
@@ -427,7 +428,7 @@ This document outlines the complete implementation plan for InvoiceForge, organi
 
 ---
 
-## Phase 10: Recurring Invoices
+## Phase 11: Recurring Invoices
 
 **Goal**: Automate invoice generation with recurring schedules.
 
