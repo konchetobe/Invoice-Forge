@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.1.1] - 2026-03-14
+
+### Fixed
+- Fixed critical error on plugin activation caused by missing `UpdateChecker.php`, `PdfService.php`, and `EmailService.php` files.
+- Added `plugin-update-checker` to vendor dependencies.
+- Added GitHub Actions workflow `release.yml` for automated ZIP builds.
+
+---
+
 ## [1.1.0] - 2026-03-14
 
 This is the first public release of InvoiceForge. It covers the complete Phase 1 implementation (1A through 1D) plus WooCommerce integration, GitHub-based auto-updates, and PDF/Email delivery.
