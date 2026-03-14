@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.1.5] - 2026-03-14
+
+### Fixed
+- Added `mpdf/mpdf` as a required composer dependency so it will be bundled inside the release ZIP, fixing the blank screen when exporting PDFs.
+- Updated the GitHub Actions release workflow to use `composer update` to pick up the new PDF dependency.
+- Fixed the JavaScript AJAX error handler to show the actual server error message (e.g. "Failed to send email") instead of assuming a HTTP 500 status code is always a "Network error".
+
+---
+
 ## [1.1.4] - 2026-03-14
 
 ### Fixed

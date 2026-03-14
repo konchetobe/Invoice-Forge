@@ -652,6 +652,10 @@ class InvoiceAjaxHandler
                 wp_die(__('Invalid invoice ID.', 'invoiceforge'));
             }
 
+            if (!\InvoiceForge\Services\PdfService::isAvailable()) {
+                wp_die(__('PDF generation is currently unavailable. The mPDF library is missing. Please ensure you are using the correct release ZIP or run "composer install".', 'invoiceforge'));
+            }
+
             $pdfService = new \InvoiceForge\Services\PdfService($this->logger ?? new \InvoiceForge\Utilities\Logger());
             $pdfService->generate($invoice_id, 'D'); // Will output directly and structure exit
             exit;
@@ -684,6 +688,10 @@ class InvoiceAjaxHandler
 
             if ($invoice_id <= 0) {
                 wp_die(__('Invalid invoice ID.', 'invoiceforge'));
+            }
+
+            if (!\InvoiceForge\Services\PdfService::isAvailable()) {
+                wp_die(__('PDF generation is currently unavailable. The mPDF library is missing. Please ensure you are using the correct release ZIP or run "composer install".', 'invoiceforge'));
             }
 
             $pdfService = new \InvoiceForge\Services\PdfService($this->logger ?? new \InvoiceForge\Utilities\Logger());

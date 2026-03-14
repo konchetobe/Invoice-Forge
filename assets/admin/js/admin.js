@@ -428,7 +428,7 @@
                 url: InvoiceForge.ajaxUrl,
                 type: 'POST',
                 data: {
-                    action: 'invoiceforge_send_email',
+                    action: 'invoiceforge_send_invoice_email',
                     nonce: InvoiceForge.nonce,
                     invoice_id: invoiceId
                 },
@@ -439,8 +439,12 @@
                         InvoiceForgeAdmin.showToast('error', response.data.message || 'Failed to send email.');
                     }
                 },
-                error: function() {
-                    InvoiceForgeAdmin.showToast('error', InvoiceForge.i18n.networkError || 'Network error. Please try again.');
+                error: function(xhr) {
+                    let msg = InvoiceForge.i18n.networkError || 'Network error. Please try again.';
+                    if (xhr.responseJSON && xhr.responseJSON.data && xhr.responseJSON.data.message) {
+                        msg = xhr.responseJSON.data.message;
+                    }
+                    InvoiceForgeAdmin.showToast('error', msg);
                 },
                 complete: function() {
                     // Restore button

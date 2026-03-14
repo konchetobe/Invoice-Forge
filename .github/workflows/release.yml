@@ -22,7 +22,7 @@ jobs:
           tools: composer
 
       - name: Install Dependencies
-        run: composer install --no-dev --optimize-autoloader
+        run: composer update --no-dev --optimize-autoloader
 
       - name: Create Plugin ZIP
         run: |
