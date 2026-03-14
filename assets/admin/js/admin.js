@@ -40,6 +40,9 @@
             // Delete client
             $(document).on('click', '.invoiceforge-delete-client', this.handleClientDelete.bind(this));
             
+            // Send email
+            $(document).on('click', '.invoiceforge-send-email', this.handleSendEmail.bind(this));
+            
             // Status filter tabs
             $(document).on('click', '.invoiceforge-filter-tab', this.handleFilterTab.bind(this));
             
@@ -390,6 +393,60 @@
                 },
                 complete: function() {
                     $btn.prop('disabled', false).removeClass('invoiceforge-loading');
+                }
+            });
+        },
+
+        /**
+         * Handle send email
+         */
+        handleSendEmail: function(e) {
+            e.preventDefault();
+            
+            const $btn = $(e.currentTarget);
+            const invoiceId = $btn.data('id');
+            
+            if (!confirm(InvoiceForge.i18n.confirmEmail || 'Are you sure you want to send this invoice to the client via email?')) {
+                return;
+            }
+            
+            // Store original icon HTML and width
+            const originalHtml = $btn.html();
+            const originalWidth = $btn.outerWidth();
+            
+            // Show loading state
+            $btn.prop('disabled', true)
+                .css('width', originalWidth + 'px') // maintain width to prevent shifting
+                .html('<span class="dashicons dashicons-update" style="animation: spin 2s linear infinite;"></span>');
+            
+            // Add spin animation to document if it doesn't exist yet
+            if (!$('#invoiceforge-spin-style').length) {
+                $('<style id="invoiceforge-spin-style">@keyframes spin { 100% { transform: rotate(360deg); } }</style>').appendTo('head');
+            }
+            
+            $.ajax({
+                url: InvoiceForge.ajaxUrl,
+                type: 'POST',
+                data: {
+                    action: 'invoiceforge_send_email',
+                    nonce: InvoiceForge.nonce,
+                    invoice_id: invoiceId
+                },
+                success: function(response) {
+                    if (response.success) {
+                        InvoiceForgeAdmin.showToast('success', response.data.message || 'Email sent successfully.');
+                    } else {
+                        InvoiceForgeAdmin.showToast('error', response.data.message || 'Failed to send email.');
+                    }
+                },
+                error: function() {
+                    InvoiceForgeAdmin.showToast('error', InvoiceForge.i18n.networkError || 'Network error. Please try again.');
+                },
+                complete: function() {
+                    // Restore button
+                    $btn.prop('disabled', false)
+                        .css('width', '')
+                        .html(originalHtml);
                 }
             });
         },

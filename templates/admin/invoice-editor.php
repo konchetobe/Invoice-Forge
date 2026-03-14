@@ -79,7 +79,7 @@ if (!isset($line_items)) {
                     <span class="dashicons dashicons-pdf"></span>
                     <?php esc_html_e('Download PDF', 'invoiceforge'); ?>
                 </a>
-                <button type="button" class="invoiceforge-btn invoiceforge-btn-primary" onclick="alert('Email functionality is handled via the Invoices list page actions in this version.');" title="<?php esc_attr_e('Feature coming soon to editor', 'invoiceforge'); ?>">
+                <button type="button" class="invoiceforge-btn invoiceforge-btn-primary invoiceforge-send-email" data-id="<?php echo esc_attr($invoice['id']); ?>" title="<?php esc_attr_e('Send to Client', 'invoiceforge'); ?>">
                     <span class="dashicons dashicons-email-alt"></span>
                     <?php esc_html_e('Send Email', 'invoiceforge'); ?>
                 </button>

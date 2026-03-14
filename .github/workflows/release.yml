@@ -39,10 +39,10 @@ jobs:
           
           # Zip the folder creating invoiceforge.zip
           cd /tmp
-          zip -rq invoiceforge.zip invoiceforge
+          zip -rq invoiceforge-plugin-installable.zip invoiceforge
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          files: /tmp/invoiceforge.zip
+          files: /tmp/invoiceforge-plugin-installable.zip
           generate_release_notes: true

@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.1.3] - 2026-03-14
+
+### Fixed
+- Fixed the "Send Email" functionality by implementing the missing `invoiceforge_send_email` AJAX handler in `admin.js`.
+- Wired up the "Send Email" buttons in the Invoice Editor and Invoices List to actually send the email + PDF to the client.
+
+### Changed
+- Renamed the GitHub Actions release artifact to `invoiceforge-plugin-installable.zip` to clearly differentiate it from GitHub's default "Source code (zip)".
+
+---
+
 ## [1.1.2] - 2026-03-14
 
 ### Added

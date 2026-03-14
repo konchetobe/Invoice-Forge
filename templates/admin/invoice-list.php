@@ -166,6 +166,9 @@ $invoicesPage  = new \InvoiceForge\Admin\Pages\InvoicesPage();
                                         <a href="<?php echo esc_url(admin_url('admin-ajax.php?action=invoiceforge_download_pdf&invoice_id=' . $invoice['id'] . '&nonce=' . wp_create_nonce('invoiceforge_ajax'))); ?>" class="invoiceforge-btn invoiceforge-btn-sm invoiceforge-btn-secondary" target="_blank" title="<?php esc_attr_e('Download PDF', 'invoiceforge'); ?>">
                                             <span class="dashicons dashicons-pdf"></span>
                                         </a>
+                                        <button type="button" class="invoiceforge-btn invoiceforge-btn-sm invoiceforge-btn-secondary invoiceforge-send-email" data-id="<?php echo esc_attr($invoice['id']); ?>" title="<?php esc_attr_e('Send Email', 'invoiceforge'); ?>">
+                                            <span class="dashicons dashicons-email-alt"></span>
+                                        </button>
                                         <button type="button" class="invoiceforge-btn invoiceforge-btn-sm invoiceforge-btn-secondary invoiceforge-delete-invoice" data-id="<?php echo esc_attr($invoice['id']); ?>" title="<?php esc_attr_e('Delete', 'invoiceforge'); ?>">
                                             <span class="dashicons dashicons-trash"></span>
                                         </button>
