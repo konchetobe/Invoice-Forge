@@ -142,6 +142,17 @@ class InvoiceAjaxHandler
         add_action('wp_ajax_invoiceforge_get_invoice', [$this, 'getInvoice']);
         add_action('wp_ajax_invoiceforge_get_invoices', [$this, 'getInvoices']);
         add_action('wp_ajax_invoiceforge_get_tax_rates', [$this, 'getTaxRates']);
+        add_action('wp_ajax_invoiceforge_save_tax_rate', [$this, 'saveTaxRate']);
+        add_action('wp_ajax_invoiceforge_delete_tax_rate', [$this, 'deleteTaxRate']);
+
+        // Phase 1C: PDF & Email
+        add_action('wp_ajax_invoiceforge_download_pdf', [$this, 'downloadPdf']);
+        add_action('wp_ajax_invoiceforge_preview_pdf', [$this, 'previewPdf']);
+        add_action('wp_ajax_invoiceforge_send_invoice_email', [$this, 'sendInvoiceEmail']);
+        add_action('wp_ajax_invoiceforge_send_reminder', [$this, 'sendReminder']);
+
+        // Phase 2: WooCommerce Integration
+        add_action('wp_ajax_invoiceforge_generate_from_order', [$this, 'generateFromOrder']);
     }
 
     /**
@@ -647,6 +658,62 @@ class InvoiceAjaxHandler
         } catch (\Exception $e) {
             $this->log('error', 'Exception in getTaxRates', ['exception' => $e->getMessage()]);
             wp_send_json_error(['message' => __('An unexpected error occurred.', 'invoiceforge')], 500);
+        }
+    }
+
+    /**
+     * Manually generate an invoice from a WooCommerce order.
+     *
+     * @since 1.1.0
+     *
+     * @return void
+     */
+    public function generateFromOrder(): void
+    {
+        try {
+            if (!$this->nonce->checkAjaxReferer('invoiceforge_admin', 'nonce', false)) {
+                wp_send_json_error(['message' => __('Security check failed.', 'invoiceforge')], 403);
+                return;
+            }
+
+            if (!$this->canEditInvoices()) {
+                wp_send_json_error(['message' => __('Unauthorized.', 'invoiceforge')], 403);
+                return;
+            }
+
+            $order_id = isset($_POST['order_id']) ? $this->sanitizer->absint($_POST['order_id']) : 0;
+
+            if ($order_id <= 0) {
+                wp_send_json_error(['message' => __('Invalid order ID.', 'invoiceforge')], 400);
+                return;
+            }
+
+            if (!\InvoiceForge\Integrations\WooCommerce\WooCommerceIntegration::isAvailable()) {
+                wp_send_json_error(['message' => __('WooCommerce is not active.', 'invoiceforge')], 400);
+                return;
+            }
+
+            $logger     = $this->logger ?? new \InvoiceForge\Utilities\Logger();
+            $integration = new \InvoiceForge\Integrations\WooCommerce\WooCommerceIntegration(
+                $logger,
+                $this->lineItemRepo,
+                $this->numberingService
+            );
+
+            $invoice_id = $integration->generateFromOrder($order_id);
+
+            if ($invoice_id) {
+                wp_send_json_success([
+                    'message'    => __('Invoice generated successfully.', 'invoiceforge'),
+                    'invoice_id' => $invoice_id,
+                ]);
+            } else {
+                wp_send_json_error(['message' => __('Failed to generate invoice. Check logs for details.', 'invoiceforge')], 500);
+            }
+
+        } catch (\Exception $e) {
+            $this->log('error', 'generateFromOrder failed', ['exception' => $e->getMessage()]);
+            wp_send_json_error(['message' => $e->getMessage()], 500);
         }
     }
 }

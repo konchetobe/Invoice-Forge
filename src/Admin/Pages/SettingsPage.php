@@ -79,6 +79,13 @@ class SettingsPage
             'invoice_terms',
             'invoice_notes',
         ],
+        'integrations' => [
+            'woo_enabled',
+            'woo_trigger_statuses',
+            'woo_invoice_number_format',
+            'woo_invoice_prefix',
+            'woo_auto_email',
+        ],
     ];
 
     /**
@@ -988,10 +995,16 @@ class SettingsPage
             'smtp_username'      => '',
             'smtp_password'      => '',
             'smtp_encryption'    => 'tls',
-            'default_currency'   => 'USD',
-            'invoice_prefix'     => 'INV',
-            'invoice_terms'      => '',
-            'invoice_notes'      => '',
+            'default_currency'          => 'USD',
+            'invoice_prefix'            => 'INV',
+            'invoice_terms'             => '',
+            'invoice_notes'             => '',
+            // WooCommerce Integration
+            'woo_enabled'               => false,
+            'woo_trigger_statuses'      => ['wc-completed'],
+            'woo_invoice_number_format' => 'invoiceforge',
+            'woo_invoice_prefix'        => 'ORD',
+            'woo_auto_email'            => true,
         ];
     }
 
@@ -1004,11 +1017,14 @@ class SettingsPage
      */
     public function getTabs(): array
     {
-        return [
-            'general'  => __('General', 'invoiceforge'),
-            'email'    => __('Email', 'invoiceforge'),
-            'advanced' => __('Advanced', 'invoiceforge'),
+        $tabs = [
+            'general'      => __('General', 'invoiceforge'),
+            'email'        => __('Email', 'invoiceforge'),
+            'advanced'     => __('Advanced', 'invoiceforge'),
+            'integrations' => __('Integrations', 'invoiceforge'),
         ];
+
+        return apply_filters('invoiceforge_settings_tabs', $tabs);
     }
 
     /**

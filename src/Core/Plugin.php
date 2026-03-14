@@ -30,6 +30,7 @@ use InvoiceForge\Security\Sanitizer;
 use InvoiceForge\Security\Validator;
 use InvoiceForge\Security\Encryption;
 use InvoiceForge\Utilities\Logger;
+use InvoiceForge\Integrations\WooCommerce\WooCommerceIntegration;
 
 // Prevent direct access
 if (!defined('ABSPATH')) {
@@ -147,6 +148,19 @@ final class Plugin
 
         $this->registerServices();
         $this->registerHooks();
+
+        // Initialize GitHub-based update checker
+        $updateChecker = new UpdateChecker();
+        $updateChecker->init();
+
+        // Initialize WooCommerce integration (registers order status hooks)
+        $wooIntegration = new WooCommerceIntegration(
+            $this->container->resolve('logger'),
+            $this->container->resolve('line_item_repo'),
+            $this->container->resolve('numbering')
+        );
+        $wooIntegration->register();
+
         $this->loader->run();
 
         $this->booted = true;

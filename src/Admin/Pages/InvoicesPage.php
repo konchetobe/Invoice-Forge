@@ -62,9 +62,36 @@ class InvoicesPage
      */
     private function renderList(): void
     {
-        $invoices = $this->getInvoices();
-        $statuses = InvoicePostType::STATUSES;
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        $source = isset($_GET['source']) ? sanitize_key($_GET['source']) : 'all';
+
+        $query_args = [];
+        if ($source === 'custom') {
+            $query_args['meta_query'] = [
+                'relation' => 'OR',
+                [
+                    'key'     => '_invoice_source',
+                    'value'   => 'manual',
+                ],
+                [
+                    'key'     => '_invoice_source',
+                    'compare' => 'NOT EXISTS',
+                ],
+            ];
+        } elseif ($source === 'woocommerce') {
+            $query_args['meta_query'] = [
+                [
+                    'key'   => '_invoice_source',
+                    'value' => 'woocommerce',
+                ],
+            ];
+        }
+
+        $invoices      = $this->getInvoices($query_args);
+        $statuses      = InvoicePostType::STATUSES;
         $status_counts = $this->getStatusCounts();
+        $source_counts = $this->getSourceCounts();
+        $active_source = $source;
 
         include INVOICEFORGE_PLUGIN_DIR . 'templates/admin/invoice-list.php';
     }
@@ -377,5 +404,68 @@ class InvoicesPage
         ];
 
         return $statuses[$status] ?? $status;
+    }
+
+    /**
+     * Get invoice counts grouped by source (manual vs woocommerce).
+     *
+     * @since 1.1.0
+     *
+     * @return array<string, int> Source => count.
+     */
+    public function getSourceCounts(): array
+    {
+        global $wpdb;
+
+        $counts = ['all' => 0, 'custom' => 0, 'woocommerce' => 0];
+
+        $results = $wpdb->get_results(
+            $wpdb->prepare(
+                "SELECT pm.meta_value as source, COUNT(*) as count
+                FROM {$wpdb->postmeta} pm
+                INNER JOIN {$wpdb->posts} p ON pm.post_id = p.ID
+                WHERE pm.meta_key = '_invoice_source'
+                AND p.post_type = %s
+                AND p.post_status = 'publish'
+                GROUP BY pm.meta_value",
+                InvoicePostType::POST_TYPE
+            )
+        );
+
+        $woo_count    = 0;
+        $custom_count = 0;
+        $total        = 0;
+
+        foreach ($results as $row) {
+            if ($row->source === 'woocommerce') {
+                $woo_count = (int) $row->count;
+            } else {
+                $custom_count += (int) $row->count;
+            }
+            $total += (int) $row->count;
+        }
+
+        // Count posts without a source meta (old manual invoices)
+        $no_source = (int) $wpdb->get_var(
+            $wpdb->prepare(
+                "SELECT COUNT(*) FROM {$wpdb->posts} p
+                WHERE p.post_type = %s
+                AND p.post_status = 'publish'
+                AND NOT EXISTS (
+                    SELECT 1 FROM {$wpdb->postmeta} pm
+                    WHERE pm.post_id = p.ID AND pm.meta_key = '_invoice_source'
+                )",
+                InvoicePostType::POST_TYPE
+            )
+        );
+
+        $custom_count += $no_source;
+        $total        += $no_source;
+
+        $counts['all']         = $total;
+        $counts['custom']      = $custom_count;
+        $counts['woocommerce'] = $woo_count;
+
+        return $counts;
     }
 }

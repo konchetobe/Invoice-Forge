@@ -115,91 +115,112 @@ This document outlines the complete implementation plan for InvoiceForge, organi
 
 ---
 
-## Phase 1B: Line Items & Calculations
+## Phase 1B: Line Items & Calculations ✅
 
 **Goal**: Add custom database tables for line items, implement tax calculations, and enhance invoice editing.
 
 ### Database
-- [ ] Create `invoiceforge_invoice_items` table
-- [ ] Create `invoiceforge_tax_rates` table
-- [ ] Migration system for schema updates
-- [ ] Repository pattern for data access
+- [x] Create `invoiceforge_invoice_items` table
+- [x] Create `invoiceforge_tax_rates` table
+- [x] Migration system for schema updates
+- [x] Repository pattern for data access
 
 ### Line Items
-- [ ] LineItem model class
-- [ ] LineItemRepository for CRUD operations
-- [ ] Dynamic line item rows in invoice editor
-- [ ] Auto-calculation of subtotal, tax, total
-- [ ] Support for quantity, unit price, tax rate
+- [x] LineItem model class
+- [x] LineItemRepository for CRUD operations
+- [x] Dynamic line item rows in invoice editor
+- [x] Auto-calculation of subtotal, tax, total
+- [x] Support for quantity, unit price, tax rate
 
 ### Tax Calculations
-- [ ] TaxService for tax calculations
-- [ ] Tax rate management interface
-- [ ] Per-item tax rate selection
-- [ ] Tax summary display
+- [x] TaxService for tax calculations
+- [x] Tax rate management interface
+- [x] Per-item tax rate selection
+- [x] Tax summary display
 
 ### Invoice Enhancements
-- [ ] Terms and conditions field
-- [ ] Payment instructions field
-- [ ] Discount field (percentage/fixed)
-- [ ] Internal notes vs customer notes
+- [x] Terms and conditions field
+- [x] Payment instructions field
+- [x] Discount field (percentage/fixed)
+- [x] Internal notes vs customer notes
 
 ### AJAX Operations
-- [ ] AJAX save for invoices
-- [ ] Real-time calculation updates
-- [ ] Auto-save draft functionality
+- [x] AJAX save for invoices
+- [x] Real-time calculation updates
+- [x] Auto-save draft functionality
 
 ---
 
-## Phase 1C: PDF Generation & Email
+## Phase 1C: PDF Generation & Email ✅
 
 **Goal**: Generate professional PDF invoices and send via email.
 
 ### PDF Generation
-- [ ] Integrate mPDF library via Composer
-- [ ] PdfService for PDF rendering
-- [ ] Default invoice template (HTML/CSS)
-- [ ] PDF preview functionality
-- [ ] Download invoice as PDF
-- [ ] Batch PDF generation
+- [x] Integrate mPDF library via Composer
+- [x] PdfService for PDF rendering
+- [x] Default invoice template (HTML/CSS)
+- [x] PDF preview functionality
+- [x] Download invoice as PDF
+- [x] Batch PDF generation
 
 ### Email Service
-- [ ] EmailService class
-- [ ] Email template system
-- [ ] Invoice email template (HTML)
-- [ ] Payment reminder template
-- [ ] Send invoice via email button
-- [ ] SMTP configuration support
-- [ ] Email logging
+- [x] EmailService class
+- [x] Email template system
+- [x] Invoice email template (HTML)
+- [x] Payment reminder template
+- [x] Send invoice via email button
+- [x] SMTP configuration support
+- [x] Email logging
 
 ### Templates
-- [ ] pdf/invoice-default.php - Default PDF template
-- [ ] email/invoice-sent.php - Invoice email template
-- [ ] email/payment-reminder.php - Reminder template
+- [x] pdf/invoice-default.php - Default PDF template
+- [x] email/invoice-sent.php - Invoice email template
+- [x] email/payment-reminder.php - Reminder template
 
 ---
 
-## Phase 1D: Dashboard & Analytics
+## Phase 1D: Dashboard & Analytics ✅
 
 **Goal**: Create an overview dashboard with key metrics and recent activity.
 
 ### Dashboard
-- [ ] Main dashboard page
-- [ ] Revenue summary widget
-- [ ] Outstanding invoices widget
-- [ ] Recent invoices list
-- [ ] Recent payments list
-- [ ] Quick action buttons
+- [x] Main dashboard page
+- [x] Revenue summary widget
+- [x] Outstanding invoices widget
+- [x] Recent invoices list
+- [x] Recent payments list
+- [x] Quick action buttons
 
 ### Analytics
-- [ ] Monthly revenue chart
-- [ ] Invoice status breakdown
-- [ ] Top clients by revenue
-- [ ] Payment trends
+- [x] Monthly revenue chart
+- [x] Invoice status breakdown
+- [x] Top clients by revenue
+- [x] Payment trends
 
 ---
 
-## Phase 2: Payment Gateways
+## Phase 2: WooCommerce Integration ✅
+
+**Goal**: Automatically generate invoices from WooCommerce orders and provide a dedicated UI tab to manage them separately.
+
+### Integration Core
+- [x] WooCommerce Integration class (`src/Integrations/WooCommerce/WooCommerceIntegration.php`)
+- [x] Order to Invoice mapping logic (Line items, taxes, shipping)
+- [x] Hook listener for configurable Order Status changes (multi-select in settings)
+- [x] Client sync: finds existing client by email or creates new from billing data
+
+### Admin UI
+- [x] Settings tab for "Integrations" (Enable/disable, trigger statuses, number format, prefix, auto-email)
+- [x] Tabbed Invoices list (All Invoices | Custom Invoices | WooCommerce Orders) with counts
+- [x] Manual generation button on WooCommerce Order page (meta box)
+
+### Document Delivery
+- [x] Auto-send PDF email on invoice generation (if enabled in settings)
+- [x] Manual "Generate Invoice" button available on order page for retroactive generation
+
+---
+
+## Phase 3: Payment Gateways
 
 **Goal**: Integrate multiple payment gateways for online invoice payment.
 

@@ -17,9 +17,13 @@ use InvoiceForge\Admin\AdminController;
 /** @var array $invoices */
 /** @var array $statuses */
 /** @var array $status_counts */
+/** @var array $source_counts */
+/** @var string $active_source */
 
-$total_count = array_sum($status_counts);
-$invoicesPage = new \InvoiceForge\Admin\Pages\InvoicesPage();
+$total_count   = array_sum($status_counts);
+$source_counts = $source_counts ?? ['all' => $total_count, 'custom' => 0, 'woocommerce' => 0];
+$active_source = $active_source ?? 'all';
+$invoicesPage  = new \InvoiceForge\Admin\Pages\InvoicesPage();
 ?>
 <div class="invoiceforge-wrap">
     <!-- Page Header -->
@@ -36,7 +40,32 @@ $invoicesPage = new \InvoiceForge\Admin\Pages\InvoicesPage();
         </div>
     </div>
 
-    <!-- Filters -->
+    <!-- Source Tabs (All / Custom / WooCommerce) -->
+    <nav class="invoiceforge-source-tabs" style="margin-bottom:12px;border-bottom:2px solid var(--if-gray-200);display:flex;gap:0;">
+        <?php
+        $source_tab_items = [
+            'all'         => __('All Invoices', 'invoiceforge'),
+            'custom'      => __('Custom Invoices', 'invoiceforge'),
+            'woocommerce' => __('WooCommerce Orders', 'invoiceforge'),
+        ];
+        foreach ($source_tab_items as $src_key => $src_label) :
+            $src_url   = admin_url('admin.php?page=invoiceforge-invoices&source=' . $src_key);
+            $is_active = ($active_source === $src_key);
+        ?>
+            <a href="<?php echo esc_url($src_url); ?>"
+               style="padding:8px 18px;text-decoration:none;font-weight:<?php echo $is_active ? '600' : '400'; ?>;
+                      color:<?php echo $is_active ? 'var(--if-primary)' : 'var(--if-gray-600)'; ?>;
+                      border-bottom:<?php echo $is_active ? '2px solid var(--if-primary)' : '2px solid transparent'; ?>;
+                      margin-bottom:-2px;display:inline-flex;align-items:center;gap:6px;">
+                <?php echo esc_html($src_label); ?>
+                <span style="background:var(--if-gray-100);border-radius:12px;padding:1px 8px;font-size:12px;">
+                    <?php echo esc_html($source_counts[$src_key] ?? 0); ?>
+                </span>
+            </a>
+        <?php endforeach; ?>
+    </nav>
+
+    <!-- Status Filters -->
     <div class="invoiceforge-filters">
         <div class="invoiceforge-search">
             <span class="invoiceforge-search-icon dashicons dashicons-search"></span>
