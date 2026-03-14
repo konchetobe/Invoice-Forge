@@ -74,6 +74,16 @@ if (!isset($line_items)) {
                 <span class="dashicons dashicons-arrow-left-alt"></span>
                 <?php esc_html_e('Back to List', 'invoiceforge'); ?>
             </a>
+            <?php if (!$is_new) : ?>
+                <a href="<?php echo esc_url(admin_url('admin-ajax.php?action=invoiceforge_download_pdf&invoice_id=' . $invoice['id'] . '&nonce=' . wp_create_nonce('invoiceforge_ajax'))); ?>" class="invoiceforge-btn invoiceforge-btn-secondary" target="_blank">
+                    <span class="dashicons dashicons-pdf"></span>
+                    <?php esc_html_e('Download PDF', 'invoiceforge'); ?>
+                </a>
+                <button type="button" class="invoiceforge-btn invoiceforge-btn-primary" onclick="alert('Email functionality is handled via the Invoices list page actions in this version.');" title="<?php esc_attr_e('Feature coming soon to editor', 'invoiceforge'); ?>">
+                    <span class="dashicons dashicons-email-alt"></span>
+                    <?php esc_html_e('Send Email', 'invoiceforge'); ?>
+                </button>
+            <?php endif; ?>
         </div>
     </div>
 
