@@ -1,0 +1,6 @@
+{
+  "granularity": "standard",
+  "project_type": "wordpress-plugin",
+  "domain": "invoice-management"
+}</content>
+<parameter name="filePath">c:\GitHubRepos\Invoice-Forge\.planning\config.json
