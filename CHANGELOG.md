@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.1.2] - 2026-03-14
+
+### Added
+- Added "Download PDF" and "Send Email" action buttons to the Invoice Editor (for existing custom invoices).
+- Added "Download PDF" action icon to the Invoices list table next to Edit and Delete.
+
+---
+
 ## [1.1.1] - 2026-03-14
 
 ### Fixed
