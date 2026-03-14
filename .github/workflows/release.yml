@@ -1,0 +1,48 @@
+name: Release Plugin
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    permissions:
+        contents: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          tools: composer
+
+      - name: Install Dependencies
+        run: composer install --no-dev --optimize-autoloader
+
+      - name: Create Plugin ZIP
+        run: |
+          # Create a temp directory named after the plugin slug
+          mkdir -p /tmp/invoiceforge
+          # Copy all files into the plugin slug folder (excluding dev and git files)
+          rsync -avq . /tmp/invoiceforge \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude 'tests' \
+            --exclude 'phpunit.xml' \
+            --exclude 'node_modules' \
+            --exclude '.abacus.donotdelete'
+          
+          # Zip the folder creating invoiceforge.zip
+          cd /tmp
+          zip -rq invoiceforge.zip invoiceforge
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: /tmp/invoiceforge.zip
+          generate_release_notes: true
