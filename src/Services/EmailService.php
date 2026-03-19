@@ -90,30 +90,19 @@ class EmailService
             $invoice['company_name']
         );
 
-        $message = sprintf(
-            __('Dear %s,
-
-Please find your invoice %s attached.
-
-Amount Due: %s %s
-Due Date: %s
-
-%s
-
-Thank you for your business.
-
-%s', 'invoiceforge'),
-            $invoice['client_name'],
-            $invoice['number'],
-            $invoice['currency'],
-            number_format($invoice['total_amount'], 2),
-            $invoice['due_date'] ?: __('On receipt', 'invoiceforge'),
-            $invoice['notes'] ?? '',
-            $invoice['company_name']
-        );
+        $message = $this->pdfService->renderEmailBody($invoice_id);
+        if (empty($message)) {
+            $message = '<html><body><p>' . sprintf(
+                esc_html__('Please find your invoice %s attached.', 'invoiceforge'),
+                esc_html($invoice['number'])
+            ) . '</p><p><strong>' . esc_html__('Amount Due:', 'invoiceforge') . ' '
+            . esc_html($invoice['currency']) . ' '
+            . esc_html(number_format($invoice['total_amount'], 2))
+            . '</strong></p></body></html>';
+        }
 
         $headers = [
-            'Content-Type: text/plain; charset=UTF-8',
+            'Content-Type: text/html; charset=UTF-8',
             'From: ' . $from_name . ' <' . $from_email . '>',
         ];
 
@@ -184,26 +173,30 @@ Thank you for your business.
             $invoice['number']
         );
 
-        $message = sprintf(
-            __('Dear %s,
-
-This is a friendly reminder that invoice %s for %s %s is overdue.
-
-Original due date: %s
-
-Please arrange payment at your earliest convenience.
-
-%s', 'invoiceforge'),
-            $invoice['client_name'],
-            $invoice['number'],
-            $invoice['currency'],
-            number_format($invoice['total_amount'], 2),
-            $invoice['due_date'],
-            $invoice['company_name']
-        );
+        $message = '<html><body>'
+            . '<p>' . sprintf(
+                /* translators: %s: Client name */
+                esc_html__('Dear %s,', 'invoiceforge'),
+                esc_html($invoice['client_name'])
+            ) . '</p>'
+            . '<p>' . sprintf(
+                /* translators: 1: Invoice number, 2: Currency code, 3: Amount */
+                esc_html__('This is a friendly reminder that invoice %1$s for %2$s %3$s is overdue.', 'invoiceforge'),
+                esc_html($invoice['number']),
+                esc_html($invoice['currency']),
+                esc_html(number_format($invoice['total_amount'], 2))
+            ) . '</p>'
+            . '<p>' . sprintf(
+                /* translators: %s: Due date */
+                esc_html__('Original due date: %s', 'invoiceforge'),
+                esc_html($invoice['due_date'])
+            ) . '</p>'
+            . '<p>' . esc_html__('Please arrange payment at your earliest convenience.', 'invoiceforge') . '</p>'
+            . '<p>' . esc_html($invoice['company_name']) . '</p>'
+            . '</body></html>';
 
         $headers = [
-            'Content-Type: text/plain; charset=UTF-8',
+            'Content-Type: text/html; charset=UTF-8',
             'From: ' . $from_name . ' <' . $from_email . '>',
         ];
 
