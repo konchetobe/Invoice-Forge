@@ -11,7 +11,7 @@ This document outlines the complete implementation plan for InvoiceForge, organi
 | 1C | PDF Generation & Email | ✅ Complete | mPDF integration, email service |
 | 1D | Dashboard & Analytics | ✅ Complete | Overview dashboard, basic stats |
 | 2 | WooCommerce Integration | ✅ Complete | WooCommerce order-to-invoice mapping |
-| 3 | Advanced Templates | 🔲 Pending | Template system, PDF customization |
+| 3 | Advanced Templates | 🔄 Planning | Template system, PDF customization |
 | 4 | Client Portal | 🔲 Pending | Client login, invoice viewing, payments |
 | 5 | Multi-Currency | 🔲 Pending | Currency support, exchange rates |
 | 6 | Payment Plans | 🔲 Pending | Partial payments, deposits, installments |
@@ -223,29 +223,56 @@ This document outlines the complete implementation plan for InvoiceForge, organi
 
 ## Phase 3: Advanced Templates
 
-**Goal**: Customizable invoice and email templates for different regions/styles, with logo placement and section customization.
+**Goal**: Single configurable invoice template modelled on Bulgarian business invoice format, with logo support, section visibility/ordering via drag-and-drop editor, new business profile fields, and dual rendering (PDF + email HTML body).
 
-### Template System
-- [ ] TemplateManager class
-- [ ] Template registration API
-- [ ] Template preview
+**Requirements:** [TMPL-01, TMPL-02, TMPL-03, TMPL-04, TMPL-05, TMPL-06]
 
-### Invoice Templates
-- [ ] Bulgarian business invoice template (reference PDF)
-- [ ] EU-compliant template
-- [ ] US-compliant template
-- [ ] UK-compliant template
-- [ ] Minimal template
-- [ ] Detailed template
+**Plans:** 3 plans
 
-### Template Editor
-- [ ] Logo placement (uploadable, positionable)
-- [ ] Customizable/moveable sections
-- [ ] Color scheme
-- [ ] Custom fields
+Plans:
+- [ ] 03-01-PLAN.md — Data model extensions and Template Settings tab
+- [ ] 03-02-PLAN.md — PDF template and PdfService dual render mode
+- [ ] 03-03-PLAN.md — Email HTML body and end-to-end verification
 
-### Email Templates
-- [ ] Customizable email template system
+### Data Model Extensions [TMPL-01]
+- [ ] LineItem model exposes discount_type/discount_value from existing DB columns
+- [ ] Client meta fields: id_no, office, att_to
+- [ ] Company profile fields: id_no, office, att_to, bank_name, iban, bic
+- [ ] Invoice payment_method meta field
+
+### Template Settings Tab [TMPL-02]
+- [ ] Logo upload (dedicated file input, stored in invoiceforge/ uploads)
+- [ ] Accent color picker (configurable hex, default dark navy)
+- [ ] Payment methods list (configurable, selectable per invoice)
+- [ ] Section visibility toggles (signature, notes, discount_row)
+- [ ] Section order drag-and-drop editor (SortableJS)
+- [ ] Signature fields configuration (add/remove, label, left/right column)
+- [ ] ID No label configuration (EIK/BULSTAT/Reg No)
+
+### Invoice Editor [TMPL-03]
+- [ ] Payment method dropdown populated from settings
+
+### PDF Template [TMPL-04]
+- [ ] Bulgarian business invoice format (three-column header: BUYER | No+Date | SELLER)
+- [ ] Logo placement in SELLER section
+- [ ] Accent color applied to section headers, totals, column headers
+- [ ] Conditional discount columns in line items table
+- [ ] Conditional Bank/IBAN section (when payment method = Bank transfer)
+- [ ] Configurable signature block (two-column layout)
+- [ ] Section rendering in admin-configured order
+- [ ] All labels translatable via __()
+
+### PdfService Extension [TMPL-05]
+- [ ] Dual render mode (pdf | email) parameter
+- [ ] getTemplateContext() method with full template config
+- [ ] renderEmailBody() method for email HTML
+- [ ] Template variable injection via extract()
+
+### Email HTML Body [TMPL-06]
+- [ ] HTML email body (replacing plain text) with invoice summary
+- [ ] "Pay Invoice" placeholder button (for Phase 8 gateway wiring)
+- [ ] PDF attachment retained on invoice emails
+- [ ] Inline styles only (email client compatible)
 
 ---
 
