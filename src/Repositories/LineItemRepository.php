@@ -87,18 +87,20 @@ class LineItemRepository
         $table = Schema::getInvoiceItemsTable();
 
         $data = [
-            'invoice_id'  => $item->invoice_id,
-            'item_order'  => $item->item_order,
-            'description' => $item->description,
-            'quantity'    => $item->quantity,
-            'unit_price'  => $item->unit_price,
-            'tax_rate_id' => $item->tax_rate_id,
-            'tax_amount'  => $item->tax_amount,
-            'subtotal'    => $item->subtotal,
-            'total'       => $item->total,
+            'invoice_id'     => $item->invoice_id,
+            'item_order'     => $item->item_order,
+            'description'    => $item->description,
+            'quantity'       => $item->quantity,
+            'unit_price'     => $item->unit_price,
+            'tax_rate_id'    => $item->tax_rate_id,
+            'tax_amount'     => $item->tax_amount,
+            'subtotal'       => $item->subtotal,
+            'total'          => $item->total,
+            'discount_type'  => $item->discount_type,
+            'discount_value' => $item->discount_value,
         ];
 
-        $format = ['%d', '%d', '%s', '%f', '%f', '%d', '%f', '%f', '%f'];
+        $format = ['%d', '%d', '%s', '%f', '%f', '%d', '%f', '%f', '%f', '%s', '%f'];
 
         if ($item->id > 0) {
             // phpcs:ignore WordPress.DB.DirectDatabaseQuery

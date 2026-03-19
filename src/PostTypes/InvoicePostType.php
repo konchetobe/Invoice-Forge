@@ -478,6 +478,12 @@ class InvoicePostType
             update_post_meta($post_id, self::META_PREFIX . 'notes', $notes);
         }
 
+        // Save payment method
+        if (isset($_POST['invoice_payment_method'])) {
+            $payment_method = $this->sanitizer->text($_POST['invoice_payment_method']);
+            update_post_meta($post_id, self::META_PREFIX . 'payment_method', $payment_method);
+        }
+
         /**
          * Fires after invoice meta data is saved.
          *

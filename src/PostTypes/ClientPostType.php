@@ -358,6 +358,9 @@ class ClientPostType
     public function renderBillingMetaBox(\WP_Post $post): void
     {
         $tax_id = get_post_meta($post->ID, self::META_PREFIX . 'tax_id', true);
+        $id_no  = get_post_meta($post->ID, self::META_PREFIX . 'id_no', true);
+        $office = get_post_meta($post->ID, self::META_PREFIX . 'office', true);
+        $att_to = get_post_meta($post->ID, self::META_PREFIX . 'att_to', true);
         ?>
         <p>
             <label for="client_tax_id">
@@ -365,13 +368,46 @@ class ClientPostType
             </label>
         </p>
         <p>
-            <input type="text" id="client_tax_id" name="client_tax_id" 
-                   value="<?php echo esc_attr($tax_id); ?>" 
+            <input type="text" id="client_tax_id" name="client_tax_id"
+                   value="<?php echo esc_attr($tax_id); ?>"
                    class="widefat"
                    placeholder="<?php esc_attr_e('e.g., GB123456789', 'invoiceforge'); ?>">
         </p>
         <p class="description">
             <?php esc_html_e('Required for EU VAT reverse charge and tax compliance.', 'invoiceforge'); ?>
+        </p>
+        <p>
+            <label for="client_id_no">
+                <strong><?php esc_html_e('ID No (EIK/BULSTAT/Reg No)', 'invoiceforge'); ?></strong>
+            </label>
+        </p>
+        <p>
+            <input type="text" id="client_id_no" name="client_id_no"
+                   value="<?php echo esc_attr($id_no); ?>"
+                   class="widefat"
+                   placeholder="<?php esc_attr_e('e.g., 123456789', 'invoiceforge'); ?>">
+        </p>
+        <p>
+            <label for="client_office">
+                <strong><?php esc_html_e('Office / Branch', 'invoiceforge'); ?></strong>
+            </label>
+        </p>
+        <p>
+            <input type="text" id="client_office" name="client_office"
+                   value="<?php echo esc_attr($office); ?>"
+                   class="widefat"
+                   placeholder="<?php esc_attr_e('e.g., HQ, Branch 1', 'invoiceforge'); ?>">
+        </p>
+        <p>
+            <label for="client_att_to">
+                <strong><?php esc_html_e('Attention To', 'invoiceforge'); ?></strong>
+            </label>
+        </p>
+        <p>
+            <input type="text" id="client_att_to" name="client_att_to"
+                   value="<?php echo esc_attr($att_to); ?>"
+                   class="widefat"
+                   placeholder="<?php esc_attr_e('Contact person name', 'invoiceforge'); ?>">
         </p>
         <?php
     }
@@ -419,6 +455,9 @@ class ClientPostType
             'zip'        => 'text',
             'country'    => 'text',
             'tax_id'     => 'text',
+            'id_no'      => 'text',
+            'office'     => 'text',
+            'att_to'     => 'text',
         ];
 
         // Save each field

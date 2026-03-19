@@ -23,18 +23,21 @@ $page_title = $is_new ? __('New Client', 'invoiceforge') : __('Edit Client', 'in
 // Set defaults for new client
 if ($is_new) {
     $client = [
-        'id' => 0,
+        'id'         => 0,
         'first_name' => '',
-        'last_name' => '',
-        'company' => '',
-        'email' => '',
-        'phone' => '',
-        'address' => '',
-        'city' => '',
-        'state' => '',
-        'zip' => '',
-        'country' => '',
-        'tax_id' => '',
+        'last_name'  => '',
+        'company'    => '',
+        'email'      => '',
+        'phone'      => '',
+        'address'    => '',
+        'city'       => '',
+        'state'      => '',
+        'zip'        => '',
+        'country'    => '',
+        'tax_id'     => '',
+        'id_no'      => '',
+        'office'     => '',
+        'att_to'     => '',
     ];
 }
 
@@ -206,7 +209,7 @@ $clientsPage = new \InvoiceForge\Admin\Pages\ClientsPage();
                         <h3 class="invoiceforge-card-title"><?php esc_html_e('Billing Information', 'invoiceforge'); ?></h3>
                     </div>
                     <div class="invoiceforge-card-body">
-                        <div class="invoiceforge-form-group" style="margin-bottom: 0;">
+                        <div class="invoiceforge-form-group">
                             <label class="invoiceforge-form-label" for="tax_id">
                                 <?php esc_html_e('Tax ID / VAT Number', 'invoiceforge'); ?>
                             </label>
@@ -216,6 +219,30 @@ $clientsPage = new \InvoiceForge\Admin\Pages\ClientsPage();
                             <p class="invoiceforge-form-help">
                                 <?php esc_html_e('For EU VAT reverse charge and tax compliance.', 'invoiceforge'); ?>
                             </p>
+                        </div>
+                        <div class="invoiceforge-form-group">
+                            <label class="invoiceforge-form-label" for="id_no">
+                                <?php esc_html_e('ID No (EIK/BULSTAT/Reg No)', 'invoiceforge'); ?>
+                            </label>
+                            <input type="text" id="id_no" name="id_no" class="invoiceforge-form-input"
+                                   value="<?php echo esc_attr($client['id_no'] ?? ''); ?>"
+                                   placeholder="<?php esc_attr_e('e.g., 123456789', 'invoiceforge'); ?>">
+                        </div>
+                        <div class="invoiceforge-form-group">
+                            <label class="invoiceforge-form-label" for="office">
+                                <?php esc_html_e('Office / Branch', 'invoiceforge'); ?>
+                            </label>
+                            <input type="text" id="office" name="office" class="invoiceforge-form-input"
+                                   value="<?php echo esc_attr($client['office'] ?? ''); ?>"
+                                   placeholder="<?php esc_attr_e('e.g., HQ, Branch 1', 'invoiceforge'); ?>">
+                        </div>
+                        <div class="invoiceforge-form-group" style="margin-bottom: 0;">
+                            <label class="invoiceforge-form-label" for="att_to">
+                                <?php esc_html_e('Attention To', 'invoiceforge'); ?>
+                            </label>
+                            <input type="text" id="att_to" name="att_to" class="invoiceforge-form-input"
+                                   value="<?php echo esc_attr($client['att_to'] ?? ''); ?>"
+                                   placeholder="<?php esc_attr_e('Contact person name', 'invoiceforge'); ?>">
                         </div>
                     </div>
                 </div>

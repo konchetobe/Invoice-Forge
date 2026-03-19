@@ -106,6 +106,22 @@ class LineItem
     public float $total = 0.0;
 
     /**
+     * Discount type: 'percentage', 'fixed', or null for no discount.
+     *
+     * @since 1.3.0
+     * @var string|null
+     */
+    public ?string $discount_type = null;
+
+    /**
+     * Discount value (percentage or fixed amount).
+     *
+     * @since 1.3.0
+     * @var float|null
+     */
+    public ?float $discount_value = null;
+
+    /**
      * Create a LineItem from a database row.
      *
      * @since 1.1.0
@@ -123,9 +139,11 @@ class LineItem
         $item->quantity    = (float) ($row->quantity ?? 1.0);
         $item->unit_price  = (float) ($row->unit_price ?? 0.0);
         $item->tax_rate_id = isset($row->tax_rate_id) && $row->tax_rate_id !== null ? (int) $row->tax_rate_id : null;
-        $item->tax_amount  = (float) ($row->tax_amount ?? 0.0);
-        $item->subtotal    = (float) ($row->subtotal ?? 0.0);
-        $item->total       = (float) ($row->total ?? 0.0);
+        $item->tax_amount     = (float) ($row->tax_amount ?? 0.0);
+        $item->subtotal       = (float) ($row->subtotal ?? 0.0);
+        $item->total          = (float) ($row->total ?? 0.0);
+        $item->discount_type  = isset($row->discount_type) && $row->discount_type !== null ? (string) $row->discount_type : null;
+        $item->discount_value = isset($row->discount_value) && $row->discount_value !== null ? (float) $row->discount_value : null;
 
         return $item;
     }
@@ -145,7 +163,9 @@ class LineItem
         $item->description = sanitize_text_field((string) ($data['description'] ?? ''));
         $item->quantity    = round((float) ($data['quantity'] ?? 1), 4);
         $item->unit_price  = round((float) ($data['unit_price'] ?? 0), 4);
-        $item->tax_rate_id = isset($data['tax_rate_id']) && $data['tax_rate_id'] !== '' ? absint($data['tax_rate_id']) : null;
+        $item->tax_rate_id    = isset($data['tax_rate_id']) && $data['tax_rate_id'] !== '' ? absint($data['tax_rate_id']) : null;
+        $item->discount_type  = isset($data['discount_type']) && in_array($data['discount_type'], ['percentage', 'fixed'], true) ? $data['discount_type'] : null;
+        $item->discount_value = isset($data['discount_value']) && $data['discount_value'] !== '' ? round((float) $data['discount_value'], 4) : null;
 
         return $item;
     }
@@ -167,9 +187,11 @@ class LineItem
             'quantity'    => $this->quantity,
             'unit_price'  => $this->unit_price,
             'tax_rate_id' => $this->tax_rate_id,
-            'tax_amount'  => $this->tax_amount,
-            'subtotal'    => $this->subtotal,
-            'total'       => $this->total,
+            'tax_amount'     => $this->tax_amount,
+            'subtotal'       => $this->subtotal,
+            'total'          => $this->total,
+            'discount_type'  => $this->discount_type,
+            'discount_value' => $this->discount_value,
         ];
     }
 }

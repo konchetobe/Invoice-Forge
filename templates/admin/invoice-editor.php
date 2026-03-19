@@ -20,6 +20,7 @@ if (!defined('ABSPATH')) {
 /** @var array $countries */
 /** @var array $tax_rates */
 /** @var array $line_items */
+/** @var array $payment_methods */
 
 $is_new = empty($invoice);
 $page_title = $is_new ? __('New Invoice', 'invoiceforge') : __('Edit Invoice', 'invoiceforge');
@@ -41,7 +42,17 @@ if ($is_new) {
         'internal_notes' => '',
         'discount_type'  => '',
         'discount_value' => 0,
+        'payment_method' => '',
     ];
+}
+
+// Load payment methods from settings (fallback to defaults)
+if (!isset($payment_methods) || empty($payment_methods)) {
+    $if_settings = get_option('invoiceforge_settings', []);
+    $payment_methods = $if_settings['template']['payment_methods'] ?? ['Bank transfer', 'Cash'];
+    if (!is_array($payment_methods) || empty($payment_methods)) {
+        $payment_methods = ['Bank transfer', 'Cash'];
+    }
 }
 
 // Get countries if not passed
@@ -269,6 +280,20 @@ if (!isset($line_items)) {
                                     <?php foreach ($currencies as $code => $label) : ?>
                                         <option value="<?php echo esc_attr($code); ?>" <?php selected($invoice['currency'], $code); ?>>
                                             <?php echo esc_html($label); ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+
+                            <div class="invoiceforge-form-group">
+                                <label class="invoiceforge-form-label" for="payment_method">
+                                    <?php esc_html_e('Payment Method', 'invoiceforge'); ?>
+                                </label>
+                                <select id="payment_method" name="payment_method" class="invoiceforge-form-select">
+                                    <option value=""><?php esc_html_e('Select...', 'invoiceforge'); ?></option>
+                                    <?php foreach ($payment_methods as $method) : ?>
+                                        <option value="<?php echo esc_attr($method); ?>" <?php selected($invoice['payment_method'] ?? '', $method); ?>>
+                                            <?php echo esc_html($method); ?>
                                         </option>
                                     <?php endforeach; ?>
                                 </select>
