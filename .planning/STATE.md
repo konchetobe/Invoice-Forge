@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: discussing
-stopped_at: Phase 3 context gathered
-last_updated: "2026-03-19T20:35:30.424Z"
+stopped_at: Completed 03-advanced-templates plan 03-01
+last_updated: "2026-03-19T21:22:13.890Z"
 last_activity: 2026-03-19 - Swapped Phase 3 (Advanced Templates) and Phase 8 (Payment Gateways); discussing Phase 3 context
 progress:
   total_phases: 14
   completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
-  percent: 45
+  total_plans: 3
+  completed_plans: 1
+  percent: 33
 ---
 
 ﻿# InvoiceForge State
@@ -27,7 +27,7 @@ progress:
 **Phase:** 3 - Advanced Templates
 **Plan:** Not created yet
 **Status:** Discussing context
-**Progress:** 45% (5/11 phases complete)
+**Progress:** [███░░░░░░░] 33%
 
 ```
 [████████████░░░░░░░░░░░░] 5/11 phases complete
@@ -50,9 +50,13 @@ progress:
 - **Integration:** WooCommerce order-to-invoice mapping
 - **Roadmap authority:** .planning/ROADMAP.md is the sole authoritative roadmap; root-level duplicate and PDF exports removed (quick-1-001)
 - **Phase swap (2026-03-19):** Phase 3 is now Advanced Templates (was Payment Gateways); Payment Gateways moved to Phase 8. Reference PDF provided: Bulgarian business invoice format.
+- **03-01 Template tab sentinel (2026-03-19):** _template_tab_marker in TAB_FIELDS identifies template tab saves without relying on $_GET params
+- **03-01 Nested template settings (2026-03-19):** invoiceforge_settings['template'] stored as sub-array; deep-merge in getSettings() preserves individual template keys
+- **03-01 SortableJS bundled locally (2026-03-19):** SortableJS v1.15.6 bundled in assets/ for offline admin environment compatibility
 
 ### Active TODOs
-- Create Phase 3 implementation plan (Advanced Templates)
+- Execute Phase 3 Plan 02 (Advanced Templates - PDF rendering with template settings)
+- Execute Phase 3 Plan 03 (Advanced Templates - email rendering)
 - Plan client portal authentication system (Phase 4)
 - Design multi-currency exchange rate handling (Phase 5)
 
@@ -71,9 +75,10 @@ progress:
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
 | 1 | Clean up root directory duplicates | 2026-03-14 | eb936dd | [1-clean-up-root-directory-duplicates](.planning/quick/1-clean-up-root-directory-duplicates/) |
+| Phase 03-advanced-templates P01 | 27 | 3 tasks | 11 files |
 
 ## Session Continuity
 
 **Last activity:** 2026-03-19 - Swapped Phase 3 (Advanced Templates) and Phase 8 (Payment Gateways); discussing Phase 3 context
-**Last session:** 2026-03-19T20:35:30.405Z
-**Stopped at:** Phase 3 context gathered
+**Last session:** 2026-03-19T21:22:13.886Z
+**Stopped at:** Completed 03-advanced-templates plan 03-01
