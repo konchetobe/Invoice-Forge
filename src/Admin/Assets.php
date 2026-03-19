@@ -94,6 +94,13 @@ class Assets
         // Enqueue WordPress media uploader for settings page
         if ($this->isSettingsPage($hook_suffix)) {
             wp_enqueue_media();
+            wp_enqueue_script(
+                'invoiceforge-sortable',
+                INVOICEFORGE_PLUGIN_URL . 'assets/admin/js/sortable.min.js',
+                [],
+                '1.15.6',
+                true
+            );
         }
 
         wp_enqueue_script(

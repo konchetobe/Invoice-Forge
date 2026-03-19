@@ -22,6 +22,9 @@
             this.initMediaUploader();
             this.initFormValidation();
             this.initToastContainer();
+            this.initSectionEditor();
+            this.initPaymentMethodsRepeater();
+            this.initSignatureFieldsRepeater();
         },
 
         /**
@@ -707,6 +710,82 @@
                 clearTimeout(timeout);
                 timeout = setTimeout(() => func.apply(context, args), wait);
             };
+        },
+
+        /**
+         * Initialize the section order drag-and-drop editor using SortableJS.
+         */
+        initSectionEditor: function() {
+            var listEl = document.getElementById('if-section-order-list');
+            if (!listEl || typeof Sortable === 'undefined') {
+                return;
+            }
+
+            Sortable.create(listEl, {
+                handle: '.if-drag-handle',
+                animation: 150,
+                onEnd: function() {
+                    // Re-index hidden inputs from 0 upward
+                    var items = listEl.querySelectorAll('.if-section-item');
+                    items.forEach(function(item, index) {
+                        var input = item.querySelector('input[type="hidden"]');
+                        if (input) {
+                            input.name = 'invoiceforge_settings[template][section_order][]';
+                        }
+                    });
+                }
+            });
+        },
+
+        /**
+         * Initialize payment methods repeater (add/remove rows).
+         */
+        initPaymentMethodsRepeater: function() {
+            $(document).on('click', '#if-add-payment-method', function() {
+                var row = '<div class="if-repeater-row" style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">' +
+                    '<input type="text" name="invoiceforge_settings[template][payment_methods][]" value="" class="regular-text">' +
+                    '<button type="button" class="button if-remove-payment-method">Remove</button>' +
+                    '</div>';
+                $('#if-payment-methods-list').append(row);
+            });
+
+            $(document).on('click', '.if-remove-payment-method', function() {
+                $(this).closest('.if-repeater-row').remove();
+            });
+        },
+
+        /**
+         * Initialize signature fields repeater (add/remove rows).
+         */
+        initSignatureFieldsRepeater: function() {
+            var sigIndex = Date.now();
+
+            $(document).on('click', '#if-add-sig-field', function() {
+                sigIndex++;
+                var uniqueId = 'if_sig_col_new_' + sigIndex;
+                var row = '<div class="if-repeater-row if-sig-field-row" style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">' +
+                    '<input type="text" name="invoiceforge_settings[template][signature_fields][][label]" value="" class="regular-text" placeholder="Field label">' +
+                    '<label style="display:inline-flex;align-items:center;gap:4px;">' +
+                        '<input type="radio" name="' + uniqueId + '" value="left" checked> Left' +
+                    '</label>' +
+                    '<label style="display:inline-flex;align-items:center;gap:4px;">' +
+                        '<input type="radio" name="' + uniqueId + '" value="right"> Right' +
+                    '</label>' +
+                    '<input type="hidden" name="invoiceforge_settings[template][signature_fields][][col]" value="left" class="if-sig-col-hidden">' +
+                    '<button type="button" class="button if-remove-sig-field">Remove</button>' +
+                    '</div>';
+                $('#if-signature-fields-list').append(row);
+            });
+
+            $(document).on('click', '.if-remove-sig-field', function() {
+                $(this).closest('.if-sig-field-row').remove();
+            });
+
+            // Sync radio buttons to hidden col inputs
+            $(document).on('change', '.if-sig-field-row input[type="radio"]', function() {
+                var $row = $(this).closest('.if-sig-field-row');
+                $row.find('.if-sig-col-hidden').val($(this).val());
+            });
         },
 
         /**

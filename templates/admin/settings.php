@@ -42,7 +42,7 @@ $numberingService = new NumberingService(new \InvoiceForge\Utilities\Logger());
 
     <!-- Settings Form -->
     <div class="invoiceforge-card">
-        <form method="post" action="options.php" class="invoiceforge-settings-form">
+        <form method="post" action="options.php" enctype="multipart/form-data" class="invoiceforge-settings-form">
             <?php settings_fields(SettingsPage::SETTINGS_GROUP); ?>
 
             <div class="invoiceforge-card-body">
@@ -167,6 +167,161 @@ $numberingService = new NumberingService(new \InvoiceForge\Utilities\Logger());
                         $(document).on('change', 'select[name="invoiceforge_settings[woo_invoice_number_format]"]', togglePrefixRow);
                     })(jQuery);
                     </script>
+
+                <?php elseif ($active_tab === 'template') : ?>
+
+                    <!-- Hidden sentinel to identify this tab on save -->
+                    <input type="hidden" name="invoiceforge_settings[_template_tab_marker]" value="1">
+
+                    <?php
+                    $tmpl = $settings['template'] ?? [];
+                    $tmpl_logo_url   = $tmpl['logo_url'] ?? '';
+                    $tmpl_accent     = $tmpl['accent_color'] ?? '#1a2b4a';
+                    $tmpl_id_label   = $tmpl['id_no_label'] ?? 'ID No';
+                    $tmpl_methods    = $tmpl['payment_methods'] ?? ['Bank transfer', 'Cash'];
+                    $tmpl_order      = $tmpl['section_order'] ?? ['header', 'line_items', 'totals', 'bank', 'notes', 'signature'];
+                    $tmpl_visibility = $tmpl['section_visibility'] ?? ['signature' => true, 'notes' => true, 'discount_row' => true];
+                    $tmpl_sig_fields = $tmpl['signature_fields'] ?? [];
+                    $section_labels  = [
+                        'header'     => __('Header (Company + Client)', 'invoiceforge'),
+                        'line_items' => __('Line Items', 'invoiceforge'),
+                        'totals'     => __('Totals', 'invoiceforge'),
+                        'bank'       => __('Bank Details', 'invoiceforge'),
+                        'notes'      => __('Notes & Terms', 'invoiceforge'),
+                        'signature'  => __('Signature', 'invoiceforge'),
+                    ];
+                    ?>
+
+                    <h3><?php esc_html_e('Logo', 'invoiceforge'); ?></h3>
+                    <table class="form-table" role="presentation">
+                        <tr>
+                            <th scope="row"><?php esc_html_e('Invoice Logo', 'invoiceforge'); ?></th>
+                            <td>
+                                <?php if (!empty($tmpl_logo_url)) : ?>
+                                    <div style="margin-bottom: 8px;">
+                                        <img src="<?php echo esc_url($tmpl_logo_url); ?>" alt="<?php esc_attr_e('Current logo', 'invoiceforge'); ?>" style="max-height:80px;max-width:300px;border:1px solid #ddd;padding:4px;border-radius:4px;">
+                                    </div>
+                                <?php endif; ?>
+                                <input type="file" name="template_logo" accept="image/*">
+                                <p class="description"><?php esc_html_e('Upload a logo image (JPG, PNG, SVG). Recommended size: 300x100px.', 'invoiceforge'); ?></p>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <h3><?php esc_html_e('Appearance', 'invoiceforge'); ?></h3>
+                    <table class="form-table" role="presentation">
+                        <tr>
+                            <th scope="row"><?php esc_html_e('Accent Color', 'invoiceforge'); ?></th>
+                            <td>
+                                <div style="display:flex;align-items:center;gap:8px;">
+                                    <input type="color" id="if-accent-color-picker" value="<?php echo esc_attr($tmpl_accent); ?>"
+                                           oninput="document.getElementById('if-accent-color-text').value = this.value">
+                                    <input type="text" id="if-accent-color-text"
+                                           name="invoiceforge_settings[template][accent_color]"
+                                           value="<?php echo esc_attr($tmpl_accent); ?>"
+                                           class="regular-text" maxlength="7" placeholder="#1a2b4a"
+                                           oninput="if(/^#[0-9a-fA-F]{3,6}$/.test(this.value)){document.getElementById('if-accent-color-picker').value=this.value}">
+                                </div>
+                                <p class="description"><?php esc_html_e('Hex color used for headings and accents on the invoice PDF.', 'invoiceforge'); ?></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><?php esc_html_e('ID No Label', 'invoiceforge'); ?></th>
+                            <td>
+                                <input type="text" name="invoiceforge_settings[template][id_no_label]"
+                                       value="<?php echo esc_attr($tmpl_id_label); ?>"
+                                       class="regular-text" placeholder="ID No">
+                                <p class="description"><?php esc_html_e('Label used for the company/client ID number field (e.g. EIK, BULSTAT, Reg No).', 'invoiceforge'); ?></p>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <h3><?php esc_html_e('Payment Methods', 'invoiceforge'); ?></h3>
+                    <table class="form-table" role="presentation">
+                        <tr>
+                            <th scope="row"><?php esc_html_e('Available Methods', 'invoiceforge'); ?></th>
+                            <td>
+                                <div id="if-payment-methods-list">
+                                    <?php foreach ($tmpl_methods as $i => $method) : ?>
+                                        <div class="if-repeater-row" style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+                                            <input type="text" name="invoiceforge_settings[template][payment_methods][]"
+                                                   value="<?php echo esc_attr($method); ?>" class="regular-text">
+                                            <button type="button" class="button if-remove-payment-method"><?php esc_html_e('Remove', 'invoiceforge'); ?></button>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                                <button type="button" id="if-add-payment-method" class="button">
+                                    <?php esc_html_e('+ Add Method', 'invoiceforge'); ?>
+                                </button>
+                                <p class="description"><?php esc_html_e('Payment methods available to select on each invoice.', 'invoiceforge'); ?></p>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <h3><?php esc_html_e('Section Visibility', 'invoiceforge'); ?></h3>
+                    <table class="form-table" role="presentation">
+                        <tr>
+                            <th scope="row"><?php esc_html_e('Visible Sections', 'invoiceforge'); ?></th>
+                            <td>
+                                <label style="display:block;margin-bottom:6px;">
+                                    <input type="checkbox" name="invoiceforge_settings[template][section_visibility][signature]" value="1"
+                                           <?php checked(!empty($tmpl_visibility['signature'])); ?>>
+                                    <?php esc_html_e('Signature block', 'invoiceforge'); ?>
+                                </label>
+                                <label style="display:block;margin-bottom:6px;">
+                                    <input type="checkbox" name="invoiceforge_settings[template][section_visibility][notes]" value="1"
+                                           <?php checked(!empty($tmpl_visibility['notes'])); ?>>
+                                    <?php esc_html_e('Notes & Terms', 'invoiceforge'); ?>
+                                </label>
+                                <label style="display:block;margin-bottom:6px;">
+                                    <input type="checkbox" name="invoiceforge_settings[template][section_visibility][discount_row]" value="1"
+                                           <?php checked(!empty($tmpl_visibility['discount_row'])); ?>>
+                                    <?php esc_html_e('Discount row in totals', 'invoiceforge'); ?>
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <h3><?php esc_html_e('Section Order', 'invoiceforge'); ?></h3>
+                    <p class="description" style="margin-bottom:12px;"><?php esc_html_e('Drag sections to reorder them on the invoice PDF.', 'invoiceforge'); ?></p>
+                    <ul id="if-section-order-list" class="if-section-order-list">
+                        <?php foreach ($tmpl_order as $slug) :
+                            if (!isset($section_labels[$slug])) continue; ?>
+                            <li class="if-section-item" data-slug="<?php echo esc_attr($slug); ?>">
+                                <span class="if-drag-handle" title="<?php esc_attr_e('Drag to reorder', 'invoiceforge'); ?>"></span>
+                                <span class="if-section-label"><?php echo esc_html($section_labels[$slug]); ?></span>
+                                <input type="hidden" name="invoiceforge_settings[template][section_order][]" value="<?php echo esc_attr($slug); ?>">
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+
+                    <h3 style="margin-top:24px;"><?php esc_html_e('Signature Fields', 'invoiceforge'); ?></h3>
+                    <p class="description" style="margin-bottom:12px;"><?php esc_html_e('Configure the fields that appear in the signature block.', 'invoiceforge'); ?></p>
+                    <div id="if-signature-fields-list">
+                        <?php foreach ($tmpl_sig_fields as $sig_field) : ?>
+                            <div class="if-repeater-row if-sig-field-row" style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+                                <input type="text" name="invoiceforge_settings[template][signature_fields][][label]"
+                                       value="<?php echo esc_attr($sig_field['label'] ?? ''); ?>"
+                                       class="regular-text" placeholder="<?php esc_attr_e('Field label', 'invoiceforge'); ?>">
+                                <label style="display:inline-flex;align-items:center;gap:4px;">
+                                    <input type="radio" name="if_sig_col_<?php echo esc_attr($sig_field['label'] ?? uniqid()); ?>_tmp"
+                                           value="left" <?php checked(($sig_field['col'] ?? 'left'), 'left'); ?>>
+                                    <?php esc_html_e('Left', 'invoiceforge'); ?>
+                                </label>
+                                <label style="display:inline-flex;align-items:center;gap:4px;">
+                                    <input type="radio" name="if_sig_col_<?php echo esc_attr($sig_field['label'] ?? uniqid()); ?>_tmp"
+                                           value="right" <?php checked(($sig_field['col'] ?? 'left'), 'right'); ?>>
+                                    <?php esc_html_e('Right', 'invoiceforge'); ?>
+                                </label>
+                                <input type="hidden" name="invoiceforge_settings[template][signature_fields][][col]"
+                                       value="<?php echo esc_attr($sig_field['col'] ?? 'left'); ?>" class="if-sig-col-hidden">
+                                <button type="button" class="button if-remove-sig-field"><?php esc_html_e('Remove', 'invoiceforge'); ?></button>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                    <button type="button" id="if-add-sig-field" class="button">
+                        <?php esc_html_e('+ Add Signature Field', 'invoiceforge'); ?>
+                    </button>
 
                 <?php endif; ?>
             </div>
