@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: discussing
-stopped_at: Completed 03-advanced-templates plan 03-01
-last_updated: "2026-03-19T21:22:13.890Z"
+stopped_at: Completed 03-advanced-templates plan 03-02
+last_updated: "2026-03-19T21:28:04.680Z"
 last_activity: 2026-03-19 - Swapped Phase 3 (Advanced Templates) and Phase 8 (Payment Gateways); discussing Phase 3 context
 progress:
   total_phases: 14
   completed_phases: 0
   total_plans: 3
-  completed_plans: 1
-  percent: 33
+  completed_plans: 2
+  percent: 67
 ---
 
 ﻿# InvoiceForge State
@@ -27,7 +27,7 @@ progress:
 **Phase:** 3 - Advanced Templates
 **Plan:** Not created yet
 **Status:** Discussing context
-**Progress:** [███░░░░░░░] 33%
+**Progress:** [███████░░░] 67%
 
 ```
 [████████████░░░░░░░░░░░░] 5/11 phases complete
@@ -53,9 +53,11 @@ progress:
 - **03-01 Template tab sentinel (2026-03-19):** _template_tab_marker in TAB_FIELDS identifies template tab saves without relying on $_GET params
 - **03-01 Nested template settings (2026-03-19):** invoiceforge_settings['template'] stored as sub-array; deep-merge in getSettings() preserves individual template keys
 - **03-01 SortableJS bundled locally (2026-03-19):** SortableJS v1.15.6 bundled in assets/ for offline admin environment compatibility
+- **03-02 Dual render mode single template (2026-03-19):** Single template file branches on render_mode ('pdf'|'email') rather than two separate templates; settings applied identically to both
+- **03-02 extract(EXTR_SKIP) context injection (2026-03-19):** Template context injected via extract() before include; flat variable names match WordPress template conventions
+- **03-02 Email mode skips mPDF (2026-03-19):** generate() returns raw HTML before mPDF instantiation in email mode so callers don't need mPDF for email-only use
 
 ### Active TODOs
-- Execute Phase 3 Plan 02 (Advanced Templates - PDF rendering with template settings)
 - Execute Phase 3 Plan 03 (Advanced Templates - email rendering)
 - Plan client portal authentication system (Phase 4)
 - Design multi-currency exchange rate handling (Phase 5)
@@ -80,5 +82,5 @@ progress:
 ## Session Continuity
 
 **Last activity:** 2026-03-19 - Swapped Phase 3 (Advanced Templates) and Phase 8 (Payment Gateways); discussing Phase 3 context
-**Last session:** 2026-03-19T21:22:13.886Z
-**Stopped at:** Completed 03-advanced-templates plan 03-01
+**Last session:** 2026-03-19T21:28:04.677Z
+**Stopped at:** Completed 03-advanced-templates plan 03-02
