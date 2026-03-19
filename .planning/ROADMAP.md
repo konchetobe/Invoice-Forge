@@ -11,12 +11,12 @@ This document outlines the complete implementation plan for InvoiceForge, organi
 | 1C | PDF Generation & Email | ✅ Complete | mPDF integration, email service |
 | 1D | Dashboard & Analytics | ✅ Complete | Overview dashboard, basic stats |
 | 2 | WooCommerce Integration | ✅ Complete | WooCommerce order-to-invoice mapping |
-| 3 | Payment Gateways | 🔲 Pending | Stripe, PayPal, Revolut, MyPos |
+| 3 | Advanced Templates | 🔲 Pending | Template system, PDF customization |
 | 4 | Client Portal | 🔲 Pending | Client login, invoice viewing, payments |
 | 5 | Multi-Currency | 🔲 Pending | Currency support, exchange rates |
 | 6 | Payment Plans | 🔲 Pending | Partial payments, deposits, installments |
 | 7 | SMS Notifications | 🔲 Pending | Twilio integration, SMS templates |
-| 8 | Advanced Templates | 🔲 Pending | Template system, PDF customization |
+| 8 | Payment Gateways | 🔲 Pending | Stripe, PayPal, Revolut, MyPos |
 | 9 | Tax Compliance | 🔲 Pending | EU VAT, UK, US tax handling |
 | 10 | Reports & Exports | 🔲 Pending | Financial reports, CSV/Excel export |
 | 11 | Recurring Invoices | 🔲 Pending | WP Cron, scheduling, automation |
@@ -221,43 +221,31 @@ This document outlines the complete implementation plan for InvoiceForge, organi
 
 ---
 
-## Phase 3: Payment Gateways
+## Phase 3: Advanced Templates
 
-**Goal**: Integrate multiple payment gateways for online invoice payment.
+**Goal**: Customizable invoice and email templates for different regions/styles, with logo placement and section customization.
 
-### Gateway Architecture
-- [ ] PaymentGatewayInterface
-- [ ] AbstractPaymentGateway base class
-- [ ] Payment model and repository
-- [ ] Gateway registration system
+### Template System
+- [ ] TemplateManager class
+- [ ] Template registration API
+- [ ] Template preview
 
-### Stripe Integration
-- [ ] StripeGateway class
-- [ ] Stripe checkout flow
-- [ ] Webhook handling
-- [ ] Payment confirmation
+### Invoice Templates
+- [ ] Bulgarian business invoice template (reference PDF)
+- [ ] EU-compliant template
+- [ ] US-compliant template
+- [ ] UK-compliant template
+- [ ] Minimal template
+- [ ] Detailed template
 
-### PayPal Integration
-- [ ] PayPalGateway class
-- [ ] PayPal checkout flow
-- [ ] IPN/webhook handling
-- [ ] Payment confirmation
+### Template Editor
+- [ ] Logo placement (uploadable, positionable)
+- [ ] Customizable/moveable sections
+- [ ] Color scheme
+- [ ] Custom fields
 
-### Revolut Integration
-- [ ] RevolutGateway class
-- [ ] Revolut checkout flow
-- [ ] Webhook handling
-
-### MyPos Integration
-- [ ] MyPosGateway class
-- [ ] MyPos checkout flow
-- [ ] Callback handling
-
-### Payment Management
-- [ ] Payments list in admin
-- [ ] Payment details view
-- [ ] Refund functionality
-- [ ] Payment receipts
+### Email Templates
+- [ ] Customizable email template system
 
 ---
 
@@ -357,27 +345,43 @@ This document outlines the complete implementation plan for InvoiceForge, organi
 
 ---
 
-## Phase 8: Advanced Templates
+## Phase 8: Payment Gateways
 
-**Goal**: Customizable invoice and email templates for different regions/styles.
+**Goal**: Integrate multiple payment gateways for online invoice payment.
 
-### Template System
-- [ ] TemplateManager class
-- [ ] Template registration API
-- [ ] Template preview
+### Gateway Architecture
+- [ ] PaymentGatewayInterface
+- [ ] AbstractPaymentGateway base class
+- [ ] Payment model and repository
+- [ ] Gateway registration system
 
-### Invoice Templates
-- [ ] EU-compliant template
-- [ ] US-compliant template
-- [ ] UK-compliant template
-- [ ] Minimal template
-- [ ] Detailed template
+### Stripe Integration
+- [ ] StripeGateway class
+- [ ] Stripe checkout flow
+- [ ] Webhook handling
+- [ ] Payment confirmation
 
-### Template Editor
-- [ ] Visual template customizer
-- [ ] Logo placement
-- [ ] Color scheme
-- [ ] Custom fields
+### PayPal Integration
+- [ ] PayPalGateway class
+- [ ] PayPal checkout flow
+- [ ] IPN/webhook handling
+- [ ] Payment confirmation
+
+### Revolut Integration
+- [ ] RevolutGateway class
+- [ ] Revolut checkout flow
+- [ ] Webhook handling
+
+### MyPos Integration
+- [ ] MyPosGateway class
+- [ ] MyPos checkout flow
+- [ ] Callback handling
+
+### Payment Management
+- [ ] Payments list in admin
+- [ ] Payment details view
+- [ ] Refund functionality
+- [ ] Payment receipts
 
 ---
 
@@ -477,7 +481,8 @@ This document outlines the complete implementation plan for InvoiceForge, organi
 | 1.1.0 | 1B | TBD | Line items & calculations |
 | 1.2.0 | 1C | TBD | PDF & Email |
 | 1.3.0 | 1D | TBD | Dashboard |
-| 2.0.0 | 2 | TBD | Payment gateways |
+| 2.0.0 | 2 | TBD | WooCommerce integration |
+| 3.0.0 | 3 | TBD | Advanced templates |
 | 3.0.0 | 3 | TBD | Client portal |
 | 4.0.0 | 4-5 | TBD | Multi-currency & payment plans |
 | 5.0.0 | 6-8 | TBD | SMS, templates, compliance |

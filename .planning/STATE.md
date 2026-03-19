@@ -8,9 +8,9 @@
 
 ## Current Position
 
-**Phase:** 3 - Payment Gateways  
-**Plan:** Not created yet  
-**Status:** Not started  
+**Phase:** 3 - Advanced Templates
+**Plan:** Not created yet
+**Status:** Discussing context
 **Progress:** 45% (5/11 phases complete)
 
 ```
@@ -33,16 +33,15 @@
 - **Database:** Custom tables for line items and tax rates
 - **Integration:** WooCommerce order-to-invoice mapping
 - **Roadmap authority:** .planning/ROADMAP.md is the sole authoritative roadmap; root-level duplicate and PDF exports removed (quick-1-001)
+- **Phase swap (2026-03-19):** Phase 3 is now Advanced Templates (was Payment Gateways); Payment Gateways moved to Phase 8. Reference PDF provided: Bulgarian business invoice format.
 
 ### Active TODOs
-- Create Phase 3 implementation plan (Payment Gateways)
-- Research Stripe/PayPal integration patterns
-- Plan client portal authentication system
-- Design multi-currency exchange rate handling
+- Create Phase 3 implementation plan (Advanced Templates)
+- Plan client portal authentication system (Phase 4)
+- Design multi-currency exchange rate handling (Phase 5)
 
 ### Known Blockers
 - Remote WordPress server access required for testing
-- Payment gateway API keys needed for Phase 3
 
 ### Research Insights
 - WordPress plugin patterns are well-established and reliable
@@ -59,6 +58,6 @@
 
 ## Session Continuity
 
-**Last activity:** 2026-03-14 - Completed quick task 1: Clean up root directory duplicates
-**Last session:** 2026-03-14T16:37:19Z
-**Stopped at:** Completed quick-1-001-PLAN.md (root directory cleanup)
+**Last activity:** 2026-03-19 - Swapped Phase 3 (Advanced Templates) and Phase 8 (Payment Gateways); discussing Phase 3 context
+**Last session:** 2026-03-19
+**Stopped at:** Phase 3 context discussion in progress
