@@ -62,6 +62,12 @@ class SettingsPage
             'company_address',
             'company_logo',
             'language',
+            'company_id_no',
+            'company_office',
+            'company_att_to',
+            'company_bank_name',
+            'company_iban',
+            'company_bic',
         ],
         'email' => [
             'email_from_name',
@@ -85,6 +91,9 @@ class SettingsPage
             'woo_invoice_number_format',
             'woo_invoice_prefix',
             'woo_auto_email',
+        ],
+        'template' => [
+            '_template_tab_marker',
         ],
     ];
 
@@ -281,6 +290,78 @@ class SettingsPage
             [
                 'id'          => 'language',
                 'description' => __('Select the language for the InvoiceForge admin interface.', 'invoiceforge'),
+            ]
+        );
+
+        add_settings_field(
+            'company_id_no',
+            __('Company ID No', 'invoiceforge'),
+            [$this, 'renderTextField'],
+            'invoiceforge-settings-general',
+            'invoiceforge_general',
+            [
+                'id'          => 'company_id_no',
+                'description' => __('EIK, BULSTAT, Registration No, or other business ID.', 'invoiceforge'),
+            ]
+        );
+
+        add_settings_field(
+            'company_office',
+            __('Office / Branch', 'invoiceforge'),
+            [$this, 'renderTextField'],
+            'invoiceforge-settings-general',
+            'invoiceforge_general',
+            [
+                'id'          => 'company_office',
+                'description' => __('Office or branch name (optional).', 'invoiceforge'),
+            ]
+        );
+
+        add_settings_field(
+            'company_att_to',
+            __('Attention To', 'invoiceforge'),
+            [$this, 'renderTextField'],
+            'invoiceforge-settings-general',
+            'invoiceforge_general',
+            [
+                'id'          => 'company_att_to',
+                'description' => __('Primary contact person name.', 'invoiceforge'),
+            ]
+        );
+
+        add_settings_field(
+            'company_bank_name',
+            __('Bank Name', 'invoiceforge'),
+            [$this, 'renderTextField'],
+            'invoiceforge-settings-general',
+            'invoiceforge_general',
+            [
+                'id'          => 'company_bank_name',
+                'description' => __('Name of your bank (appears on invoices).', 'invoiceforge'),
+            ]
+        );
+
+        add_settings_field(
+            'company_iban',
+            __('IBAN', 'invoiceforge'),
+            [$this, 'renderTextField'],
+            'invoiceforge-settings-general',
+            'invoiceforge_general',
+            [
+                'id'          => 'company_iban',
+                'description' => __('International Bank Account Number.', 'invoiceforge'),
+            ]
+        );
+
+        add_settings_field(
+            'company_bic',
+            __('BIC / SWIFT', 'invoiceforge'),
+            [$this, 'renderTextField'],
+            'invoiceforge-settings-general',
+            'invoiceforge_general',
+            [
+                'id'          => 'company_bic',
+                'description' => __('Bank Identifier Code (SWIFT code).', 'invoiceforge'),
             ]
         );
     }
@@ -832,20 +913,25 @@ class SettingsPage
         // Only process fields from the active tab
         $tab_fields = self::TAB_FIELDS[$active_tab] ?? [];
 
-        foreach ($tab_fields as $field) {
-            // Handle checkbox fields specially - if not in input, they're unchecked
-            if ($field === 'smtp_enabled') {
-                $sanitized[$field] = !empty($input[$field]);
-                continue;
-            }
+        // Handle template tab separately
+        if ($active_tab === 'template') {
+            $sanitized['template'] = $this->sanitizeTemplateSettings($input, $sanitized['template'] ?? []);
+        } else {
+            foreach ($tab_fields as $field) {
+                // Handle checkbox fields specially - if not in input, they're unchecked
+                if ($field === 'smtp_enabled') {
+                    $sanitized[$field] = !empty($input[$field]);
+                    continue;
+                }
 
-            // Skip if field not in input (shouldn't happen for non-checkbox fields)
-            if (!array_key_exists($field, $input)) {
-                continue;
-            }
+                // Skip if field not in input (shouldn't happen for non-checkbox fields)
+                if (!array_key_exists($field, $input)) {
+                    continue;
+                }
 
-            // Sanitize based on field type
-            $sanitized[$field] = $this->sanitizeField($field, $input[$field], $current[$field] ?? null);
+                // Sanitize based on field type
+                $sanitized[$field] = $this->sanitizeField($field, $input[$field], $current[$field] ?? null);
+            }
         }
 
         /**
@@ -884,6 +970,110 @@ class SettingsPage
     }
 
     /**
+     * Sanitize template tab settings.
+     *
+     * @since 1.3.0
+     *
+     * @param array<string, mixed> $input   The raw input.
+     * @param array<string, mixed> $current The current saved template settings.
+     * @return array<string, mixed> The sanitized template settings.
+     */
+    private function sanitizeTemplateSettings(array $input, array $current): array
+    {
+        $template_input = $input['template'] ?? [];
+        if (!is_array($template_input)) {
+            $template_input = [];
+        }
+
+        $defaults = $this->getDefaults();
+        $sanitized = array_merge($defaults['template'], $current);
+
+        // Handle logo file upload
+        if (isset($_FILES['template_logo']) && !empty($_FILES['template_logo']['tmp_name'])) {
+            $upload = $_FILES['template_logo'];
+            if ($upload['error'] === UPLOAD_ERR_OK) {
+                // Only allow image files
+                $allowed_types = ['image/jpeg', 'image/png', 'image/gif', 'image/svg+xml', 'image/webp'];
+                if (in_array($upload['type'], $allowed_types, true)) {
+                    // Use WordPress upload handling
+                    if (!function_exists('wp_handle_upload')) {
+                        require_once ABSPATH . 'wp-admin/includes/file.php';
+                    }
+                    $overrides = ['test_form' => false];
+                    $result = wp_handle_upload($upload, $overrides);
+                    if (isset($result['file'], $result['url'])) {
+                        $sanitized['logo_path'] = $result['file'];
+                        $sanitized['logo_url']  = $result['url'];
+                    }
+                }
+            }
+        }
+
+        // Accent color - validate hex
+        if (isset($template_input['accent_color'])) {
+            $color = trim((string) $template_input['accent_color']);
+            $sanitized['accent_color'] = preg_match('/^#[0-9a-fA-F]{3,6}$/', $color) ? $color : '#1a2b4a';
+        }
+
+        // ID no label
+        if (isset($template_input['id_no_label'])) {
+            $sanitized['id_no_label'] = sanitize_text_field((string) $template_input['id_no_label']);
+        }
+
+        // Payment methods - array of text values
+        if (isset($template_input['payment_methods'])) {
+            $methods = is_array($template_input['payment_methods']) ? $template_input['payment_methods'] : [];
+            $sanitized['payment_methods'] = array_values(
+                array_filter(
+                    array_map('sanitize_text_field', $methods),
+                    fn($m) => $m !== ''
+                )
+            );
+            if (empty($sanitized['payment_methods'])) {
+                $sanitized['payment_methods'] = ['Bank transfer', 'Cash'];
+            }
+        }
+
+        // Section order - validated against allowed slugs
+        if (isset($template_input['section_order'])) {
+            $allowed_sections = ['header', 'line_items', 'totals', 'bank', 'notes', 'signature'];
+            $order = is_array($template_input['section_order']) ? $template_input['section_order'] : [];
+            $sanitized['section_order'] = array_values(
+                array_filter($order, fn($s) => in_array($s, $allowed_sections, true))
+            );
+        }
+
+        // Section visibility - cast each to bool
+        if (isset($template_input['section_visibility'])) {
+            $visibility = is_array($template_input['section_visibility']) ? $template_input['section_visibility'] : [];
+            $sanitized_visibility = [];
+            foreach (['signature', 'notes', 'discount_row'] as $key) {
+                $sanitized_visibility[$key] = !empty($visibility[$key]);
+            }
+            $sanitized['section_visibility'] = $sanitized_visibility;
+        }
+
+        // Signature fields - array of {label, col}
+        if (isset($template_input['signature_fields'])) {
+            $fields = is_array($template_input['signature_fields']) ? $template_input['signature_fields'] : [];
+            $sanitized_fields = [];
+            foreach ($fields as $sig_field) {
+                if (!is_array($sig_field)) {
+                    continue;
+                }
+                $label = sanitize_text_field((string) ($sig_field['label'] ?? ''));
+                $col   = in_array($sig_field['col'] ?? '', ['left', 'right'], true) ? $sig_field['col'] : 'left';
+                if ($label !== '') {
+                    $sanitized_fields[] = ['label' => $label, 'col' => $col];
+                }
+            }
+            $sanitized['signature_fields'] = $sanitized_fields;
+        }
+
+        return $sanitized;
+    }
+
+    /**
      * Sanitize a single field based on its name.
      *
      * @since 1.0.0
@@ -903,6 +1093,12 @@ class SettingsPage
             case 'smtp_host':
             case 'smtp_username':
             case 'invoice_prefix':
+            case 'company_id_no':
+            case 'company_office':
+            case 'company_att_to':
+            case 'company_bank_name':
+            case 'company_iban':
+            case 'company_bic':
                 return $this->sanitizer->text((string) $value);
 
             // Email fields
@@ -969,7 +1165,15 @@ class SettingsPage
             $settings = [];
         }
 
-        return array_merge($this->getDefaults(), $settings);
+        $merged = array_merge($this->getDefaults(), $settings);
+
+        // Deep-merge the 'template' sub-array so individual keys are preserved
+        $defaults = $this->getDefaults();
+        if (isset($settings['template']) && is_array($settings['template'])) {
+            $merged['template'] = array_merge($defaults['template'], $settings['template']);
+        }
+
+        return $merged;
     }
 
     /**
@@ -987,6 +1191,14 @@ class SettingsPage
             'company_phone'      => '',
             'company_address'    => '',
             'company_logo'       => 0,
+            'language'           => '',
+            // Company profile fields
+            'company_id_no'      => '',
+            'company_office'     => '',
+            'company_att_to'     => '',
+            'company_bank_name'  => '',
+            'company_iban'       => '',
+            'company_bic'        => '',
             'email_from_name'    => get_option('blogname', 'InvoiceForge'),
             'email_from_address' => get_option('admin_email', ''),
             'smtp_enabled'       => false,
@@ -1005,6 +1217,27 @@ class SettingsPage
             'woo_invoice_number_format' => 'invoiceforge',
             'woo_invoice_prefix'        => 'ORD',
             'woo_auto_email'            => true,
+            // Template settings
+            'template' => [
+                'logo_path'  => '',
+                'logo_url'   => '',
+                'accent_color' => '#1a2b4a',
+                'id_no_label' => 'ID No',
+                'payment_methods' => ['Bank transfer', 'Cash'],
+                'section_order' => ['header', 'line_items', 'totals', 'bank', 'notes', 'signature'],
+                'section_visibility' => [
+                    'signature'    => true,
+                    'notes'        => true,
+                    'discount_row' => true,
+                ],
+                'signature_fields' => [
+                    ['label' => 'Date', 'col' => 'left'],
+                    ['label' => 'Place', 'col' => 'left'],
+                    ['label' => 'Compiler', 'col' => 'right'],
+                    ['label' => 'Personal code', 'col' => 'right'],
+                    ['label' => 'Attended to', 'col' => 'right'],
+                ],
+            ],
         ];
     }
 
@@ -1022,6 +1255,7 @@ class SettingsPage
             'email'        => __('Email', 'invoiceforge'),
             'advanced'     => __('Advanced', 'invoiceforge'),
             'integrations' => __('Integrations', 'invoiceforge'),
+            'template'     => __('Template', 'invoiceforge'),
         ];
 
         return apply_filters('invoiceforge_settings_tabs', $tabs);
