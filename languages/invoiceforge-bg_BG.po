@@ -358,10 +358,10 @@ msgstr "Изберете..."
 
 # Invoice/Email Template
 msgid "BUYER"
-msgstr "КУПУВАЧ"
+msgstr "ПОЛУЧАТЕЛ"
 
 msgid "SELLER"
-msgstr "ПРОДАВАЧ"
+msgstr "ДОСТАВЧИК"
 
 msgid "INVOICE"
 msgstr "ФАКТУРА"
@@ -379,7 +379,7 @@ msgid "Office"
 msgstr "Офис"
 
 msgid "Att To"
-msgstr "На вниманието на"
+msgstr "МОЛ"
 
 msgid "Description"
 msgstr "Описание"
