@@ -310,9 +310,13 @@ class PdfService
             'terms'          => get_post_meta($invoice_id, '_invoice_terms', true),
             'payment_instructions' => get_post_meta($invoice_id, '_invoice_payment_instructions', true),
             'payment_method' => (string) get_post_meta($invoice_id, '_invoice_payment_method', true),
-            'client_name'    => $client ? $client->post_title : '',
+            'client_name'    => $client_id ? $this->getClientDisplayName($client_id) : ($client ? $client->post_title : ''),
             'client_email'   => $client_id ? get_post_meta($client_id, '_client_email', true) : '',
             'client_address' => $client_id ? get_post_meta($client_id, '_client_address', true) : '',
+            'client_city'    => $client_id ? get_post_meta($client_id, '_client_city', true) : '',
+            'client_state'   => $client_id ? get_post_meta($client_id, '_client_state', true) : '',
+            'client_zip'     => $client_id ? get_post_meta($client_id, '_client_zip', true) : '',
+            'client_country' => $client_id ? get_post_meta($client_id, '_client_country', true) : '',
             'client_phone'   => $client_id ? get_post_meta($client_id, '_client_phone', true) : '',
             'client_id_no'   => $client_id ? get_post_meta($client_id, '_client_id_no', true) : '',
             'client_office'  => $client_id ? get_post_meta($client_id, '_client_office', true) : '',
@@ -333,6 +337,26 @@ class PdfService
      * @param array<string, mixed> $invoice Invoice data.
      * @return string HTML.
      */
+    /**
+     * Get client display name from meta (company name for companies, first+last for individuals).
+     *
+     * @since 1.0.0
+     *
+     * @param int $client_id The client post ID.
+     * @return string Display name.
+     */
+    private function getClientDisplayName(int $client_id): string
+    {
+        $company = (string) get_post_meta($client_id, '_client_company', true);
+        if (!empty($company)) {
+            return $company;
+        }
+        $first = (string) get_post_meta($client_id, '_client_first_name', true);
+        $last  = (string) get_post_meta($client_id, '_client_last_name', true);
+        $name  = trim($first . ' ' . $last);
+        return $name ?: __('Unknown Client', 'invoiceforge');
+    }
+
     private function getFallbackHtml(array $invoice): string
     {
         $rows = '';

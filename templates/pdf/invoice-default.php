@@ -43,6 +43,10 @@
  *   @var string $client_name
  *   @var string $client_email
  *   @var string $client_address
+ *   @var string $client_city
+ *   @var string $client_state
+ *   @var string $client_zip
+ *   @var string $client_country
  *   @var string $client_phone
  *   @var string $client_id_no
  *   @var string $client_office
@@ -152,6 +156,22 @@ foreach ($section_order as $section) :
             <strong><?php echo esc_html($client_name); ?></strong><br>
             <?php if (!empty($client_address)) : ?>
                 <?php echo nl2br(esc_html($client_address)); ?><br>
+            <?php endif; ?>
+            <?php
+            $addr_parts = array_filter([
+                !empty($client_zip) ? $client_zip : '',
+                !empty($client_city) ? $client_city : '',
+            ]);
+            $addr_line2 = implode(' ', $addr_parts);
+            if (!empty($client_state)) {
+                $addr_line2 .= ($addr_line2 ? ', ' : '') . $client_state;
+            }
+            if (!empty($client_country)) {
+                $addr_line2 .= ($addr_line2 ? ', ' : '') . $client_country;
+            }
+            ?>
+            <?php if (!empty($addr_line2)) : ?>
+                <?php echo esc_html($addr_line2); ?><br>
             <?php endif; ?>
             <?php if (!empty($client_id_no)) : ?>
                 <?php echo esc_html($id_no_label); ?>: <?php echo esc_html($client_id_no); ?><br>
