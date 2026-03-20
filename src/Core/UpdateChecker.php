@@ -58,8 +58,15 @@ class UpdateChecker
                 'invoiceforge'
             );
 
+            // Point at the main branch so the library resolves tags correctly
+            $updateChecker->setBranch('main');
+
             // Use release assets (the ZIP attached to GitHub Releases)
             $updateChecker->getVcsApi()->enableReleaseAssets();
+
+            if (defined('WP_DEBUG') && WP_DEBUG) {
+                error_log('[InvoiceForge] UpdateChecker initialized for ' . self::GITHUB_REPO . ' (current version: ' . INVOICEFORGE_VERSION . ')');
+            }
 
         } catch (\Throwable $e) {
             // Silently fail — update checking is non-critical
