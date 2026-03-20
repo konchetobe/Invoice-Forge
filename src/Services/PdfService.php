@@ -244,7 +244,9 @@ class PdfService
             'id_no_label'        => $template['id_no_label'] ?? 'EIK',
             'section_order'      => $section_order,
             'section_visibility' => $section_visibility,
-            'signature_fields'   => $signature_fields,
+            'signature_fields'      => $signature_fields,
+            'signature_left_title'  => $template['signature_left_title'] ?? '',
+            'signature_right_title' => $template['signature_right_title'] ?? '',
 
             // Company profile (extended fields from Plan 01)
             'company_id_no'    => $settings['company_id_no']    ?? '',

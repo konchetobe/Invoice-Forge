@@ -397,9 +397,15 @@ foreach ($section_order as $section) :
     </tr>
     <tr>
         <td style="width:50%; vertical-align:top; padding-right:20px;">
+            <?php if (!empty($signature_left_title)) : ?>
+                <p style="font-weight:bold; font-size:9pt; margin:0 0 4px;"><?php echo esc_html($signature_left_title); ?></p>
+            <?php endif; ?>
             <?php $render_sig_col($signature_fields, 'left'); ?>
         </td>
         <td style="width:50%; vertical-align:top;">
+            <?php if (!empty($signature_right_title)) : ?>
+                <p style="font-weight:bold; font-size:9pt; margin:0 0 4px;"><?php echo esc_html($signature_right_title); ?></p>
+            <?php endif; ?>
             <?php $render_sig_col($signature_fields, 'right'); ?>
         </td>
     </tr>

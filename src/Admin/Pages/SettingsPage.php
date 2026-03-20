@@ -988,24 +988,16 @@ class SettingsPage
         $defaults = $this->getDefaults();
         $sanitized = array_merge($defaults['template'], $current);
 
-        // Handle logo file upload
-        if (isset($_FILES['template_logo']) && !empty($_FILES['template_logo']['tmp_name'])) {
-            $upload = $_FILES['template_logo'];
-            if ($upload['error'] === UPLOAD_ERR_OK) {
-                // Only allow image files
-                $allowed_types = ['image/jpeg', 'image/png', 'image/gif', 'image/svg+xml', 'image/webp'];
-                if (in_array($upload['type'], $allowed_types, true)) {
-                    // Use WordPress upload handling
-                    if (!function_exists('wp_handle_upload')) {
-                        require_once ABSPATH . 'wp-admin/includes/file.php';
-                    }
-                    $overrides = ['test_form' => false];
-                    $result = wp_handle_upload($upload, $overrides);
-                    if (isset($result['file'], $result['url'])) {
-                        $sanitized['logo_path'] = $result['file'];
-                        $sanitized['logo_url']  = $result['url'];
-                    }
-                }
+        // Handle logo via media library attachment ID
+        if (isset($template_input['logo_id'])) {
+            $logo_id = absint($template_input['logo_id']);
+            $sanitized['logo_id'] = $logo_id;
+            if ($logo_id > 0) {
+                $sanitized['logo_path'] = get_attached_file($logo_id) ?: '';
+                $sanitized['logo_url']  = wp_get_attachment_url($logo_id) ?: '';
+            } else {
+                $sanitized['logo_path'] = '';
+                $sanitized['logo_url']  = '';
             }
         }
 
@@ -1068,6 +1060,14 @@ class SettingsPage
                 }
             }
             $sanitized['signature_fields'] = $sanitized_fields;
+        }
+
+        // Signature column titles
+        if (isset($template_input['signature_left_title'])) {
+            $sanitized['signature_left_title'] = sanitize_text_field((string) $template_input['signature_left_title']);
+        }
+        if (isset($template_input['signature_right_title'])) {
+            $sanitized['signature_right_title'] = sanitize_text_field((string) $template_input['signature_right_title']);
         }
 
         return $sanitized;
@@ -1219,6 +1219,7 @@ class SettingsPage
             'woo_auto_email'            => true,
             // Template settings
             'template' => [
+                'logo_id'    => 0,
                 'logo_path'  => '',
                 'logo_url'   => '',
                 'accent_color' => '#1a2b4a',
@@ -1237,6 +1238,8 @@ class SettingsPage
                     ['label' => 'Personal code', 'col' => 'right'],
                     ['label' => 'Attended to', 'col' => 'right'],
                 ],
+                'signature_left_title'  => '',
+                'signature_right_title' => '',
             ],
         ];
     }

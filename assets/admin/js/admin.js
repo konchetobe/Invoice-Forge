@@ -214,7 +214,8 @@
                 terms: $form.find('[name="terms"]').val(),
                 internal_notes: $form.find('[name="internal_notes"]').val(),
                 discount_type: $form.find('[name="discount_type"]').val(),
-                discount_value: $form.find('[name="discount_value"]').val() || 0
+                discount_value: $form.find('[name="discount_value"]').val() || 0,
+                payment_method: $form.find('[name="payment_method"]').val() || ''
             };
 
             // Serialize line items

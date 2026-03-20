@@ -192,18 +192,33 @@ $numberingService = new NumberingService(new \InvoiceForge\Utilities\Logger());
                     ];
                     ?>
 
+                    <?php
+                    $tmpl_logo_id = $tmpl['logo_id'] ?? 0;
+                    $tmpl_logo_preview = $tmpl_logo_id ? wp_get_attachment_image_url((int) $tmpl_logo_id, 'medium') : '';
+                    ?>
                     <h3><?php esc_html_e('Logo', 'invoiceforge'); ?></h3>
                     <table class="form-table" role="presentation">
                         <tr>
                             <th scope="row"><?php esc_html_e('Invoice Logo', 'invoiceforge'); ?></th>
                             <td>
-                                <?php if (!empty($tmpl_logo_url)) : ?>
-                                    <div style="margin-bottom: 8px;">
-                                        <img src="<?php echo esc_url($tmpl_logo_url); ?>" alt="<?php esc_attr_e('Current logo', 'invoiceforge'); ?>" style="max-height:80px;max-width:300px;border:1px solid #ddd;padding:4px;border-radius:4px;">
+                                <div class="invoiceforge-image-upload">
+                                    <input type="hidden" id="template_logo_id"
+                                           name="invoiceforge_settings[template][logo_id]"
+                                           value="<?php echo esc_attr((string) $tmpl_logo_id); ?>">
+                                    <div class="invoiceforge-image-preview" id="template_logo_id_preview">
+                                        <?php if ($tmpl_logo_preview) : ?>
+                                            <img src="<?php echo esc_url($tmpl_logo_preview); ?>" alt="">
+                                        <?php endif; ?>
                                     </div>
-                                <?php endif; ?>
-                                <input type="file" name="template_logo" accept="image/*">
-                                <p class="description"><?php esc_html_e('Upload a logo image (JPG, PNG, SVG). Recommended size: 300x100px.', 'invoiceforge'); ?></p>
+                                    <button type="button" class="button invoiceforge-upload-image" data-target="template_logo_id">
+                                        <?php esc_html_e('Select Image', 'invoiceforge'); ?>
+                                    </button>
+                                    <button type="button" class="button invoiceforge-remove-image" data-target="template_logo_id"
+                                            style="<?php echo $tmpl_logo_id ? '' : 'display:none;'; ?>">
+                                        <?php esc_html_e('Remove Image', 'invoiceforge'); ?>
+                                    </button>
+                                </div>
+                                <p class="description"><?php esc_html_e('Select a logo from the media library (JPG, PNG, SVG). Recommended size: 300x100px.', 'invoiceforge'); ?></p>
                             </td>
                         </tr>
                     </table>
@@ -297,6 +312,24 @@ $numberingService = new NumberingService(new \InvoiceForge\Utilities\Logger());
 
                     <h3 style="margin-top:24px;"><?php esc_html_e('Signature Fields', 'invoiceforge'); ?></h3>
                     <p class="description" style="margin-bottom:12px;"><?php esc_html_e('Configure the fields that appear in the signature block.', 'invoiceforge'); ?></p>
+                    <table class="form-table" role="presentation" style="margin-bottom:12px;">
+                        <tr>
+                            <th scope="row"><?php esc_html_e('Left Column Title', 'invoiceforge'); ?></th>
+                            <td>
+                                <input type="text" name="invoiceforge_settings[template][signature_left_title]"
+                                       value="<?php echo esc_attr($tmpl['signature_left_title'] ?? ''); ?>"
+                                       class="regular-text" placeholder="<?php esc_attr_e('e.g., Issued by', 'invoiceforge'); ?>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><?php esc_html_e('Right Column Title', 'invoiceforge'); ?></th>
+                            <td>
+                                <input type="text" name="invoiceforge_settings[template][signature_right_title]"
+                                       value="<?php echo esc_attr($tmpl['signature_right_title'] ?? ''); ?>"
+                                       class="regular-text" placeholder="<?php esc_attr_e('e.g., Received by', 'invoiceforge'); ?>">
+                            </td>
+                        </tr>
+                    </table>
                     <div id="if-signature-fields-list">
                         <?php foreach ($tmpl_sig_fields as $sig_field) : ?>
                             <div class="if-repeater-row if-sig-field-row" style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">

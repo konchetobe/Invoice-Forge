@@ -341,6 +341,10 @@ class InvoiceAjaxHandler
             $internal_notes = isset($_POST['internal_notes']) ? $this->sanitizer->textarea($_POST['internal_notes']) : '';
             update_post_meta($post_id, '_invoice_internal_notes', $internal_notes);
 
+            // Save payment method
+            $payment_method = isset($_POST['payment_method']) ? $this->sanitizer->text($_POST['payment_method']) : '';
+            update_post_meta($post_id, '_invoice_payment_method', $payment_method);
+
             // Save discount
             $discount_type  = isset($_POST['discount_type']) ? $this->sanitizer->option($_POST['discount_type'], ['', 'percentage', 'fixed'], '') : '';
             $discount_value = isset($_POST['discount_value']) ? $this->sanitizer->money($_POST['discount_value']) : 0;
@@ -622,6 +626,7 @@ class InvoiceAjaxHandler
             'internal_notes'  => get_post_meta($invoice_id, '_invoice_internal_notes', true),
             'discount_type'   => get_post_meta($invoice_id, '_invoice_discount_type', true),
             'discount_value'  => (float) get_post_meta($invoice_id, '_invoice_discount_value', true),
+            'payment_method'  => get_post_meta($invoice_id, '_invoice_payment_method', true) ?: '',
             'line_items'      => $lineItemsArray,
             'created_at'      => $post->post_date,
             'updated_at'      => $post->post_modified,
