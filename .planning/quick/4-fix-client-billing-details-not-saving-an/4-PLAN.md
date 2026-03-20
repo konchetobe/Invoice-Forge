@@ -11,6 +11,7 @@ files_modified:
   - src/PostTypes/ClientPostType.php
   - src/Services/PdfService.php
   - templates/pdf/invoice-default.php
+  - templates/admin/client-editor.php
 autonomous: true
 requirements: [QUICK-4]
 
@@ -19,11 +20,13 @@ must_haves:
     - "All billing fields (id_no, office, att_to) are saved when a client is created or updated via AJAX"
     - "Client name in post_title and invoice display does NOT include company in parentheses"
     - "Invoice PDF/email shows full client address including city, postal code, state, and country"
-    - "No client fields are mandatory -- saving succeeds even with only partial data"
+    - "No client fields are mandatory -- saving succeeds even with only partial data, both in client editor and inline invoice creation"
     - "Billing fields round-trip correctly: save -> reload editor -> values are populated"
+    - "Att To (МОЛ) label in client editor translates correctly in Bulgarian"
+    - "att_to field has help text explaining it is the contact person / МОЛ for companies"
   artifacts:
     - path: "assets/admin/js/admin.js"
-      provides: "AJAX form data includes id_no, office, att_to fields"
+      provides: "AJAX form data includes id_no, office, att_to fields; inline client creation does not require first_name/last_name/email"
       contains: "id_no.*att_to.*office"
     - path: "src/Ajax/ClientAjaxHandler.php"
       provides: "Backend saves and returns all billing meta fields"
@@ -37,11 +40,18 @@ must_haves:
     - path: "templates/pdf/invoice-default.php"
       provides: "Template renders full address with city, zip, country"
       contains: "client_city|client_zip|client_country"
+    - path: "templates/admin/client-editor.php"
+      provides: "No required attributes on first_name/last_name/email; correct i18n msgid for Att To; help text on att_to field"
+      contains: "Att To"
   key_links:
     - from: "assets/admin/js/admin.js"
       to: "src/Ajax/ClientAjaxHandler.php"
       via: "AJAX POST formData with id_no, office, att_to fields"
       pattern: "id_no.*office.*att_to"
+    - from: "assets/admin/js/admin.js (inline client creation)"
+      to: "src/Ajax/ClientAjaxHandler.php (createClientFromInvoice)"
+      via: "AJAX new client creation no longer blocks on missing first_name/last_name/email"
+      pattern: "new_client_first_name"
     - from: "src/Ajax/ClientAjaxHandler.php"
       to: "src/Services/PdfService.php"
       via: "post_meta _client_id_no, _client_office, _client_att_to read by getInvoiceData"
@@ -54,12 +64,16 @@ must_haves:
       to: "templates/pdf/invoice-default.php"
       via: "template context variables client_city, client_zip etc."
       pattern: "client_city|client_country"
+    - from: "templates/admin/client-editor.php"
+      to: "languages/invoiceforge-bg_BG.po"
+      via: "msgid 'Att To' matches .po translation entry for МОЛ"
+      pattern: "Att To"
 ---
 
 <objective>
 Fix client billing details not saving and not displaying correctly in invoices.
 
-Purpose: Currently only tax_id is saved from the billing section; id_no, office, and att_to fields are lost on save. Additionally, invoices only show the street address (missing city/zip/country), client names incorrectly include "(Company)" in parentheses, and all core fields are mandatory when they should not be.
+Purpose: Currently only tax_id is saved from the billing section; id_no, office, and att_to fields are lost on save. Additionally, invoices only show the street address (missing city/zip/country), client names incorrectly include "(Company)" in parentheses, all core fields are mandatory when they should not be (enforced in PHP, HTML required attributes, AND JS validation), the "Attention To" label does not match the i18n msgid in .po files, and the att_to field lacks guidance about its purpose for companies.
 
 Output: Fully functional client billing save/load cycle with correct invoice rendering of all address and billing fields.
 </objective>
@@ -73,21 +87,42 @@ Output: Fully functional client billing save/load cycle with correct invoice ren
 @.planning/STATE.md
 
 Key source files:
-@assets/admin/js/admin.js (client form AJAX - lines 316-331)
+@assets/admin/js/admin.js (client form AJAX - lines 316-331, inline client creation - lines 174-187, validateForm - lines 581-603)
 @src/Ajax/ClientAjaxHandler.php (saveClient, createClientFromInvoice, getClientData)
 @src/Admin/Pages/ClientsPage.php (getClientData for editor template)
 @src/PostTypes/ClientPostType.php (getDisplayName, saveMetaData)
 @src/Services/PdfService.php (getInvoiceData, getTemplateContext)
 @templates/pdf/invoice-default.php (header section rendering)
+@templates/admin/client-editor.php (client form with required attributes on lines 81-113, "Attention To" msgid on line 241)
 </context>
 
 <tasks>
 
 <task type="auto">
-  <name>Task 1: Fix billing field save/load in JS and AJAX handler + remove mandatory constraints + fix client name format</name>
-  <files>assets/admin/js/admin.js, src/Ajax/ClientAjaxHandler.php, src/Admin/Pages/ClientsPage.php, src/PostTypes/ClientPostType.php</files>
+  <name>Task 1: Fix billing field save/load, remove ALL mandatory constraints (PHP + HTML + JS), fix client name, fix i18n msgid, add att_to help text</name>
+  <files>assets/admin/js/admin.js, src/Ajax/ClientAjaxHandler.php, src/Admin/Pages/ClientsPage.php, src/PostTypes/ClientPostType.php, templates/admin/client-editor.php</files>
   <action>
-1. **assets/admin/js/admin.js** (~line 330): Add the three missing billing fields to the formData object in the client form AJAX submit handler:
+1. **templates/admin/client-editor.php** - Remove required attributes and asterisks from first_name, last_name, email inputs:
+   - Line 81: Remove `<span class="required">*</span>` from First Name label
+   - Line 83: Remove `required` attribute from the first_name input element
+   - Line 90: Remove `<span class="required">*</span>` from Last Name label
+   - Line 92: Remove `required` attribute from the last_name input element
+   - Line 111: Remove `<span class="required">*</span>` from Email label
+   - Line 113: Remove `required` attribute from the email input element
+   This is critical because the JS `validateForm` function (admin.js line 584) iterates `$form.find('[required]')` -- removing the HTML `required` attribute is what makes JS validation pass without these fields.
+
+2. **templates/admin/client-editor.php** - Fix i18n msgid on line 241:
+   - Change `<?php esc_html_e('Attention To', 'invoiceforge'); ?>` to `<?php esc_html_e('Att To', 'invoiceforge'); ?>`
+   - The .po files (including bg_BG.po) use msgid `"Att To"` which maps to `"МОЛ"` in Bulgarian. Using `"Attention To"` as the msgid produces no translation match, so the label stays in English.
+
+3. **templates/admin/client-editor.php** - Add help text to the att_to field (near line 241-243):
+   - Below the att_to input, add a `<p class="description">` element with help text:
+     ```php
+     <p class="description"><?php esc_html_e('Contact person (МОЛ) for company clients. For individuals, this can be left empty.', 'invoiceforge'); ?></p>
+     ```
+   - This addresses requirement 5 (first_name/last_name = att_to/МОЛ for companies) by providing UI guidance.
+
+4. **assets/admin/js/admin.js** (~line 330): Add the three missing billing fields to the formData object in the client form AJAX submit handler:
    ```
    id_no: $form.find('[name="id_no"]').val(),
    office: $form.find('[name="office"]').val(),
@@ -95,7 +130,24 @@ Key source files:
    ```
    Add these after the existing `tax_id` line. Keep the trailing comma consistent.
 
-2. **src/Ajax/ClientAjaxHandler.php** - `saveClient()` method:
+5. **assets/admin/js/admin.js** - Inline client creation validation (~lines 178-183):
+   - Remove or relax the required field check for inline new client creation. Change:
+     ```js
+     if (!firstName || !lastName || !email) {
+         this.showToast('error', 'For new clients, first name, last name and email are required.');
+         return;
+     }
+     ```
+     To only validate email format IF an email is provided (keep the isValidEmail check on lines 184-187 but make it conditional on email being non-empty):
+     ```js
+     if (email && !this.isValidEmail(email)) {
+         this.showToast('error', InvoiceForge.i18n.invalidEmail || 'Please enter a valid email address.');
+         return;
+     }
+     ```
+     Remove the `if (!firstName || !lastName || !email)` block entirely. This unblocks the AJAX call to `createClientFromInvoice` PHP handler.
+
+6. **src/Ajax/ClientAjaxHandler.php** - `saveClient()` method:
    - Add parsing for the three new fields after the `$tax_id` line (~line 190):
      ```php
      $id_no = isset($_POST['id_no']) ? $this->sanitizer->text($_POST['id_no']) : '';
@@ -121,7 +173,7 @@ Key source files:
      update_post_meta($post_id, '_client_att_to', $att_to);
      ```
 
-3. **src/Ajax/ClientAjaxHandler.php** - `createClientFromInvoice()` method (~line 295):
+7. **src/Ajax/ClientAjaxHandler.php** - `createClientFromInvoice()` method (~line 295):
    - Remove the required field check (~line 311): `if (empty($first_name) || empty($last_name) || empty($email))` -- make it non-blocking. Still validate email format IF provided but don't require it.
    - Fix title construction same as above (remove parenthesized company).
    - Add parsing of id_no, office, att_to, AND tax_id from `$data` array (after the existing `$country` line ~308):
@@ -140,7 +192,7 @@ Key source files:
      ```
    NOTE: tax_id was previously missing from createClientFromInvoice entirely -- this is a silent data-loss fix.
 
-4. **src/Ajax/ClientAjaxHandler.php** - `getClientData()` method (~line 544):
+8. **src/Ajax/ClientAjaxHandler.php** - `getClientData()` method (~line 544):
    - Add the three billing fields to the returned array (after `tax_id` on ~line 564):
      ```php
      'id_no'  => get_post_meta($client_id, '_client_id_no', true),
@@ -148,7 +200,7 @@ Key source files:
      'att_to' => get_post_meta($client_id, '_client_att_to', true),
      ```
 
-5. **src/Admin/Pages/ClientsPage.php** - `getClientData()` method (~line 99):
+9. **src/Admin/Pages/ClientsPage.php** - `getClientData()` method (~line 99):
    - This method populates `$client` for the client-editor.php template. Add the three billing fields to the returned array (after `tax_id` on ~line 119):
      ```php
      'id_no'  => get_post_meta($client_id, '_client_id_no', true),
@@ -157,7 +209,7 @@ Key source files:
      ```
    Without this fix, the editor form fields for id_no/office/att_to always render blank on page load even if the data exists in post_meta.
 
-6. **src/PostTypes/ClientPostType.php** - `getDisplayName()` static method (~line 773):
+10. **src/PostTypes/ClientPostType.php** - `getDisplayName()` static method (~line 773):
    - Change to use company name as title for companies (no parentheses):
      ```php
      if (!empty($company)) {
@@ -167,10 +219,10 @@ Key source files:
      ```
   </action>
   <verify>
-    <automated>grep -n "id_no\|office\|att_to" assets/admin/js/admin.js src/Ajax/ClientAjaxHandler.php src/Admin/Pages/ClientsPage.php | grep -c "id_no\|att_to\|office" | xargs -I{} test {} -ge 18 && echo "PASS: billing fields present in JS, handler, and ClientsPage" || echo "FAIL"</automated>
-    Verify: grep for `_client_id_no` in ClientAjaxHandler.php returns matches in saveClient, createClientFromInvoice, AND getClientData. Grep for `_client_id_no` in ClientsPage.php returns a match in getClientData. Grep for `_client_tax_id` in createClientFromInvoice block returns a match. Grep for `required` or `is required` in saveClient validation section returns 0 matches. Grep for `"($company)"` returns 0 matches in ClientAjaxHandler.php.
+    <automated>grep -n "id_no\|office\|att_to" assets/admin/js/admin.js src/Ajax/ClientAjaxHandler.php src/Admin/Pages/ClientsPage.php | grep -c "id_no\|att_to\|office" | xargs -I{} test {} -ge 18 && echo "PASS: billing fields present" || echo "FAIL"; grep -c "required" templates/admin/client-editor.php | xargs -I{} test {} -eq 0 && echo "PASS: no required attributes" || echo "WARN: check required attrs are removed from first_name/last_name/email only"; grep "Att To" templates/admin/client-editor.php && echo "PASS: correct msgid" || echo "FAIL: wrong msgid"; grep -c "first_name.*last_name.*email.*required\|!firstName.*!lastName.*!email" assets/admin/js/admin.js | xargs -I{} test {} -eq 0 && echo "PASS: no inline required check" || echo "FAIL: inline required check still present"</automated>
+    Verify: grep for `_client_id_no` in ClientAjaxHandler.php returns matches in saveClient, createClientFromInvoice, AND getClientData. Grep for `_client_id_no` in ClientsPage.php returns a match in getClientData. Grep for `_client_tax_id` in createClientFromInvoice block returns a match. Grep for `required` in saveClient validation section returns 0 matches. Grep for `"($company)"` returns 0 matches in ClientAjaxHandler.php. Grep for HTML `required` attribute on first_name/last_name/email inputs in client-editor.php returns 0 matches. Grep for `Att To` (not `Attention To`) in client-editor.php returns a match. Grep for `!firstName || !lastName || !email` in admin.js returns 0 matches. Grep for `description` near att_to in client-editor.php returns help text match.
   </verify>
-  <done>All three billing fields (id_no, office, att_to) are saved and returned via AJAX. tax_id is now also saved in createClientFromInvoice (was silently lost before). No fields are mandatory. Client title uses company name directly (no parentheses) for company clients. Both ClientAjaxHandler::getClientData and ClientsPage::getClientData return billing fields for editor pre-population.</done>
+  <done>All three billing fields (id_no, office, att_to) are saved and returned via AJAX. tax_id is now also saved in createClientFromInvoice (was silently lost before). No fields are mandatory at any layer: HTML required attributes removed, JS inline client validation relaxed, PHP validation removed. Client title uses company name directly (no parentheses) for company clients. Both ClientAjaxHandler::getClientData and ClientsPage::getClientData return billing fields for editor pre-population. "Att To" msgid matches .po files for correct Bulgarian translation (МОЛ). att_to field has descriptive help text for company clients.</done>
 </task>
 
 <task type="auto">
@@ -230,7 +282,7 @@ Key source files:
      <?php endif; ?>
      ```
    - Place this block immediately after the `client_address` nl2br output and before the `client_id_no` check.
-   - Apply the same pattern to the SELLER column (~line 188-190) for company address: read `company_city`, `company_state`, `company_zip`, `company_country` the same way. However, looking at the company data, it uses a single `company_address` field from settings. Leave the seller column as-is since company address is a single textarea field in settings.
+   - Leave the seller column as-is since company address is a single textarea field in settings.
 
 5. **templates/pdf/invoice-default.php** - Also ensure the template variables docblock at the top (~line 43-50) documents the new client address variables:
    ```php
@@ -259,15 +311,25 @@ Key source files:
 7. Grep `PdfService.php` for `client_city` -- present in getInvoiceData
 8. Grep `invoice-default.php` for `client_city` -- present in template rendering
 9. Grep `PdfService.php` for `getClientDisplayName` -- present as helper method
+10. Grep `client-editor.php` for `required` on first_name/last_name/email inputs -- zero matches (HTML required removed)
+11. Grep `client-editor.php` for `Attention To` -- zero matches (changed to `Att To`)
+12. Grep `client-editor.php` for `Att To` -- present (correct msgid for i18n)
+13. Grep `admin.js` for `!firstName || !lastName || !email` -- zero matches (inline required check removed)
+14. Grep `client-editor.php` for `description` near att_to -- help text present
 </verification>
 
 <success_criteria>
 - All six billing/address fields (id_no, office, att_to, city, zip, country) persist through the full save-load-render cycle
 - tax_id is saved when creating clients from invoices (was silently lost before)
-- Client form saves with no mandatory fields -- partial data accepted
+- Client form saves with no mandatory fields -- partial data accepted at all layers (HTML, JS, PHP)
+- HTML required attributes removed from first_name, last_name, email in client-editor.php
+- JS inline client creation (admin.js) no longer blocks on missing first_name/last_name/email
+- JS validateForm no longer flags first_name/last_name/email as missing (since [required] attr removed)
 - Client name never shows "(Company)" in parentheses in post titles or invoices
 - Invoice PDF buyer section shows complete address: street + city/zip + state/country
 - Editor form pre-populates id_no, office, att_to on page load (via ClientsPage::getClientData)
+- "Att To" label in client editor uses correct msgid matching .po files (translates to МОЛ in Bulgarian)
+- att_to field has help text explaining its purpose for company clients
 - Existing billing fields (tax_id) continue to work unchanged
 </success_criteria>
 
