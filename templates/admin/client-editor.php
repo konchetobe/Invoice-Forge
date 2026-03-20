@@ -78,18 +78,18 @@ $clientsPage = new \InvoiceForge\Admin\Pages\ClientsPage();
                         <div class="invoiceforge-form-grid">
                             <div class="invoiceforge-form-group">
                                 <label class="invoiceforge-form-label" for="client_first_name">
-                                    <?php esc_html_e('First Name', 'invoiceforge'); ?> <span class="required">*</span>
+                                    <?php esc_html_e('First Name', 'invoiceforge'); ?>
                                 </label>
-                                <input type="text" id="client_first_name" name="first_name" class="invoiceforge-form-input" required
+                                <input type="text" id="client_first_name" name="first_name" class="invoiceforge-form-input"
                                        value="<?php echo esc_attr($client['first_name']); ?>"
                                        placeholder="<?php esc_attr_e('John', 'invoiceforge'); ?>">
                             </div>
 
                             <div class="invoiceforge-form-group">
                                 <label class="invoiceforge-form-label" for="client_last_name">
-                                    <?php esc_html_e('Last Name', 'invoiceforge'); ?> <span class="required">*</span>
+                                    <?php esc_html_e('Last Name', 'invoiceforge'); ?>
                                 </label>
-                                <input type="text" id="client_last_name" name="last_name" class="invoiceforge-form-input" required
+                                <input type="text" id="client_last_name" name="last_name" class="invoiceforge-form-input"
                                        value="<?php echo esc_attr($client['last_name']); ?>"
                                        placeholder="<?php esc_attr_e('Doe', 'invoiceforge'); ?>">
                             </div>
@@ -108,9 +108,9 @@ $clientsPage = new \InvoiceForge\Admin\Pages\ClientsPage();
 
                             <div class="invoiceforge-form-group">
                                 <label class="invoiceforge-form-label" for="email">
-                                    <?php esc_html_e('Email', 'invoiceforge'); ?> <span class="required">*</span>
+                                    <?php esc_html_e('Email', 'invoiceforge'); ?>
                                 </label>
-                                <input type="email" id="email" name="email" class="invoiceforge-form-input" required
+                                <input type="email" id="email" name="email" class="invoiceforge-form-input"
                                        value="<?php echo esc_attr($client['email']); ?>"
                                        placeholder="<?php esc_attr_e('email@example.com', 'invoiceforge'); ?>">
                             </div>
@@ -238,11 +238,12 @@ $clientsPage = new \InvoiceForge\Admin\Pages\ClientsPage();
                         </div>
                         <div class="invoiceforge-form-group" style="margin-bottom: 0;">
                             <label class="invoiceforge-form-label" for="att_to">
-                                <?php esc_html_e('Attention To', 'invoiceforge'); ?>
+                                <?php esc_html_e('Att To', 'invoiceforge'); ?>
                             </label>
                             <input type="text" id="att_to" name="att_to" class="invoiceforge-form-input"
                                    value="<?php echo esc_attr($client['att_to'] ?? ''); ?>"
                                    placeholder="<?php esc_attr_e('Contact person name', 'invoiceforge'); ?>">
+                            <p class="description"><?php esc_html_e('Contact person (МОЛ) for company clients. For individuals, this can be left empty.', 'invoiceforge'); ?></p>
                         </div>
                     </div>
                 </div>

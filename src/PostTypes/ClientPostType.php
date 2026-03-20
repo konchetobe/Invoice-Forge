@@ -776,12 +776,11 @@ class ClientPostType
         $last_name = get_post_meta($client_id, '_client_last_name', true);
         $company = get_post_meta($client_id, '_client_company', true);
 
-        $name = trim($first_name . ' ' . $last_name);
-        
         if (!empty($company)) {
-            return $name ? "$name ($company)" : $company;
+            return $company;
         }
 
+        $name = trim($first_name . ' ' . $last_name);
         return $name ?: __('Unknown Client', 'invoiceforge');
     }
 }

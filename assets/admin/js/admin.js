@@ -172,16 +172,9 @@
                     return;
                 }
             } else if (clientMode === 'new') {
-                const firstName = $form.find('[name="new_client_first_name"]').val();
-                const lastName = $form.find('[name="new_client_last_name"]').val();
                 const email = $form.find('[name="new_client_email"]').val();
-                
-                if (!firstName || !lastName || !email) {
-                    this.showToast('error', 'For new clients, first name, last name and email are required.');
-                    return;
-                }
-                
-                if (!this.isValidEmail(email)) {
+
+                if (email && !this.isValidEmail(email)) {
                     this.showToast('error', InvoiceForge.i18n.invalidEmail || 'Please enter a valid email address.');
                     return;
                 }
@@ -327,7 +320,10 @@
                 state: $form.find('[name="state"]').val(),
                 zip: $form.find('[name="zip"]').val(),
                 country: $form.find('[name="country"]').val(),
-                tax_id: $form.find('[name="tax_id"]').val()
+                tax_id: $form.find('[name="tax_id"]').val(),
+                id_no: $form.find('[name="id_no"]').val(),
+                office: $form.find('[name="office"]').val(),
+                att_to: $form.find('[name="att_to"]').val()
             };
             
             // Send AJAX request

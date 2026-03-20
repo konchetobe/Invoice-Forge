@@ -117,6 +117,9 @@ class ClientsPage
             'zip'        => get_post_meta($client_id, '_client_zip', true),
             'country'    => get_post_meta($client_id, '_client_country', true),
             'tax_id'     => get_post_meta($client_id, '_client_tax_id', true),
+            'id_no'      => get_post_meta($client_id, '_client_id_no', true),
+            'office'     => get_post_meta($client_id, '_client_office', true),
+            'att_to'     => get_post_meta($client_id, '_client_att_to', true),
             'created_at' => $post->post_date,
             'updated_at' => $post->post_modified,
         ];

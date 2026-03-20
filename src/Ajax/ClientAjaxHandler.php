@@ -188,6 +188,9 @@ class ClientAjaxHandler
             $zip = isset($_POST['zip']) ? $this->sanitizer->text($_POST['zip']) : '';
             $country = isset($_POST['country']) ? $this->sanitizer->text($_POST['country']) : '';
             $tax_id = isset($_POST['tax_id']) ? $this->sanitizer->text($_POST['tax_id']) : '';
+            $id_no  = isset($_POST['id_no']) ? $this->sanitizer->text($_POST['id_no']) : '';
+            $office = isset($_POST['office']) ? $this->sanitizer->text($_POST['office']) : '';
+            $att_to = isset($_POST['att_to']) ? $this->sanitizer->text($_POST['att_to']) : '';
 
             $this->log('debug', 'Parsed client data', [
                 'client_id' => $client_id,
@@ -196,30 +199,20 @@ class ClientAjaxHandler
                 'email' => $email,
             ]);
 
-            // Validate required fields
-            $errors = [];
-            if (empty($first_name)) {
-                $errors[] = __('First name is required.', 'invoiceforge');
-            }
-            if (empty($last_name)) {
-                $errors[] = __('Last name is required.', 'invoiceforge');
-            }
-            if (empty($email)) {
-                $errors[] = __('Email is required.', 'invoiceforge');
-            } elseif (!$this->validator->isValidEmail($email)) {
-                $errors[] = __('Please enter a valid email address.', 'invoiceforge');
-            }
-
-            if (!empty($errors)) {
-                $this->log('debug', 'Validation errors', ['errors' => $errors]);
-                wp_send_json_error(['message' => implode(' ', $errors)], 400);
+            // Validate email format only if provided
+            if (!empty($email) && !$this->validator->isValidEmail($email)) {
+                wp_send_json_error(['message' => __('Please enter a valid email address.', 'invoiceforge')], 400);
                 return;
             }
 
-            // Build title from name
-            $title = trim($first_name . ' ' . $last_name);
+            // Build title from name (no parenthesised company suffix)
             if (!empty($company)) {
-                $title .= " ($company)";
+                $title = $company;
+            } else {
+                $title = trim($first_name . ' ' . $last_name);
+            }
+            if (empty($title)) {
+                $title = $email ?: __('Unnamed Client', 'invoiceforge');
             }
 
             // Create or update post
@@ -259,6 +252,9 @@ class ClientAjaxHandler
             update_post_meta($post_id, '_client_zip', $zip);
             update_post_meta($post_id, '_client_country', $country);
             update_post_meta($post_id, '_client_tax_id', $tax_id);
+            update_post_meta($post_id, '_client_id_no', $id_no);
+            update_post_meta($post_id, '_client_office', $office);
+            update_post_meta($post_id, '_client_att_to', $att_to);
 
             $this->log('info', 'Client saved successfully', ['post_id' => $post_id]);
 
@@ -306,22 +302,25 @@ class ClientAjaxHandler
         $state = $this->sanitizer->text($data['state'] ?? '');
         $zip = $this->sanitizer->text($data['zip'] ?? '');
         $country = $this->sanitizer->text($data['country'] ?? '');
+        $tax_id  = $this->sanitizer->text($data['tax_id'] ?? '');
+        $id_no   = $this->sanitizer->text($data['id_no'] ?? '');
+        $office  = $this->sanitizer->text($data['office'] ?? '');
+        $att_to  = $this->sanitizer->text($data['att_to'] ?? '');
 
-        // Validate required fields
-        if (empty($first_name) || empty($last_name) || empty($email)) {
-            $this->log('warning', 'Missing required fields for inline client creation');
-            return false;
-        }
-
-        if (!$this->validator->isValidEmail($email)) {
+        // Validate email format only if provided
+        if (!empty($email) && !$this->validator->isValidEmail($email)) {
             $this->log('warning', 'Invalid email for inline client creation');
             return false;
         }
 
-        // Build title
-        $title = trim($first_name . ' ' . $last_name);
+        // Build title (no parenthesised company suffix)
         if (!empty($company)) {
-            $title .= " ($company)";
+            $title = $company;
+        } else {
+            $title = trim($first_name . ' ' . $last_name);
+        }
+        if (empty($title)) {
+            $title = $email ?: __('Unnamed Client', 'invoiceforge');
         }
 
         // Create post
@@ -351,6 +350,10 @@ class ClientAjaxHandler
         update_post_meta($post_id, '_client_state', $state);
         update_post_meta($post_id, '_client_zip', $zip);
         update_post_meta($post_id, '_client_country', $country);
+        update_post_meta($post_id, '_client_tax_id', $tax_id);
+        update_post_meta($post_id, '_client_id_no', $id_no);
+        update_post_meta($post_id, '_client_office', $office);
+        update_post_meta($post_id, '_client_att_to', $att_to);
 
         $this->log('info', 'Inline client created successfully', ['post_id' => $post_id]);
 
@@ -562,6 +565,9 @@ class ClientAjaxHandler
             'zip'           => get_post_meta($client_id, '_client_zip', true),
             'country'       => get_post_meta($client_id, '_client_country', true),
             'tax_id'        => get_post_meta($client_id, '_client_tax_id', true),
+            'id_no'         => get_post_meta($client_id, '_client_id_no', true),
+            'office'        => get_post_meta($client_id, '_client_office', true),
+            'att_to'        => get_post_meta($client_id, '_client_att_to', true),
             'invoice_count' => $this->getClientInvoiceCount($client_id),
             'created_at'    => $post->post_date,
             'updated_at'    => $post->post_modified,
