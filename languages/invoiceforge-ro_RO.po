@@ -1,0 +1,472 @@
+# Romanian translations for InvoiceForge WordPress Plugin.
+# Copyright (C) 2026 InvoiceForge
+# This file is distributed under the same license as the InvoiceForge package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: InvoiceForge 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-20 12:00+0000\n"
+"PO-Revision-Date: 2026-03-20 12:00+0000\n"
+"Last-Translator: InvoiceForge Team\n"
+"Language-Team: Romanian\n"
+"Language: ro_RO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);\n"
+
+# Dashboard
+msgid "Dashboard"
+msgstr "Tablou de bord"
+
+msgid "Total Revenue"
+msgstr "Venituri totale"
+
+msgid "Outstanding"
+msgstr "Neachitate"
+
+msgid "Total Invoices"
+msgstr "Total facturi"
+
+msgid "Total Clients"
+msgstr "Total clienți"
+
+msgid "Quick Actions"
+msgstr "Acțiuni rapide"
+
+msgid "Recent Invoices"
+msgstr "Facturi recente"
+
+msgid "Recent Clients"
+msgstr "Clienți recenți"
+
+# Invoices
+msgid "Invoices"
+msgstr "Facturi"
+
+msgid "Invoice"
+msgstr "Factură"
+
+msgid "New Invoice"
+msgstr "Factură nouă"
+
+msgid "Edit Invoice"
+msgstr "Editare factură"
+
+msgid "Invoice Details"
+msgstr "Detalii factură"
+
+msgid "Invoice Title"
+msgstr "Titlu factură"
+
+msgid "Invoice Date"
+msgstr "Data facturii"
+
+msgid "Due Date"
+msgstr "Data scadenței"
+
+msgid "Total Amount"
+msgstr "Sumă totală"
+
+msgid "Currency"
+msgstr "Monedă"
+
+msgid "Notes"
+msgstr "Note"
+
+msgid "Create Invoice"
+msgstr "Creare factură"
+
+msgid "Delete Invoice"
+msgstr "Ștergere factură"
+
+msgid "Invoice Info"
+msgstr "Info factură"
+
+msgid "Invoice #:"
+msgstr "Factură nr.:"
+
+msgid "Created:"
+msgstr "Creată:"
+
+# Invoice Statuses
+msgid "Status"
+msgstr "Stare"
+
+msgid "Draft"
+msgstr "Ciornă"
+
+msgid "Sent"
+msgstr "Trimisă"
+
+msgid "Paid"
+msgstr "Plătită"
+
+msgid "Overdue"
+msgstr "Restantă"
+
+msgid "Cancelled"
+msgstr "Anulată"
+
+msgid "All"
+msgstr "Toate"
+
+# Clients
+msgid "Clients"
+msgstr "Clienți"
+
+msgid "Client"
+msgstr "Client"
+
+msgid "New Client"
+msgstr "Client nou"
+
+msgid "Edit Client"
+msgstr "Editare client"
+
+msgid "Add New Client"
+msgstr "Adăugare client nou"
+
+msgid "Select Existing Client"
+msgstr "Selectare client existent"
+
+msgid "Select a client..."
+msgstr "Selectați un client..."
+
+msgid "New Client Details"
+msgstr "Date client nou"
+
+msgid "Personal Information"
+msgstr "Informații personale"
+
+msgid "First Name"
+msgstr "Prenume"
+
+msgid "Last Name"
+msgstr "Nume"
+
+msgid "Company"
+msgstr "Societate"
+
+msgid "Email"
+msgstr "E-mail"
+
+msgid "Phone"
+msgstr "Telefon"
+
+msgid "Create Client"
+msgstr "Creare client"
+
+msgid "Delete Client"
+msgstr "Ștergere client"
+
+# Address
+msgid "Address"
+msgstr "Adresă"
+
+msgid "Street Address"
+msgstr "Stradă"
+
+msgid "City"
+msgstr "Oraș"
+
+msgid "State / Province"
+msgstr "Județ"
+
+msgid "ZIP / Postal Code"
+msgstr "Cod poștal"
+
+msgid "Country"
+msgstr "Țară"
+
+msgid "Select a country..."
+msgstr "Selectați o țară..."
+
+msgid "+ Add Address (Optional)"
+msgstr "+ Adăugare adresă (opțional)"
+
+# Billing
+msgid "Billing Information"
+msgstr "Informații de facturare"
+
+msgid "Tax ID / VAT Number"
+msgstr "CUI / Nr. TVA"
+
+# Statistics
+msgid "Statistics"
+msgstr "Statistici"
+
+# Settings
+msgid "Settings"
+msgstr "Setări"
+
+msgid "General"
+msgstr "General"
+
+msgid "Advanced"
+msgstr "Avansat"
+
+msgid "Company Information"
+msgstr "Informații societate"
+
+msgid "Company Name"
+msgstr "Denumire societate"
+
+msgid "Company Email"
+msgstr "E-mail societate"
+
+msgid "Company Phone"
+msgstr "Telefon societate"
+
+msgid "Company Address"
+msgstr "Adresă societate"
+
+msgid "Company Logo"
+msgstr "Logo societate"
+
+msgid "Language"
+msgstr "Limbă"
+
+msgid "Default (Site Language)"
+msgstr "Implicit (limba site-ului)"
+
+msgid "English (US)"
+msgstr "Engleză (SUA)"
+
+msgid "English (UK)"
+msgstr "Engleză (UK)"
+
+msgid "Bulgarian (Български)"
+msgstr "Bulgară (Български)"
+
+msgid "German (Deutsch)"
+msgstr "Germană (Deutsch)"
+
+msgid "French (Français)"
+msgstr "Franceză (Français)"
+
+msgid "Spanish (Español)"
+msgstr "Spaniolă (Español)"
+
+msgid "Italian (Italiano)"
+msgstr "Italiană (Italiano)"
+
+msgid "Dutch (Nederlands)"
+msgstr "Olandeză (Nederlands)"
+
+msgid "Polish (Polski)"
+msgstr "Poloneză (Polski)"
+
+msgid "Portuguese (Português)"
+msgstr "Portugheză (Português)"
+
+msgid "Romanian (Română)"
+msgstr "Română"
+
+msgid "Russian (Русский)"
+msgstr "Rusă (Русский)"
+
+msgid "Save Settings"
+msgstr "Salvare setări"
+
+# Actions
+msgid "Save"
+msgstr "Salvare"
+
+msgid "Save Changes"
+msgstr "Salvare modificări"
+
+msgid "Cancel"
+msgstr "Anulare"
+
+msgid "Delete"
+msgstr "Ștergere"
+
+msgid "Edit"
+msgstr "Editare"
+
+msgid "View"
+msgstr "Vizualizare"
+
+msgid "Search"
+msgstr "Căutare"
+
+msgid "Back to List"
+msgstr "Înapoi la listă"
+
+# Messages
+msgid "Saving..."
+msgstr "Se salvează..."
+
+msgid "Saved!"
+msgstr "Salvat!"
+
+msgid "An error occurred. Please try again."
+msgstr "A apărut o eroare. Vă rugăm să încercați din nou."
+
+msgid "Network error. Please try again."
+msgstr "Eroare de rețea. Vă rugăm să încercați din nou."
+
+msgid "Security check failed."
+msgstr "Verificarea de securitate a eșuat."
+
+msgid "Please fill in all required fields."
+msgstr "Vă rugăm să completați toate câmpurile obligatorii."
+
+msgid "Please enter a valid email address."
+msgstr "Vă rugăm să introduceți o adresă de e-mail validă."
+
+msgid "Are you sure you want to delete this item?"
+msgstr "Sunteți sigur că doriți să ștergeți acest element?"
+
+msgid "Client created successfully."
+msgstr "Clientul a fost creat cu succes."
+
+msgid "Client updated successfully."
+msgstr "Clientul a fost actualizat cu succes."
+
+msgid "Client deleted successfully."
+msgstr "Clientul a fost șters cu succes."
+
+msgid "Invoice created successfully."
+msgstr "Factura a fost creată cu succes."
+
+msgid "Invoice updated successfully."
+msgstr "Factura a fost actualizată cu succes."
+
+msgid "Invoice deleted successfully."
+msgstr "Factura a fost ștearsă cu succes."
+
+# Countries
+msgid "Bulgaria"
+msgstr "Bulgaria"
+
+msgid "United States"
+msgstr "Statele Unite"
+
+msgid "United Kingdom"
+msgstr "Regatul Unit"
+
+msgid "Germany"
+msgstr "Germania"
+
+msgid "France"
+msgstr "Franța"
+
+# Empty states
+msgid "No invoices found."
+msgstr "Nu s-au găsit facturi."
+
+msgid "No clients found."
+msgstr "Nu s-au găsit clienți."
+
+msgid "Create your first invoice"
+msgstr "Creați prima dvs. factură"
+
+msgid "Add your first client"
+msgstr "Adăugați primul dvs. client"
+
+# Misc
+msgid "required"
+msgstr "obligatoriu"
+
+msgid "Optional"
+msgstr "Opțional"
+
+msgid "Loading..."
+msgstr "Se încarcă..."
+
+msgid "Line items will be available in a future update."
+msgstr "Pozițiile vor fi disponibile într-o actualizare viitoare."
+
+msgid "Select..."
+msgstr "Selectați..."
+
+# Invoice/Email Template
+msgid "BUYER"
+msgstr "CUMPĂRĂTOR"
+
+msgid "SELLER"
+msgstr "VÂNZĂTOR"
+
+msgid "INVOICE"
+msgstr "FACTURĂ"
+
+msgid "No."
+msgstr "Nr."
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Due"
+msgstr "Scadent"
+
+msgid "Office"
+msgstr "Sediu"
+
+msgid "Att To"
+msgstr "În atenția"
+
+msgid "Description"
+msgstr "Denumire"
+
+msgid "Qty"
+msgstr "Cant."
+
+msgid "Unit Price"
+msgstr "Preț unit."
+
+msgid "Disc.%"
+msgstr "Disc.%"
+
+msgid "Disc.Amt"
+msgstr "Val.disc."
+
+msgid "Tax %"
+msgstr "TVA %"
+
+msgid "Tax Amt"
+msgstr "Val.TVA"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "Subtotal"
+msgstr "Subtotal"
+
+msgid "Discount"
+msgstr "Discount"
+
+msgid "Tax"
+msgstr "TVA"
+
+msgid "TOTAL"
+msgstr "TOTAL"
+
+msgid "VAT exempt — Article 70 VATA."
+msgstr "Scutit de TVA — Articolul 70 VATA."
+
+msgid "Payment Details"
+msgstr "Date de plată"
+
+msgid "Payment Method"
+msgstr "Metodă de plată"
+
+msgid "Bank"
+msgstr "Bancă"
+
+msgid "IBAN"
+msgstr "IBAN"
+
+msgid "BIC"
+msgstr "BIC"
+
+msgid "Signatures"
+msgstr "Semnături"
+
+msgid "Amount Due"
+msgstr "Sumă de plată"
+
+msgid "Pay Invoice"
+msgstr "Plătește factura"

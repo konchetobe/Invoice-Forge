@@ -1,0 +1,472 @@
+# Italian translations for InvoiceForge WordPress Plugin.
+# Copyright (C) 2026 InvoiceForge
+# This file is distributed under the same license as the InvoiceForge package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: InvoiceForge 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-20 12:00+0000\n"
+"PO-Revision-Date: 2026-03-20 12:00+0000\n"
+"Last-Translator: InvoiceForge Team\n"
+"Language-Team: Italian\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# Dashboard
+msgid "Dashboard"
+msgstr "Pannello"
+
+msgid "Total Revenue"
+msgstr "Fatturato totale"
+
+msgid "Outstanding"
+msgstr "In sospeso"
+
+msgid "Total Invoices"
+msgstr "Fatture totali"
+
+msgid "Total Clients"
+msgstr "Clienti totali"
+
+msgid "Quick Actions"
+msgstr "Azioni rapide"
+
+msgid "Recent Invoices"
+msgstr "Fatture recenti"
+
+msgid "Recent Clients"
+msgstr "Clienti recenti"
+
+# Invoices
+msgid "Invoices"
+msgstr "Fatture"
+
+msgid "Invoice"
+msgstr "Fattura"
+
+msgid "New Invoice"
+msgstr "Nuova fattura"
+
+msgid "Edit Invoice"
+msgstr "Modifica fattura"
+
+msgid "Invoice Details"
+msgstr "Dettagli fattura"
+
+msgid "Invoice Title"
+msgstr "Titolo fattura"
+
+msgid "Invoice Date"
+msgstr "Data fattura"
+
+msgid "Due Date"
+msgstr "Data di scadenza"
+
+msgid "Total Amount"
+msgstr "Importo totale"
+
+msgid "Currency"
+msgstr "Valuta"
+
+msgid "Notes"
+msgstr "Note"
+
+msgid "Create Invoice"
+msgstr "Crea fattura"
+
+msgid "Delete Invoice"
+msgstr "Elimina fattura"
+
+msgid "Invoice Info"
+msgstr "Info fattura"
+
+msgid "Invoice #:"
+msgstr "Fattura n.:"
+
+msgid "Created:"
+msgstr "Creata:"
+
+# Invoice Statuses
+msgid "Status"
+msgstr "Stato"
+
+msgid "Draft"
+msgstr "Bozza"
+
+msgid "Sent"
+msgstr "Inviata"
+
+msgid "Paid"
+msgstr "Pagata"
+
+msgid "Overdue"
+msgstr "Scaduta"
+
+msgid "Cancelled"
+msgstr "Annullata"
+
+msgid "All"
+msgstr "Tutte"
+
+# Clients
+msgid "Clients"
+msgstr "Clienti"
+
+msgid "Client"
+msgstr "Cliente"
+
+msgid "New Client"
+msgstr "Nuovo cliente"
+
+msgid "Edit Client"
+msgstr "Modifica cliente"
+
+msgid "Add New Client"
+msgstr "Aggiungi nuovo cliente"
+
+msgid "Select Existing Client"
+msgstr "Seleziona cliente esistente"
+
+msgid "Select a client..."
+msgstr "Seleziona un cliente..."
+
+msgid "New Client Details"
+msgstr "Dati nuovo cliente"
+
+msgid "Personal Information"
+msgstr "Informazioni personali"
+
+msgid "First Name"
+msgstr "Nome"
+
+msgid "Last Name"
+msgstr "Cognome"
+
+msgid "Company"
+msgstr "Azienda"
+
+msgid "Email"
+msgstr "E-mail"
+
+msgid "Phone"
+msgstr "Telefono"
+
+msgid "Create Client"
+msgstr "Crea cliente"
+
+msgid "Delete Client"
+msgstr "Elimina cliente"
+
+# Address
+msgid "Address"
+msgstr "Indirizzo"
+
+msgid "Street Address"
+msgstr "Via"
+
+msgid "City"
+msgstr "Città"
+
+msgid "State / Province"
+msgstr "Regione / Provincia"
+
+msgid "ZIP / Postal Code"
+msgstr "CAP"
+
+msgid "Country"
+msgstr "Paese"
+
+msgid "Select a country..."
+msgstr "Seleziona un paese..."
+
+msgid "+ Add Address (Optional)"
+msgstr "+ Aggiungi indirizzo (facoltativo)"
+
+# Billing
+msgid "Billing Information"
+msgstr "Informazioni di fatturazione"
+
+msgid "Tax ID / VAT Number"
+msgstr "Codice fiscale / P.IVA"
+
+# Statistics
+msgid "Statistics"
+msgstr "Statistiche"
+
+# Settings
+msgid "Settings"
+msgstr "Impostazioni"
+
+msgid "General"
+msgstr "Generale"
+
+msgid "Advanced"
+msgstr "Avanzato"
+
+msgid "Company Information"
+msgstr "Informazioni aziendali"
+
+msgid "Company Name"
+msgstr "Nome azienda"
+
+msgid "Company Email"
+msgstr "E-mail azienda"
+
+msgid "Company Phone"
+msgstr "Telefono azienda"
+
+msgid "Company Address"
+msgstr "Indirizzo azienda"
+
+msgid "Company Logo"
+msgstr "Logo azienda"
+
+msgid "Language"
+msgstr "Lingua"
+
+msgid "Default (Site Language)"
+msgstr "Predefinita (lingua del sito)"
+
+msgid "English (US)"
+msgstr "Inglese (USA)"
+
+msgid "English (UK)"
+msgstr "Inglese (UK)"
+
+msgid "Bulgarian (Български)"
+msgstr "Bulgaro (Български)"
+
+msgid "German (Deutsch)"
+msgstr "Tedesco (Deutsch)"
+
+msgid "French (Français)"
+msgstr "Francese (Français)"
+
+msgid "Spanish (Español)"
+msgstr "Spagnolo (Español)"
+
+msgid "Italian (Italiano)"
+msgstr "Italiano"
+
+msgid "Dutch (Nederlands)"
+msgstr "Olandese (Nederlands)"
+
+msgid "Polish (Polski)"
+msgstr "Polacco (Polski)"
+
+msgid "Portuguese (Português)"
+msgstr "Portoghese (Português)"
+
+msgid "Romanian (Română)"
+msgstr "Rumeno (Română)"
+
+msgid "Russian (Русский)"
+msgstr "Russo (Русский)"
+
+msgid "Save Settings"
+msgstr "Salva impostazioni"
+
+# Actions
+msgid "Save"
+msgstr "Salva"
+
+msgid "Save Changes"
+msgstr "Salva modifiche"
+
+msgid "Cancel"
+msgstr "Annulla"
+
+msgid "Delete"
+msgstr "Elimina"
+
+msgid "Edit"
+msgstr "Modifica"
+
+msgid "View"
+msgstr "Visualizza"
+
+msgid "Search"
+msgstr "Cerca"
+
+msgid "Back to List"
+msgstr "Torna all'elenco"
+
+# Messages
+msgid "Saving..."
+msgstr "Salvataggio..."
+
+msgid "Saved!"
+msgstr "Salvato!"
+
+msgid "An error occurred. Please try again."
+msgstr "Si è verificato un errore. Riprova."
+
+msgid "Network error. Please try again."
+msgstr "Errore di rete. Riprova."
+
+msgid "Security check failed."
+msgstr "Verifica di sicurezza non riuscita."
+
+msgid "Please fill in all required fields."
+msgstr "Compila tutti i campi obbligatori."
+
+msgid "Please enter a valid email address."
+msgstr "Inserisci un indirizzo e-mail valido."
+
+msgid "Are you sure you want to delete this item?"
+msgstr "Sei sicuro di voler eliminare questo elemento?"
+
+msgid "Client created successfully."
+msgstr "Cliente creato con successo."
+
+msgid "Client updated successfully."
+msgstr "Cliente aggiornato con successo."
+
+msgid "Client deleted successfully."
+msgstr "Cliente eliminato con successo."
+
+msgid "Invoice created successfully."
+msgstr "Fattura creata con successo."
+
+msgid "Invoice updated successfully."
+msgstr "Fattura aggiornata con successo."
+
+msgid "Invoice deleted successfully."
+msgstr "Fattura eliminata con successo."
+
+# Countries
+msgid "Bulgaria"
+msgstr "Bulgaria"
+
+msgid "United States"
+msgstr "Stati Uniti"
+
+msgid "United Kingdom"
+msgstr "Regno Unito"
+
+msgid "Germany"
+msgstr "Germania"
+
+msgid "France"
+msgstr "Francia"
+
+# Empty states
+msgid "No invoices found."
+msgstr "Nessuna fattura trovata."
+
+msgid "No clients found."
+msgstr "Nessun cliente trovato."
+
+msgid "Create your first invoice"
+msgstr "Crea la tua prima fattura"
+
+msgid "Add your first client"
+msgstr "Aggiungi il tuo primo cliente"
+
+# Misc
+msgid "required"
+msgstr "obbligatorio"
+
+msgid "Optional"
+msgstr "Facoltativo"
+
+msgid "Loading..."
+msgstr "Caricamento..."
+
+msgid "Line items will be available in a future update."
+msgstr "Le voci di dettaglio saranno disponibili in un futuro aggiornamento."
+
+msgid "Select..."
+msgstr "Seleziona..."
+
+# Invoice/Email Template
+msgid "BUYER"
+msgstr "ACQUIRENTE"
+
+msgid "SELLER"
+msgstr "VENDITORE"
+
+msgid "INVOICE"
+msgstr "FATTURA"
+
+msgid "No."
+msgstr "N."
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Due"
+msgstr "Scadenza"
+
+msgid "Office"
+msgstr "Ufficio"
+
+msgid "Att To"
+msgstr "Att.ne"
+
+msgid "Description"
+msgstr "Descrizione"
+
+msgid "Qty"
+msgstr "Qtà"
+
+msgid "Unit Price"
+msgstr "Prezzo unit."
+
+msgid "Disc.%"
+msgstr "Sc.%"
+
+msgid "Disc.Amt"
+msgstr "Imp.sc."
+
+msgid "Tax %"
+msgstr "IVA %"
+
+msgid "Tax Amt"
+msgstr "Imp.IVA"
+
+msgid "Total"
+msgstr "Totale"
+
+msgid "Subtotal"
+msgstr "Subtotale"
+
+msgid "Discount"
+msgstr "Sconto"
+
+msgid "Tax"
+msgstr "IVA"
+
+msgid "TOTAL"
+msgstr "TOTALE"
+
+msgid "VAT exempt — Article 70 VATA."
+msgstr "Esente IVA — Articolo 70 VATA."
+
+msgid "Payment Details"
+msgstr "Dettagli pagamento"
+
+msgid "Payment Method"
+msgstr "Metodo di pagamento"
+
+msgid "Bank"
+msgstr "Banca"
+
+msgid "IBAN"
+msgstr "IBAN"
+
+msgid "BIC"
+msgstr "BIC"
+
+msgid "Signatures"
+msgstr "Firme"
+
+msgid "Amount Due"
+msgstr "Importo dovuto"
+
+msgid "Pay Invoice"
+msgstr "Paga fattura"

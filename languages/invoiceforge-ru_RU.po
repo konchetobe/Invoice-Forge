@@ -1,0 +1,472 @@
+# Russian translations for InvoiceForge WordPress Plugin.
+# Copyright (C) 2026 InvoiceForge
+# This file is distributed under the same license as the InvoiceForge package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: InvoiceForge 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-20 12:00+0000\n"
+"PO-Revision-Date: 2026-03-20 12:00+0000\n"
+"Last-Translator: InvoiceForge Team\n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+# Dashboard
+msgid "Dashboard"
+msgstr "Панель управления"
+
+msgid "Total Revenue"
+msgstr "Общий доход"
+
+msgid "Outstanding"
+msgstr "Неоплаченные"
+
+msgid "Total Invoices"
+msgstr "Всего счетов"
+
+msgid "Total Clients"
+msgstr "Всего клиентов"
+
+msgid "Quick Actions"
+msgstr "Быстрые действия"
+
+msgid "Recent Invoices"
+msgstr "Последние счета"
+
+msgid "Recent Clients"
+msgstr "Последние клиенты"
+
+# Invoices
+msgid "Invoices"
+msgstr "Счета"
+
+msgid "Invoice"
+msgstr "Счёт"
+
+msgid "New Invoice"
+msgstr "Новый счёт"
+
+msgid "Edit Invoice"
+msgstr "Редактировать счёт"
+
+msgid "Invoice Details"
+msgstr "Детали счёта"
+
+msgid "Invoice Title"
+msgstr "Название счёта"
+
+msgid "Invoice Date"
+msgstr "Дата счёта"
+
+msgid "Due Date"
+msgstr "Срок оплаты"
+
+msgid "Total Amount"
+msgstr "Общая сумма"
+
+msgid "Currency"
+msgstr "Валюта"
+
+msgid "Notes"
+msgstr "Примечания"
+
+msgid "Create Invoice"
+msgstr "Создать счёт"
+
+msgid "Delete Invoice"
+msgstr "Удалить счёт"
+
+msgid "Invoice Info"
+msgstr "Информация о счёте"
+
+msgid "Invoice #:"
+msgstr "Счёт №:"
+
+msgid "Created:"
+msgstr "Создан:"
+
+# Invoice Statuses
+msgid "Status"
+msgstr "Статус"
+
+msgid "Draft"
+msgstr "Черновик"
+
+msgid "Sent"
+msgstr "Отправлен"
+
+msgid "Paid"
+msgstr "Оплачен"
+
+msgid "Overdue"
+msgstr "Просрочен"
+
+msgid "Cancelled"
+msgstr "Отменён"
+
+msgid "All"
+msgstr "Все"
+
+# Clients
+msgid "Clients"
+msgstr "Клиенты"
+
+msgid "Client"
+msgstr "Клиент"
+
+msgid "New Client"
+msgstr "Новый клиент"
+
+msgid "Edit Client"
+msgstr "Редактировать клиента"
+
+msgid "Add New Client"
+msgstr "Добавить нового клиента"
+
+msgid "Select Existing Client"
+msgstr "Выбрать существующего клиента"
+
+msgid "Select a client..."
+msgstr "Выберите клиента..."
+
+msgid "New Client Details"
+msgstr "Данные нового клиента"
+
+msgid "Personal Information"
+msgstr "Личная информация"
+
+msgid "First Name"
+msgstr "Имя"
+
+msgid "Last Name"
+msgstr "Фамилия"
+
+msgid "Company"
+msgstr "Компания"
+
+msgid "Email"
+msgstr "Эл. почта"
+
+msgid "Phone"
+msgstr "Телефон"
+
+msgid "Create Client"
+msgstr "Создать клиента"
+
+msgid "Delete Client"
+msgstr "Удалить клиента"
+
+# Address
+msgid "Address"
+msgstr "Адрес"
+
+msgid "Street Address"
+msgstr "Улица"
+
+msgid "City"
+msgstr "Город"
+
+msgid "State / Province"
+msgstr "Область / Регион"
+
+msgid "ZIP / Postal Code"
+msgstr "Почтовый индекс"
+
+msgid "Country"
+msgstr "Страна"
+
+msgid "Select a country..."
+msgstr "Выберите страну..."
+
+msgid "+ Add Address (Optional)"
+msgstr "+ Добавить адрес (необязательно)"
+
+# Billing
+msgid "Billing Information"
+msgstr "Платёжные реквизиты"
+
+msgid "Tax ID / VAT Number"
+msgstr "ИНН / № НДС"
+
+# Statistics
+msgid "Statistics"
+msgstr "Статистика"
+
+# Settings
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "General"
+msgstr "Общие"
+
+msgid "Advanced"
+msgstr "Расширенные"
+
+msgid "Company Information"
+msgstr "Информация о компании"
+
+msgid "Company Name"
+msgstr "Название компании"
+
+msgid "Company Email"
+msgstr "Эл. почта компании"
+
+msgid "Company Phone"
+msgstr "Телефон компании"
+
+msgid "Company Address"
+msgstr "Адрес компании"
+
+msgid "Company Logo"
+msgstr "Логотип компании"
+
+msgid "Language"
+msgstr "Язык"
+
+msgid "Default (Site Language)"
+msgstr "По умолчанию (язык сайта)"
+
+msgid "English (US)"
+msgstr "Английский (США)"
+
+msgid "English (UK)"
+msgstr "Английский (UK)"
+
+msgid "Bulgarian (Български)"
+msgstr "Болгарский (Български)"
+
+msgid "German (Deutsch)"
+msgstr "Немецкий (Deutsch)"
+
+msgid "French (Français)"
+msgstr "Французский (Français)"
+
+msgid "Spanish (Español)"
+msgstr "Испанский (Español)"
+
+msgid "Italian (Italiano)"
+msgstr "Итальянский (Italiano)"
+
+msgid "Dutch (Nederlands)"
+msgstr "Нидерландский (Nederlands)"
+
+msgid "Polish (Polski)"
+msgstr "Польский (Polski)"
+
+msgid "Portuguese (Português)"
+msgstr "Португальский (Português)"
+
+msgid "Romanian (Română)"
+msgstr "Румынский (Română)"
+
+msgid "Russian (Русский)"
+msgstr "Русский"
+
+msgid "Save Settings"
+msgstr "Сохранить настройки"
+
+# Actions
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Save Changes"
+msgstr "Сохранить изменения"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Edit"
+msgstr "Редактировать"
+
+msgid "View"
+msgstr "Просмотр"
+
+msgid "Search"
+msgstr "Поиск"
+
+msgid "Back to List"
+msgstr "Вернуться к списку"
+
+# Messages
+msgid "Saving..."
+msgstr "Сохранение..."
+
+msgid "Saved!"
+msgstr "Сохранено!"
+
+msgid "An error occurred. Please try again."
+msgstr "Произошла ошибка. Пожалуйста, попробуйте снова."
+
+msgid "Network error. Please try again."
+msgstr "Ошибка сети. Пожалуйста, попробуйте снова."
+
+msgid "Security check failed."
+msgstr "Проверка безопасности не пройдена."
+
+msgid "Please fill in all required fields."
+msgstr "Пожалуйста, заполните все обязательные поля."
+
+msgid "Please enter a valid email address."
+msgstr "Пожалуйста, введите корректный адрес эл. почты."
+
+msgid "Are you sure you want to delete this item?"
+msgstr "Вы уверены, что хотите удалить этот элемент?"
+
+msgid "Client created successfully."
+msgstr "Клиент успешно создан."
+
+msgid "Client updated successfully."
+msgstr "Клиент успешно обновлён."
+
+msgid "Client deleted successfully."
+msgstr "Клиент успешно удалён."
+
+msgid "Invoice created successfully."
+msgstr "Счёт успешно создан."
+
+msgid "Invoice updated successfully."
+msgstr "Счёт успешно обновлён."
+
+msgid "Invoice deleted successfully."
+msgstr "Счёт успешно удалён."
+
+# Countries
+msgid "Bulgaria"
+msgstr "Болгария"
+
+msgid "United States"
+msgstr "США"
+
+msgid "United Kingdom"
+msgstr "Великобритания"
+
+msgid "Germany"
+msgstr "Германия"
+
+msgid "France"
+msgstr "Франция"
+
+# Empty states
+msgid "No invoices found."
+msgstr "Счета не найдены."
+
+msgid "No clients found."
+msgstr "Клиенты не найдены."
+
+msgid "Create your first invoice"
+msgstr "Создайте первый счёт"
+
+msgid "Add your first client"
+msgstr "Добавьте первого клиента"
+
+# Misc
+msgid "required"
+msgstr "обязательно"
+
+msgid "Optional"
+msgstr "Необязательно"
+
+msgid "Loading..."
+msgstr "Загрузка..."
+
+msgid "Line items will be available in a future update."
+msgstr "Позиции будут доступны в будущем обновлении."
+
+msgid "Select..."
+msgstr "Выберите..."
+
+# Invoice/Email Template
+msgid "BUYER"
+msgstr "ПОКУПАТЕЛЬ"
+
+msgid "SELLER"
+msgstr "ПРОДАВЕЦ"
+
+msgid "INVOICE"
+msgstr "СЧЁТ-ФАКТУРА"
+
+msgid "No."
+msgstr "№"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Due"
+msgstr "Срок"
+
+msgid "Office"
+msgstr "Офис"
+
+msgid "Att To"
+msgstr "Вниманию"
+
+msgid "Description"
+msgstr "Наименование"
+
+msgid "Qty"
+msgstr "Кол-во"
+
+msgid "Unit Price"
+msgstr "Цена ед."
+
+msgid "Disc.%"
+msgstr "Скид.%"
+
+msgid "Disc.Amt"
+msgstr "Сумма скид."
+
+msgid "Tax %"
+msgstr "НДС %"
+
+msgid "Tax Amt"
+msgstr "Сумма НДС"
+
+msgid "Total"
+msgstr "Итого"
+
+msgid "Subtotal"
+msgstr "Сумма"
+
+msgid "Discount"
+msgstr "Скидка"
+
+msgid "Tax"
+msgstr "НДС"
+
+msgid "TOTAL"
+msgstr "ИТОГО"
+
+msgid "VAT exempt — Article 70 VATA."
+msgstr "Освобождено от НДС — Статья 70 VATA."
+
+msgid "Payment Details"
+msgstr "Реквизиты оплаты"
+
+msgid "Payment Method"
+msgstr "Способ оплаты"
+
+msgid "Bank"
+msgstr "Банк"
+
+msgid "IBAN"
+msgstr "IBAN"
+
+msgid "BIC"
+msgstr "BIC"
+
+msgid "Signatures"
+msgstr "Подписи"
+
+msgid "Amount Due"
+msgstr "К оплате"
+
+msgid "Pay Invoice"
+msgstr "Оплатить счёт"

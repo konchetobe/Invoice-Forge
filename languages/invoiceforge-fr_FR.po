@@ -1,0 +1,472 @@
+# French translations for InvoiceForge WordPress Plugin.
+# Copyright (C) 2026 InvoiceForge
+# This file is distributed under the same license as the InvoiceForge package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: InvoiceForge 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-20 12:00+0000\n"
+"PO-Revision-Date: 2026-03-20 12:00+0000\n"
+"Last-Translator: InvoiceForge Team\n"
+"Language-Team: French\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+# Dashboard
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+msgid "Total Revenue"
+msgstr "Chiffre d'affaires total"
+
+msgid "Outstanding"
+msgstr "En attente"
+
+msgid "Total Invoices"
+msgstr "Total des factures"
+
+msgid "Total Clients"
+msgstr "Total des clients"
+
+msgid "Quick Actions"
+msgstr "Actions rapides"
+
+msgid "Recent Invoices"
+msgstr "Factures récentes"
+
+msgid "Recent Clients"
+msgstr "Clients récents"
+
+# Invoices
+msgid "Invoices"
+msgstr "Factures"
+
+msgid "Invoice"
+msgstr "Facture"
+
+msgid "New Invoice"
+msgstr "Nouvelle facture"
+
+msgid "Edit Invoice"
+msgstr "Modifier la facture"
+
+msgid "Invoice Details"
+msgstr "Détails de la facture"
+
+msgid "Invoice Title"
+msgstr "Titre de la facture"
+
+msgid "Invoice Date"
+msgstr "Date de facturation"
+
+msgid "Due Date"
+msgstr "Date d'échéance"
+
+msgid "Total Amount"
+msgstr "Montant total"
+
+msgid "Currency"
+msgstr "Devise"
+
+msgid "Notes"
+msgstr "Notes"
+
+msgid "Create Invoice"
+msgstr "Créer une facture"
+
+msgid "Delete Invoice"
+msgstr "Supprimer la facture"
+
+msgid "Invoice Info"
+msgstr "Infos facture"
+
+msgid "Invoice #:"
+msgstr "Facture n° :"
+
+msgid "Created:"
+msgstr "Créée :"
+
+# Invoice Statuses
+msgid "Status"
+msgstr "Statut"
+
+msgid "Draft"
+msgstr "Brouillon"
+
+msgid "Sent"
+msgstr "Envoyée"
+
+msgid "Paid"
+msgstr "Payée"
+
+msgid "Overdue"
+msgstr "En retard"
+
+msgid "Cancelled"
+msgstr "Annulée"
+
+msgid "All"
+msgstr "Toutes"
+
+# Clients
+msgid "Clients"
+msgstr "Clients"
+
+msgid "Client"
+msgstr "Client"
+
+msgid "New Client"
+msgstr "Nouveau client"
+
+msgid "Edit Client"
+msgstr "Modifier le client"
+
+msgid "Add New Client"
+msgstr "Ajouter un nouveau client"
+
+msgid "Select Existing Client"
+msgstr "Sélectionner un client existant"
+
+msgid "Select a client..."
+msgstr "Sélectionner un client..."
+
+msgid "New Client Details"
+msgstr "Détails du nouveau client"
+
+msgid "Personal Information"
+msgstr "Informations personnelles"
+
+msgid "First Name"
+msgstr "Prénom"
+
+msgid "Last Name"
+msgstr "Nom"
+
+msgid "Company"
+msgstr "Société"
+
+msgid "Email"
+msgstr "E-mail"
+
+msgid "Phone"
+msgstr "Téléphone"
+
+msgid "Create Client"
+msgstr "Créer un client"
+
+msgid "Delete Client"
+msgstr "Supprimer le client"
+
+# Address
+msgid "Address"
+msgstr "Adresse"
+
+msgid "Street Address"
+msgstr "Rue"
+
+msgid "City"
+msgstr "Ville"
+
+msgid "State / Province"
+msgstr "Région / Province"
+
+msgid "ZIP / Postal Code"
+msgstr "Code postal"
+
+msgid "Country"
+msgstr "Pays"
+
+msgid "Select a country..."
+msgstr "Sélectionner un pays..."
+
+msgid "+ Add Address (Optional)"
+msgstr "+ Ajouter une adresse (facultatif)"
+
+# Billing
+msgid "Billing Information"
+msgstr "Informations de facturation"
+
+msgid "Tax ID / VAT Number"
+msgstr "N° SIREN / N° TVA"
+
+# Statistics
+msgid "Statistics"
+msgstr "Statistiques"
+
+# Settings
+msgid "Settings"
+msgstr "Paramètres"
+
+msgid "General"
+msgstr "Général"
+
+msgid "Advanced"
+msgstr "Avancé"
+
+msgid "Company Information"
+msgstr "Informations sur la société"
+
+msgid "Company Name"
+msgstr "Nom de la société"
+
+msgid "Company Email"
+msgstr "E-mail de la société"
+
+msgid "Company Phone"
+msgstr "Téléphone de la société"
+
+msgid "Company Address"
+msgstr "Adresse de la société"
+
+msgid "Company Logo"
+msgstr "Logo de la société"
+
+msgid "Language"
+msgstr "Langue"
+
+msgid "Default (Site Language)"
+msgstr "Par défaut (langue du site)"
+
+msgid "English (US)"
+msgstr "Anglais (É.-U.)"
+
+msgid "English (UK)"
+msgstr "Anglais (R.-U.)"
+
+msgid "Bulgarian (Български)"
+msgstr "Bulgare (Български)"
+
+msgid "German (Deutsch)"
+msgstr "Allemand (Deutsch)"
+
+msgid "French (Français)"
+msgstr "Français"
+
+msgid "Spanish (Español)"
+msgstr "Espagnol (Español)"
+
+msgid "Italian (Italiano)"
+msgstr "Italien (Italiano)"
+
+msgid "Dutch (Nederlands)"
+msgstr "Néerlandais (Nederlands)"
+
+msgid "Polish (Polski)"
+msgstr "Polonais (Polski)"
+
+msgid "Portuguese (Português)"
+msgstr "Portugais (Português)"
+
+msgid "Romanian (Română)"
+msgstr "Roumain (Română)"
+
+msgid "Russian (Русский)"
+msgstr "Russe (Русский)"
+
+msgid "Save Settings"
+msgstr "Enregistrer les paramètres"
+
+# Actions
+msgid "Save"
+msgstr "Enregistrer"
+
+msgid "Save Changes"
+msgstr "Enregistrer les modifications"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Delete"
+msgstr "Supprimer"
+
+msgid "Edit"
+msgstr "Modifier"
+
+msgid "View"
+msgstr "Voir"
+
+msgid "Search"
+msgstr "Rechercher"
+
+msgid "Back to List"
+msgstr "Retour à la liste"
+
+# Messages
+msgid "Saving..."
+msgstr "Enregistrement..."
+
+msgid "Saved!"
+msgstr "Enregistré !"
+
+msgid "An error occurred. Please try again."
+msgstr "Une erreur s'est produite. Veuillez réessayer."
+
+msgid "Network error. Please try again."
+msgstr "Erreur réseau. Veuillez réessayer."
+
+msgid "Security check failed."
+msgstr "Échec de la vérification de sécurité."
+
+msgid "Please fill in all required fields."
+msgstr "Veuillez remplir tous les champs obligatoires."
+
+msgid "Please enter a valid email address."
+msgstr "Veuillez saisir une adresse e-mail valide."
+
+msgid "Are you sure you want to delete this item?"
+msgstr "Êtes-vous sûr de vouloir supprimer cet élément ?"
+
+msgid "Client created successfully."
+msgstr "Client créé avec succès."
+
+msgid "Client updated successfully."
+msgstr "Client mis à jour avec succès."
+
+msgid "Client deleted successfully."
+msgstr "Client supprimé avec succès."
+
+msgid "Invoice created successfully."
+msgstr "Facture créée avec succès."
+
+msgid "Invoice updated successfully."
+msgstr "Facture mise à jour avec succès."
+
+msgid "Invoice deleted successfully."
+msgstr "Facture supprimée avec succès."
+
+# Countries
+msgid "Bulgaria"
+msgstr "Bulgarie"
+
+msgid "United States"
+msgstr "États-Unis"
+
+msgid "United Kingdom"
+msgstr "Royaume-Uni"
+
+msgid "Germany"
+msgstr "Allemagne"
+
+msgid "France"
+msgstr "France"
+
+# Empty states
+msgid "No invoices found."
+msgstr "Aucune facture trouvée."
+
+msgid "No clients found."
+msgstr "Aucun client trouvé."
+
+msgid "Create your first invoice"
+msgstr "Créez votre première facture"
+
+msgid "Add your first client"
+msgstr "Ajoutez votre premier client"
+
+# Misc
+msgid "required"
+msgstr "obligatoire"
+
+msgid "Optional"
+msgstr "Facultatif"
+
+msgid "Loading..."
+msgstr "Chargement..."
+
+msgid "Line items will be available in a future update."
+msgstr "Les lignes de détail seront disponibles dans une prochaine mise à jour."
+
+msgid "Select..."
+msgstr "Sélectionner..."
+
+# Invoice/Email Template
+msgid "BUYER"
+msgstr "ACHETEUR"
+
+msgid "SELLER"
+msgstr "VENDEUR"
+
+msgid "INVOICE"
+msgstr "FACTURE"
+
+msgid "No."
+msgstr "N°"
+
+msgid "Date"
+msgstr "Date"
+
+msgid "Due"
+msgstr "Échéance"
+
+msgid "Office"
+msgstr "Bureau"
+
+msgid "Att To"
+msgstr "À l'att. de"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Qty"
+msgstr "Qté"
+
+msgid "Unit Price"
+msgstr "Prix unitaire"
+
+msgid "Disc.%"
+msgstr "Rem.%"
+
+msgid "Disc.Amt"
+msgstr "Mont.rem."
+
+msgid "Tax %"
+msgstr "TVA %"
+
+msgid "Tax Amt"
+msgstr "Mont.TVA"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "Subtotal"
+msgstr "Sous-total"
+
+msgid "Discount"
+msgstr "Remise"
+
+msgid "Tax"
+msgstr "TVA"
+
+msgid "TOTAL"
+msgstr "TOTAL"
+
+msgid "VAT exempt — Article 70 VATA."
+msgstr "Exonéré de TVA — Article 70 VATA."
+
+msgid "Payment Details"
+msgstr "Détails du paiement"
+
+msgid "Payment Method"
+msgstr "Mode de paiement"
+
+msgid "Bank"
+msgstr "Banque"
+
+msgid "IBAN"
+msgstr "IBAN"
+
+msgid "BIC"
+msgstr "BIC"
+
+msgid "Signatures"
+msgstr "Signatures"
+
+msgid "Amount Due"
+msgstr "Montant dû"
+
+msgid "Pay Invoice"
+msgstr "Payer la facture"

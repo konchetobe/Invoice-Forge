@@ -355,3 +355,119 @@ msgstr "Позициите ще бъдат налични в бъдеща вер
 
 msgid "Select..."
 msgstr "Изберете..."
+
+# Invoice/Email Template
+msgid "BUYER"
+msgstr "КУПУВАЧ"
+
+msgid "SELLER"
+msgstr "ПРОДАВАЧ"
+
+msgid "INVOICE"
+msgstr "ФАКТУРА"
+
+msgid "No."
+msgstr "No."
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Due"
+msgstr "Срок"
+
+msgid "Office"
+msgstr "Офис"
+
+msgid "Att To"
+msgstr "На вниманието на"
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "Qty"
+msgstr "Кол."
+
+msgid "Unit Price"
+msgstr "Ед. цена"
+
+msgid "Disc.%"
+msgstr "Отст.%"
+
+msgid "Disc.Amt"
+msgstr "Отст.ст."
+
+msgid "Tax %"
+msgstr "ДДС %"
+
+msgid "Tax Amt"
+msgstr "ДДС ст."
+
+msgid "Total"
+msgstr "Общо"
+
+msgid "Subtotal"
+msgstr "Междинна сума"
+
+msgid "Discount"
+msgstr "Отстъпка"
+
+msgid "Tax"
+msgstr "Данък"
+
+msgid "TOTAL"
+msgstr "ОБЩО"
+
+msgid "VAT exempt — Article 70 VATA."
+msgstr "Освободена от ДДС — Член 70 от ЗДДС."
+
+msgid "Payment Details"
+msgstr "Данни за плащане"
+
+msgid "Payment Method"
+msgstr "Начин на плащане"
+
+msgid "Bank"
+msgstr "Банка"
+
+msgid "IBAN"
+msgstr "IBAN"
+
+msgid "BIC"
+msgstr "BIC"
+
+msgid "Signatures"
+msgstr "Подписи"
+
+msgid "Amount Due"
+msgstr "Дължима сума"
+
+msgid "Pay Invoice"
+msgstr "Плати фактура"
+
+# Language names (in Bulgarian)
+msgid "German (Deutsch)"
+msgstr "Немски (Deutsch)"
+
+msgid "French (Français)"
+msgstr "Френски (Français)"
+
+msgid "Spanish (Español)"
+msgstr "Испански (Español)"
+
+msgid "Italian (Italiano)"
+msgstr "Италиански (Italiano)"
+
+msgid "Dutch (Nederlands)"
+msgstr "Холандски (Nederlands)"
+
+msgid "Polish (Polski)"
+msgstr "Полски (Polski)"
+
+msgid "Portuguese (Português)"
+msgstr "Португалски (Português)"
+
+msgid "Romanian (Română)"
+msgstr "Румънски (Română)"
+
+msgid "Russian (Русский)"
+msgstr "Руски (Русский)"
