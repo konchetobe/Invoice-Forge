@@ -83,9 +83,10 @@ progress:
 | Phase 03-advanced-templates P03 | 35 | 2 tasks | 8 files |
 | 2 | Fix Language setting to actually switch plugin and invoice language by creating missing translation files | 2026-03-20 | 5daca18 | [2-fix-language-setting-to-actually-switch-](./quick/2-fix-language-setting-to-actually-switch-/) |
 | 3 | Fix Bulgarian invoice terms: КУПУВАЧ->ПОЛУЧАТЕЛ, ПРОДАВАЧ->ДОСТАВЧИК, На вниманието на->МОЛ | 2026-03-20 | 6bdba85 | [3-fix-buyer-seller-att-to-translations-in-](./quick/3-fix-buyer-seller-att-to-translations-in-/) |
+| 4 | Fix client billing details not saving: id_no/office/att_to fields, remove mandatory constraints, fix client name, fix invoice full address | 2026-03-20 | 4227c16 | [4-fix-client-billing-details-not-saving-an](./quick/4-fix-client-billing-details-not-saving-an/) |
 
 ## Session Continuity
 
-**Last activity:** 2026-03-20 - Completed quick task 3: Fix Bulgarian invoice terms to standard accounting terminology (ПОЛУЧАТЕЛ, ДОСТАВЧИК, МОЛ)
-**Last session:** 2026-03-20T19:30:00.000Z
-**Stopped at:** Completed quick task 3
+**Last activity:** 2026-03-20 - Completed quick task 4: Fix client billing details save/load cycle, remove mandatory field constraints, fix invoice full address rendering
+**Last session:** 2026-03-20T19:45:00.000Z
+**Stopped at:** Completed quick task 4
