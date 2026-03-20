@@ -3,9 +3,9 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: discussing
-stopped_at: Completed 03-advanced-templates plan 03-03
-last_updated: "2026-03-20T19:16:39.680Z"
-last_activity: 2026-03-20 - Completed quick task 2: Fix Language setting to actually switch plugin and invoice language by creating missing translation files
+stopped_at: Completed quick task 5
+last_updated: "2026-03-20T20:00:00.000Z"
+last_activity: 2026-03-20 - Completed quick task 5: Fix WordPress plugin version detection - bumped to 1.2.0 and hardened UpdateChecker
 progress:
   total_phases: 14
   completed_phases: 1
@@ -84,9 +84,10 @@ progress:
 | 2 | Fix Language setting to actually switch plugin and invoice language by creating missing translation files | 2026-03-20 | 5daca18 | | [2-fix-language-setting-to-actually-switch-](./quick/2-fix-language-setting-to-actually-switch-/) |
 | 3 | Fix Bulgarian invoice terms: КУПУВАЧ->ПОЛУЧАТЕЛ, ПРОДАВАЧ->ДОСТАВЧИК, На вниманието на->МОЛ | 2026-03-20 | 6bdba85 | | [3-fix-buyer-seller-att-to-translations-in-](./quick/3-fix-buyer-seller-att-to-translations-in-/) |
 | 4 | Fix client billing details not saving and not displaying correctly in invoices | 2026-03-20 | 4227c16 | Verified | [4-fix-client-billing-details-not-saving-an](./quick/4-fix-client-billing-details-not-saving-an/) |
+| 5 | Fix WordPress plugin version detection: bump to 1.2.0, harden UpdateChecker with setBranch('main') and debug log | 2026-03-20 | bff7eaf | Completed | [5-fix-wordpress-plugin-version-detection-a](./quick/5-fix-wordpress-plugin-version-detection-a/) |
 
 ## Session Continuity
 
-**Last activity:** 2026-03-20 - Completed quick task 4: Fix client billing details not saving and not displaying correctly in invoices
-**Last session:** 2026-03-20T19:45:00.000Z
-**Stopped at:** Completed quick task 4
+**Last activity:** 2026-03-20 - Completed quick task 5: Fix WordPress plugin version detection - bumped to 1.2.0 and hardened UpdateChecker
+**Last session:** 2026-03-20T20:00:00.000Z
+**Stopped at:** Completed quick task 5
