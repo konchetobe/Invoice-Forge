@@ -7,6 +7,7 @@ depends_on: []
 files_modified:
   - src/Services/NumberingService.php
   - src/Admin/Pages/SettingsPage.php
+  - src/Services/PdfService.php
   - src/Ajax/InvoiceAjaxHandler.php
   - templates/admin/invoice-editor.php
   - templates/admin/settings.php
@@ -18,7 +19,7 @@ requirements: [PREVIEW-01, NUMBERING-01]
 must_haves:
   truths:
     - "Invoice editor shows a split view with the form on the left and a live HTML preview on the right"
-    - "Preview updates after save (debounced) as the user changes fields (title, client, dates, line items, totals)"
+    - "Preview updates real-time with debounce (500ms) on field change -- user does NOT need to save first to see preview updates"
     - "Settings page Advanced tab has fields for invoice number prefix, suffix, date pattern (year/month), counter reset mode (yearly/monthly), and custom start number"
     - "NumberingService generates invoice numbers using the full customization settings (prefix, suffix, date patterns, counter reset)"
     - "Preview of next invoice number shown on settings page reflects the configured format"
@@ -29,11 +30,14 @@ must_haves:
     - path: "src/Admin/Pages/SettingsPage.php"
       provides: "Invoice numbering customization fields in Advanced tab"
       contains: "invoice_suffix"
+    - path: "src/Services/PdfService.php"
+      provides: "renderPreviewHtml method that accepts form data overrides for unsaved preview"
+      contains: "renderPreviewHtml"
     - path: "templates/admin/invoice-editor.php"
       provides: "Split view layout with preview panel"
       contains: "invoiceforge-preview-panel"
     - path: "assets/admin/js/admin.js"
-      provides: "Real-time debounced preview update logic"
+      provides: "Debounced real-time preview update on every field change"
       contains: "initInvoicePreview"
     - path: "assets/admin/css/admin.css"
       provides: "Split view CSS for editor + preview layout"
@@ -41,12 +45,12 @@ must_haves:
   key_links:
     - from: "assets/admin/js/admin.js"
       to: "/wp-admin/admin-ajax.php?action=invoiceforge_preview_invoice_html"
-      via: "AJAX call on form field change (debounced 500ms)"
+      via: "AJAX call on form field change (debounced 500ms), posts current form field values"
       pattern: "invoiceforge_preview_invoice_html"
     - from: "src/Ajax/InvoiceAjaxHandler.php"
       to: "src/Services/PdfService.php"
-      via: "renderEmailBody or getTemplateContext for HTML preview"
-      pattern: "previewInvoiceHtml"
+      via: "renderPreviewHtml() accepting posted form data to render unsaved preview without persisting"
+      pattern: "renderPreviewHtml"
     - from: "src/Services/NumberingService.php"
       to: "invoiceforge_settings"
       via: "Reading numbering config from wp_options"
@@ -54,7 +58,7 @@ must_haves:
 ---
 
 <objective>
-Add a live invoice preview panel in the invoice editor (split view: form left, preview right) with real-time debounced updates as fields change. Also extend invoice number customization in Settings > Advanced with prefix, suffix, date patterns (year/month), counter reset mode (yearly/monthly), and custom start number.
+Add a live invoice preview panel in the invoice editor (split view: form left, preview right) with real-time debounced updates as fields change (no save required). Also extend invoice number customization in Settings > Advanced with prefix, suffix, date patterns (year/month), counter reset mode (yearly/monthly), and custom start number.
 
 Purpose: Users need visual feedback while editing invoices, and businesses need flexible invoice numbering schemes beyond the current simple PREFIX-YEAR-COUNTER format.
 
@@ -94,9 +98,10 @@ From src/Ajax/InvoiceAjaxHandler.php:
 
 From src/Services/PdfService.php:
 - generate(int $invoice_id, string $output_mode, string $file_path, string $render_mode): ?string
-- getTemplateContext(int $invoice_id, string $render_mode): array
-- getInvoiceData(int $invoice_id): ?array
+- getTemplateContext(int $invoice_id, string $render_mode): array — PRIVATE, reads all data from DB
+- getInvoiceData(int $invoice_id): ?array — PUBLIC, reads invoice meta from DB into array
 - renderEmailBody(int $invoice_id): string — returns HTML without mPDF
+- Template rendering: loads templates/pdf/invoice-default.php, extracts context vars, returns HTML
 
 From templates/admin/invoice-editor.php:
 - Layout: div.invoiceforge-editor-layout > div.invoiceforge-editor-main + div.invoiceforge-editor-sidebar
@@ -110,11 +115,6 @@ From assets/admin/js/admin.js:
 - Uses jQuery ($), InvoiceForge.ajaxUrl, InvoiceForge.nonce
 - Has debounce() utility method already
 - handleInvoiceSave collects all form data into formData object
-
-From assets/admin/css/admin.css:
-- .invoiceforge-editor-layout: grid with 1fr 320px
-- .invoiceforge-editor-sidebar: sticky, top: 32px
-- CSS custom properties: --if-space-*, --if-radius, --if-gray-*, --if-primary, etc.
 </interfaces>
 </context>
 
@@ -198,17 +198,62 @@ In the Advanced tab section (around line 65-72), update the "Next Invoice Number
 </task>
 
 <task type="auto">
-  <name>Task 2: Add live invoice preview panel to the editor with real-time updates</name>
+  <name>Task 2: Add live invoice preview panel with real-time debounced updates on field change</name>
   <files>
-    templates/admin/invoice-editor.php,
+    src/Services/PdfService.php,
     src/Ajax/InvoiceAjaxHandler.php,
+    templates/admin/invoice-editor.php,
     assets/admin/js/admin.js,
     assets/admin/css/admin.css
   </files>
   <action>
+**src/Services/PdfService.php — Add preview rendering from form data:**
+
+1. Add a new PUBLIC method `renderPreviewHtml(int $invoice_id, array $form_overrides = []): string` that renders the invoice template HTML using a mix of saved DB data and posted form field overrides, WITHOUT persisting anything:
+   - Call `$this->getInvoiceData($invoice_id)` to get the base saved data
+   - Merge `$form_overrides` on top of the saved data for these fields (if present in overrides):
+     - `title` (maps to invoice title/number display is separate)
+     - `invoice_date`, `due_date`, `currency`, `payment_method`, `status`
+     - `discount_type`, `discount_value`
+     - `notes`, `terms`
+     - `client_id` — if changed, re-resolve client fields from DB by the new client_id
+     - `line_items` — array of `{description, quantity, unit_price, tax_rate, discount_value}`, recalculate subtotal/tax_total/total_amount from these
+   - After merging, build the full template context the same way `getTemplateContext()` does (settings, company profile, client extended fields, computed helpers)
+   - Render using `templates/pdf/invoice-default.php` with `ob_start()` / `extract()` / `include` / `ob_get_clean()` — same pattern as `generate()`
+   - Return the HTML string
+
+2. For line item recalculation in the override path: iterate posted line_items, compute `line_total = (quantity * unit_price) - discount + tax` per item, sum for subtotal, tax_total, total_amount. Apply invoice-level discount_type/discount_value on top.
+
+3. Make `getTemplateContext` accept an optional `array $invoice_data_override = null` parameter. When provided, use it instead of calling `getInvoiceData()`. This avoids duplicating all the template context logic.
+
+**src/Ajax/InvoiceAjaxHandler.php — Add HTML preview endpoint accepting form data:**
+
+1. In `registerAjaxHandlers()`, add: `add_action('wp_ajax_invoiceforge_preview_invoice_html', [$this, 'previewInvoiceHtml']);`
+
+2. Create method `previewInvoiceHtml()`:
+   - Verify nonce (POST data, key 'nonce', action 'invoiceforge_admin')
+   - Check capabilities via `$this->canEditInvoices()`
+   - Get `invoice_id` from `$_POST['invoice_id']`, validate > 0
+   - Collect form field overrides from `$_POST`: sanitize each field using `$this->sanitizer`
+     - `title`: `sanitize_text_field`
+     - `invoice_date`, `due_date`: `sanitize_text_field` (date format)
+     - `currency`, `payment_method`, `status`: `sanitize_text_field`
+     - `discount_type`: validate against allowed values
+     - `discount_value`: `floatval`
+     - `notes`, `terms`: `sanitize_textarea_field`
+     - `client_id`: `absint`
+     - `line_items`: array, sanitize each item's fields (`sanitize_text_field` for description, `floatval` for numeric fields)
+   - Build `$form_overrides` array from the sanitized POST data (only include fields that were actually posted)
+   - Call `(new PdfService($this->logger))->renderPreviewHtml($invoice_id, $form_overrides)`
+   - Return `wp_send_json_success(['html' => $html])`
+   - On error: `wp_send_json_error(['message' => 'Preview failed'])`
+
 **templates/admin/invoice-editor.php — Restructure layout for split view:**
 
-1. Change the outer layout div from `invoiceforge-editor-layout` to `invoiceforge-editor-with-preview`. The new layout is a 3-column grid: `grid-template-columns: 1fr 320px 480px` (form | sidebar | preview). On screens under 1400px, collapse to 2-column with preview below. On mobile (under 1024px), single column.
+1. Change the outer layout div from `invoiceforge-editor-layout` to be conditional:
+```php
+<div class="<?php echo $is_new ? 'invoiceforge-editor-layout' : 'invoiceforge-editor-with-preview'; ?>">
+```
 
 2. After the closing `</div>` of `invoiceforge-editor-sidebar` (around line 478), add a new preview panel div:
 
@@ -233,21 +278,9 @@ In the Advanced tab section (around line 65-72), update the "Next Invoice Number
 </div>
 ```
 
-3. The preview panel only shows the AJAX preview for saved invoices (invoice_id > 0). For new invoices, show a placeholder message.
+3. The preview panel only shows for existing invoices (invoice_id > 0). For new invoices, the original layout class is used and no preview panel is rendered.
 
-**src/Ajax/InvoiceAjaxHandler.php — Add HTML preview endpoint:**
-
-1. In `registerAjaxHandlers()`, add: `add_action('wp_ajax_invoiceforge_preview_invoice_html', [$this, 'previewInvoiceHtml']);`
-
-2. Create method `previewInvoiceHtml()`:
-   - Verify nonce (POST data, key 'nonce', action 'invoiceforge_admin')
-   - Check capabilities via `$this->canEditInvoices()`
-   - Get `invoice_id` from `$_POST['invoice_id']`, validate > 0
-   - Create PdfService instance, call `renderEmailBody($invoice_id)` which returns the invoice template HTML without mPDF
-   - Return `wp_send_json_success(['html' => $html])`
-   - On error: `wp_send_json_error(['message' => 'Preview failed'])`
-
-**assets/admin/js/admin.js — Add preview logic:**
+**assets/admin/js/admin.js — Add real-time debounced preview logic:**
 
 1. In `init()`, add `this.initInvoicePreview();`
 
@@ -255,16 +288,29 @@ In the Advanced tab section (around line 65-72), update the "Next Invoice Number
    - Check if `#invoiceforge-preview-frame` exists, bail if not
    - Check if `$('[name="invoice_id"]').val()` is truthy (> 0), bail if new invoice
    - Load initial preview via `this.loadPreview()`
-   - After a successful save (in `handleInvoiceSave` success callback), also trigger `this.loadPreview()` to refresh the preview
-   - Add a "Refresh Preview" button click handler
+   - Create a debounced version of `loadPreview` using the existing `debounce()` utility (500ms delay): `this.debouncedLoadPreview = this.debounce(this.loadPreview.bind(this), 500);`
+   - Bind `input` and `change` events on ALL editor form fields to trigger `this.debouncedLoadPreview()`:
+     - Text/textarea inputs: `$('#invoiceforge-invoice-form').on('input', 'input[type="text"], input[type="number"], input[type="date"], textarea', this.debouncedLoadPreview);`
+     - Select dropdowns: `$('#invoiceforge-invoice-form').on('change', 'select', this.debouncedLoadPreview);`
+     - Line item changes: `$('#invoiceforge-items-body').on('input change', 'input, select', this.debouncedLoadPreview);`
+   - Also trigger `this.loadPreview()` (non-debounced) after successful save in `handleInvoiceSave` success callback, to pick up any server-side computed changes (e.g., recalculated totals)
 
 3. Create `loadPreview()` method:
-   - Show "Updating..." status indicator in `#invoiceforge-preview-status` (small text, no spinner needed)
-   - AJAX POST to `InvoiceForge.ajaxUrl` with `action: 'invoiceforge_preview_invoice_html'`, `nonce: InvoiceForge.nonce`, `invoice_id: $('[name="invoice_id"]').val()`
-   - On success: set `$('#invoiceforge-preview-frame').html(response.data.html)` and clear status
+   - Show "Updating..." status indicator in `#invoiceforge-preview-status`
+   - Collect current form field values into a data object (reuse pattern from `handleInvoiceSave`):
+     - `action: 'invoiceforge_preview_invoice_html'`
+     - `nonce: InvoiceForge.nonce`
+     - `invoice_id: $('[name="invoice_id"]').val()`
+     - `title: $('[name="title"]').val()`
+     - `client_id: $('[name="client_id"]').val()`
+     - `invoice_date`, `due_date`, `currency`, `payment_method`, `status` from their respective form fields
+     - `discount_type`, `discount_value` from form fields
+     - `notes`, `terms` from textareas
+     - `line_items`: collect from `#invoiceforge-items-body tr` rows — each row's description, quantity, unit_price, tax_rate, discount_value
+   - AJAX POST all collected data to `InvoiceForge.ajaxUrl`
+   - On success: set `$('#invoiceforge-preview-frame').html(response.data.html)` and show "Up to date" status (then fade status out after 2s)
    - On error: show "Preview unavailable" in the status indicator
-   - Important: The preview loads the SAVED state of the invoice. After the user saves via AJAX, the preview refreshes to show the updated data. Between saves, the preview shows the last-saved state. This is acceptable because the save is one click away, and the preview updates immediately after save.
-   - Add a small note below the preview: "Preview shows last saved state. Save changes to update."
+   - Use an `abortController` pattern: if a new request fires while one is pending, abort the old one (store the jqXHR and call `.abort()` before firing a new request)
 
 **assets/admin/css/admin.css — Split view styles:**
 
@@ -327,20 +373,18 @@ In the Advanced tab section (around line 65-72), update the "Next Invoice Number
 }
 ```
 
-3. Keep the existing `.invoiceforge-editor-layout` class unchanged for backward compatibility (though currently only invoice-editor.php uses it, we replace its usage).
-
-4. For new invoices (`$is_new` = true), use the original `invoiceforge-editor-layout` class (no preview panel). For existing invoices, use `invoiceforge-editor-with-preview`. This means the layout class in the template should be conditional:
-```php
-<div class="<?php echo $is_new ? 'invoiceforge-editor-layout' : 'invoiceforge-editor-with-preview'; ?>">
-```
+3. Keep the existing `.invoiceforge-editor-layout` class unchanged for backward compatibility.
   </action>
   <verify>
-    <automated>cd C:/GitHubRepos/Invoice-Forge && php -l templates/admin/invoice-editor.php && php -l src/Ajax/InvoiceAjaxHandler.php && echo "Syntax OK"</automated>
+    <automated>cd C:/GitHubRepos/Invoice-Forge && php -l src/Services/PdfService.php && php -l templates/admin/invoice-editor.php && php -l src/Ajax/InvoiceAjaxHandler.php && node -e "try { require('fs').readFileSync('assets/admin/js/admin.js','utf8'); console.log('JS syntax readable'); } catch(e) { console.error(e); process.exit(1); }" && echo "All files pass checks"</automated>
   </verify>
   <done>
     - Invoice editor for existing invoices shows a 3-column layout: form | sidebar | preview panel
     - Preview panel loads invoice HTML via AJAX on page load (for saved invoices)
-    - Preview auto-refreshes after successful AJAX save
+    - Preview updates real-time as user types/changes any field (debounced 500ms) WITHOUT requiring save
+    - The AJAX endpoint accepts current form field values and renders a preview from posted data merged over saved data, without persisting
+    - Preview also refreshes after successful AJAX save to pick up server-side computed changes
+    - Pending AJAX requests are aborted when a newer request fires
     - New invoices show placeholder text instead of preview (save first to preview)
     - Layout is responsive: collapses preview below on medium screens, single column on mobile
     - Preview panel is scrollable with max-height 80vh
@@ -353,7 +397,7 @@ In the Advanced tab section (around line 65-72), update the "Next Invoice Number
   <action>
     Human verification of both features:
     1. Extended invoice number customization in Settings > Advanced tab
-    2. Live invoice preview panel in the invoice editor
+    2. Live invoice preview panel with real-time updates in the invoice editor
 
     Steps:
     1. Go to InvoiceForge > Settings > Advanced tab
@@ -363,10 +407,13 @@ In the Advanced tab section (around line 65-72), update the "Next Invoice Number
     5. Save settings, verify they persist after page reload
     6. Go to InvoiceForge > Invoices and edit an existing invoice
     7. Verify the preview panel appears on the right side showing the invoice HTML
-    8. Make a change to a field (e.g., edit title or notes), click Save
-    9. Verify the preview auto-refreshes after save completes
-    10. Create a new invoice — verify the preview panel shows a placeholder message instead
-    11. Resize browser window to under 1400px — verify preview moves below the form
+    8. Change the invoice title -- verify the preview updates automatically within ~1 second (no save needed)
+    9. Change the client dropdown -- verify the preview updates with the new client details
+    10. Edit a line item quantity or price -- verify the preview reflects the change in real-time
+    11. Change notes or terms text -- verify the preview updates as you type (debounced)
+    12. Click Save -- verify the preview refreshes again after save completes
+    13. Create a new invoice -- verify the preview panel shows a placeholder message instead
+    14. Resize browser window to under 1400px -- verify preview moves below the form
   </action>
   <verify>User confirms both features work correctly</verify>
   <done>User types "approved" or describes issues to fix</done>
@@ -375,17 +422,20 @@ In the Advanced tab section (around line 65-72), update the "Next Invoice Number
 </tasks>
 
 <verification>
-- PHP syntax check passes on all modified files
+- PHP syntax check passes on all modified PHP files
+- JS file is parseable (node -e readFileSync check)
 - Settings page Advanced tab shows all numbering customization fields
 - NumberingService::preview() returns correctly formatted number per settings
 - Invoice editor split view renders without CSS layout breaks
-- AJAX preview endpoint returns invoice HTML for valid invoice IDs
+- AJAX preview endpoint accepts form field values and returns rendered HTML without persisting
+- Preview updates on field change (debounced), not just on save
 - Responsive layout works at 1400px and 1024px breakpoints
 </verification>
 
 <success_criteria>
 - Invoice editor shows split view with live preview panel (for saved invoices)
-- Preview updates automatically after each save
+- Preview updates real-time with debounce on field change -- user does NOT need to save to see changes
+- Preview endpoint renders from posted form data merged over saved data, without persisting
 - Settings > Advanced has full invoice number customization (prefix, suffix, date pattern, counter reset, start number, padding)
 - NumberingService generates numbers in the configured format
 - All changes are backward compatible (existing invoices and default settings produce the same format as before)
