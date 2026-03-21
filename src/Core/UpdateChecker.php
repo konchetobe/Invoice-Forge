@@ -61,8 +61,12 @@ class UpdateChecker
             // Point at the main branch so the library resolves tags correctly
             $updateChecker->setBranch('main');
 
-            // Use release assets (the ZIP attached to GitHub Releases)
-            $updateChecker->getVcsApi()->enableReleaseAssets();
+            // Require a release asset ZIP (do not fall back to GitHub's auto-generated
+            // source archive, which never contains the vendor/ directory).
+            $updateChecker->getVcsApi()->enableReleaseAssets(
+                null,
+                \YahnisElsts\PluginUpdateChecker\v5p6\Vcs\Api::REQUIRE_RELEASE_ASSETS
+            );
 
             if (defined('WP_DEBUG') && WP_DEBUG) {
                 error_log('[InvoiceForge] UpdateChecker initialized for ' . self::GITHUB_REPO . ' (current version: ' . INVOICEFORGE_VERSION . ')');

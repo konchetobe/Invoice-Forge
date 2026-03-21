@@ -34,7 +34,12 @@ jobs:
             --exclude '.github' \
             --exclude 'tests' \
             --exclude 'phpunit.xml' \
+            --exclude 'phpcs.xml' \
+            --exclude 'phpstan.neon' \
             --exclude 'node_modules' \
+            --exclude 'composer.phar' \
+            --exclude '.claude' \
+            --exclude '.planning' \
             --exclude '.abacus.donotdelete'
           
           # Zip the folder creating invoiceforge.zip
