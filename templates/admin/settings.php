@@ -62,6 +62,26 @@ $numberingService = new NumberingService(new \InvoiceForge\Utilities\Logger());
                     <?php do_settings_sections('invoiceforge-settings-advanced'); ?>
                     
                     <!-- Invoice Number Preview -->
+                    <?php
+                    $numbering_config = $numberingService->getNumberingConfig();
+                    $format_parts = [];
+                    if ($numbering_config['prefix'] !== '') {
+                        $format_parts[] = '{PREFIX}';
+                    }
+                    if ($numbering_config['date_pattern'] !== 'none') {
+                        $date_labels = [
+                            'Y'   => '{YEAR}',
+                            'Ym'  => '{YEAR}{MONTH}',
+                            'Y-m' => '{YEAR}-{MONTH}',
+                        ];
+                        $format_parts[] = $date_labels[$numbering_config['date_pattern']] ?? '{DATE}';
+                    }
+                    $format_parts[] = '{' . str_repeat('0', $numbering_config['padding']) . '}';
+                    if ($numbering_config['suffix'] !== '') {
+                        $format_parts[] = '{SUFFIX}';
+                    }
+                    $format_hint = implode('-', $format_parts);
+                    ?>
                     <div style="background: var(--if-gray-50); border-radius: var(--if-radius); padding: var(--if-space-4); margin-top: var(--if-space-4);">
                         <p style="margin: 0 0 var(--if-space-2);">
                             <strong><?php esc_html_e('Next Invoice Number:', 'invoiceforge'); ?></strong>
@@ -69,6 +89,10 @@ $numberingService = new NumberingService(new \InvoiceForge\Utilities\Logger());
                         <code style="font-size: var(--if-font-size-lg); padding: var(--if-space-2) var(--if-space-3); background: var(--if-white); border-radius: var(--if-radius-sm);">
                             <?php echo esc_html($numberingService->preview()); ?>
                         </code>
+                        <p style="margin: var(--if-space-2) 0 0; font-size: var(--if-font-size-xs); color: var(--if-gray-500);">
+                            <?php esc_html_e('Format:', 'invoiceforge'); ?>
+                            <code style="font-size: var(--if-font-size-xs);"><?php echo esc_html($format_hint); ?></code>
+                        </p>
                     </div>
                 <?php elseif ($active_tab === 'integrations') : ?>
 

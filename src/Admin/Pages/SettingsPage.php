@@ -82,6 +82,11 @@ class SettingsPage
         'advanced' => [
             'default_currency',
             'invoice_prefix',
+            'invoice_suffix',
+            'invoice_date_pattern',
+            'invoice_counter_reset',
+            'invoice_start_number',
+            'invoice_number_padding',
             'invoice_terms',
             'invoice_notes',
         ],
@@ -579,6 +584,80 @@ class SettingsPage
             [
                 'id'          => 'invoice_prefix',
                 'description' => __('Prefix for invoice numbers (e.g., INV, INVOICE).', 'invoiceforge'),
+            ]
+        );
+
+        add_settings_field(
+            'invoice_suffix',
+            __('Invoice Suffix', 'invoiceforge'),
+            [$this, 'renderTextField'],
+            'invoiceforge-settings-advanced',
+            'invoiceforge_advanced',
+            [
+                'id'          => 'invoice_suffix',
+                'description' => __('Suffix appended to invoice numbers (e.g., BG, LLC). Leave blank for none.', 'invoiceforge'),
+            ]
+        );
+
+        add_settings_field(
+            'invoice_date_pattern',
+            __('Date Pattern', 'invoiceforge'),
+            [$this, 'renderSelectField'],
+            'invoiceforge-settings-advanced',
+            'invoiceforge_advanced',
+            [
+                'id'          => 'invoice_date_pattern',
+                'description' => __('Date segment format included in invoice numbers.', 'invoiceforge'),
+                'options'     => [
+                    'Y'    => __('Year only (e.g., 2026)', 'invoiceforge'),
+                    'Ym'   => __('Year + Month (e.g., 202603)', 'invoiceforge'),
+                    'Y-m'  => __('Year-Month (e.g., 2026-03)', 'invoiceforge'),
+                    'none' => __('No date in number', 'invoiceforge'),
+                ],
+            ]
+        );
+
+        add_settings_field(
+            'invoice_counter_reset',
+            __('Counter Reset', 'invoiceforge'),
+            [$this, 'renderSelectField'],
+            'invoiceforge-settings-advanced',
+            'invoiceforge_advanced',
+            [
+                'id'          => 'invoice_counter_reset',
+                'description' => __('When the sequential counter resets back to the start number.', 'invoiceforge'),
+                'options'     => [
+                    'yearly'  => __('Reset yearly', 'invoiceforge'),
+                    'monthly' => __('Reset monthly', 'invoiceforge'),
+                    'never'   => __('Never reset (continuous)', 'invoiceforge'),
+                ],
+            ]
+        );
+
+        add_settings_field(
+            'invoice_start_number',
+            __('Start Number', 'invoiceforge'),
+            [$this, 'renderNumberField'],
+            'invoiceforge-settings-advanced',
+            'invoiceforge_advanced',
+            [
+                'id'          => 'invoice_start_number',
+                'min'         => 1,
+                'description' => __('Starting number when the counter resets (e.g., 1 = 0001).', 'invoiceforge'),
+            ]
+        );
+
+        add_settings_field(
+            'invoice_number_padding',
+            __('Number Padding', 'invoiceforge'),
+            [$this, 'renderNumberField'],
+            'invoiceforge-settings-advanced',
+            'invoiceforge_advanced',
+            [
+                'id'          => 'invoice_number_padding',
+                'min'         => 1,
+                'max'         => 10,
+                'description' => __('Number of digits (zero-padded). E.g., 4 = 0001, 5 = 00001.', 'invoiceforge'),
             ]
         );
 
@@ -1101,6 +1180,35 @@ class SettingsPage
             case 'company_bic':
                 return $this->sanitizer->text((string) $value);
 
+            // Invoice suffix: alphanumeric and dashes only
+            case 'invoice_suffix':
+                $suffix = $this->sanitizer->text((string) $value);
+                return preg_replace('/[^A-Za-z0-9\-]/', '', $suffix) ?? '';
+
+            // Invoice date pattern: validated against allowed values
+            case 'invoice_date_pattern':
+                return $this->sanitizer->option(
+                    (string) $value,
+                    ['Y', 'Ym', 'Y-m', 'none'],
+                    'Y'
+                );
+
+            // Invoice counter reset: validated against allowed values
+            case 'invoice_counter_reset':
+                return $this->sanitizer->option(
+                    (string) $value,
+                    ['yearly', 'monthly', 'never'],
+                    'yearly'
+                );
+
+            // Invoice start number: positive integer, minimum 1
+            case 'invoice_start_number':
+                return max(1, $this->sanitizer->absint($value));
+
+            // Invoice number padding: 1-10 digits
+            case 'invoice_number_padding':
+                return max(1, min(10, $this->sanitizer->absint($value) ?: 4));
+
             // Email fields
             case 'company_email':
             case 'email_from_address':
@@ -1209,6 +1317,11 @@ class SettingsPage
             'smtp_encryption'    => 'tls',
             'default_currency'          => 'USD',
             'invoice_prefix'            => 'INV',
+            'invoice_suffix'            => '',
+            'invoice_date_pattern'      => 'Y',
+            'invoice_counter_reset'     => 'yearly',
+            'invoice_start_number'      => 1,
+            'invoice_number_padding'    => 4,
             'invoice_terms'             => '',
             'invoice_notes'             => '',
             // WooCommerce Integration
