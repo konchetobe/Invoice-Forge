@@ -5,7 +5,7 @@ milestone_name: milestone
 status: discussing
 stopped_at: Completed quick task 5
 last_updated: "2026-03-20T20:00:00.000Z"
-last_activity: 2026-03-20 - Completed quick task 5: Fix WordPress plugin version detection - bumped to 1.2.0 and hardened UpdateChecker
+last_activity: 2026-03-21 - Completed quick task 6: Add invoice preview in editor and extend invoice number customization
 progress:
   total_phases: 14
   completed_phases: 1
@@ -85,10 +85,10 @@ progress:
 | 3 | Fix Bulgarian invoice terms: КУПУВАЧ->ПОЛУЧАТЕЛ, ПРОДАВАЧ->ДОСТАВЧИК, На вниманието на->МОЛ | 2026-03-20 | 6bdba85 | | [3-fix-buyer-seller-att-to-translations-in-](./quick/3-fix-buyer-seller-att-to-translations-in-/) |
 | 4 | Fix client billing details not saving and not displaying correctly in invoices | 2026-03-20 | 4227c16 | Verified | [4-fix-client-billing-details-not-saving-an](./quick/4-fix-client-billing-details-not-saving-an/) |
 | 5 | Fix WordPress plugin version detection: bump to 1.2.0, harden UpdateChecker with setBranch('main') and debug log | 2026-03-20 | bff7eaf | Completed | [5-fix-wordpress-plugin-version-detection-a](./quick/5-fix-wordpress-plugin-version-detection-a/) |
-| 6 | Add live invoice preview panel (split view, 500ms debounce) and extended invoice numbering (suffix, date patterns, counter reset) | 2026-03-21 | 8434867 | Awaiting Verify | [6-add-invoice-preview-in-editor-and-extend](./quick/6-add-invoice-preview-in-editor-and-extend/) |
+| 6 | Add live invoice preview panel (split view, 500ms debounce) and extended invoice numbering (suffix, date patterns, counter reset) | 2026-03-21 | 8434867 | Verified | [6-add-invoice-preview-in-editor-and-extend](./quick/6-add-invoice-preview-in-editor-and-extend/) |
 
 ## Session Continuity
 
-**Last activity:** 2026-03-21 - Completed quick task 6 tasks 1-2 (live preview panel + extended numbering); awaiting human verification at checkpoint
-**Last session:** 2026-03-21T00:00:00.000Z
-**Stopped at:** Quick task 6 - checkpoint:human-verify (Task 3)
+**Last activity:** 2026-03-21 - Completed quick task 6: Add invoice preview in editor and extend invoice number customization
+**Last session:** 2026-03-21T20:34:44.338Z
+**Stopped at:** Completed quick task 6
