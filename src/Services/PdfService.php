@@ -159,6 +159,134 @@ class PdfService
     }
 
     /**
+     * Render the invoice template as HTML using a mix of saved data and form overrides.
+     *
+     * Accepts posted form field values and merges them over the saved invoice data
+     * to render a live preview WITHOUT persisting any changes.
+     *
+     * @since 1.4.0
+     *
+     * @param int   $invoice_id     Invoice post ID.
+     * @param array $form_overrides Posted form field values to overlay on saved data.
+     * @return string Rendered HTML preview.
+     */
+    public function renderPreviewHtml(int $invoice_id, array $form_overrides = []): string
+    {
+        $invoice = $this->getInvoiceData($invoice_id);
+        if (!$invoice) {
+            return '';
+        }
+
+        // Merge simple scalar overrides
+        $scalar_fields = [
+            'title', 'invoice_date', 'due_date', 'currency',
+            'payment_method', 'status', 'discount_type', 'discount_value',
+            'notes', 'terms',
+        ];
+        foreach ($scalar_fields as $field) {
+            // Support both 'invoice_date' from POST and 'date' key in invoice data
+            if (isset($form_overrides[$field])) {
+                // Map invoice_date/due_date to the invoice array keys 'date'/'due_date'
+                if ($field === 'invoice_date') {
+                    $invoice['date'] = $form_overrides[$field];
+                } else {
+                    $invoice[$field] = $form_overrides[$field];
+                }
+            }
+        }
+
+        // Re-resolve client if client_id changed
+        if (isset($form_overrides['client_id'])) {
+            $new_client_id = (int) $form_overrides['client_id'];
+            if ($new_client_id > 0 && $new_client_id !== (int) ($invoice['client_id'] ?? 0)) {
+                $invoice['client_name']    = $this->getClientDisplayName($new_client_id);
+                $invoice['client_email']   = (string) get_post_meta($new_client_id, '_client_email', true);
+                $invoice['client_address'] = (string) get_post_meta($new_client_id, '_client_address', true);
+                $invoice['client_city']    = (string) get_post_meta($new_client_id, '_client_city', true);
+                $invoice['client_state']   = (string) get_post_meta($new_client_id, '_client_state', true);
+                $invoice['client_zip']     = (string) get_post_meta($new_client_id, '_client_zip', true);
+                $invoice['client_country'] = (string) get_post_meta($new_client_id, '_client_country', true);
+                $invoice['client_phone']   = (string) get_post_meta($new_client_id, '_client_phone', true);
+                $invoice['client_id_no']   = (string) get_post_meta($new_client_id, '_client_id_no', true);
+                $invoice['client_office']  = (string) get_post_meta($new_client_id, '_client_office', true);
+                $invoice['client_att_to']  = (string) get_post_meta($new_client_id, '_client_att_to', true);
+            }
+        }
+
+        // Recalculate line items if provided
+        if (!empty($form_overrides['line_items']) && is_array($form_overrides['line_items'])) {
+            $discount_type  = $invoice['discount_type']  ?? '';
+            $discount_value = (float) ($invoice['discount_value'] ?? 0);
+
+            $computed_items = [];
+            $subtotal       = 0.0;
+            $tax_total      = 0.0;
+
+            foreach ($form_overrides['line_items'] as $item) {
+                $qty        = max(0, (float) ($item['quantity']   ?? 1));
+                $price      = (float) ($item['unit_price']  ?? 0);
+                $tax_rate   = (float) ($item['tax_rate']    ?? 0);
+                $item_disc  = (float) ($item['discount_value'] ?? 0);
+                $description = (string) ($item['description'] ?? '');
+
+                $line_base  = $qty * $price;
+                $line_disc  = $item_disc; // item-level discount (flat)
+                $line_net   = max(0, $line_base - $line_disc);
+                $line_tax   = $line_net * ($tax_rate / 100);
+                $line_total = $line_net + $line_tax;
+
+                $computed_items[] = [
+                    'description'    => $description,
+                    'quantity'       => $qty,
+                    'unit_price'     => $price,
+                    'tax_rate'       => $tax_rate,
+                    'discount_value' => $item_disc,
+                    'total'          => $line_total,
+                ];
+
+                $subtotal  += $line_net;
+                $tax_total += $line_tax;
+            }
+
+            // Apply invoice-level discount
+            $inv_discount = 0.0;
+            if ($discount_type === 'percentage') {
+                $inv_discount = $subtotal * ($discount_value / 100);
+            } elseif ($discount_type === 'fixed') {
+                $inv_discount = $discount_value;
+            }
+
+            $total_amount = max(0, $subtotal - $inv_discount + $tax_total);
+
+            $invoice['line_items']    = $computed_items;
+            $invoice['subtotal']      = $subtotal;
+            $invoice['tax_total']     = $tax_total;
+            $invoice['total_amount']  = $total_amount;
+        }
+
+        try {
+            $template_file = INVOICEFORGE_PLUGIN_DIR . 'templates/pdf/invoice-default.php';
+
+            if (!file_exists($template_file)) {
+                return $this->getFallbackHtml($invoice);
+            }
+
+            $template_vars = $this->getTemplateContext($invoice_id, 'email', $invoice);
+            ob_start();
+            extract($template_vars, EXTR_SKIP);
+            include $template_file;
+            return (string) ob_get_clean();
+
+        } catch (\Throwable $e) {
+            $this->logger->error('Preview HTML render failed', [
+                'invoice_id' => $invoice_id,
+                'error'      => $e->getMessage(),
+            ]);
+            return '';
+        }
+    }
+
+    /**
      * Build the full template context array for template rendering.
      *
      * Combines invoice data, template settings, company profile, client extended
@@ -166,25 +294,32 @@ class PdfService
      *
      * @since 1.3.0
      *
-     * @param int    $invoice_id  Invoice post ID.
-     * @param string $render_mode 'pdf' or 'email'.
+     * @param int                       $invoice_id            Invoice post ID.
+     * @param string                    $render_mode           'pdf' or 'email'.
+     * @param array<string, mixed>|null $invoice_data_override When provided, skip DB fetch and use this data instead.
      * @return array<string, mixed>
      */
-    private function getTemplateContext(int $invoice_id, string $render_mode): array
+    private function getTemplateContext(int $invoice_id, string $render_mode, ?array $invoice_data_override = null): array
     {
-        $invoice  = $this->getInvoiceData($invoice_id);
+        $invoice  = $invoice_data_override ?? $this->getInvoiceData($invoice_id);
         $settings = get_option('invoiceforge_settings', []);
         $template = $settings['template'] ?? [];
 
-        // Resolve client extended fields via the stored _invoice_client_id
-        $client_id = (int) get_post_meta($invoice_id, '_invoice_client_id', true);
-
-        $client_id_no  = $client_id ? (string) get_post_meta($client_id, '_client_id_no', true) : '';
-        $client_office = $client_id ? (string) get_post_meta($client_id, '_client_office', true) : '';
-        $client_att_to = $client_id ? (string) get_post_meta($client_id, '_client_att_to', true) : '';
-
-        // Payment method from invoice meta
-        $payment_method = (string) get_post_meta($invoice_id, '_invoice_payment_method', true);
+        // Resolve client extended fields
+        // When an override is provided, client fields are already merged into $invoice
+        if ($invoice_data_override !== null) {
+            $client_id_no  = (string) ($invoice['client_id_no']  ?? '');
+            $client_office = (string) ($invoice['client_office'] ?? '');
+            $client_att_to = (string) ($invoice['client_att_to'] ?? '');
+            $payment_method = (string) ($invoice['payment_method'] ?? '');
+        } else {
+            $client_id = (int) get_post_meta($invoice_id, '_invoice_client_id', true);
+            $client_id_no  = $client_id ? (string) get_post_meta($client_id, '_client_id_no', true) : '';
+            $client_office = $client_id ? (string) get_post_meta($client_id, '_client_office', true) : '';
+            $client_att_to = $client_id ? (string) get_post_meta($client_id, '_client_att_to', true) : '';
+            // Payment method from invoice meta
+            $payment_method = (string) get_post_meta($invoice_id, '_invoice_payment_method', true);
+        }
 
         // Determine whether any line item carries a non-zero discount
         $has_discount = false;

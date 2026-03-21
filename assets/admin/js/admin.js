@@ -25,6 +25,7 @@
             this.initSectionEditor();
             this.initPaymentMethodsRepeater();
             this.initSignatureFieldsRepeater();
+            this.initInvoicePreview();
         },
 
         /**
@@ -257,7 +258,12 @@
                         if (response.data.invoice && response.data.invoice.number) {
                             $form.find('[name="invoice_number"]').val(response.data.invoice.number);
                         }
-                        
+
+                        // Refresh preview after successful save to pick up server-side changes
+                        if (typeof InvoiceForgeAdmin.loadPreview === 'function') {
+                            InvoiceForgeAdmin.loadPreview();
+                        }
+
                         // If new client was created, switch to existing mode and update dropdown
                         if (clientMode === 'new' && response.data.invoice && response.data.invoice.client_id) {
                             const clientName = formData.new_client_first_name + ' ' + formData.new_client_last_name;
@@ -783,6 +789,132 @@
                 var $row = $(this).closest('.if-sig-field-row');
                 $row.find('.if-sig-col-hidden').val($(this).val());
             });
+        },
+
+        /**
+         * Initialize live invoice preview panel.
+         * Loads initial preview and binds debounced updates on field changes.
+         */
+        initInvoicePreview: function() {
+            var $frame = $('#invoiceforge-preview-frame');
+            if (!$frame.length) {
+                return;
+            }
+
+            var invoiceId = $('[name="invoice_id"]').val();
+            if (!invoiceId || parseInt(invoiceId) <= 0) {
+                return;
+            }
+
+            // Store pending XHR so we can abort on new request
+            this._previewXhr = null;
+
+            // Create debounced version of loadPreview
+            this.debouncedLoadPreview = this.debounce(this.loadPreview.bind(this), 500);
+
+            // Load initial preview immediately
+            this.loadPreview();
+
+            // Bind input/change events on the invoice form
+            $(document).on(
+                'input',
+                '#invoiceforge-invoice-form input[type="text"], #invoiceforge-invoice-form input[type="number"], #invoiceforge-invoice-form input[type="date"], #invoiceforge-invoice-form textarea',
+                this.debouncedLoadPreview
+            );
+            $(document).on(
+                'change',
+                '#invoiceforge-invoice-form select',
+                this.debouncedLoadPreview
+            );
+
+            // Line item changes
+            $(document).on(
+                'input change',
+                '#invoiceforge-items-body input, #invoiceforge-items-body select',
+                this.debouncedLoadPreview
+            );
+        },
+
+        /**
+         * Load the invoice HTML preview via AJAX using current form values.
+         * Aborts any pending preview request before firing a new one.
+         */
+        loadPreview: function() {
+            var $frame  = $('#invoiceforge-preview-frame');
+            var $status = $('#invoiceforge-preview-status');
+
+            if (!$frame.length) {
+                return;
+            }
+
+            var invoiceId = $('[name="invoice_id"]').val();
+            if (!invoiceId || parseInt(invoiceId) <= 0) {
+                return;
+            }
+
+            // Abort previous request if still pending
+            if (this._previewXhr && this._previewXhr.readyState !== 4) {
+                this._previewXhr.abort();
+            }
+
+            $status.text('Updating...');
+
+            // Collect line items from the DOM
+            var lineItems = [];
+            $('#invoiceforge-items-body .invoiceforge-line-item-row').each(function() {
+                var $row = $(this);
+                lineItems.push({
+                    description:    $row.find('[name$="[description]"]').val() || '',
+                    quantity:       $row.find('[name$="[quantity]"]').val() || 1,
+                    unit_price:     $row.find('[name$="[unit_price]"]').val() || 0,
+                    tax_rate:       $row.find('[name$="[tax_rate_id]"]').find('option:selected').data('rate') || 0,
+                    discount_value: $row.find('[name$="[discount_value]"]').val() || 0
+                });
+            });
+
+            var $form = $('#invoiceforge-invoice-form');
+
+            var data = {
+                action:         'invoiceforge_preview_invoice_html',
+                nonce:          InvoiceForge.nonce,
+                invoice_id:     invoiceId,
+                title:          $form.find('[name="title"]').val(),
+                client_id:      $form.find('[name="client_id"]').val() || 0,
+                invoice_date:   $form.find('[name="invoice_date"]').val(),
+                due_date:       $form.find('[name="due_date"]').val(),
+                currency:       $form.find('[name="currency"]').val(),
+                payment_method: $form.find('[name="payment_method"]').val() || '',
+                status:         $form.find('[name="status"]').val(),
+                discount_type:  $form.find('[name="discount_type"]').val() || '',
+                discount_value: $form.find('[name="discount_value"]').val() || 0,
+                notes:          $form.find('[name="notes"]').val(),
+                terms:          $form.find('[name="terms"]').val(),
+                'line_items':   lineItems
+            };
+
+            var self = this;
+
+            this._previewXhr = $.ajax({
+                url:  InvoiceForge.ajaxUrl,
+                type: 'POST',
+                data: data,
+                success: function(response) {
+                    if (response.success && response.data && response.data.html) {
+                        $frame.html(response.data.html);
+                        $status.text('Up to date');
+                        setTimeout(function() { $status.fadeOut(400, function() { $(this).text('').show(); }); }, 2000);
+                    } else {
+                        $status.text('Preview unavailable');
+                    }
+                },
+                error: function(xhr, status) {
+                    if (status !== 'abort') {
+                        $status.text('Preview unavailable');
+                    }
+                }
+            });
+
+            self._previewXhr = this._previewXhr;
         },
 
         /**

@@ -104,7 +104,7 @@ if (!isset($line_items)) {
         <input type="hidden" name="invoice_number" value="<?php echo esc_attr($invoice['number']); ?>">
         <input type="hidden" name="client_mode" id="client_mode" value="existing">
 
-        <div class="invoiceforge-editor-layout">
+        <div class="<?php echo $is_new ? 'invoiceforge-editor-layout' : 'invoiceforge-editor-with-preview'; ?>">
             <!-- Main Content -->
             <div class="invoiceforge-editor-main">
                 <!-- Invoice Details Card -->
@@ -476,6 +476,24 @@ if (!isset($line_items)) {
                     </div>
                 <?php endif; ?>
             </div>
+
+            <?php if (!$is_new) : ?>
+            <!-- Invoice Preview Panel -->
+            <div class="invoiceforge-preview-panel">
+                <div class="invoiceforge-card">
+                    <div class="invoiceforge-card-header" style="display:flex;align-items:center;justify-content:space-between;">
+                        <h3 class="invoiceforge-card-title"><?php esc_html_e('Preview', 'invoiceforge'); ?></h3>
+                        <span id="invoiceforge-preview-status" class="invoiceforge-preview-status"></span>
+                    </div>
+                    <div class="invoiceforge-card-body invoiceforge-preview-body" style="padding:0;">
+                        <div id="invoiceforge-preview-frame" class="invoiceforge-preview-frame">
+                            <p class="invoiceforge-preview-loading"><?php esc_html_e('Loading preview...', 'invoiceforge'); ?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php endif; ?>
+
         </div>
     </form>
 </div>

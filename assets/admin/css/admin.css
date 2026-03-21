@@ -1415,3 +1415,59 @@
         top: 64px;
     }
 }
+
+/* ========================================
+   Invoice Editor Split View (Quick-6)
+======================================== */
+.invoiceforge-editor-with-preview {
+    display: grid;
+    grid-template-columns: 1fr 320px 480px;
+    gap: var(--if-space-6);
+    align-items: start;
+}
+
+@media (max-width: 1400px) {
+    .invoiceforge-editor-with-preview {
+        grid-template-columns: 1fr 320px;
+    }
+    .invoiceforge-preview-panel {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 1024px) {
+    .invoiceforge-editor-with-preview {
+        grid-template-columns: 1fr;
+    }
+}
+
+.invoiceforge-preview-panel {
+    position: sticky;
+    top: 32px;
+}
+
+.invoiceforge-preview-frame {
+    max-height: 80vh;
+    overflow-y: auto;
+    background: #fff;
+    border: 1px solid var(--if-gray-200);
+    border-radius: var(--if-radius);
+    padding: var(--if-space-4);
+}
+
+.invoiceforge-preview-frame img {
+    max-width: 100%;
+    height: auto;
+}
+
+.invoiceforge-preview-status {
+    font-size: var(--if-font-size-xs);
+    color: var(--if-gray-400);
+}
+
+.invoiceforge-preview-placeholder,
+.invoiceforge-preview-loading {
+    text-align: center;
+    color: var(--if-gray-400);
+    padding: var(--if-space-8) var(--if-space-4);
+}

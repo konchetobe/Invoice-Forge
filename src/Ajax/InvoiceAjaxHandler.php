@@ -151,6 +151,9 @@ class InvoiceAjaxHandler
         add_action('wp_ajax_invoiceforge_send_invoice_email', [$this, 'sendInvoiceEmail']);
         add_action('wp_ajax_invoiceforge_send_reminder', [$this, 'sendReminder']);
 
+        // Quick-6: Live HTML preview
+        add_action('wp_ajax_invoiceforge_preview_invoice_html', [$this, 'previewInvoiceHtml']);
+
         // Phase 2: WooCommerce Integration
         add_action('wp_ajax_invoiceforge_generate_from_order', [$this, 'generateFromOrder']);
     }
@@ -885,6 +888,115 @@ class InvoiceAjaxHandler
         } catch (\Exception $e) {
             $this->log('error', 'generateFromOrder failed', ['exception' => $e->getMessage()]);
             wp_send_json_error(['message' => $e->getMessage()], 500);
+        }
+    }
+
+    /**
+     * Return a rendered HTML preview of an invoice using posted form field values.
+     *
+     * Does NOT persist any changes — purely for live preview purposes.
+     *
+     * @since 1.4.0
+     *
+     * @return void
+     */
+    public function previewInvoiceHtml(): void
+    {
+        try {
+            // Verify nonce
+            if (!$this->nonce->checkAjaxReferer('invoiceforge_admin', 'nonce', false)) {
+                wp_send_json_error(['message' => __('Security check failed.', 'invoiceforge')], 403);
+                return;
+            }
+
+            // Check permissions
+            if (!$this->canEditInvoices()) {
+                wp_send_json_error(['message' => __('You do not have permission to preview invoices.', 'invoiceforge')], 403);
+                return;
+            }
+
+            // Validate invoice_id
+            $invoice_id = isset($_POST['invoice_id']) ? $this->sanitizer->absint($_POST['invoice_id']) : 0;
+            if ($invoice_id <= 0) {
+                wp_send_json_error(['message' => __('Invalid invoice ID.', 'invoiceforge')], 400);
+                return;
+            }
+
+            // Collect and sanitize form field overrides (only include fields actually posted)
+            $form_overrides = [];
+
+            if (isset($_POST['title'])) {
+                $form_overrides['title'] = $this->sanitizer->text($_POST['title']);
+            }
+            if (isset($_POST['invoice_date'])) {
+                $form_overrides['invoice_date'] = $this->sanitizer->text($_POST['invoice_date']);
+            }
+            if (isset($_POST['due_date'])) {
+                $form_overrides['due_date'] = $this->sanitizer->text($_POST['due_date']);
+            }
+            if (isset($_POST['currency'])) {
+                $form_overrides['currency'] = $this->sanitizer->text($_POST['currency']);
+            }
+            if (isset($_POST['payment_method'])) {
+                $form_overrides['payment_method'] = $this->sanitizer->text($_POST['payment_method']);
+            }
+            if (isset($_POST['status'])) {
+                $form_overrides['status'] = $this->sanitizer->text($_POST['status']);
+            }
+            if (isset($_POST['discount_type'])) {
+                $form_overrides['discount_type'] = $this->sanitizer->option(
+                    $_POST['discount_type'],
+                    ['percentage', 'fixed', ''],
+                    ''
+                );
+            }
+            if (isset($_POST['discount_value'])) {
+                $form_overrides['discount_value'] = (float) $_POST['discount_value'];
+            }
+            if (isset($_POST['notes'])) {
+                $form_overrides['notes'] = $this->sanitizer->textarea($_POST['notes']);
+            }
+            if (isset($_POST['terms'])) {
+                $form_overrides['terms'] = $this->sanitizer->textarea($_POST['terms']);
+            }
+            if (isset($_POST['client_id'])) {
+                $form_overrides['client_id'] = $this->sanitizer->absint($_POST['client_id']);
+            }
+
+            // Sanitize line items array
+            if (isset($_POST['line_items']) && is_array($_POST['line_items'])) {
+                $sanitized_items = [];
+                foreach ($_POST['line_items'] as $item) {
+                    if (!is_array($item)) {
+                        continue;
+                    }
+                    $sanitized_items[] = [
+                        'description'    => $this->sanitizer->text((string) ($item['description'] ?? '')),
+                        'quantity'       => (float) ($item['quantity'] ?? 1),
+                        'unit_price'     => (float) ($item['unit_price'] ?? 0),
+                        'tax_rate'       => (float) ($item['tax_rate'] ?? 0),
+                        'discount_value' => (float) ($item['discount_value'] ?? 0),
+                    ];
+                }
+                if (!empty($sanitized_items)) {
+                    $form_overrides['line_items'] = $sanitized_items;
+                }
+            }
+
+            $logger     = $this->logger ?? new \InvoiceForge\Utilities\Logger();
+            $pdfService = new \InvoiceForge\Services\PdfService($logger);
+            $html       = $pdfService->renderPreviewHtml($invoice_id, $form_overrides);
+
+            if ($html === '') {
+                wp_send_json_error(['message' => __('Preview failed — invoice not found or template missing.', 'invoiceforge')]);
+                return;
+            }
+
+            wp_send_json_success(['html' => $html]);
+
+        } catch (\Throwable $e) {
+            $this->log('error', 'previewInvoiceHtml failed', ['exception' => $e->getMessage()]);
+            wp_send_json_error(['message' => __('Preview failed.', 'invoiceforge')], 500);
         }
     }
 }
