@@ -367,6 +367,9 @@ foreach ($section_order as $section) :
     <tr>
         <td style="width:50%;">
             <strong><?php echo esc_html(__('Payment Method', 'invoiceforge')); ?>:</strong> <?php echo esc_html($payment_method); ?><br>
+            <?php if (!empty($company_name)) : ?>
+                <strong><?php echo esc_html(__('Account Holder', 'invoiceforge')); ?>:</strong> <?php echo esc_html($company_name); ?><br>
+            <?php endif; ?>
             <?php if (!empty($company_bank_name)) : ?>
                 <strong><?php echo esc_html(__('Bank', 'invoiceforge')); ?>:</strong> <?php echo esc_html($company_bank_name); ?><br>
             <?php endif; ?>

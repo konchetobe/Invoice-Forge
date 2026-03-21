@@ -471,3 +471,6 @@ msgstr "Румънски (Română)"
 
 msgid "Russian (Русский)"
 msgstr "Руски (Русский)"
+
+msgid "Account Holder"
+msgstr "Титуляр на сметка"

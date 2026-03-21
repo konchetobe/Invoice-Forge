@@ -470,3 +470,6 @@ msgstr "Sumă de plată"
 
 msgid "Pay Invoice"
 msgstr "Plătește factura"
+
+msgid "Account Holder"
+msgstr "Titular cont"

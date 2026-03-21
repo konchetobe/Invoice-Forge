@@ -257,8 +257,10 @@ final class Plugin
      */
     private function registerHooks(): void
     {
-        // Load text domain
-        $this->loader->addAction('init', $this, 'loadTextDomain');
+        // Load text domain.
+        // Must be registered directly (not via Loader) so the filter is in place
+        // before WordPress fires its JIT translation loader on 'init'.
+        $this->registerTextDomainHooks();
 
         // Register post types
         /** @var InvoicePostType $invoicePostType */
@@ -302,8 +304,76 @@ final class Plugin
     }
 
     /**
+     * Register text domain hooks for translation loading.
+     *
+     * WordPress 6.7+ uses a Just-In-Time (JIT) translation loader that bypasses
+     * the legacy `plugin_locale` filter entirely. The only reliable hook for
+     * redirecting a domain's .mo file during JIT loading is `load_textdomain_mofile`.
+     *
+     * Strategy:
+     * 1. Register `load_textdomain_mofile` immediately (before `init`) so it is in
+     *    place when the JIT loader first fires for this domain.
+     * 2. On `init` (priority 1, before post-type registration), force-load the
+     *    correct locale file in case the JIT loader already ran before the filter
+     *    was registered (e.g. if another plugin triggered a translation early).
+     *
+     * @since 1.0.0
+     *
+     * @return void
+     */
+    private function registerTextDomainHooks(): void
+    {
+        // Step 1 — intercept the JIT .mo file resolution for this domain.
+        add_filter('load_textdomain_mofile', [$this, 'filterTextDomainMofile'], 10, 2);
+
+        // Step 2 — on init (priority 1) explicitly load/reload with the correct file.
+        add_action('init', [$this, 'loadTextDomain'], 1);
+    }
+
+    /**
+     * Filter the .mo file path for the invoiceforge text domain.
+     *
+     * Called by WordPress's JIT translation loader when it resolves the .mo file
+     * to load for a given domain. If a custom language is configured we substitute
+     * the path with the locale-specific file from our languages/ directory.
+     *
+     * @since 1.0.0
+     *
+     * @param string $mofile Resolved .mo file path.
+     * @param string $domain Text domain being loaded.
+     * @return string Possibly overridden .mo file path.
+     */
+    public function filterTextDomainMofile(string $mofile, string $domain): string
+    {
+        if ($domain !== 'invoiceforge') {
+            return $mofile;
+        }
+
+        $settings        = get_option('invoiceforge_settings', []);
+        $custom_language = $settings['language'] ?? '';
+
+        if (empty($custom_language)) {
+            return $mofile;
+        }
+
+        $custom_mofile = INVOICEFORGE_PLUGIN_DIR . 'languages/invoiceforge-' . $custom_language . '.mo';
+
+        if (file_exists($custom_mofile)) {
+            return $custom_mofile;
+        }
+
+        return $mofile;
+    }
+
+    /**
      * Load the plugin text domain for translations.
-     * Applies custom language setting if configured.
+     *
+     * Runs at init priority 1 to ensure the domain is loaded before any other
+     * init callbacks (post-type registration, settings, etc.) use translated strings.
+     *
+     * If a custom language is configured and the matching .mo file exists, that file
+     * is loaded directly via `load_textdomain()`. This handles the case where the
+     * JIT loader already ran before `filterTextDomainMofile` was registered.
      *
      * @since 1.0.0
      *
@@ -311,26 +381,22 @@ final class Plugin
      */
     public function loadTextDomain(): void
     {
-        // Check for custom language setting
-        $settings = get_option('invoiceforge_settings', []);
+        $settings        = get_option('invoiceforge_settings', []);
         $custom_language = $settings['language'] ?? '';
 
-        if (!empty($custom_language) && function_exists('switch_to_locale')) {
-            // Switch to custom locale for this plugin only.
-            // The plugin_locale filter must be added before load_plugin_textdomain.
-            add_filter('plugin_locale', function ($locale, $domain) use ($custom_language) {
-                if ($domain === 'invoiceforge') {
-                    return $custom_language;
-                }
-                return $locale;
-            }, 10, 2);
+        if (!empty($custom_language)) {
+            $custom_mofile = INVOICEFORGE_PLUGIN_DIR . 'languages/invoiceforge-' . $custom_language . '.mo';
 
-            // WordPress 6.7+ pre-loads text domains via just-in-time loading before
-            // the init hook runs. Unload any cached version so the re-load below picks
-            // up the correct locale set by the filter above.
-            unload_textdomain('invoiceforge');
+            if (file_exists($custom_mofile)) {
+                // Unload whatever the JIT system may have already loaded (typically the
+                // site-default locale), then load the user-selected locale directly.
+                unload_textdomain('invoiceforge');
+                load_textdomain('invoiceforge', $custom_mofile);
+                return;
+            }
         }
 
+        // No custom language or .mo file not found — fall back to standard loading.
         load_plugin_textdomain(
             'invoiceforge',
             false,

@@ -470,3 +470,6 @@ msgstr "Verschuldigd bedrag"
 
 msgid "Pay Invoice"
 msgstr "Factuur betalen"
+
+msgid "Account Holder"
+msgstr "Rekeninghouder"

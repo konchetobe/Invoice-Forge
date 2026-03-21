@@ -470,3 +470,6 @@ msgstr "Importo dovuto"
 
 msgid "Pay Invoice"
 msgstr "Paga fattura"
+
+msgid "Account Holder"
+msgstr "Intestatario del conto"

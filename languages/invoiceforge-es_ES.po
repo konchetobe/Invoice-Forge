@@ -470,3 +470,6 @@ msgstr "Importe pendiente"
 
 msgid "Pay Invoice"
 msgstr "Pagar factura"
+
+msgid "Account Holder"
+msgstr "Titular de la cuenta"

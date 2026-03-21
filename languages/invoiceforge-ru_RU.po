@@ -470,3 +470,6 @@ msgstr "К оплате"
 
 msgid "Pay Invoice"
 msgstr "Оплатить счёт"
+
+msgid "Account Holder"
+msgstr "Владелец счёта"

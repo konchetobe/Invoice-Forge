@@ -470,3 +470,6 @@ msgstr "Montant dû"
 
 msgid "Pay Invoice"
 msgstr "Payer la facture"
+
+msgid "Account Holder"
+msgstr "Titulaire du compte"

@@ -470,3 +470,6 @@ msgstr "Kwota do zapłaty"
 
 msgid "Pay Invoice"
 msgstr "Zapłać fakturę"
+
+msgid "Account Holder"
+msgstr "Posiadacz rachunku"

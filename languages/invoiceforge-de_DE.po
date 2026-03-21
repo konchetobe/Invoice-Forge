@@ -470,3 +470,6 @@ msgstr "Fälliger Betrag"
 
 msgid "Pay Invoice"
 msgstr "Rechnung bezahlen"
+
+msgid "Account Holder"
+msgstr "Kontoinhaber"
