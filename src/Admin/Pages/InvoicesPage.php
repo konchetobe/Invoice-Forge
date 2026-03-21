@@ -178,6 +178,7 @@ class InvoicesPage
             'internal_notes' => get_post_meta($invoice_id, '_invoice_internal_notes', true),
             'discount_type'  => get_post_meta($invoice_id, '_invoice_discount_type', true),
             'discount_value' => (float) get_post_meta($invoice_id, '_invoice_discount_value', true),
+            'payment_method' => get_post_meta($invoice_id, '_invoice_payment_method', true) ?: '',
             'created_at'     => $post->post_date,
             'updated_at'     => $post->post_modified,
         ];

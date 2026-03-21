@@ -316,13 +316,19 @@ final class Plugin
         $custom_language = $settings['language'] ?? '';
 
         if (!empty($custom_language) && function_exists('switch_to_locale')) {
-            // Switch to custom locale for this plugin only
+            // Switch to custom locale for this plugin only.
+            // The plugin_locale filter must be added before load_plugin_textdomain.
             add_filter('plugin_locale', function ($locale, $domain) use ($custom_language) {
                 if ($domain === 'invoiceforge') {
                     return $custom_language;
                 }
                 return $locale;
             }, 10, 2);
+
+            // WordPress 6.7+ pre-loads text domains via just-in-time loading before
+            // the init hook runs. Unload any cached version so the re-load below picks
+            // up the correct locale set by the filter above.
+            unload_textdomain('invoiceforge');
         }
 
         load_plugin_textdomain(

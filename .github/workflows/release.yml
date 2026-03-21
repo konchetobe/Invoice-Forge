@@ -24,6 +24,18 @@ jobs:
       - name: Install Dependencies
         run: composer update --no-dev --optimize-autoloader
 
+      - name: Strip vendor bloat
+        run: |
+          # Remove docs, tests, and other non-runtime files from vendor packages
+          find vendor -type d \( -name 'test' -o -name 'tests' -o -name 'Tests' \
+            -o -name 'doc' -o -name 'docs' -o -name 'examples' -o -name 'demo' \
+            -o -name '.git' -o -name '.github' \) -exec rm -rf {} + 2>/dev/null || true
+          find vendor -type f \( -name '*.md' -o -name 'CHANGELOG*' -o -name 'UPGRADING*' \
+            -o -name 'LICENSE*' -o -name 'CONTRIBUTING*' -o -name '.gitignore' \
+            -o -name '.gitattributes' -o -name '.editorconfig' -o -name 'phpunit.xml*' \
+            -o -name 'phpstan.neon*' -o -name '.php-cs-fixer*' -o -name 'Makefile' \
+            -o -name '.travis.yml' -o -name 'appveyor.yml' \) -delete 2>/dev/null || true
+
       - name: Create Plugin ZIP
         run: |
           # Create a temp directory named after the plugin slug
@@ -38,13 +50,15 @@ jobs:
             --exclude 'phpstan.neon' \
             --exclude 'node_modules' \
             --exclude 'composer.phar' \
+            --exclude 'composer.lock' \
             --exclude '.claude' \
             --exclude '.planning' \
             --exclude '.abacus.donotdelete'
-          
+
           # Zip the folder creating invoiceforge.zip
           cd /tmp
           zip -rq invoiceforge-plugin-installable.zip invoiceforge
+          echo "ZIP size: $(du -sh invoiceforge-plugin-installable.zip | cut -f1)"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1

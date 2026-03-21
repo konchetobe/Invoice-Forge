@@ -354,7 +354,8 @@ foreach ($section_order as $section) :
 
         // ── BANK ─────────────────────────────────────────────────────────────
         case 'bank':
-            if ($payment_method !== 'Bank transfer') {
+            $has_bank_details = !empty($company_bank_name) || !empty($company_iban) || !empty($company_bic);
+            if (empty($payment_method) && !$has_bank_details) {
                 break;
             }
 ?>
