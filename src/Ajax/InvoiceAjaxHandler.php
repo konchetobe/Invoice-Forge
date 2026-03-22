@@ -915,12 +915,16 @@ class InvoiceAjaxHandler
                 return;
             }
 
-            // Validate invoice_id
+            // Validate invoice_id — 0 is allowed for new (unsaved) invoices
             $invoice_id = isset($_POST['invoice_id']) ? $this->sanitizer->absint($_POST['invoice_id']) : 0;
-            if ($invoice_id <= 0) {
+            // Negative values are invalid; 0 is valid (new invoice preview from form data only)
+            if ($invoice_id < 0) {
                 wp_send_json_error(['message' => __('Invalid invoice ID.', 'invoiceforge')], 400);
                 return;
             }
+
+            // Render mode: 'pdf' or 'email' (default email)
+            $render_mode = isset($_POST['render_mode']) && $_POST['render_mode'] === 'pdf' ? 'pdf' : 'email';
 
             // Collect and sanitize form field overrides (only include fields actually posted)
             $form_overrides = [];
@@ -985,7 +989,7 @@ class InvoiceAjaxHandler
 
             $logger     = $this->logger ?? new \InvoiceForge\Utilities\Logger();
             $pdfService = new \InvoiceForge\Services\PdfService($logger);
-            $html       = $pdfService->renderPreviewHtml($invoice_id, $form_overrides);
+            $html       = $pdfService->renderPreviewHtml($invoice_id, $form_overrides, $render_mode);
 
             if ($html === '') {
                 wp_send_json_error(['message' => __('Preview failed — invoice not found or template missing.', 'invoiceforge')]);

@@ -164,17 +164,59 @@ class PdfService
      * Accepts posted form field values and merges them over the saved invoice data
      * to render a live preview WITHOUT persisting any changes.
      *
+     * When invoice_id is 0 (unsaved/new invoice), builds the invoice data entirely
+     * from form overrides without touching the database.
+     *
      * @since 1.4.0
      *
-     * @param int   $invoice_id     Invoice post ID.
-     * @param array $form_overrides Posted form field values to overlay on saved data.
+     * @param int    $invoice_id     Invoice post ID (0 for new unsaved invoices).
+     * @param array  $form_overrides Posted form field values to overlay on saved data.
+     * @param string $render_mode    'email' (default) or 'pdf'.
      * @return string Rendered HTML preview.
      */
-    public function renderPreviewHtml(int $invoice_id, array $form_overrides = []): string
+    public function renderPreviewHtml(int $invoice_id, array $form_overrides = [], string $render_mode = 'email'): string
     {
-        $invoice = $this->getInvoiceData($invoice_id);
-        if (!$invoice) {
-            return '';
+        if ($invoice_id === 0) {
+            // New invoice: build data entirely from form overrides, no DB access
+            $settings = get_option('invoiceforge_settings', []);
+            $invoice  = [
+                'id'             => 0,
+                'title'          => $form_overrides['title'] ?? '',
+                'number'         => __('(Not yet assigned)', 'invoiceforge'),
+                'date'           => $form_overrides['invoice_date'] ?? current_time('Y-m-d'),
+                'due_date'       => $form_overrides['due_date'] ?? date('Y-m-d', strtotime('+30 days')),
+                'status'         => $form_overrides['status'] ?? 'draft',
+                'currency'       => $form_overrides['currency'] ?? 'USD',
+                'payment_method' => $form_overrides['payment_method'] ?? '',
+                'discount_type'  => $form_overrides['discount_type'] ?? '',
+                'discount_value' => (float) ($form_overrides['discount_value'] ?? 0),
+                'notes'          => $form_overrides['notes'] ?? '',
+                'terms'          => $form_overrides['terms'] ?? '',
+                'total_amount'   => 0.0,
+                'subtotal'       => 0.0,
+                'tax_total'      => 0.0,
+                'line_items'     => [],
+                'client_name'    => '',
+                'client_email'   => '',
+                'client_address' => '',
+                'client_city'    => '',
+                'client_state'   => '',
+                'client_zip'     => '',
+                'client_country' => '',
+                'client_phone'   => '',
+                'client_id_no'   => '',
+                'client_office'  => '',
+                'client_att_to'  => '',
+                'company_name'   => $settings['company_name'] ?? get_option('blogname'),
+                'company_email'  => $settings['company_email'] ?? get_option('admin_email'),
+                'company_phone'  => $settings['company_phone'] ?? '',
+                'company_address' => $settings['company_address'] ?? '',
+            ];
+        } else {
+            $invoice = $this->getInvoiceData($invoice_id);
+            if (!$invoice) {
+                return '';
+            }
         }
 
         // Merge simple scalar overrides
@@ -271,7 +313,7 @@ class PdfService
                 return $this->getFallbackHtml($invoice);
             }
 
-            $template_vars = $this->getTemplateContext($invoice_id, 'email', $invoice);
+            $template_vars = $this->getTemplateContext($invoice_id, $render_mode, $invoice);
             ob_start();
             extract($template_vars, EXTR_SKIP);
             include $template_file;
