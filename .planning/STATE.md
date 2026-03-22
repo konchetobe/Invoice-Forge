@@ -86,9 +86,10 @@ progress:
 | 4 | Fix client billing details not saving and not displaying correctly in invoices | 2026-03-20 | 4227c16 | Verified | [4-fix-client-billing-details-not-saving-an](./quick/4-fix-client-billing-details-not-saving-an/) |
 | 5 | Fix WordPress plugin version detection: bump to 1.2.0, harden UpdateChecker with setBranch('main') and debug log | 2026-03-20 | bff7eaf | Completed | [5-fix-wordpress-plugin-version-detection-a](./quick/5-fix-wordpress-plugin-version-detection-a/) |
 | 6 | Add live invoice preview panel (split view, 500ms debounce) and extended invoice numbering (suffix, date patterns, counter reset) | 2026-03-21 | 8434867 | Verified | [6-add-invoice-preview-in-editor-and-extend](./quick/6-add-invoice-preview-in-editor-and-extend/) |
+| 7 | Fix invoice preview for new invoices; add email/PDF render mode toggle in preview header | 2026-03-22 | 1e033f7 | Awaiting verify | [7-fix-invoice-preview-show-for-new-invoice](./quick/7-fix-invoice-preview-show-for-new-invoice/) |
 
 ## Session Continuity
 
-**Last activity:** 2026-03-21 - Completed quick task 6: Add invoice preview in editor and extend invoice number customization
-**Last session:** 2026-03-21T20:34:44.338Z
-**Stopped at:** Completed quick task 6
+**Last activity:** 2026-03-22 - Completed quick task 7 (code tasks; awaiting human verify checkpoint)
+**Last session:** 2026-03-22T00:00:00.000Z
+**Stopped at:** Completed quick task 7 code tasks — checkpoint:human-verify pending
