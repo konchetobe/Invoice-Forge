@@ -801,13 +801,23 @@
                 return;
             }
 
-            var invoiceId = $('[name="invoice_id"]').val();
-            if (!invoiceId || parseInt(invoiceId) <= 0) {
-                return;
-            }
-
             // Store pending XHR so we can abort on new request
             this._previewXhr = null;
+
+            // Default render mode
+            this._previewRenderMode = 'email';
+
+            // Bind toggle buttons
+            var self = this;
+            $(document).on('click', '.invoiceforge-preview-toggle', function(e) {
+                e.preventDefault();
+                var $btn = $(this);
+                if ($btn.hasClass('active')) return;
+                $('.invoiceforge-preview-toggle').removeClass('active');
+                $btn.addClass('active');
+                self._previewRenderMode = $btn.data('mode');
+                self.loadPreview();
+            });
 
             // Create debounced version of loadPreview
             this.debouncedLoadPreview = this.debounce(this.loadPreview.bind(this), 500);
@@ -847,10 +857,7 @@
                 return;
             }
 
-            var invoiceId = $('[name="invoice_id"]').val();
-            if (!invoiceId || parseInt(invoiceId) <= 0) {
-                return;
-            }
+            var invoiceId = parseInt($('[name="invoice_id"]').val()) || 0;
 
             // Abort previous request if still pending
             if (this._previewXhr && this._previewXhr.readyState !== 4) {
@@ -878,6 +885,7 @@
                 action:         'invoiceforge_preview_invoice_html',
                 nonce:          InvoiceForge.nonce,
                 invoice_id:     invoiceId,
+                render_mode:    this._previewRenderMode || 'email',
                 title:          $form.find('[name="title"]').val(),
                 client_id:      $form.find('[name="client_id"]').val() || 0,
                 invoice_date:   $form.find('[name="invoice_date"]').val(),

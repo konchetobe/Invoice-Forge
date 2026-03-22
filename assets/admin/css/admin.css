@@ -1471,3 +1471,37 @@
     color: var(--if-gray-400);
     padding: var(--if-space-8) var(--if-space-4);
 }
+
+/* ========================================
+   Preview Mode Toggle Buttons (Quick-7)
+======================================== */
+.invoiceforge-preview-toggles {
+    display: flex;
+    gap: 0;
+    border: 1px solid #c3c4c7;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.invoiceforge-preview-toggle {
+    padding: 2px 10px;
+    font-size: 12px;
+    border: none;
+    background: #f0f0f1;
+    color: #50575e;
+    cursor: pointer;
+    line-height: 1.6;
+}
+
+.invoiceforge-preview-toggle:not(:last-child) {
+    border-right: 1px solid #c3c4c7;
+}
+
+.invoiceforge-preview-toggle.active {
+    background: #2271b1;
+    color: #fff;
+}
+
+.invoiceforge-preview-toggle:hover:not(.active) {
+    background: #e0e0e0;
+}
