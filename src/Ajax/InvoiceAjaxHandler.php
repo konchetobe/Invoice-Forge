@@ -156,6 +156,10 @@ class InvoiceAjaxHandler
 
         // Phase 2: WooCommerce Integration
         add_action('wp_ajax_invoiceforge_generate_from_order', [$this, 'generateFromOrder']);
+
+        // Quick-8: Invoice counter management
+        add_action('wp_ajax_invoiceforge_reset_invoice_counter', [$this, 'resetInvoiceCounter']);
+        add_action('wp_ajax_invoiceforge_set_invoice_counter', [$this, 'setInvoiceCounter']);
     }
 
     /**
@@ -1001,6 +1005,101 @@ class InvoiceAjaxHandler
         } catch (\Throwable $e) {
             $this->log('error', 'previewInvoiceHtml failed', ['exception' => $e->getMessage()]);
             wp_send_json_error(['message' => __('Preview failed.', 'invoiceforge')], 500);
+        }
+    }
+
+    /**
+     * Reset invoice counter to start_number via AJAX.
+     *
+     * Resets the counter so the next generated invoice number equals
+     * the configured start_number.
+     *
+     * @since 1.2.5
+     *
+     * @return void
+     */
+    public function resetInvoiceCounter(): void
+    {
+        if (!$this->nonce->checkAjaxReferer('invoiceforge_admin', 'nonce', false)) {
+            wp_send_json_error(['message' => __('Security check failed.', 'invoiceforge')], 403);
+            return;
+        }
+
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error(['message' => __('You do not have permission to perform this action.', 'invoiceforge')], 403);
+            return;
+        }
+
+        try {
+            $config = $this->numberingService->getNumberingConfig();
+            $startNumber = isset($config['start_number']) ? (int) $config['start_number'] : 1;
+
+            // Reset to start_number - 1 so the next generate() produces start_number.
+            $this->numberingService->reset($startNumber - 1);
+
+            $preview = $this->numberingService->preview();
+            $counter = $this->numberingService->getCurrentCounter();
+
+            wp_send_json_success([
+                'message' => __('Invoice counter has been reset.', 'invoiceforge'),
+                'preview' => $preview,
+                'counter' => $counter['number'],
+            ]);
+        } catch (\Throwable $e) {
+            $this->log('error', 'resetInvoiceCounter failed', ['exception' => $e->getMessage()]);
+            wp_send_json_error(['message' => __('Failed to reset invoice counter.', 'invoiceforge')], 500);
+        }
+    }
+
+    /**
+     * Set invoice counter to a specific value via AJAX.
+     *
+     * Sets the counter so the next generated invoice number equals
+     * the supplied counter_value POST parameter.
+     *
+     * @since 1.2.5
+     *
+     * @return void
+     */
+    public function setInvoiceCounter(): void
+    {
+        if (!$this->nonce->checkAjaxReferer('invoiceforge_admin', 'nonce', false)) {
+            wp_send_json_error(['message' => __('Security check failed.', 'invoiceforge')], 403);
+            return;
+        }
+
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error(['message' => __('You do not have permission to perform this action.', 'invoiceforge')], 403);
+            return;
+        }
+
+        // phpcs:ignore WordPress.Security.NonceVerification -- nonce already checked above.
+        $value = isset($_POST['counter_value']) ? absint($_POST['counter_value']) : null;
+
+        if ($value === null || $value < 1) {
+            wp_send_json_error(['message' => __('Please enter a valid counter value.', 'invoiceforge')]);
+            return;
+        }
+
+        try {
+            // Reset to value - 1 so the next generate() produces $value.
+            $this->numberingService->reset($value - 1);
+
+            $preview = $this->numberingService->preview();
+
+            wp_send_json_success([
+                'message' => sprintf(
+                    /* translators: 1: counter value integer, 2: formatted next invoice number */
+                    __('Invoice counter set to %1$d. Next invoice: %2$s', 'invoiceforge'),
+                    $value,
+                    $preview
+                ),
+                'preview' => $preview,
+                'counter' => $value,
+            ]);
+        } catch (\Throwable $e) {
+            $this->log('error', 'setInvoiceCounter failed', ['exception' => $e->getMessage()]);
+            wp_send_json_error(['message' => __('Failed to set invoice counter.', 'invoiceforge')], 500);
         }
     }
 }
