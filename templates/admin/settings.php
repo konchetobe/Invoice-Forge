@@ -399,10 +399,36 @@ $numberingService = new NumberingService(new \InvoiceForge\Utilities\Logger());
             <p style="color: var(--if-gray-600); margin-bottom: var(--if-space-4);">
                 <?php esc_html_e('These actions can affect your invoice data. Use with caution.', 'invoiceforge'); ?>
             </p>
-            <button type="button" class="invoiceforge-btn invoiceforge-btn-danger" id="reset-invoice-counter" data-confirm="<?php esc_attr_e('Are you sure you want to reset the invoice counter? This cannot be undone.', 'invoiceforge'); ?>">
+            <button type="button" class="invoiceforge-btn invoiceforge-btn-danger" id="reset-invoice-counter">
                 <span class="dashicons dashicons-backup"></span>
                 <?php esc_html_e('Reset Invoice Counter', 'invoiceforge'); ?>
             </button>
+
+            <div style="margin-top: var(--if-space-4); padding-top: var(--if-space-4); border-top: 1px solid var(--if-gray-200);">
+                <label for="manual-counter-value" style="display: block; margin-bottom: var(--if-space-2); font-weight: 600;">
+                    <?php esc_html_e('Set Invoice Counter', 'invoiceforge'); ?>
+                </label>
+                <p style="color: var(--if-gray-600); margin-bottom: var(--if-space-2); font-size: 13px;">
+                    <?php esc_html_e('Manually set the next invoice number counter. The next invoice created will use this number.', 'invoiceforge'); ?>
+                </p>
+                <div style="display: flex; align-items: center; gap: var(--if-space-2);">
+                    <input type="number" id="manual-counter-value" min="1" step="1" placeholder="<?php esc_attr_e('e.g., 100', 'invoiceforge'); ?>" style="width: 150px;" class="regular-text" />
+                    <button type="button" class="invoiceforge-btn invoiceforge-btn-danger" id="set-invoice-counter">
+                        <span class="dashicons dashicons-edit"></span>
+                        <?php esc_html_e('Set Counter', 'invoiceforge'); ?>
+                    </button>
+                </div>
+                <p id="counter-current-info" style="color: var(--if-gray-500); margin-top: var(--if-space-2); font-size: 12px;">
+                    <?php
+                    $current_counter = (int) get_option('invoiceforge_last_invoice_number', 0);
+                    printf(
+                        /* translators: current invoice counter number */
+                        esc_html__('Current counter: %d', 'invoiceforge'),
+                        $current_counter
+                    );
+                    ?>
+                </p>
+            </div>
         </div>
     <?php endif; ?>
 </div>

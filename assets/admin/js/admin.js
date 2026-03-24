@@ -73,6 +73,12 @@
             
             // Confirm dangerous actions
             $(document).on('click', '[data-confirm]', this.handleConfirm.bind(this));
+
+            // Reset invoice counter (quick-8)
+            $(document).on('click', '#reset-invoice-counter', this.handleResetCounter.bind(this));
+
+            // Set invoice counter (quick-8)
+            $(document).on('click', '#set-invoice-counter', this.handleSetCounter.bind(this));
         },
 
         /**
@@ -611,6 +617,101 @@
         isValidEmail: function(email) {
             const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return re.test(email);
+        },
+
+        /**
+         * Handle reset invoice counter button click (quick-8)
+         */
+        handleResetCounter: function(e) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+
+            if (!confirm(InvoiceForge.i18n && InvoiceForge.i18n.resetCounterConfirm
+                    ? InvoiceForge.i18n.resetCounterConfirm
+                    : 'Are you sure you want to reset the invoice counter? This cannot be undone.')) {
+                return;
+            }
+
+            var $btn = $(e.currentTarget);
+            $btn.prop('disabled', true);
+
+            $.ajax({
+                url: InvoiceForge.ajaxUrl,
+                type: 'POST',
+                data: {
+                    action: 'invoiceforge_reset_invoice_counter',
+                    nonce: InvoiceForge.nonce
+                },
+                success: function(response) {
+                    if (response.success) {
+                        InvoiceForgeAdmin.showToast('success', response.data.message);
+                        if (response.data.counter !== undefined) {
+                            $('#counter-current-info').text(
+                                'Current counter: ' + response.data.counter +
+                                ' | Next invoice: ' + response.data.preview
+                            );
+                        }
+                    } else {
+                        InvoiceForgeAdmin.showToast('error', (response.data && response.data.message) || 'Failed to reset counter.');
+                    }
+                },
+                error: function() {
+                    InvoiceForgeAdmin.showToast('error', 'Network error. Please try again.');
+                },
+                complete: function() {
+                    $btn.prop('disabled', false);
+                }
+            });
+        },
+
+        /**
+         * Handle set invoice counter button click (quick-8)
+         */
+        handleSetCounter: function(e) {
+            e.preventDefault();
+
+            var value = parseInt($('#manual-counter-value').val(), 10);
+            if (!value || value < 1) {
+                InvoiceForgeAdmin.showToast('error', 'Please enter a valid counter value (minimum 1).');
+                return;
+            }
+
+            if (!confirm('Set the invoice counter to ' + value + '? The next invoice will use this number.')) {
+                return;
+            }
+
+            var $btn = $(e.currentTarget);
+            $btn.prop('disabled', true);
+
+            $.ajax({
+                url: InvoiceForge.ajaxUrl,
+                type: 'POST',
+                data: {
+                    action: 'invoiceforge_set_invoice_counter',
+                    nonce: InvoiceForge.nonce,
+                    counter_value: value
+                },
+                success: function(response) {
+                    if (response.success) {
+                        InvoiceForgeAdmin.showToast('success', response.data.message);
+                        $('#manual-counter-value').val('');
+                        if (response.data.counter !== undefined) {
+                            $('#counter-current-info').text(
+                                'Current counter: ' + (response.data.counter - 1) +
+                                ' | Next invoice: ' + response.data.preview
+                            );
+                        }
+                    } else {
+                        InvoiceForgeAdmin.showToast('error', (response.data && response.data.message) || 'Failed to set counter.');
+                    }
+                },
+                error: function() {
+                    InvoiceForgeAdmin.showToast('error', 'Network error. Please try again.');
+                },
+                complete: function() {
+                    $btn.prop('disabled', false);
+                }
+            });
         },
 
         /**
