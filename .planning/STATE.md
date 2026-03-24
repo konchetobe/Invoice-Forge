@@ -87,9 +87,10 @@ progress:
 | 5 | Fix WordPress plugin version detection: bump to 1.2.0, harden UpdateChecker with setBranch('main') and debug log | 2026-03-20 | bff7eaf | Completed | [5-fix-wordpress-plugin-version-detection-a](./quick/5-fix-wordpress-plugin-version-detection-a/) |
 | 6 | Add live invoice preview panel (split view, 500ms debounce) and extended invoice numbering (suffix, date patterns, counter reset) | 2026-03-21 | 8434867 | Verified | [6-add-invoice-preview-in-editor-and-extend](./quick/6-add-invoice-preview-in-editor-and-extend/) |
 | 7 | Fix invoice preview for new invoices; add email/PDF render mode toggle in preview header | 2026-03-22 | 1e033f7 | Verified | [7-fix-invoice-preview-show-for-new-invoice](./quick/7-fix-invoice-preview-show-for-new-invoice/) |
+| 8 | Fix Reset Invoice Counter button (was non-functional); add manual Set Counter input in Danger Zone | 2026-03-24 | cf8c13d | Completed | [8-fix-reset-invoice-counter-bug-and-add-ma](./quick/8-fix-reset-invoice-counter-bug-and-add-ma/) |
 
 ## Session Continuity
 
-**Last activity:** 2026-03-22 - Completed quick task 7: Fix invoice preview for new invoices, add email/PDF preview toggle
-**Last session:** 2026-03-22T09:34:30.919Z
-**Stopped at:** Completed quick task 7 (verified)
+**Last activity:** 2026-03-24 - Completed quick task 8: Fix reset invoice counter bug, add manual counter adjustment UI
+**Last session:** 2026-03-24T12:11:40Z
+**Stopped at:** Completed quick task 8 (completed)
