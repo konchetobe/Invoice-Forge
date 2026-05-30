@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Invoice AJAX Handler
  *
@@ -22,7 +22,11 @@ use InvoiceForge\PostTypes\ClientPostType;
 use InvoiceForge\Services\NumberingService;
 use InvoiceForge\Services\TaxService;
 use InvoiceForge\Models\LineItem;
+use InvoiceForge\Models\TaxRate;
+use InvoiceForge\Services\PdfService;
+use InvoiceForge\Services\EmailService;
 use InvoiceForge\Repositories\LineItemRepository;
+use InvoiceForge\Repositories\TaxRateRepository;
 use InvoiceForge\Utilities\Logger;
 
 // Prevent direct access
@@ -83,7 +87,7 @@ class InvoiceAjaxHandler
      * @since 1.1.0
      * @var TaxService
      */
-    private TaxService $taxService;
+    private TaxService $taxService, ?PdfService $pdfService = null, ?EmailService $emailService = null;
 
     /**
      * Logger instance.
@@ -92,6 +96,22 @@ class InvoiceAjaxHandler
      * @var Logger|null
      */
     private ?Logger $logger = null;
+
+    /**
+     * PDF service (injected or lazily created).
+     *
+     * @since 1.2.5
+     * @var PdfService|null
+     */
+    private ?PdfService $pdfService = null;
+
+    /**
+     * Email service (injected or lazily created).
+     *
+     * @since 1.2.5
+     * @var EmailService|null
+     */
+    private ?EmailService $emailService = null;
 
     /**
      * Constructor.
@@ -111,14 +131,14 @@ class InvoiceAjaxHandler
         Validator $validator,
         NumberingService $numberingService,
         LineItemRepository $lineItemRepo,
-        TaxService $taxService
+        TaxService $taxService, ?PdfService $pdfService = null, ?EmailService $emailService = null
     ) {
         $this->nonce = $nonce;
         $this->sanitizer = $sanitizer;
         $this->validator = $validator;
         $this->numberingService = $numberingService;
         $this->lineItemRepo = $lineItemRepo;
-        $this->taxService = $taxService;
+        $this->taxService = $taxService; $this->pdfService = $pdfService; $this->emailService = $emailService;
         
         // Initialize logger
         try {
@@ -188,7 +208,7 @@ class InvoiceAjaxHandler
      */
     private function canEditInvoices(): bool
     {
-        return current_user_can('edit_if_invoices') || current_user_can('edit_posts');
+        return current_user_can('edit_if_invoices') || current_user_can('manage_options');
     }
 
     /**
@@ -200,7 +220,7 @@ class InvoiceAjaxHandler
      */
     private function canDeleteInvoices(): bool
     {
-        return current_user_can('delete_if_invoices') || current_user_can('delete_posts');
+        return current_user_can('delete_if_invoices') || current_user_can('manage_options');
     }
 
     /**
@@ -213,7 +233,7 @@ class InvoiceAjaxHandler
      */
     public function saveInvoice(): void
     {
-        $this->log('debug', 'saveInvoice called', ['POST' => $_POST]);
+        $this->log('debug', 'saveInvoice called', ['post_fields' => array_keys($_POST)]);
 
         try {
             // Verify nonce
@@ -397,7 +417,7 @@ class InvoiceAjaxHandler
 
             // Store computed totals
             update_post_meta($post_id, '_invoice_subtotal', $invoiceSubtotal);
-            update_post_meta($post_id, '_invoice_tax', $invoiceTax);
+            update_post_meta($post_id, '_invoice_tax_total', $invoiceTax);
             update_post_meta($post_id, '_invoice_total_amount', max(0, $invoiceTotal));
 
             $this->log('info', 'Invoice saved successfully', ['post_id' => $post_id]);
@@ -625,7 +645,7 @@ class InvoiceAjaxHandler
             'due_date'        => get_post_meta($invoice_id, '_invoice_due_date', true),
             'status'          => get_post_meta($invoice_id, '_invoice_status', true) ?: 'draft',
             'subtotal'        => (float) get_post_meta($invoice_id, '_invoice_subtotal', true),
-            'tax'             => (float) get_post_meta($invoice_id, '_invoice_tax', true),
+            'tax'             => (float) get_post_meta($invoice_id, '_invoice_tax_total', true),
             'total_amount'    => (float) get_post_meta($invoice_id, '_invoice_total_amount', true),
             'currency'        => get_post_meta($invoice_id, '_invoice_currency', true) ?: 'USD',
             'notes'           => get_post_meta($invoice_id, '_invoice_notes', true),
@@ -668,7 +688,7 @@ class InvoiceAjaxHandler
                 wp_die(__('PDF generation is currently unavailable. The mPDF library is missing. Please ensure you are using the correct release ZIP or run "composer install".', 'invoiceforge'));
             }
 
-            $pdfService = new \InvoiceForge\Services\PdfService($this->logger ?? new \InvoiceForge\Utilities\Logger());
+            $pdfService = $this->pdfService ?? new \InvoiceForge\Services\PdfService($this->logger ?? new \InvoiceForge\Utilities\Logger());
             $pdfService->generate($invoice_id, 'D'); // Will output directly and structure exit
             exit;
             
@@ -706,7 +726,7 @@ class InvoiceAjaxHandler
                 wp_die(__('PDF generation is currently unavailable. The mPDF library is missing. Please ensure you are using the correct release ZIP or run "composer install".', 'invoiceforge'));
             }
 
-            $pdfService = new \InvoiceForge\Services\PdfService($this->logger ?? new \InvoiceForge\Utilities\Logger());
+            $pdfService = $this->pdfService ?? new \InvoiceForge\Services\PdfService($this->logger ?? new \InvoiceForge\Utilities\Logger());
             $pdfService->generate($invoice_id, 'I'); // Inline preview
             exit;
 
@@ -1100,6 +1120,123 @@ class InvoiceAjaxHandler
         } catch (\Throwable $e) {
             $this->log('error', 'setInvoiceCounter failed', ['exception' => $e->getMessage()]);
             wp_send_json_error(['message' => __('Failed to set invoice counter.', 'invoiceforge')], 500);
+        }
+    }
+
+    /**
+     * Save a tax rate via AJAX.
+     *
+     * @since 1.2.5
+     *
+     * @return void
+     */
+    public function saveTaxRate(): void
+    {
+        try {
+            if (!$this->nonce->checkAjaxReferer('invoiceforge_admin', 'nonce', false)) {
+                wp_send_json_error(['message' => __('Security check failed.', 'invoiceforge')], 403);
+                return;
+            }
+
+            if (!current_user_can('manage_options')) {
+                wp_send_json_error(['message' => __('You do not have permission to manage tax rates.', 'invoiceforge')], 403);
+                return;
+            }
+
+            $rate_id     = isset($_POST['id']) ? $this->sanitizer->absint($_POST['id']) : 0;
+            $name        = isset($_POST['name']) ? $this->sanitizer->text($_POST['name']) : '';
+            $rate        = isset($_POST['rate']) ? $this->sanitizer->money($_POST['rate']) : 0;
+            $country     = isset($_POST['country']) ? $this->sanitizer->text($_POST['country']) : '';
+            $is_compound = !empty($_POST['is_compound']);
+            $is_default  = !empty($_POST['is_default']);
+            $is_active   = isset($_POST['is_active']) ? !empty($_POST['is_active']) : true;
+
+            if (empty($name)) {
+                wp_send_json_error(['message' => __('Tax rate name is required.', 'invoiceforge')], 400);
+                return;
+            }
+
+            $taxRateRepo = $this->taxService->getTaxRateRepository();
+
+            $taxRate = $rate_id > 0 ? $taxRateRepo->find($rate_id) : new TaxRate();
+            if ($rate_id > 0 && !$taxRate) {
+                wp_send_json_error(['message' => __('Tax rate not found.', 'invoiceforge')], 404);
+                return;
+            }
+
+            $taxRate->name        = $name;
+            $taxRate->rate        = $rate;
+            $taxRate->country     = $country;
+            $taxRate->is_compound = $is_compound;
+            $taxRate->is_default  = $is_default;
+            $taxRate->is_active   = $is_active;
+
+            $saved_id = $taxRateRepo->save($taxRate);
+
+            $this->log('info', 'Tax rate saved', ['id' => $saved_id]);
+
+            wp_send_json_success([
+                'message'  => __('Tax rate saved successfully.', 'invoiceforge'),
+                'tax_rate' => $taxRate->toArray(),
+            ]);
+
+        } catch (\Exception $e) {
+            $this->log('error', 'saveTaxRate failed', ['exception' => $e->getMessage()]);
+            wp_send_json_error(['message' => __('An unexpected error occurred.', 'invoiceforge')], 500);
+        }
+    }
+
+    /**
+     * Delete a tax rate via AJAX.
+     *
+     * @since 1.2.5
+     *
+     * @return void
+     */
+    public function deleteTaxRate(): void
+    {
+        try {
+            if (!$this->nonce->checkAjaxReferer('invoiceforge_admin', 'nonce', false)) {
+                wp_send_json_error(['message' => __('Security check failed.', 'invoiceforge')], 403);
+                return;
+            }
+
+            if (!current_user_can('manage_options')) {
+                wp_send_json_error(['message' => __('You do not have permission to manage tax rates.', 'invoiceforge')], 403);
+                return;
+            }
+
+            $rate_id = isset($_POST['id']) ? $this->sanitizer->absint($_POST['id']) : 0;
+
+            if ($rate_id <= 0) {
+                wp_send_json_error(['message' => __('Invalid tax rate ID.', 'invoiceforge')], 400);
+                return;
+            }
+
+            $taxRateRepo = $this->taxService->getTaxRateRepository();
+            $taxRate = $taxRateRepo->find($rate_id);
+
+            if (!$taxRate) {
+                wp_send_json_error(['message' => __('Tax rate not found.', 'invoiceforge')], 404);
+                return;
+            }
+
+            $result = $taxRateRepo->delete($rate_id);
+
+            if (!$result) {
+                wp_send_json_error(['message' => __('Failed to delete tax rate.', 'invoiceforge')], 500);
+                return;
+            }
+
+            $this->log('info', 'Tax rate deleted', ['id' => $rate_id]);
+
+            wp_send_json_success([
+                'message' => __('Tax rate deleted successfully.', 'invoiceforge'),
+            ]);
+
+        } catch (\Exception $e) {
+            $this->log('error', 'deleteTaxRate failed', ['exception' => $e->getMessage()]);
+            wp_send_json_error(['message' => __('An unexpected error occurred.', 'invoiceforge')], 500);
         }
     }
 }

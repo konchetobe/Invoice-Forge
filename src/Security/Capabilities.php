@@ -105,7 +105,7 @@ class Capabilities
      */
     public function canEditInvoices(): bool
     {
-        return current_user_can(self::EDIT_INVOICES) || current_user_can('edit_posts');
+        return current_user_can(self::EDIT_INVOICES) || current_user_can('manage_options');
     }
 
     /**
@@ -130,7 +130,7 @@ class Capabilities
      */
     public function canEditClients(): bool
     {
-        return current_user_can(self::EDIT_CLIENTS) || current_user_can('edit_posts');
+        return current_user_can(self::EDIT_CLIENTS) || current_user_can('manage_options');
     }
 
     /**

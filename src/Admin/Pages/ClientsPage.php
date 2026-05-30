@@ -182,7 +182,7 @@ class ClientsPage
     {
         $clients = get_posts([
             'post_type'      => ClientPostType::POST_TYPE,
-            'posts_per_page' => -1,
+            'posts_per_page' => 500,
             'post_status'    => 'publish',
             'orderby'        => 'title',
             'order'          => 'ASC',

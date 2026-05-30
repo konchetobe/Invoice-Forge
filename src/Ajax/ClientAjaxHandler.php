@@ -132,8 +132,8 @@ class ClientAjaxHandler
      */
     private function canEditClients(): bool
     {
-        // Allow custom capability OR standard edit_posts capability
-        return current_user_can('edit_if_clients') || current_user_can('edit_posts');
+        // Allow custom capability OR admin manage_options
+        return current_user_can('edit_if_clients') || current_user_can('manage_options');
     }
 
     /**
@@ -145,8 +145,8 @@ class ClientAjaxHandler
      */
     private function canDeleteClients(): bool
     {
-        // Allow custom capability OR standard delete_posts capability
-        return current_user_can('delete_if_clients') || current_user_can('delete_posts');
+        // Allow custom capability OR admin manage_options
+        return current_user_can('delete_if_clients') || current_user_can('manage_options');
     }
 
     /**
@@ -158,7 +158,7 @@ class ClientAjaxHandler
      */
     public function saveClient(): void
     {
-        $this->log('debug', 'saveClient called', ['POST' => $_POST]);
+        $this->log('debug', 'saveClient called', ['post_fields' => array_keys($_POST)]);
 
         try {
             // Verify nonce
@@ -290,7 +290,13 @@ class ClientAjaxHandler
      */
     public function createClientFromInvoice(array $data): int|false
     {
-        $this->log('debug', 'createClientFromInvoice called', $data);
+        // Defense-in-depth: verify the caller has invoice edit permission
+        if (!current_user_can('edit_if_invoices') && !current_user_can('manage_options')) {
+            $this->log('warning', 'createClientFromInvoice called without proper permissions');
+            return false;
+        }
+
+        $this->log('debug', 'createClientFromInvoice called', array_keys($data));
 
         $first_name = $this->sanitizer->text($data['first_name'] ?? '');
         $last_name = $this->sanitizer->text($data['last_name'] ?? '');

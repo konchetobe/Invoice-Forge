@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.2.6] - 2026-05-30
+
+### Fixed
+- Orphaned AJAX hooks: implemented missing `saveTaxRate` and `deleteTaxRate` handler methods that caused fatal errors when invoked.
+- WooCommerce integration TypeError: `LineItemRepository::save()` now receives a proper `LineItem` object instead of a raw array, preventing crashes when generating invoices from orders.
+- Tax meta key mismatch: invoice tax is now consistently stored and read as `_invoice_tax_total`, fixing PDF templates showing $0.00 for tax.
+- Data leakage: AJAX handlers now log only posted field keys instead of raw `$_POST` values, preventing sensitive data from being written to log files.
+- Capability fallback: changed from `edit_posts` (too broad — granted access to all Authors/Editors) to `manage_options` (admin-only) for invoice and client management.
+- Clients page capability check: `renderClients()` now correctly checks `canEditClients()` instead of `canEditInvoices()`.
+- Defense-in-depth: `createClientFromInvoice()` now verifies caller has invoice edit permission before creating clients.
+- Performance: `posts_per_page=-1` in admin dropdown queries limited to 500 to prevent memory exhaustion on sites with large client lists.
+- DI container: `PdfService` and `EmailService` now registered in the DI container and injected into `InvoiceAjaxHandler` for improved testability.
+
+---
+
 ## [1.1.5] - 2026-03-14
 
 ### Fixed

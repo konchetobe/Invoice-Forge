@@ -170,7 +170,7 @@ class InvoicesPage
             'due_date'       => get_post_meta($invoice_id, '_invoice_due_date', true),
             'status'         => get_post_meta($invoice_id, '_invoice_status', true) ?: 'draft',
             'subtotal'       => (float) get_post_meta($invoice_id, '_invoice_subtotal', true),
-            'tax'            => (float) get_post_meta($invoice_id, '_invoice_tax', true),
+            'tax'            => (float) get_post_meta($invoice_id, '_invoice_tax_total', true),
             'total_amount'   => (float) get_post_meta($invoice_id, '_invoice_total_amount', true),
             'currency'       => get_post_meta($invoice_id, '_invoice_currency', true) ?: 'USD',
             'notes'          => get_post_meta($invoice_id, '_invoice_notes', true),
@@ -330,7 +330,7 @@ class InvoicesPage
     {
         $clients = get_posts([
             'post_type'      => ClientPostType::POST_TYPE,
-            'posts_per_page' => -1,
+            'posts_per_page' => 500,
             'post_status'    => 'publish',
             'orderby'        => 'title',
             'order'          => 'ASC',

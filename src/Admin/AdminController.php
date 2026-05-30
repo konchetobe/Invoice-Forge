@@ -329,7 +329,7 @@ class AdminController
     public function renderClients(): void
     {
         // Check capabilities
-        if (!$this->capabilities->canEditInvoices()) {
+        if (!$this->capabilities->canEditClients()) {
             wp_die(esc_html__('You do not have permission to access this page.', 'invoiceforge'));
         }
 

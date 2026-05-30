@@ -15,6 +15,7 @@ declare(strict_types=1);
 namespace InvoiceForge\Integrations\WooCommerce;
 
 use InvoiceForge\Admin\Pages\SettingsPage;
+use InvoiceForge\Models\LineItem;
 use InvoiceForge\PostTypes\InvoicePostType;
 use InvoiceForge\Repositories\LineItemRepository;
 use InvoiceForge\Services\NumberingService;
@@ -220,7 +221,7 @@ class WooCommerceIntegration
             $item_tax   = (float) $item->get_subtotal_tax();
             $line_total = (float) $item->get_subtotal() + $item_tax;
 
-            $this->lineItemRepo->save([
+            $lineItem = LineItem::fromArray([
                 'invoice_id'  => $invoice_id,
                 'description' => $item->get_name(),
                 'quantity'    => $quantity,
@@ -228,8 +229,9 @@ class WooCommerceIntegration
                 'tax_rate_id' => 0,
                 'tax_amount'  => $item_tax,
                 'total'       => $line_total,
-                'sort_order'  => $sort_order++,
             ]);
+            $lineItem->item_order = $sort_order++;
+            $this->lineItemRepo->save($lineItem);
 
             $subtotal  += (float) $item->get_subtotal();
             $tax_total += $item_tax;
@@ -240,7 +242,7 @@ class WooCommerceIntegration
             $shipping_total = (float) $order->get_shipping_total();
             $shipping_tax   = (float) $order->get_shipping_tax();
 
-            $this->lineItemRepo->save([
+            $shippingItem = LineItem::fromArray([
                 'invoice_id'  => $invoice_id,
                 'description' => __('Shipping', 'invoiceforge'),
                 'quantity'    => 1.0,
@@ -248,8 +250,9 @@ class WooCommerceIntegration
                 'tax_rate_id' => 0,
                 'tax_amount'  => $shipping_tax,
                 'total'       => $shipping_total + $shipping_tax,
-                'sort_order'  => $sort_order++,
             ]);
+            $shippingItem->item_order = $sort_order++;
+            $this->lineItemRepo->save($shippingItem);
 
             $subtotal  += $shipping_total;
             $tax_total += $shipping_tax;

@@ -22,7 +22,9 @@ use InvoiceForge\PostTypes\InvoicePostType;
 use InvoiceForge\PostTypes\ClientPostType;
 use InvoiceForge\Repositories\LineItemRepository;
 use InvoiceForge\Repositories\TaxRateRepository;
+use InvoiceForge\Services\EmailService;
 use InvoiceForge\Services\NumberingService;
+use InvoiceForge\Services\PdfService;
 use InvoiceForge\Services\TaxService;
 use InvoiceForge\Security\Nonce;
 use InvoiceForge\Security\Capabilities;
@@ -199,6 +201,15 @@ final class Plugin
             $this->container->resolve('logger')
         ));
 
+        // PDF & Email services
+        $this->container->register('pdf_service', fn(): PdfService => new PdfService(
+            $this->container->resolve('logger')
+        ));
+        $this->container->register('email_service', fn(): EmailService => new EmailService(
+            $this->container->resolve('logger'),
+            $this->container->resolve('pdf_service')
+        ));
+
         // Repositories
         $this->container->register('line_item_repo', fn(): LineItemRepository => new LineItemRepository());
         $this->container->register('tax_rate_repo', fn(): TaxRateRepository => new TaxRateRepository());
@@ -238,7 +249,9 @@ final class Plugin
             $this->container->resolve('validator'),
             $this->container->resolve('numbering'),
             $this->container->resolve('line_item_repo'),
-            $this->container->resolve('tax_service')
+            $this->container->resolve('tax_service'),
+            $this->container->resolve('pdf_service'),
+            $this->container->resolve('email_service')
         ));
 
         $this->container->register('client_ajax', fn(): ClientAjaxHandler => new ClientAjaxHandler(
