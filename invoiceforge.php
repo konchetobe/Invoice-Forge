@@ -11,7 +11,7 @@
  * Plugin Name:       InvoiceForge
  * Plugin URI:        https://invoiceforge.io
  * Description:       A production-grade WordPress invoice management plugin with payment gateways, client portal, multi-currency support, and compliance-ready templates.
- * Version:           1.2.7
+ * Version:           1.2.8
  * Requires at least: 6.0
  * Requires PHP:      8.1
  * Author:            InvoiceForge Team

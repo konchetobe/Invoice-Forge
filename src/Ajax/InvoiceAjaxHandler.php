@@ -87,7 +87,7 @@ class InvoiceAjaxHandler
      * @since 1.1.0
      * @var TaxService
      */
-    private TaxService $taxService, ?PdfService $pdfService = null, ?EmailService $emailService = null;
+    private TaxService $taxService;
 
     /**
      * Logger instance.
