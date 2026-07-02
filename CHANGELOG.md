@@ -6,6 +6,32 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.2.9] - 2026-07-02
+
+### Fixed
+- **Critical: Version mismatch** — `INVOICEFORGE_VERSION` constant was stuck at `1.2.5` while the plugin header declared `1.2.8`, causing the update checker to malfunction. Both now correctly read `1.2.9`.
+- **Critical: Invoice numbering race condition** — Replaced the non-atomic transient-based lock with MySQL `GET_LOCK()`/`RELEASE_LOCK()` named locks, preventing concurrent processes from generating duplicate invoice numbers. Added a uniqueness check that calls `exists()` and retries on collision.
+- **Critical: Line-item discounts ignored in tax calculation** — `TaxService::calculateItem()` now applies line-item discounts (percentage or fixed) to the subtotal before computing tax, so totals are correct when discounts are used.
+- **Critical: SMTP settings never applied** — Added `configurePhpMailer()` method to `EmailService` and registered the `phpmailer_init` hook, so saved SMTP settings (host, port, auth, encryption) are now actually used by `wp_mail()`.
+- **Critical: Missing `mpdf/mpdf` in vendor** — Removed a stale `composer.lock` that excluded mpdf, so the release build now correctly installs the PDF library. Added `scripts/build.sh` and `scripts/build.bat` for production builds.
+- **Critical: XSS vulnerabilities in admin JavaScript** — Fixed three XSS vectors in `admin.js`: toast messages now use `.text()`, client name `<option>` creation uses DOM API, and media uploader `<img>` creation uses `.attr()` instead of HTML string concatenation.
+
+---
+
+## [1.2.8] - 2026-06-18
+
+### Fixed
+- Corrupted property declaration and duplicate `pdfService`/`emailService` assignments in `InvoiceAjaxHandler`.
+
+---
+
+## [1.2.7] - 2026-06-18
+
+### Fixed
+- UTF-8 BOM issue in `InvoiceAjaxHandler.php` causing fatal errors on some server configurations.
+
+---
+
 ## [1.2.6] - 2026-05-30
 
 ### Fixed

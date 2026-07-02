@@ -281,7 +281,7 @@ class WooCommerceIntegration
         if (!empty($settings['woo_auto_email'])) {
             try {
                 $pdfService   = new PdfService($this->logger);
-                $emailService = new EmailService($this->logger, $pdfService);
+                $emailService = new EmailService($this->logger, $pdfService, new \InvoiceForge\Security\Encryption());
                 $emailService->sendInvoice($invoice_id);
             } catch (\Exception $e) {
                 $this->logger->warning('Auto-email failed for WC invoice', ['error' => $e->getMessage()]);

@@ -765,7 +765,7 @@ class InvoiceAjaxHandler
 
             $logger = $this->logger ?? new \InvoiceForge\Utilities\Logger();
             $pdfService = new \InvoiceForge\Services\PdfService($logger);
-            $emailService = new \InvoiceForge\Services\EmailService($logger, $pdfService);
+            $emailService = new \InvoiceForge\Services\EmailService($logger, $pdfService, new \InvoiceForge\Security\Encryption());
 
             $result = $emailService->sendInvoice($invoice_id);
 
@@ -810,7 +810,7 @@ class InvoiceAjaxHandler
 
             $logger = $this->logger ?? new \InvoiceForge\Utilities\Logger();
             $pdfService = new \InvoiceForge\Services\PdfService($logger);
-            $emailService = new \InvoiceForge\Services\EmailService($logger, $pdfService);
+            $emailService = new \InvoiceForge\Services\EmailService($logger, $pdfService, new \InvoiceForge\Security\Encryption());
 
             $result = $emailService->sendReminder($invoice_id);
 

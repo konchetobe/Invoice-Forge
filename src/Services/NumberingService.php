@@ -60,12 +60,15 @@ class NumberingService
     private const OPTION_LAST_MONTH = 'invoiceforge_last_invoice_month';
 
     /**
-     * Transient name for the lock.
+     * Named lock identifier for MySQL GET_LOCK().
      *
-     * @since 1.0.0
+     * Using a server-side named lock avoids the TOCTOU race condition
+     * inherent in transient-based locks, which are not atomic.
+     *
+     * @since 1.2.8
      * @var string
      */
-    private const LOCK_TRANSIENT = 'invoiceforge_number_lock';
+    private const LOCK_NAME = 'invoiceforge_number_lock';
 
     /**
      * Lock timeout in seconds.
@@ -76,12 +79,12 @@ class NumberingService
     private const LOCK_TIMEOUT = 10;
 
     /**
-     * Maximum retry attempts for acquiring lock.
+     * Maximum attempts to find a unique invoice number after a collision.
      *
-     * @since 1.0.0
+     * @since 1.2.8
      * @var int
      */
-    private const MAX_RETRIES = 5;
+    private const MAX_UNIQUENESS_ATTEMPTS = 100;
 
     /**
      * Logger instance.
@@ -196,6 +199,24 @@ class NumberingService
 
             // Generate the formatted number
             $invoice_number = $this->formatCustom($config, $current_year, $current_month, $new_number);
+
+            // Ensure uniqueness — if a collision is found (e.g. from a prior race
+            // condition or manual entry), increment and retry until unique.
+            $attempts = 0;
+            while ($this->exists($invoice_number) && $attempts < self::MAX_UNIQUENESS_ATTEMPTS) {
+                $new_number++;
+                update_option(self::OPTION_LAST_NUMBER, $new_number);
+                $invoice_number = $this->formatCustom($config, $current_year, $current_month, $new_number);
+                $attempts++;
+            }
+
+            if ($this->exists($invoice_number)) {
+                $this->logger->error('Could not generate a unique invoice number after maximum attempts', [
+                    'last_attempt' => $invoice_number,
+                    'attempts'     => $attempts,
+                ]);
+                throw new \RuntimeException('Could not generate a unique invoice number.');
+            }
 
             $this->logger->debug('Generated invoice number', [
                 'number' => $invoice_number,
@@ -467,43 +488,43 @@ class NumberingService
     }
 
     /**
-     * Acquire a lock for number generation.
+     * Acquire an atomic lock for number generation.
      *
-     * @since 1.0.0
+     * Uses MySQL's GET_LOCK() which provides a true atomic, server-side lock
+     * that is connection-scoped and automatically released when the connection
+     * closes. This avoids the TOCTOU race condition inherent in transient-based
+     * locks, where set_transient() overwrites unconditionally and two processes
+     * can both believe they hold the lock.
+     *
+     * @since 1.2.8
      *
      * @return bool True if lock was acquired.
      */
     private function acquireLock(): bool
     {
-        for ($i = 0; $i < self::MAX_RETRIES; $i++) {
-            // Try to set the transient
-            if (get_transient(self::LOCK_TRANSIENT) === false) {
-                // Set the lock with a unique identifier
-                $lock_id = uniqid('lock_', true);
-                set_transient(self::LOCK_TRANSIENT, $lock_id, self::LOCK_TIMEOUT);
+        global $wpdb;
 
-                // Verify we got the lock (race condition check)
-                if (get_transient(self::LOCK_TRANSIENT) === $lock_id) {
-                    return true;
-                }
-            }
+        // GET_LOCK returns 1 if acquired, 0 if timed out, NULL on error.
+        $result = $wpdb->get_var(
+            $wpdb->prepare('SELECT GET_LOCK(%s, %d)', self::LOCK_NAME, self::LOCK_TIMEOUT)
+        );
 
-            // Wait before retrying (exponential backoff)
-            usleep((int) (100000 * pow(2, $i))); // 100ms, 200ms, 400ms, etc.
-        }
-
-        return false;
+        return $result === '1';
     }
 
     /**
      * Release the lock.
      *
-     * @since 1.0.0
+     * @since 1.2.8
      *
      * @return void
      */
     private function releaseLock(): void
     {
-        delete_transient(self::LOCK_TRANSIENT);
+        global $wpdb;
+
+        $wpdb->query(
+            $wpdb->prepare('SELECT RELEASE_LOCK(%s)', self::LOCK_NAME)
+        );
     }
 }

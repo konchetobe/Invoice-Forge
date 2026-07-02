@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace InvoiceForge\Services;
 
+use InvoiceForge\Security\Encryption;
 use InvoiceForge\Utilities\Logger;
 
 // Prevent direct access
@@ -44,17 +45,27 @@ class EmailService
     private PdfService $pdfService;
 
     /**
+     * Encryption handler for decrypting SMTP passwords.
+     *
+     * @since 1.2.8
+     * @var Encryption
+     */
+    private Encryption $encryption;
+
+    /**
      * Constructor.
      *
      * @since 1.1.0
      *
      * @param Logger     $logger     Logger instance.
      * @param PdfService $pdfService PDF service instance.
+     * @param Encryption $encryption Encryption handler.
      */
-    public function __construct(Logger $logger, PdfService $pdfService)
+    public function __construct(Logger $logger, PdfService $pdfService, Encryption $encryption)
     {
         $this->logger     = $logger;
         $this->pdfService = $pdfService;
+        $this->encryption = $encryption;
     }
 
     /**
@@ -207,5 +218,57 @@ class EmailService
         }
 
         return $sent;
+    }
+
+    /**
+     * Configure PHPMailer with the saved SMTP settings.
+     *
+     * Hooked into the `phpmailer_init` action so that wp_mail() uses the
+     * configured SMTP server instead of the default PHP mailer. Does nothing
+     * when SMTP is disabled or no host is configured.
+     *
+     * @since 1.2.8
+     *
+     * @param \PHPMailer\PHPMailer\PHPMailer $phpmailer The PHPMailer instance.
+     * @return void
+     */
+    public function configurePhpMailer(\PHPMailer\PHPMailer\PHPMailer $phpmailer): void
+    {
+        $settings = get_option('invoiceforge_settings', []);
+
+        if (empty($settings['smtp_enabled'])) {
+            return;
+        }
+
+        $host = (string) ($settings['smtp_host'] ?? '');
+        if ($host === '') {
+            return;
+        }
+
+        $phpmailer->isSMTP();
+        $phpmailer->Host = $host;
+        $phpmailer->Port = (int) ($settings['smtp_port'] ?? 587);
+
+        $username = (string) ($settings['smtp_username'] ?? '');
+        if ($username !== '') {
+            $phpmailer->SMTPAuth = true;
+            $phpmailer->Username = $username;
+            $phpmailer->Password = $this->encryption->safeDecrypt((string) ($settings['smtp_password'] ?? ''));
+        }
+
+        $encryption = (string) ($settings['smtp_encryption'] ?? 'tls');
+        if ($encryption === 'ssl' || $encryption === 'tls') {
+            $phpmailer->SMTPSecure = $encryption;
+        }
+
+        $from_email = (string) ($settings['email_from_address'] ?? get_option('admin_email'));
+        $from_name  = (string) ($settings['email_from_name'] ?? get_option('blogname'));
+
+        if ($from_email !== '') {
+            $phpmailer->From = $from_email;
+        }
+        if ($from_name !== '') {
+            $phpmailer->FromName = $from_name;
+        }
     }
 }

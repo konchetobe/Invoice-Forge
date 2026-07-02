@@ -207,7 +207,8 @@ final class Plugin
         ));
         $this->container->register('email_service', fn(): EmailService => new EmailService(
             $this->container->resolve('logger'),
-            $this->container->resolve('pdf_service')
+            $this->container->resolve('pdf_service'),
+            $this->container->resolve('encryption')
         ));
 
         // Repositories
@@ -274,6 +275,11 @@ final class Plugin
         // Must be registered directly (not via Loader) so the filter is in place
         // before WordPress fires its JIT translation loader on 'init'.
         $this->registerTextDomainHooks();
+
+        // Configure PHPMailer with saved SMTP settings when wp_mail() is used.
+        /** @var EmailService $emailService */
+        $emailService = $this->container->resolve('email_service');
+        add_action('phpmailer_init', [$emailService, 'configurePhpMailer']);
 
         // Register post types
         /** @var InvoicePostType $invoicePostType */

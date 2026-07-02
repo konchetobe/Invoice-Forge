@@ -109,7 +109,8 @@
                 mediaUploader.on('select', function() {
                     const attachment = mediaUploader.state().get('selection').first().toJSON();
                     $input.val(attachment.id);
-                    $preview.html('<img src="' + attachment.url + '" alt="">');
+                    // Use DOM API to prevent XSS from attachment URL
+                    $preview.empty().append($('<img>').attr('src', attachment.url).attr('alt', ''));
                     $removeBtn.show();
                 });
                 
@@ -274,7 +275,8 @@
                         if (clientMode === 'new' && response.data.invoice && response.data.invoice.client_id) {
                             const clientName = formData.new_client_first_name + ' ' + formData.new_client_last_name;
                             const $clientSelect = $form.find('[name="client_id"]');
-                            $clientSelect.append('<option value="' + response.data.invoice.client_id + '">' + clientName + '</option>');
+                            // Use DOM API to prevent XSS from user-supplied client name
+                            $('<option>').val(response.data.invoice.client_id).text(clientName).appendTo($clientSelect);
                             $clientSelect.val(response.data.invoice.client_id);
                             
                             // Switch to existing mode
@@ -731,7 +733,7 @@
                 <div class="invoiceforge-toast ${type}">
                     <div class="invoiceforge-toast-icon">${icons[type] || icons.info}</div>
                     <div class="invoiceforge-toast-content">
-                        <div class="invoiceforge-toast-message">${message}</div>
+                        <div class="invoiceforge-toast-message"></div>
                     </div>
                     <button type="button" class="invoiceforge-toast-close">
                         <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
@@ -740,6 +742,8 @@
                     </button>
                 </div>
             `);
+            // Use .text() to prevent XSS from server messages or user input
+            $toast.find('.invoiceforge-toast-message').text(message);
             
             $('#invoiceforge-toast-container').append($toast);
             
