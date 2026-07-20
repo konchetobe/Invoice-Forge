@@ -197,11 +197,13 @@ class EmailService
                 esc_html($invoice['currency']),
                 esc_html(number_format($invoice['total_amount'], 2))
             ) . '</p>'
-            . '<p>' . sprintf(
-                /* translators: %s: Due date */
-                esc_html__('Original due date: %s', 'invoiceforge'),
-                esc_html($invoice['due_date'])
-            ) . '</p>'
+            . (!empty($invoice['due_date'])
+                ? '<p>' . sprintf(
+                    /* translators: %s: Due date */
+                    esc_html__('Original due date: %s', 'invoiceforge'),
+                    esc_html($invoice['due_date'])
+                ) . '</p>'
+                : '')
             . '<p>' . esc_html__('Please arrange payment at your earliest convenience.', 'invoiceforge') . '</p>'
             . '<p>' . esc_html($invoice['company_name']) . '</p>'
             . '</body></html>';

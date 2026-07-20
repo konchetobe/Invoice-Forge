@@ -6,6 +6,34 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.3.0] - 2026-07-20
+
+### Added
+- **Person/Company toggle for client forms**: New individual-vs-company switch in both the standalone Client editor and the inline client creation form on the Invoice editor. When "Company" is selected, company name becomes required and the Billing Information fields (Tax ID, ID No, Office/Branch, Att To) appear. When "Individual" is selected, first/last name are required and billing fields are hidden.
+- **Inline billing fields on invoice editor**: The four missing billing fields (Tax ID / VAT Number, ID No / EIK / BULSTAT, Office / Branch, Att To) are now available when creating a client inline from the Invoice editor. Previously these fields were only accessible from the standalone Client editor and were silently stored as empty strings when creating clients from an invoice.
+- **`.pot` translation template**: New `languages/invoiceforge.pot` file generated from the full source code scan, exposing 545 translatable strings. This allows translators to update existing `.po` files without manual string extraction.
+- **Complete translation coverage**: All 10 language `.po`/`.mo` files now include every translatable string from the plugin source, preventing "undefined" messages in JavaScript and missing labels in the UI. Bulgarian (`bg_BG`) received 298 fully translated strings covering dashboard, invoice editor, client forms, settings, AJAX responses, and tax/payment/currency labels.
+- **Translation generation scripts**: Added `scripts/generate-pot.php` (extracts translatable strings from source) and `scripts/merge-translations.php` (merges new strings into all `.po` files and compiles `.mo` binaries), enabling reproducible translation updates.
+
+### Changed
+- **Due Date is now optional**: Removed the `+30 days` default that pre-filled the due date field for new invoices. The field starts empty; users can set a due date if needed. The classic editor meta box and the PDF preview no longer inject a `+30 days` default. The reminder email no longer references "Original due date" when the invoice has no due date.
+- **Due date validation relaxed**: The date validation in `admin.js` only warns when both dates are set and the due date precedes the invoice date. Empty due date is silently accepted everywhere (save handler, PDF rendering, email rendering, admin list columns).
+- **Expanded JavaScript i18n**: `Assets::getLocalizedData()` now exposes 24 keys covering all user-facing strings previously hardcoded in English in `admin.js`, including `saveError`, `networkError`, `validationError`, `emailSent`, `emailFailed`, `counterResetFailed`, `updating`, `upToDate`, `previewUnavailable`, `fieldLabel`, `left`, `right`, `remove`, etc. Fixed the `dueDateBefore` / `dueDateWarning` key mismatch that prevented the date warning from being translated.
+
+### Fixed
+- **Signature fields alignment in Settings → Template**: Moved the signature field repeater inside a `form-table` row so it lines up with the surrounding column-title fields above. Previously the rows were rendered outside the form-table, causing a ~200px leftward shift.
+- **Signature field radio name bug**: The radio inputs for Left/Right column selection used `uniqid()` twice per row (once per radio), producing different `name` attributes for empty-label fields and breaking radio grouping. Replaced with a stable index plus `md5(label)` so both radios in a pair always share the same name.
+- **Signature field responsive layout**: Added `flex-wrap: wrap` to repeater rows and `flex-shrink: 0` / `white-space: nowrap` to radio labels and remove buttons, preventing the Left/Right labels and buttons from being compressed on narrow screens.
+- **JavaScript toast error messages**: Replaced remaining hardcoded English strings in `admin.js` (invoice title required, counter value invalid, email sent/failed, preview status, network errors) with `InvoiceForge.i18n.*` references that fall back to English if the localized string is missing.
+- **WordPress.org-compliant constants and IDs**: All 10 new AJAX i18n keys are properly wrapped in `__()` calls so they appear in `.pot` files and are translatable.
+
+### Notes
+- **Backwards compatibility**: All changes preserve existing invoice/client data. Existing invoices with a `+30 days` due date retain that value; the change only affects new invoices going forward.
+- **Database**: No schema changes. No migration needed.
+- **Translation workflow**: Run `php scripts/generate-pot.php` after adding new translatable strings, then `php scripts/merge-translations.php` to propagate them across all 10 language files with English fallback. Translators can then update specific `.po` files with native translations.
+
+---
+
 ## [1.2.9] - 2026-07-02
 
 ### Fixed

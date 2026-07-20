@@ -279,17 +279,39 @@ class InvoiceAjaxHandler
                     'state'      => isset($_POST['new_client_state']) ? $_POST['new_client_state'] : '',
                     'zip'        => isset($_POST['new_client_zip']) ? $_POST['new_client_zip'] : '',
                     'country'    => isset($_POST['new_client_country']) ? $_POST['new_client_country'] : '',
+                    'tax_id'     => isset($_POST['new_client_tax_id']) ? $_POST['new_client_tax_id'] : '',
+                    'id_no'      => isset($_POST['new_client_id_no']) ? $_POST['new_client_id_no'] : '',
+                    'office'     => isset($_POST['new_client_office']) ? $_POST['new_client_office'] : '',
+                    'att_to'     => isset($_POST['new_client_att_to']) ? $_POST['new_client_att_to'] : '',
                 ];
+
+                // Determine client type
+                $new_client_type = isset($_POST['new_client_type']) ? sanitize_text_field(wp_unslash($_POST['new_client_type'])) : 'individual';
 
                 // Validate inline client data
                 $client_first_name = $this->sanitizer->text($client_data['first_name']);
                 $client_last_name = $this->sanitizer->text($client_data['last_name']);
                 $client_email = $this->sanitizer->email($client_data['email']);
+                $client_company = $this->sanitizer->text($client_data['company']);
 
-                if (empty($client_first_name) || empty($client_last_name) || empty($client_email)) {
-                    $this->log('debug', 'Missing required inline client fields');
-                    wp_send_json_error(['message' => __('For new clients, first name, last name and email are required.', 'invoiceforge')], 400);
-                    return;
+                // For company type: company name is required; for individual: first/last name required
+                if ($new_client_type === 'company') {
+                    if (empty($client_company)) {
+                        $this->log('debug', 'Missing company name for company-type inline client');
+                        wp_send_json_error(['message' => __('Company name is required for company clients.', 'invoiceforge')], 400);
+                        return;
+                    }
+                    if (empty($client_email)) {
+                        $this->log('debug', 'Missing email for company-type inline client');
+                        wp_send_json_error(['message' => __('Email is required for new clients.', 'invoiceforge')], 400);
+                        return;
+                    }
+                } else {
+                    if (empty($client_first_name) || empty($client_last_name) || empty($client_email)) {
+                        $this->log('debug', 'Missing required inline client fields');
+                        wp_send_json_error(['message' => __('For new clients, first name, last name and email are required.', 'invoiceforge')], 400);
+                        return;
+                    }
                 }
 
                 // Create the client using ClientAjaxHandler

@@ -234,9 +234,7 @@ class InvoicePostType
         if (empty($invoice_date)) {
             $invoice_date = current_time('Y-m-d');
         }
-        if (empty($due_date)) {
-            $due_date = gmdate('Y-m-d', strtotime('+30 days'));
-        }
+        // Due date is optional — leave empty if not set
 
         // Get all clients
         $clients = get_posts([

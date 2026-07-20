@@ -33,7 +33,7 @@ if ($is_new) {
         'number'         => '',
         'client_id'      => 0,
         'date'           => current_time('Y-m-d'),
-        'due_date'       => date('Y-m-d', strtotime('+30 days')),
+        'due_date'       => '',
         'status'         => 'draft',
         'total_amount'   => '',
         'currency'       => 'USD',
@@ -166,15 +166,29 @@ if (!isset($line_items)) {
                                         </h4>
                                     </div>
                                     <div class="invoiceforge-card-body" style="padding: var(--if-space-3);">
+                                        <input type="hidden" name="new_client_type" id="new_client_type" value="individual">
+
+                                        <!-- Person / Company Toggle -->
+                                        <div class="invoiceforge-client-type-toggle" style="display:flex;gap:0;margin-bottom:var(--if-space-3);border:1px solid var(--if-gray-300);border-radius:var(--if-radius);overflow:hidden;width:fit-content;">
+                                            <label style="flex:1;cursor:pointer;padding:var(--if-space-2) var(--if-space-4);text-align:center;background:var(--if-primary);color:#fff;">
+                                                <input type="radio" name="new_client_type_radio" value="individual" checked onchange="toggleNewClientType('individual')" style="display:none;">
+                                                <?php esc_html_e('Individual', 'invoiceforge'); ?>
+                                            </label>
+                                            <label style="flex:1;cursor:pointer;padding:var(--if-space-2) var(--if-space-4);text-align:center;border-left:1px solid var(--if-gray-300);">
+                                                <input type="radio" name="new_client_type_radio" value="company" onchange="toggleNewClientType('company')" style="display:none;">
+                                                <?php esc_html_e('Company', 'invoiceforge'); ?>
+                                            </label>
+                                        </div>
+
                                         <div class="invoiceforge-form-grid">
-                                            <div class="invoiceforge-form-group">
+                                            <div class="if-new-individual-field invoiceforge-form-group">
                                                 <label class="invoiceforge-form-label" for="new_client_first_name">
                                                     <?php esc_html_e('First Name', 'invoiceforge'); ?> <span class="required">*</span>
                                                 </label>
                                                 <input type="text" id="new_client_first_name" name="new_client_first_name" 
                                                        class="invoiceforge-form-input" placeholder="<?php esc_attr_e('John', 'invoiceforge'); ?>">
                                             </div>
-                                            <div class="invoiceforge-form-group">
+                                            <div class="if-new-individual-field invoiceforge-form-group">
                                                 <label class="invoiceforge-form-label" for="new_client_last_name">
                                                     <?php esc_html_e('Last Name', 'invoiceforge'); ?> <span class="required">*</span>
                                                 </label>
@@ -190,10 +204,10 @@ if (!isset($line_items)) {
                                             </div>
                                             <div class="invoiceforge-form-group">
                                                 <label class="invoiceforge-form-label" for="new_client_company">
-                                                    <?php esc_html_e('Company', 'invoiceforge'); ?>
+                                                    <?php esc_html_e('Company', 'invoiceforge'); ?> <span class="if-new-company-required required" style="display:none;">*</span>
                                                 </label>
                                                 <input type="text" id="new_client_company" name="new_client_company" 
-                                                       class="invoiceforge-form-input" placeholder="<?php esc_attr_e('Company (Optional)', 'invoiceforge'); ?>">
+                                                       class="invoiceforge-form-input" placeholder="<?php esc_attr_e('Company or Organization name', 'invoiceforge'); ?>">
                                             </div>
                                             <div class="invoiceforge-form-group">
                                                 <label class="invoiceforge-form-label" for="new_client_phone">
@@ -214,6 +228,40 @@ if (!isset($line_items)) {
                                                         </option>
                                                     <?php endforeach; ?>
                                                 </select>
+                                            </div>
+                                        </div>
+
+                                        <!-- Billing fields (shown only for company) -->
+                                        <div class="if-new-company-field" style="display:none;margin-top:var(--if-space-3);">
+                                            <div class="invoiceforge-form-grid">
+                                                <div class="invoiceforge-form-group">
+                                                    <label class="invoiceforge-form-label" for="new_client_tax_id">
+                                                        <?php esc_html_e('Tax ID / VAT Number', 'invoiceforge'); ?>
+                                                    </label>
+                                                    <input type="text" id="new_client_tax_id" name="new_client_tax_id" 
+                                                           class="invoiceforge-form-input" placeholder="<?php esc_attr_e('e.g., GB123456789', 'invoiceforge'); ?>">
+                                                </div>
+                                                <div class="invoiceforge-form-group">
+                                                    <label class="invoiceforge-form-label" for="new_client_id_no">
+                                                        <?php esc_html_e('ID No (EIK/BULSTAT/Reg No)', 'invoiceforge'); ?>
+                                                    </label>
+                                                    <input type="text" id="new_client_id_no" name="new_client_id_no" 
+                                                           class="invoiceforge-form-input" placeholder="<?php esc_attr_e('e.g., 123456789', 'invoiceforge'); ?>">
+                                                </div>
+                                                <div class="invoiceforge-form-group">
+                                                    <label class="invoiceforge-form-label" for="new_client_office">
+                                                        <?php esc_html_e('Office / Branch', 'invoiceforge'); ?>
+                                                    </label>
+                                                    <input type="text" id="new_client_office" name="new_client_office" 
+                                                           class="invoiceforge-form-input" placeholder="<?php esc_attr_e('e.g., HQ, Branch 1', 'invoiceforge'); ?>">
+                                                </div>
+                                                <div class="invoiceforge-form-group">
+                                                    <label class="invoiceforge-form-label" for="new_client_att_to">
+                                                        <?php esc_html_e('Att To', 'invoiceforge'); ?>
+                                                    </label>
+                                                    <input type="text" id="new_client_att_to" name="new_client_att_to" 
+                                                           class="invoiceforge-form-input" placeholder="<?php esc_attr_e('Contact person name', 'invoiceforge'); ?>">
+                                                </div>
                                             </div>
                                         </div>
 
@@ -717,6 +765,49 @@ function toggleClientMode(mode) {
         document.getElementById('new_client_first_name').removeAttribute('required');
         document.getElementById('new_client_last_name').removeAttribute('required');
         document.getElementById('new_client_email').removeAttribute('required');
+    }
+}
+
+function toggleNewClientType(type) {
+    var isCompany = (type === 'company');
+    document.getElementById('new_client_type').value = type;
+
+    // Toggle billing fields visibility
+    document.querySelectorAll('.if-new-company-field').forEach(function(el) {
+        el.style.display = isCompany ? '' : 'none';
+    });
+
+    // Toggle individual-only fields (first/last name)
+    document.querySelectorAll('.if-new-individual-field').forEach(function(el) {
+        el.style.display = isCompany ? 'none' : '';
+    });
+
+    // Toggle required markers
+    document.querySelectorAll('.if-new-company-required').forEach(function(el) {
+        el.style.display = isCompany ? '' : 'none';
+    });
+
+    // Update toggle button styling
+    document.querySelectorAll('#new-client-section .invoiceforge-client-type-toggle label').forEach(function(label) {
+        var radio = label.querySelector('input[type="radio"]');
+        if (radio && radio.checked) {
+            label.style.background = 'var(--if-primary)';
+            label.style.color = '#fff';
+        } else {
+            label.style.background = '';
+            label.style.color = '';
+        }
+    });
+
+    // Update required attributes
+    var firstName = document.getElementById('new_client_first_name');
+    var lastName = document.getElementById('new_client_last_name');
+    if (isCompany) {
+        firstName.removeAttribute('required');
+        lastName.removeAttribute('required');
+    } else {
+        firstName.setAttribute('required', '');
+        lastName.setAttribute('required', '');
     }
 }
 </script>

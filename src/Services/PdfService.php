@@ -184,7 +184,7 @@ class PdfService
                 'title'          => $form_overrides['title'] ?? '',
                 'number'         => __('(Not yet assigned)', 'invoiceforge'),
                 'date'           => $form_overrides['invoice_date'] ?? current_time('Y-m-d'),
-                'due_date'       => $form_overrides['due_date'] ?? date('Y-m-d', strtotime('+30 days')),
+                'due_date'       => $form_overrides['due_date'] ?? '',
                 'status'         => $form_overrides['status'] ?? 'draft',
                 'currency'       => $form_overrides['currency'] ?? 'USD',
                 'payment_method' => $form_overrides['payment_method'] ?? '',

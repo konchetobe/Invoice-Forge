@@ -1,0 +1,2166 @@
+# Translation template for InvoiceForge
+# Copyright (C) 2026 InvoiceForge
+# This file is distributed under the GPL-2.0-or-later license.
+msgid ""
+msgstr ""
+"Project-Id-Version: InvoiceForge 1.2.9\n"
+"Report-Msgid-Bugs-To: https://github.com/konchetobe/Invoice-Forge/issues\n"
+"POT-Creation-Date: 2026-07-20 10:49:16+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: InvoiceForge POT Generator\n"
+"X-Domain: invoiceforge\n"
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Security/Validator.php
+msgid "%1$s must be after %2$s."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Security/Validator.php
+msgid "%1$s must be at least %2$d characters."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Security/Validator.php
+msgid "%1$s must be at least %2$s."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Security/Validator.php
+msgid "%1$s must not exceed %2$d characters."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Security/Validator.php
+msgid "%1$s must not exceed %2$s."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Security/Validator.php
+msgid "%s cannot be negative."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Security/Validator.php
+msgid "%s is required."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Security/Validator.php
+msgid "%s must be a positive number."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Services/PdfService.php
+msgid "(Not yet assigned)"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "(not visible on invoice)"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "+ Add Address (Optional)"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "+ Add Method"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "+ Add Signature Field"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "+1 (555) 123-4567"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "123 Main Street"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php
+msgid "123 Main Street, Suite 100"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Accent Color"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Security/Capabilities.php
+msgid "Access Denied"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Account Holder"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/client-list.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-list.php
+msgid "Actions"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/client-list.php C:/GitHub-Repos/Invoice-Forge/templates/admin/dashboard.php
+msgid "Add Client"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Add Item"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgid "Add New"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Add New Client"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgid "Add New Invoice"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgid "Add a client first"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgid "Add any notes or terms for this invoice..."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/client-list.php
+msgid "Add your first client to start creating invoices."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php
+msgid "Address"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Afghanistan"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Albania"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Algeria"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-list.php
+msgid "All"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "All Clients"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-list.php
+msgid "All Invoices"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-list.php
+msgid "Amount"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Amount Due"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Services/EmailService.php
+msgid "Amount Due:"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "An error occurred while generating the PDF."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "An error occurred while previewing the PDF."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "An error occurred. Please try again."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/ClientAjaxHandler.php C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "An unexpected error occurred."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/ClientAjaxHandler.php C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "An unexpected error occurred. Please try again."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Andorra"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Angola"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Appearance"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "Are you sure you want to delete this client?"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "Are you sure you want to delete this invoice?"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "Are you sure you want to delete this item?"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "Are you sure you want to reset the invoice counter? This cannot be undone."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "Are you sure you want to send this invoice to the client via email?"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Argentina"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Armenia"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Att To"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Attention To"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Australia"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Austria"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Auto-Send Invoice Email"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgid "Auto-generated on save"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Automatically email the PDF invoice to the customer when generated"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Automatically generate invoices from WooCommerce orders"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Available Methods"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Azerbaijan"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "BIC"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "BUYER"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Back to List"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Bahrain"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Bangladesh"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Bank"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Bank Details"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Belarus"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Belgium"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Belize"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php
+msgid "Billing Information"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Bolivia"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Bosnia and Herzegovina"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Botswana"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Brazil"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Brunei"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Bulgaria"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Cambodia"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Cameroon"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Canada"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgid "Cancelled"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/ClientAjaxHandler.php
+msgid "Cannot delete client with %d invoice(s). Please delete or reassign the invoices first."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Chile"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "China"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "City"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-list.php
+msgid "Client"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php
+msgid "Client Information"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Client Name"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/ClientAjaxHandler.php
+msgid "Client created successfully."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/ClientAjaxHandler.php
+msgid "Client deleted successfully."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Client is required. Select an existing client or add new client details."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/ClientAjaxHandler.php
+msgid "Client not found."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/ClientAjaxHandler.php
+msgid "Client updated successfully."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/AdminController.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-list.php
+msgid "Clients"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Colombia"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-list.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Company"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Company name is required for company clients."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Company or Organization (Optional)"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Company or Organization name"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Completed"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Configure the fields that appear in the signature block."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Contact Information"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php
+msgid "Contact person (МОЛ) for company clients. For individuals, this can be left empty."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Contact person name"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Costa Rica"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Country"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php
+msgid "Create Client"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/dashboard.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-list.php
+msgid "Create Invoice"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-list.php
+msgid "Create your first invoice to get started."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Created:"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Croatia"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Cuba"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Currency"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Current counter: %d"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-list.php
+msgid "Custom Invoices"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Customer Notes"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Cyprus"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Czech Republic"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Danger Zone"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/AdminController.php C:/GitHub-Repos/Invoice-Forge/templates/admin/dashboard.php
+msgid "Dashboard"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-list.php C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Date"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Security/Validator.php
+msgid "Date cannot be in the past."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Services/EmailService.php
+msgid "Dear %s,"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/client-list.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-list.php
+msgid "Delete"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php
+msgid "Delete Client"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Delete Invoice"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Denmark"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Description"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Disc.%"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Disc.Amt"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Discount"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Discount row in totals"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Doe"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Dominican Republic"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-list.php
+msgid "Download PDF"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgid "Draft"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Drag sections to reorder them on the invoice PDF."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Drag to reorder"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Due"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-list.php C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Due Date"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "Due date cannot be before invoice date."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Ecuador"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/client-list.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-list.php
+msgid "Edit"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php
+msgid "Edit Client"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Edit Invoice"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Egypt"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "El Salvador"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-list.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Email"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Email Address"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Email Preview"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Email is required for new clients."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Email sending functionality will be available in a future update. Configure your SMTP settings now to be ready."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Email sent successfully."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Enable Integration"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Estonia"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Ethiopia"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Failed to create new client. Please check the client details."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/ClientAjaxHandler.php
+msgid "Failed to delete client."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Failed to delete invoice."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Failed to delete tax rate."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Failed to generate invoice. Check logs for details."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "Failed to reset counter."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Failed to reset invoice counter."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "Failed to save. Please try again."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "Failed to send email."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Failed to send email. Check error logs for more details."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Failed to send reminder. Check error logs for more details."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "Failed to set counter."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Failed to set invoice counter."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Field label"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Finland"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "First Name"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Fixed Amount"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php
+msgid "For EU VAT reverse charge and tax compliance."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgid "For Phase 1A, enter the total manually. Line items will be added in Phase 1B."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "For new clients, first name, last name and email are required."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Format:"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "France"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Georgia"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Germany"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Ghana"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Greece"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Guatemala"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Header (Company + Client)"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Hex color used for headings and accents on the invoice PDF."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Hold Ctrl/Cmd to select multiple statuses."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Honduras"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Hong Kong"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Hungary"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "IBAN"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "ID No (EIK/BULSTAT/Reg No)"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "ID No Label"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "INVOICE"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Iceland"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "India"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Individual"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Indonesia"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Internal Notes"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/ClientAjaxHandler.php
+msgid "Invalid client ID."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/ClientAjaxHandler.php
+msgid "Invalid client."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Invalid invoice ID."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Invalid invoice."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Invalid order ID."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Invalid tax rate ID."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Invoice"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-list.php
+msgid "Invoice #"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Invoice #:"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Services/EmailService.php
+msgid "Invoice %s from %s"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Invoice Date"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Invoice Details"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Invoice Info"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Invoice Logo"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgid "Invoice Notes"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgid "Invoice Number"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Invoice Number Format"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/dashboard.php
+msgid "Invoice Status"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Invoice Title"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Invoice counter has been reset."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Invoice counter set to %1$d. Next invoice: %2$s"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Invoice created successfully."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Invoice deleted successfully."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Invoice generated successfully."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Invoice not found."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgid "Invoice number is automatically generated."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Invoice title is required."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Invoice updated successfully."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/AdminController.php
+msgid "InvoiceForge"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "InvoiceForge Sequential (e.g. INV-2026-0001)"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/invoiceforge.php
+msgid "InvoiceForge requires Composer dependencies. Please run \"composer install\" first."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/invoiceforge.php
+msgid "InvoiceForge requires Composer dependencies. Please run \"composer install\" in the plugin directory."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/invoiceforge.php
+msgid "InvoiceForge requires PHP %s or higher."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/invoiceforge.php
+msgid "InvoiceForge requires PHP version %1$s or higher. Your current version is %2$s. Please upgrade PHP to use this plugin."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/invoiceforge.php
+msgid "InvoiceForge requires WordPress version %1$s or higher. Your current version is %2$s. Please upgrade WordPress to use this plugin."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/AdminController.php C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-list.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-list.php
+msgid "Invoices"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Iran"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Iraq"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Ireland"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Israel"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Italy"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Item description"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Jamaica"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Japan"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "John"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Jordan"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Kazakhstan"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Kenya"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Kuwait"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Label used for the company/client ID number field (e.g. EIK, BULSTAT, Reg No)."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Last Name"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Latvia"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Lebanon"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Left"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Left Column Title"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Libya"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Liechtenstein"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Line Items"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Lithuania"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Loading preview..."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "Loading..."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-list.php
+msgid "Location"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Logo"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Luxembourg"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Macau"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Malaysia"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Maldives"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Malta"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Manually set the next invoice number counter. The next invoice created will use this number."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Mauritius"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Mexico"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Moldova"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Monaco"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Mongolia"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Montenegro"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Morocco"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgid "Multi-currency support will be expanded in Phase 4."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Myanmar"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/client-list.php
+msgid "Name"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Nepal"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Netherlands"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "Network error. Please try again."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-list.php
+msgid "New Client"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "New Client Details"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/dashboard.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-list.php
+msgid "New Invoice"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "New Zealand"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Next Invoice Number:"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Nicaragua"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Nigeria"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "No Discount"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "No Tax"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "No clients found in Trash."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "No clients found."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "No clients found. Switch to \"Add New Client\" to create one inline."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/client-list.php
+msgid "No clients yet"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/dashboard.php
+msgid "No clients yet. Add your first client to start invoicing!"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgid "No invoices found in Trash."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgid "No invoices found."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-list.php
+msgid "No invoices yet"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/dashboard.php
+msgid "No invoices yet. Create your first invoice to get started!"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "No line items yet. Click \"Add Item\" to get started."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "No."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "North Macedonia"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Norway"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Notes"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Notes & Terms"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Notes visible to the customer on the invoice..."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Office"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Office / Branch"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Oman"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php
+msgid "Optional for individuals."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Optional. Leave blank for individual clients."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Order Invoice Prefix"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Services/EmailService.php
+msgid "Original due date: %s"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/dashboard.php
+msgid "Outstanding"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgid "Overdue"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "PDF"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "PDF Preview"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "PDF generation is currently unavailable. The mPDF library is missing. Please ensure you are using the correct release ZIP or run \"composer install\"."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgid "Paid"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Pakistan"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Panama"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Paraguay"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Parent Clients:"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgid "Parent Invoices:"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Pay Invoice"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Payment Details"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Payment Method"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Payment Methods"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Services/EmailService.php
+msgid "Payment Reminder: Invoice %s"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Payment methods available to select on each invoice."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Payment terms, late fees, etc."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Pending payment"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Percentage (%)"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Peru"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Philippines"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-list.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Phone"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Phone Number"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Services/EmailService.php
+msgid "Please arrange payment at your earliest convenience."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Security/Validator.php
+msgid "Please enter a valid URL."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "Please enter a valid counter value (minimum 1)."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Please enter a valid counter value."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php C:/GitHub-Repos/Invoice-Forge/src/Security/Validator.php
+msgid "Please enter a valid date."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php C:/GitHub-Repos/Invoice-Forge/src/Ajax/ClientAjaxHandler.php C:/GitHub-Repos/Invoice-Forge/src/Security/Validator.php
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "Please enter a valid number."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Security/Validator.php
+msgid "Please enter a valid value."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "Please fill in all required fields."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Services/EmailService.php
+msgid "Please find your invoice %s attached."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "Please select a client."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Security/Validator.php
+msgid "Please select a valid option."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/invoiceforge.php
+msgid "Plugin Activation Error"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Poland"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Portugal"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Preview"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Preview failed — invoice not found or template missing."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Preview failed."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "Preview unavailable"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Private notes for your reference..."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Processing"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Puerto Rico"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Qatar"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Qty"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/dashboard.php
+msgid "Quick Actions"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/dashboard.php
+msgid "Recent Clients"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/dashboard.php
+msgid "Recent Invoices"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Reminder sent successfully."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Remove"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Remove Image"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Required for EU VAT reverse charge and tax compliance."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Reset Invoice Counter"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Right"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Right Column Title"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Romania"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Russia"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "SELLER"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Saudi Arabia"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Save Changes"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Save Settings"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "Saved!"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "Saving..."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Search Clients"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgid "Search Invoices"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/client-list.php
+msgid "Search clients..."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-list.php
+msgid "Search invoices..."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Section Order"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Section Visibility"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Security/Nonce.php
+msgid "Security Error"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/ClientAjaxHandler.php C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Security check failed."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/ClientAjaxHandler.php C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Security check failed. Please refresh the page and try again."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Security/Nonce.php
+msgid "Security check failed. Please try again."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Select Existing Client"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Select Image"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Select a client..."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php
+msgid "Select a country..."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Select a logo from the media library (JPG, PNG, SVG). Recommended size: 300x100px."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Select..."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-list.php
+msgid "Send Email"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Send to Client"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgid "Sent"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Serbia"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Set Counter"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Set Invoice Counter"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/AdminController.php C:/GitHub-Repos/Invoice-Forge/templates/admin/dashboard.php C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Settings"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Signature"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Signature Fields"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Signature block"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Signatures"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Singapore"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Slovakia"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Slovenia"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "South Africa"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "South Korea"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Spain"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Sri Lanka"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "State / Province"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php
+msgid "Statistics"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-list.php C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Status"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Street Address"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Subtotal"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Sweden"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Switzerland"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "TOTAL"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Taiwan"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Tanzania"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Tax"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Tax %"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Tax Amt"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Tax ID / VAT Number"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Tax rate deleted successfully."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Tax rate name is required."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Tax rate not found."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Tax rate saved successfully."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Terms & Conditions"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Thailand"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "These actions can affect your invoice data. Use with caution."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgid "These notes will appear on the invoice."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "This field is required."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Services/EmailService.php
+msgid "This is a friendly reminder that invoice %1$s for %2$s %3$s is overdue."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Total"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgid "Total Amount"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/dashboard.php
+msgid "Total Clients"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/dashboard.php
+msgid "Total Invoices"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/dashboard.php
+msgid "Total Revenue"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Totals"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Trigger on Order Status"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Tunisia"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Turkey"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Ukraine"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "Unauthorized."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "Unit Price"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "United Arab Emirates"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "United Kingdom"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "United States"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/src/Services/PdfService.php
+msgid "Unknown Client"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/ClientAjaxHandler.php
+msgid "Unnamed Client"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "Up to date"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "Updating..."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Uruguay"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/Assets.php
+msgid "Use this image"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Used when \"WooCommerce Order Number\" format is selected (e.g. ORD-1234)."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Uzbekistan"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Repositories/TaxRateRepository.php
+msgid "VAT 0%"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Repositories/TaxRateRepository.php
+msgid "VAT 20%"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Repositories/TaxRateRepository.php
+msgid "VAT 9%"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/pdf/invoice-default.php
+msgid "VAT exempt — Article 70 VATA."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "Value"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Venezuela"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Vietnam"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/dashboard.php
+msgid "View All"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/dashboard.php
+msgid "View All Invoices"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "View Client"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgid "View Invoice"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "Visible Sections"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "WooCommerce Integration"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "WooCommerce Order Number with Prefix (e.g. ORD-1234)"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-list.php
+msgid "WooCommerce Orders"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "WooCommerce is not active."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "WooCommerce is not installed or activated. Install WooCommerce to use these integration settings."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Yemen"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Admin/AdminController.php
+msgid "You do not have permission to access this page."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/ClientAjaxHandler.php
+msgid "You do not have permission to delete clients."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "You do not have permission to delete invoices."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/ClientAjaxHandler.php
+msgid "You do not have permission to edit clients."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "You do not have permission to edit invoices."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Security/Capabilities.php
+msgid "You do not have permission to manage InvoiceForge settings."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Security/Capabilities.php
+msgid "You do not have permission to manage clients."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Security/Capabilities.php
+msgid "You do not have permission to manage invoices."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "You do not have permission to manage tax rates."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php C:/GitHub-Repos/Invoice-Forge/src/Security/Capabilities.php
+msgid "You do not have permission to perform this action."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "You do not have permission to preview invoices."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/ClientAjaxHandler.php
+msgid "You do not have permission to view clients."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/Ajax/InvoiceAjaxHandler.php
+msgid "You do not have permission to view invoices."
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "ZIP / Postal Code"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgid "Zimbabwe"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgctxt "Add New on Toolbar"
+msgid "Client"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgctxt "Add New on Toolbar"
+msgid "Invoice"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgctxt "Admin Menu text"
+msgid "Clients"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgctxt "Admin Menu text"
+msgid "Invoices"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgctxt "Overrides the \"Featured Image\" phrase"
+msgid "Client Photo"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgctxt "Overrides the \"Featured Image\" phrase"
+msgid "Invoice Logo"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgctxt "Overrides the \"Insert into post\" phrase"
+msgid "Insert into client"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgctxt "Overrides the \"Insert into post\" phrase"
+msgid "Insert into invoice"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgctxt "Overrides the \"Remove featured image\" phrase"
+msgid "Remove client photo"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgctxt "Overrides the \"Remove featured image\" phrase"
+msgid "Remove invoice logo"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgctxt "Overrides the \"Set featured image\" phrase"
+msgid "Set client photo"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgctxt "Overrides the \"Set featured image\" phrase"
+msgid "Set invoice logo"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgctxt "Overrides the \"Uploaded to this post\" phrase"
+msgid "Uploaded to this client"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgctxt "Overrides the \"Uploaded to this post\" phrase"
+msgid "Uploaded to this invoice"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgctxt "Overrides the \"Use as featured image\" phrase"
+msgid "Use as client photo"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgctxt "Overrides the \"Use as featured image\" phrase"
+msgid "Use as invoice logo"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgctxt "Post type general name"
+msgid "Clients"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgctxt "Post type general name"
+msgid "Invoices"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgctxt "Post type singular name"
+msgid "Client"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgctxt "Post type singular name"
+msgid "Invoice"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgctxt "Screen reader text"
+msgid "Clients list"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgctxt "Screen reader text"
+msgid "Clients list navigation"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgctxt "Screen reader text"
+msgid "Filter clients list"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgctxt "Screen reader text"
+msgid "Filter invoices list"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgctxt "Screen reader text"
+msgid "Invoices list"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgctxt "Screen reader text"
+msgid "Invoices list navigation"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php
+msgctxt "The post type archive label"
+msgid "Client archives"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/InvoicePostType.php
+msgctxt "The post type archive label"
+msgid "Invoice archives"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "e.g., 100"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "e.g., 123456789"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "e.g., GB123456789"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "e.g., HQ, Branch 1"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "e.g., Issued by"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/settings.php
+msgid "e.g., Received by"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "e.g., Website Development - March 2025"
+msgstr ""
+
+#: C:/GitHub-Repos/Invoice-Forge/src/PostTypes/ClientPostType.php C:/GitHub-Repos/Invoice-Forge/templates/admin/client-editor.php C:/GitHub-Repos/Invoice-Forge/templates/admin/invoice-editor.php
+msgid "email@example.com"
+msgstr ""
+

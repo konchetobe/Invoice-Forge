@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: InvoiceForge 1.0.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-20 12:00+0000\n"
-"PO-Revision-Date: 2026-03-20 12:00+0000\n"
+"Project-Id-Version: InvoiceForge 1.2.9\n"
+"Report-Msgid-Bugs-To: https://github.com/konchetobe/Invoice-Forge/issues\n"
+"POT-Creation-Date: 2026-07-20 11:03:25+0000\n"
+"PO-Revision-Date: 2026-07-20 11:03:25+0000\n"
 "Last-Translator: InvoiceForge Team\n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
@@ -16,406 +16,398 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-# Dashboard
-msgid "Dashboard"
-msgstr "Pannello"
+msgid "%1$s must be after %2$s."
+msgstr "%1$s must be after %2$s."
 
-msgid "Total Revenue"
-msgstr "Fatturato totale"
+msgid "%1$s must be at least %2$d characters."
+msgstr "%1$s must be at least %2$d characters."
 
-msgid "Outstanding"
-msgstr "In sospeso"
+msgid "%1$s must be at least %2$s."
+msgstr "%1$s must be at least %2$s."
 
-msgid "Total Invoices"
-msgstr "Fatture totali"
+msgid "%1$s must not exceed %2$d characters."
+msgstr "%1$s must not exceed %2$d characters."
 
-msgid "Total Clients"
-msgstr "Clienti totali"
+msgid "%1$s must not exceed %2$s."
+msgstr "%1$s must not exceed %2$s."
 
-msgid "Quick Actions"
-msgstr "Azioni rapide"
+msgid "%s cannot be negative."
+msgstr "%s cannot be negative."
 
-msgid "Recent Invoices"
-msgstr "Fatture recenti"
+msgid "%s is required."
+msgstr "%s is required."
 
-msgid "Recent Clients"
-msgstr "Clienti recenti"
+msgid "%s must be a positive number."
+msgstr "%s must be a positive number."
 
-# Invoices
-msgid "Invoices"
-msgstr "Fatture"
+msgid "(Not yet assigned)"
+msgstr "(Not yet assigned)"
 
-msgid "Invoice"
-msgstr "Fattura"
-
-msgid "New Invoice"
-msgstr "Nuova fattura"
-
-msgid "Edit Invoice"
-msgstr "Modifica fattura"
-
-msgid "Invoice Details"
-msgstr "Dettagli fattura"
-
-msgid "Invoice Title"
-msgstr "Titolo fattura"
-
-msgid "Invoice Date"
-msgstr "Data fattura"
-
-msgid "Due Date"
-msgstr "Data di scadenza"
-
-msgid "Total Amount"
-msgstr "Importo totale"
-
-msgid "Currency"
-msgstr "Valuta"
-
-msgid "Notes"
-msgstr "Note"
-
-msgid "Create Invoice"
-msgstr "Crea fattura"
-
-msgid "Delete Invoice"
-msgstr "Elimina fattura"
-
-msgid "Invoice Info"
-msgstr "Info fattura"
-
-msgid "Invoice #:"
-msgstr "Fattura n.:"
-
-msgid "Created:"
-msgstr "Creata:"
-
-# Invoice Statuses
-msgid "Status"
-msgstr "Stato"
-
-msgid "Draft"
-msgstr "Bozza"
-
-msgid "Sent"
-msgstr "Inviata"
-
-msgid "Paid"
-msgstr "Pagata"
-
-msgid "Overdue"
-msgstr "Scaduta"
-
-msgid "Cancelled"
-msgstr "Annullata"
-
-msgid "All"
-msgstr "Tutte"
-
-# Clients
-msgid "Clients"
-msgstr "Clienti"
-
-msgid "Client"
-msgstr "Cliente"
-
-msgid "New Client"
-msgstr "Nuovo cliente"
-
-msgid "Edit Client"
-msgstr "Modifica cliente"
-
-msgid "Add New Client"
-msgstr "Aggiungi nuovo cliente"
-
-msgid "Select Existing Client"
-msgstr "Seleziona cliente esistente"
-
-msgid "Select a client..."
-msgstr "Seleziona un cliente..."
-
-msgid "New Client Details"
-msgstr "Dati nuovo cliente"
-
-msgid "Personal Information"
-msgstr "Informazioni personali"
-
-msgid "First Name"
-msgstr "Nome"
-
-msgid "Last Name"
-msgstr "Cognome"
-
-msgid "Company"
-msgstr "Azienda"
-
-msgid "Email"
-msgstr "E-mail"
-
-msgid "Phone"
-msgstr "Telefono"
-
-msgid "Create Client"
-msgstr "Crea cliente"
-
-msgid "Delete Client"
-msgstr "Elimina cliente"
-
-# Address
-msgid "Address"
-msgstr "Indirizzo"
-
-msgid "Street Address"
-msgstr "Via"
-
-msgid "City"
-msgstr "Città"
-
-msgid "State / Province"
-msgstr "Regione / Provincia"
-
-msgid "ZIP / Postal Code"
-msgstr "CAP"
-
-msgid "Country"
-msgstr "Paese"
-
-msgid "Select a country..."
-msgstr "Seleziona un paese..."
+msgid "(not visible on invoice)"
+msgstr "(not visible on invoice)"
 
 msgid "+ Add Address (Optional)"
 msgstr "+ Aggiungi indirizzo (facoltativo)"
 
-# Billing
-msgid "Billing Information"
-msgstr "Informazioni di fatturazione"
+msgid "+ Add Method"
+msgstr "+ Add Method"
 
-msgid "Tax ID / VAT Number"
-msgstr "Codice fiscale / P.IVA"
+msgid "+ Add Signature Field"
+msgstr "+ Add Signature Field"
 
-# Statistics
-msgid "Statistics"
-msgstr "Statistiche"
+msgid "+1 (555) 123-4567"
+msgstr "+1 (555) 123-4567"
 
-# Settings
-msgid "Settings"
-msgstr "Impostazioni"
+msgid "123 Main Street"
+msgstr "123 Main Street"
 
-msgid "General"
-msgstr "Generale"
+msgid "123 Main Street, Suite 100"
+msgstr "123 Main Street, Suite 100"
 
-msgid "Advanced"
-msgstr "Avanzato"
+msgid "Accent Color"
+msgstr "Accent Color"
 
-msgid "Company Information"
-msgstr "Informazioni aziendali"
+msgid "Access Denied"
+msgstr "Access Denied"
 
-msgid "Company Name"
-msgstr "Nome azienda"
+msgid "Account Holder"
+msgstr "Intestatario del conto"
 
-msgid "Company Email"
-msgstr "E-mail azienda"
+msgid "Actions"
+msgstr "Actions"
 
-msgid "Company Phone"
-msgstr "Telefono azienda"
+msgid "Add Client"
+msgstr "Add Client"
 
-msgid "Company Address"
-msgstr "Indirizzo azienda"
+msgid "Add Item"
+msgstr "Add Item"
 
-msgid "Company Logo"
-msgstr "Logo azienda"
+msgid "Add New"
+msgstr "Add New"
 
-msgid "Language"
-msgstr "Lingua"
+msgid "Add New Client"
+msgstr "Aggiungi nuovo cliente"
 
-msgid "Default (Site Language)"
-msgstr "Predefinita (lingua del sito)"
+msgid "Add New Invoice"
+msgstr "Add New Invoice"
 
-msgid "English (US)"
-msgstr "Inglese (USA)"
+msgid "Add a client first"
+msgstr "Add a client first"
 
-msgid "English (UK)"
-msgstr "Inglese (UK)"
+msgid "Add any notes or terms for this invoice..."
+msgstr "Add any notes or terms for this invoice..."
 
-msgid "Bulgarian (Български)"
-msgstr "Bulgaro (Български)"
+msgid "Add your first client to start creating invoices."
+msgstr "Add your first client to start creating invoices."
 
-msgid "German (Deutsch)"
-msgstr "Tedesco (Deutsch)"
+msgid "Address"
+msgstr "Indirizzo"
 
-msgid "French (Français)"
-msgstr "Francese (Français)"
+msgid "Afghanistan"
+msgstr "Afghanistan"
 
-msgid "Spanish (Español)"
-msgstr "Spagnolo (Español)"
+msgid "Albania"
+msgstr "Albania"
 
-msgid "Italian (Italiano)"
-msgstr "Italiano"
+msgid "Algeria"
+msgstr "Algeria"
 
-msgid "Dutch (Nederlands)"
-msgstr "Olandese (Nederlands)"
+msgid "All"
+msgstr "Tutte"
 
-msgid "Polish (Polski)"
-msgstr "Polacco (Polski)"
+msgid "All Clients"
+msgstr "All Clients"
 
-msgid "Portuguese (Português)"
-msgstr "Portoghese (Português)"
+msgid "All Invoices"
+msgstr "All Invoices"
 
-msgid "Romanian (Română)"
-msgstr "Rumeno (Română)"
+msgid "Amount"
+msgstr "Amount"
 
-msgid "Russian (Русский)"
-msgstr "Russo (Русский)"
+msgid "Amount Due"
+msgstr "Importo dovuto"
 
-msgid "Save Settings"
-msgstr "Salva impostazioni"
+msgid "Amount Due:"
+msgstr "Amount Due:"
 
-# Actions
-msgid "Save"
-msgstr "Salva"
+msgid "An error occurred while generating the PDF."
+msgstr "An error occurred while generating the PDF."
 
-msgid "Save Changes"
-msgstr "Salva modifiche"
-
-msgid "Cancel"
-msgstr "Annulla"
-
-msgid "Delete"
-msgstr "Elimina"
-
-msgid "Edit"
-msgstr "Modifica"
-
-msgid "View"
-msgstr "Visualizza"
-
-msgid "Search"
-msgstr "Cerca"
-
-msgid "Back to List"
-msgstr "Torna all'elenco"
-
-# Messages
-msgid "Saving..."
-msgstr "Salvataggio..."
-
-msgid "Saved!"
-msgstr "Salvato!"
+msgid "An error occurred while previewing the PDF."
+msgstr "An error occurred while previewing the PDF."
 
 msgid "An error occurred. Please try again."
 msgstr "Si è verificato un errore. Riprova."
 
-msgid "Network error. Please try again."
-msgstr "Errore di rete. Riprova."
+msgid "An unexpected error occurred."
+msgstr "An unexpected error occurred."
 
-msgid "Security check failed."
-msgstr "Verifica di sicurezza non riuscita."
+msgid "An unexpected error occurred. Please try again."
+msgstr "An unexpected error occurred. Please try again."
 
-msgid "Please fill in all required fields."
-msgstr "Compila tutti i campi obbligatori."
+msgid "Andorra"
+msgstr "Andorra"
 
-msgid "Please enter a valid email address."
-msgstr "Inserisci un indirizzo e-mail valido."
+msgid "Angola"
+msgstr "Angola"
+
+msgid "Appearance"
+msgstr "Appearance"
+
+msgid "Are you sure you want to delete this client?"
+msgstr "Are you sure you want to delete this client?"
+
+msgid "Are you sure you want to delete this invoice?"
+msgstr "Are you sure you want to delete this invoice?"
 
 msgid "Are you sure you want to delete this item?"
 msgstr "Sei sicuro di voler eliminare questo elemento?"
 
-msgid "Client created successfully."
-msgstr "Cliente creato con successo."
+msgid "Are you sure you want to reset the invoice counter? This cannot be undone."
+msgstr "Are you sure you want to reset the invoice counter? This cannot be undone."
 
-msgid "Client updated successfully."
-msgstr "Cliente aggiornato con successo."
+msgid "Are you sure you want to send this invoice to the client via email?"
+msgstr "Are you sure you want to send this invoice to the client via email?"
 
-msgid "Client deleted successfully."
-msgstr "Cliente eliminato con successo."
+msgid "Argentina"
+msgstr "Argentina"
 
-msgid "Invoice created successfully."
-msgstr "Fattura creata con successo."
-
-msgid "Invoice updated successfully."
-msgstr "Fattura aggiornata con successo."
-
-msgid "Invoice deleted successfully."
-msgstr "Fattura eliminata con successo."
-
-# Countries
-msgid "Bulgaria"
-msgstr "Bulgaria"
-
-msgid "United States"
-msgstr "Stati Uniti"
-
-msgid "United Kingdom"
-msgstr "Regno Unito"
-
-msgid "Germany"
-msgstr "Germania"
-
-msgid "France"
-msgstr "Francia"
-
-# Empty states
-msgid "No invoices found."
-msgstr "Nessuna fattura trovata."
-
-msgid "No clients found."
-msgstr "Nessun cliente trovato."
-
-msgid "Create your first invoice"
-msgstr "Crea la tua prima fattura"
-
-msgid "Add your first client"
-msgstr "Aggiungi il tuo primo cliente"
-
-# Misc
-msgid "required"
-msgstr "obbligatorio"
-
-msgid "Optional"
-msgstr "Facoltativo"
-
-msgid "Loading..."
-msgstr "Caricamento..."
-
-msgid "Line items will be available in a future update."
-msgstr "Le voci di dettaglio saranno disponibili in un futuro aggiornamento."
-
-msgid "Select..."
-msgstr "Seleziona..."
-
-# Invoice/Email Template
-msgid "BUYER"
-msgstr "ACQUIRENTE"
-
-msgid "SELLER"
-msgstr "VENDITORE"
-
-msgid "INVOICE"
-msgstr "FATTURA"
-
-msgid "No."
-msgstr "N."
-
-msgid "Date"
-msgstr "Data"
-
-msgid "Due"
-msgstr "Scadenza"
-
-msgid "Office"
-msgstr "Ufficio"
+msgid "Armenia"
+msgstr "Armenia"
 
 msgid "Att To"
 msgstr "Att.ne"
 
+msgid "Attention To"
+msgstr "Attention To"
+
+msgid "Australia"
+msgstr "Australia"
+
+msgid "Austria"
+msgstr "Austria"
+
+msgid "Auto-Send Invoice Email"
+msgstr "Auto-Send Invoice Email"
+
+msgid "Auto-generated on save"
+msgstr "Auto-generated on save"
+
+msgid "Automatically email the PDF invoice to the customer when generated"
+msgstr "Automatically email the PDF invoice to the customer when generated"
+
+msgid "Automatically generate invoices from WooCommerce orders"
+msgstr "Automatically generate invoices from WooCommerce orders"
+
+msgid "Available Methods"
+msgstr "Available Methods"
+
+msgid "Azerbaijan"
+msgstr "Azerbaijan"
+
+msgid "BIC"
+msgstr "BIC"
+
+msgid "BUYER"
+msgstr "ACQUIRENTE"
+
+msgid "Back to List"
+msgstr "Torna all'elenco"
+
+msgid "Bahrain"
+msgstr "Bahrain"
+
+msgid "Bangladesh"
+msgstr "Bangladesh"
+
+msgid "Bank"
+msgstr "Banca"
+
+msgid "Bank Details"
+msgstr "Bank Details"
+
+msgid "Belarus"
+msgstr "Belarus"
+
+msgid "Belgium"
+msgstr "Belgium"
+
+msgid "Belize"
+msgstr "Belize"
+
+msgid "Billing Information"
+msgstr "Informazioni di fatturazione"
+
+msgid "Bolivia"
+msgstr "Bolivia"
+
+msgid "Bosnia and Herzegovina"
+msgstr "Bosnia and Herzegovina"
+
+msgid "Botswana"
+msgstr "Botswana"
+
+msgid "Brazil"
+msgstr "Brazil"
+
+msgid "Brunei"
+msgstr "Brunei"
+
+msgid "Bulgaria"
+msgstr "Bulgaria"
+
+msgid "Cambodia"
+msgstr "Cambodia"
+
+msgid "Cameroon"
+msgstr "Cameroon"
+
+msgid "Canada"
+msgstr "Canada"
+
+msgid "Cancelled"
+msgstr "Annullata"
+
+msgid "Cannot delete client with %d invoice(s). Please delete or reassign the invoices first."
+msgstr "Cannot delete client with %d invoice(s). Please delete or reassign the invoices first."
+
+msgid "Chile"
+msgstr "Chile"
+
+msgid "China"
+msgstr "China"
+
+msgid "City"
+msgstr "Città"
+
+msgid "Client"
+msgstr "Cliente"
+
+msgid "Client Information"
+msgstr "Client Information"
+
+msgid "Client Name"
+msgstr "Client Name"
+
+msgid "Client created successfully."
+msgstr "Cliente creato con successo."
+
+msgid "Client deleted successfully."
+msgstr "Cliente eliminato con successo."
+
+msgid "Client is required. Select an existing client or add new client details."
+msgstr "Client is required. Select an existing client or add new client details."
+
+msgid "Client not found."
+msgstr "Client not found."
+
+msgid "Client updated successfully."
+msgstr "Cliente aggiornato con successo."
+
+msgid "Clients"
+msgstr "Clienti"
+
+msgid "Colombia"
+msgstr "Colombia"
+
+msgid "Company"
+msgstr "Azienda"
+
+msgid "Company name is required for company clients."
+msgstr "Company name is required for company clients."
+
+msgid "Company or Organization (Optional)"
+msgstr "Company or Organization (Optional)"
+
+msgid "Company or Organization name"
+msgstr "Company or Organization name"
+
+msgid "Completed"
+msgstr "Completed"
+
+msgid "Configure the fields that appear in the signature block."
+msgstr "Configure the fields that appear in the signature block."
+
+msgid "Contact Information"
+msgstr "Contact Information"
+
+msgid "Contact person (МОЛ) for company clients. For individuals, this can be left empty."
+msgstr "Contact person (МОЛ) for company clients. For individuals, this can be left empty."
+
+msgid "Contact person name"
+msgstr "Contact person name"
+
+msgid "Costa Rica"
+msgstr "Costa Rica"
+
+msgid "Country"
+msgstr "Paese"
+
+msgid "Create Client"
+msgstr "Crea cliente"
+
+msgid "Create Invoice"
+msgstr "Crea fattura"
+
+msgid "Create your first invoice to get started."
+msgstr "Create your first invoice to get started."
+
+msgid "Created:"
+msgstr "Creata:"
+
+msgid "Croatia"
+msgstr "Croatia"
+
+msgid "Cuba"
+msgstr "Cuba"
+
+msgid "Currency"
+msgstr "Valuta"
+
+msgid "Current counter: %d"
+msgstr "Current counter: %d"
+
+msgid "Custom Invoices"
+msgstr "Custom Invoices"
+
+msgid "Customer Notes"
+msgstr "Customer Notes"
+
+msgid "Cyprus"
+msgstr "Cyprus"
+
+msgid "Czech Republic"
+msgstr "Czech Republic"
+
+msgid "Danger Zone"
+msgstr "Danger Zone"
+
+msgid "Dashboard"
+msgstr "Pannello"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Date cannot be in the past."
+msgstr "Date cannot be in the past."
+
+msgid "Dear %s,"
+msgstr "Dear %s,"
+
+msgid "Delete"
+msgstr "Elimina"
+
+msgid "Delete Client"
+msgstr "Elimina cliente"
+
+msgid "Delete Invoice"
+msgstr "Elimina fattura"
+
+msgid "Denmark"
+msgstr "Denmark"
+
 msgid "Description"
 msgstr "Descrizione"
-
-msgid "Qty"
-msgstr "Qtà"
-
-msgid "Unit Price"
-msgstr "Prezzo unit."
 
 msgid "Disc.%"
 msgstr "Sc.%"
@@ -423,29 +415,587 @@ msgstr "Sc.%"
 msgid "Disc.Amt"
 msgstr "Imp.sc."
 
-msgid "Tax %"
-msgstr "IVA %"
-
-msgid "Tax Amt"
-msgstr "Imp.IVA"
-
-msgid "Total"
-msgstr "Totale"
-
-msgid "Subtotal"
-msgstr "Subtotale"
-
 msgid "Discount"
 msgstr "Sconto"
 
-msgid "Tax"
-msgstr "IVA"
+msgid "Discount row in totals"
+msgstr "Discount row in totals"
 
-msgid "TOTAL"
-msgstr "TOTALE"
+msgid "Doe"
+msgstr "Doe"
 
-msgid "VAT exempt — Article 70 VATA."
-msgstr "Esente IVA — Articolo 70 VATA."
+msgid "Dominican Republic"
+msgstr "Dominican Republic"
+
+msgid "Download PDF"
+msgstr "Download PDF"
+
+msgid "Draft"
+msgstr "Bozza"
+
+msgid "Drag sections to reorder them on the invoice PDF."
+msgstr "Drag sections to reorder them on the invoice PDF."
+
+msgid "Drag to reorder"
+msgstr "Drag to reorder"
+
+msgid "Due"
+msgstr "Scadenza"
+
+msgid "Due Date"
+msgstr "Data di scadenza"
+
+msgid "Due date cannot be before invoice date."
+msgstr "Due date cannot be before invoice date."
+
+msgid "Ecuador"
+msgstr "Ecuador"
+
+msgid "Edit"
+msgstr "Modifica"
+
+msgid "Edit Client"
+msgstr "Modifica cliente"
+
+msgid "Edit Invoice"
+msgstr "Modifica fattura"
+
+msgid "Egypt"
+msgstr "Egypt"
+
+msgid "El Salvador"
+msgstr "El Salvador"
+
+msgid "Email"
+msgstr "E-mail"
+
+msgid "Email Address"
+msgstr "Email Address"
+
+msgid "Email Preview"
+msgstr "Email Preview"
+
+msgid "Email is required for new clients."
+msgstr "Email is required for new clients."
+
+msgid "Email sending functionality will be available in a future update. Configure your SMTP settings now to be ready."
+msgstr "Email sending functionality will be available in a future update. Configure your SMTP settings now to be ready."
+
+msgid "Email sent successfully."
+msgstr "Email sent successfully."
+
+msgid "Enable Integration"
+msgstr "Enable Integration"
+
+msgid "Estonia"
+msgstr "Estonia"
+
+msgid "Ethiopia"
+msgstr "Ethiopia"
+
+msgid "Failed to create new client. Please check the client details."
+msgstr "Failed to create new client. Please check the client details."
+
+msgid "Failed to delete client."
+msgstr "Failed to delete client."
+
+msgid "Failed to delete invoice."
+msgstr "Failed to delete invoice."
+
+msgid "Failed to delete tax rate."
+msgstr "Failed to delete tax rate."
+
+msgid "Failed to generate invoice. Check logs for details."
+msgstr "Failed to generate invoice. Check logs for details."
+
+msgid "Failed to reset counter."
+msgstr "Failed to reset counter."
+
+msgid "Failed to reset invoice counter."
+msgstr "Failed to reset invoice counter."
+
+msgid "Failed to save. Please try again."
+msgstr "Failed to save. Please try again."
+
+msgid "Failed to send email."
+msgstr "Failed to send email."
+
+msgid "Failed to send email. Check error logs for more details."
+msgstr "Failed to send email. Check error logs for more details."
+
+msgid "Failed to send reminder. Check error logs for more details."
+msgstr "Failed to send reminder. Check error logs for more details."
+
+msgid "Failed to set counter."
+msgstr "Failed to set counter."
+
+msgid "Failed to set invoice counter."
+msgstr "Failed to set invoice counter."
+
+msgid "Field label"
+msgstr "Field label"
+
+msgid "Finland"
+msgstr "Finland"
+
+msgid "First Name"
+msgstr "Nome"
+
+msgid "Fixed Amount"
+msgstr "Fixed Amount"
+
+msgid "For EU VAT reverse charge and tax compliance."
+msgstr "For EU VAT reverse charge and tax compliance."
+
+msgid "For Phase 1A, enter the total manually. Line items will be added in Phase 1B."
+msgstr "For Phase 1A, enter the total manually. Line items will be added in Phase 1B."
+
+msgid "For new clients, first name, last name and email are required."
+msgstr "For new clients, first name, last name and email are required."
+
+msgid "Format:"
+msgstr "Format:"
+
+msgid "France"
+msgstr "Francia"
+
+msgid "Georgia"
+msgstr "Georgia"
+
+msgid "Germany"
+msgstr "Germania"
+
+msgid "Ghana"
+msgstr "Ghana"
+
+msgid "Greece"
+msgstr "Greece"
+
+msgid "Guatemala"
+msgstr "Guatemala"
+
+msgid "Header (Company + Client)"
+msgstr "Header (Company + Client)"
+
+msgid "Hex color used for headings and accents on the invoice PDF."
+msgstr "Hex color used for headings and accents on the invoice PDF."
+
+msgid "Hold Ctrl/Cmd to select multiple statuses."
+msgstr "Hold Ctrl/Cmd to select multiple statuses."
+
+msgid "Honduras"
+msgstr "Honduras"
+
+msgid "Hong Kong"
+msgstr "Hong Kong"
+
+msgid "Hungary"
+msgstr "Hungary"
+
+msgid "IBAN"
+msgstr "IBAN"
+
+msgid "ID No (EIK/BULSTAT/Reg No)"
+msgstr "ID No (EIK/BULSTAT/Reg No)"
+
+msgid "ID No Label"
+msgstr "ID No Label"
+
+msgid "INVOICE"
+msgstr "FATTURA"
+
+msgid "Iceland"
+msgstr "Iceland"
+
+msgid "India"
+msgstr "India"
+
+msgid "Individual"
+msgstr "Individual"
+
+msgid "Indonesia"
+msgstr "Indonesia"
+
+msgid "Internal Notes"
+msgstr "Internal Notes"
+
+msgid "Invalid client ID."
+msgstr "Invalid client ID."
+
+msgid "Invalid client."
+msgstr "Invalid client."
+
+msgid "Invalid invoice ID."
+msgstr "Invalid invoice ID."
+
+msgid "Invalid invoice."
+msgstr "Invalid invoice."
+
+msgid "Invalid order ID."
+msgstr "Invalid order ID."
+
+msgid "Invalid tax rate ID."
+msgstr "Invalid tax rate ID."
+
+msgid "Invoice"
+msgstr "Fattura"
+
+msgid "Invoice #"
+msgstr "Invoice #"
+
+msgid "Invoice #:"
+msgstr "Fattura n.:"
+
+msgid "Invoice %s from %s"
+msgstr "Invoice %s from %s"
+
+msgid "Invoice Date"
+msgstr "Data fattura"
+
+msgid "Invoice Details"
+msgstr "Dettagli fattura"
+
+msgid "Invoice Info"
+msgstr "Info fattura"
+
+msgid "Invoice Logo"
+msgstr "Invoice Logo"
+
+msgid "Invoice Notes"
+msgstr "Invoice Notes"
+
+msgid "Invoice Number"
+msgstr "Invoice Number"
+
+msgid "Invoice Number Format"
+msgstr "Invoice Number Format"
+
+msgid "Invoice Status"
+msgstr "Invoice Status"
+
+msgid "Invoice Title"
+msgstr "Titolo fattura"
+
+msgid "Invoice counter has been reset."
+msgstr "Invoice counter has been reset."
+
+msgid "Invoice counter set to %1$d. Next invoice: %2$s"
+msgstr "Invoice counter set to %1$d. Next invoice: %2$s"
+
+msgid "Invoice created successfully."
+msgstr "Fattura creata con successo."
+
+msgid "Invoice deleted successfully."
+msgstr "Fattura eliminata con successo."
+
+msgid "Invoice generated successfully."
+msgstr "Invoice generated successfully."
+
+msgid "Invoice not found."
+msgstr "Invoice not found."
+
+msgid "Invoice number is automatically generated."
+msgstr "Invoice number is automatically generated."
+
+msgid "Invoice title is required."
+msgstr "Invoice title is required."
+
+msgid "Invoice updated successfully."
+msgstr "Fattura aggiornata con successo."
+
+msgid "InvoiceForge"
+msgstr "InvoiceForge"
+
+msgid "InvoiceForge Sequential (e.g. INV-2026-0001)"
+msgstr "InvoiceForge Sequential (e.g. INV-2026-0001)"
+
+msgid "InvoiceForge requires Composer dependencies. Please run \"composer install\" first."
+msgstr "InvoiceForge requires Composer dependencies. Please run \"composer install\" first."
+
+msgid "InvoiceForge requires Composer dependencies. Please run \"composer install\" in the plugin directory."
+msgstr "InvoiceForge requires Composer dependencies. Please run \"composer install\" in the plugin directory."
+
+msgid "InvoiceForge requires PHP %s or higher."
+msgstr "InvoiceForge requires PHP %s or higher."
+
+msgid "InvoiceForge requires PHP version %1$s or higher. Your current version is %2$s. Please upgrade PHP to use this plugin."
+msgstr "InvoiceForge requires PHP version %1$s or higher. Your current version is %2$s. Please upgrade PHP to use this plugin."
+
+msgid "InvoiceForge requires WordPress version %1$s or higher. Your current version is %2$s. Please upgrade WordPress to use this plugin."
+msgstr "InvoiceForge requires WordPress version %1$s or higher. Your current version is %2$s. Please upgrade WordPress to use this plugin."
+
+msgid "Invoices"
+msgstr "Fatture"
+
+msgid "Iran"
+msgstr "Iran"
+
+msgid "Iraq"
+msgstr "Iraq"
+
+msgid "Ireland"
+msgstr "Ireland"
+
+msgid "Israel"
+msgstr "Israel"
+
+msgid "Italy"
+msgstr "Italy"
+
+msgid "Item description"
+msgstr "Item description"
+
+msgid "Jamaica"
+msgstr "Jamaica"
+
+msgid "Japan"
+msgstr "Japan"
+
+msgid "John"
+msgstr "John"
+
+msgid "Jordan"
+msgstr "Jordan"
+
+msgid "Kazakhstan"
+msgstr "Kazakhstan"
+
+msgid "Kenya"
+msgstr "Kenya"
+
+msgid "Kuwait"
+msgstr "Kuwait"
+
+msgid "Label used for the company/client ID number field (e.g. EIK, BULSTAT, Reg No)."
+msgstr "Label used for the company/client ID number field (e.g. EIK, BULSTAT, Reg No)."
+
+msgid "Last Name"
+msgstr "Cognome"
+
+msgid "Latvia"
+msgstr "Latvia"
+
+msgid "Lebanon"
+msgstr "Lebanon"
+
+msgid "Left"
+msgstr "Left"
+
+msgid "Left Column Title"
+msgstr "Left Column Title"
+
+msgid "Libya"
+msgstr "Libya"
+
+msgid "Liechtenstein"
+msgstr "Liechtenstein"
+
+msgid "Line Items"
+msgstr "Line Items"
+
+msgid "Lithuania"
+msgstr "Lithuania"
+
+msgid "Loading preview..."
+msgstr "Loading preview..."
+
+msgid "Loading..."
+msgstr "Caricamento..."
+
+msgid "Location"
+msgstr "Location"
+
+msgid "Logo"
+msgstr "Logo"
+
+msgid "Luxembourg"
+msgstr "Luxembourg"
+
+msgid "Macau"
+msgstr "Macau"
+
+msgid "Malaysia"
+msgstr "Malaysia"
+
+msgid "Maldives"
+msgstr "Maldives"
+
+msgid "Malta"
+msgstr "Malta"
+
+msgid "Manually set the next invoice number counter. The next invoice created will use this number."
+msgstr "Manually set the next invoice number counter. The next invoice created will use this number."
+
+msgid "Mauritius"
+msgstr "Mauritius"
+
+msgid "Mexico"
+msgstr "Mexico"
+
+msgid "Moldova"
+msgstr "Moldova"
+
+msgid "Monaco"
+msgstr "Monaco"
+
+msgid "Mongolia"
+msgstr "Mongolia"
+
+msgid "Montenegro"
+msgstr "Montenegro"
+
+msgid "Morocco"
+msgstr "Morocco"
+
+msgid "Multi-currency support will be expanded in Phase 4."
+msgstr "Multi-currency support will be expanded in Phase 4."
+
+msgid "Myanmar"
+msgstr "Myanmar"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Nepal"
+msgstr "Nepal"
+
+msgid "Netherlands"
+msgstr "Netherlands"
+
+msgid "Network error. Please try again."
+msgstr "Errore di rete. Riprova."
+
+msgid "New Client"
+msgstr "Nuovo cliente"
+
+msgid "New Client Details"
+msgstr "Dati nuovo cliente"
+
+msgid "New Invoice"
+msgstr "Nuova fattura"
+
+msgid "New Zealand"
+msgstr "New Zealand"
+
+msgid "Next Invoice Number:"
+msgstr "Next Invoice Number:"
+
+msgid "Nicaragua"
+msgstr "Nicaragua"
+
+msgid "Nigeria"
+msgstr "Nigeria"
+
+msgid "No Discount"
+msgstr "No Discount"
+
+msgid "No Tax"
+msgstr "No Tax"
+
+msgid "No clients found in Trash."
+msgstr "No clients found in Trash."
+
+msgid "No clients found."
+msgstr "Nessun cliente trovato."
+
+msgid "No clients found. Switch to \"Add New Client\" to create one inline."
+msgstr "No clients found. Switch to \"Add New Client\" to create one inline."
+
+msgid "No clients yet"
+msgstr "No clients yet"
+
+msgid "No clients yet. Add your first client to start invoicing!"
+msgstr "No clients yet. Add your first client to start invoicing!"
+
+msgid "No invoices found in Trash."
+msgstr "No invoices found in Trash."
+
+msgid "No invoices found."
+msgstr "Nessuna fattura trovata."
+
+msgid "No invoices yet"
+msgstr "No invoices yet"
+
+msgid "No invoices yet. Create your first invoice to get started!"
+msgstr "No invoices yet. Create your first invoice to get started!"
+
+msgid "No line items yet. Click \"Add Item\" to get started."
+msgstr "No line items yet. Click \"Add Item\" to get started."
+
+msgid "No."
+msgstr "N."
+
+msgid "North Macedonia"
+msgstr "North Macedonia"
+
+msgid "Norway"
+msgstr "Norway"
+
+msgid "Notes"
+msgstr "Note"
+
+msgid "Notes & Terms"
+msgstr "Notes & Terms"
+
+msgid "Notes visible to the customer on the invoice..."
+msgstr "Notes visible to the customer on the invoice..."
+
+msgid "Office"
+msgstr "Ufficio"
+
+msgid "Office / Branch"
+msgstr "Office / Branch"
+
+msgid "Oman"
+msgstr "Oman"
+
+msgid "Optional for individuals."
+msgstr "Optional for individuals."
+
+msgid "Optional. Leave blank for individual clients."
+msgstr "Optional. Leave blank for individual clients."
+
+msgid "Order Invoice Prefix"
+msgstr "Order Invoice Prefix"
+
+msgid "Original due date: %s"
+msgstr "Original due date: %s"
+
+msgid "Outstanding"
+msgstr "In sospeso"
+
+msgid "Overdue"
+msgstr "Scaduta"
+
+msgid "PDF"
+msgstr "PDF"
+
+msgid "PDF Preview"
+msgstr "PDF Preview"
+
+msgid "PDF generation is currently unavailable. The mPDF library is missing. Please ensure you are using the correct release ZIP or run \"composer install\"."
+msgstr "PDF generation is currently unavailable. The mPDF library is missing. Please ensure you are using the correct release ZIP or run \"composer install\"."
+
+msgid "Paid"
+msgstr "Pagata"
+
+msgid "Pakistan"
+msgstr "Pakistan"
+
+msgid "Panama"
+msgstr "Panama"
+
+msgid "Paraguay"
+msgstr "Paraguay"
+
+msgid "Parent Clients:"
+msgstr "Parent Clients:"
+
+msgid "Parent Invoices:"
+msgstr "Parent Invoices:"
+
+msgid "Pay Invoice"
+msgstr "Paga fattura"
 
 msgid "Payment Details"
 msgstr "Dettagli pagamento"
@@ -453,23 +1003,688 @@ msgstr "Dettagli pagamento"
 msgid "Payment Method"
 msgstr "Metodo di pagamento"
 
-msgid "Bank"
-msgstr "Banca"
+msgid "Payment Methods"
+msgstr "Payment Methods"
 
-msgid "IBAN"
-msgstr "IBAN"
+msgid "Payment Reminder: Invoice %s"
+msgstr "Payment Reminder: Invoice %s"
 
-msgid "BIC"
-msgstr "BIC"
+msgid "Payment methods available to select on each invoice."
+msgstr "Payment methods available to select on each invoice."
+
+msgid "Payment terms, late fees, etc."
+msgstr "Payment terms, late fees, etc."
+
+msgid "Pending payment"
+msgstr "Pending payment"
+
+msgid "Percentage (%)"
+msgstr "Percentage (%)"
+
+msgid "Peru"
+msgstr "Peru"
+
+msgid "Philippines"
+msgstr "Philippines"
+
+msgid "Phone"
+msgstr "Telefono"
+
+msgid "Phone Number"
+msgstr "Phone Number"
+
+msgid "Please arrange payment at your earliest convenience."
+msgstr "Please arrange payment at your earliest convenience."
+
+msgid "Please enter a valid URL."
+msgstr "Please enter a valid URL."
+
+msgid "Please enter a valid counter value (minimum 1)."
+msgstr "Please enter a valid counter value (minimum 1)."
+
+msgid "Please enter a valid counter value."
+msgstr "Please enter a valid counter value."
+
+msgid "Please enter a valid date."
+msgstr "Please enter a valid date."
+
+msgid "Please enter a valid email address."
+msgstr "Inserisci un indirizzo e-mail valido."
+
+msgid "Please enter a valid number."
+msgstr "Please enter a valid number."
+
+msgid "Please enter a valid value."
+msgstr "Please enter a valid value."
+
+msgid "Please fill in all required fields."
+msgstr "Compila tutti i campi obbligatori."
+
+msgid "Please find your invoice %s attached."
+msgstr "Please find your invoice %s attached."
+
+msgid "Please select a client."
+msgstr "Please select a client."
+
+msgid "Please select a valid option."
+msgstr "Please select a valid option."
+
+msgid "Plugin Activation Error"
+msgstr "Plugin Activation Error"
+
+msgid "Poland"
+msgstr "Poland"
+
+msgid "Portugal"
+msgstr "Portugal"
+
+msgid "Preview"
+msgstr "Preview"
+
+msgid "Preview failed — invoice not found or template missing."
+msgstr "Preview failed — invoice not found or template missing."
+
+msgid "Preview failed."
+msgstr "Preview failed."
+
+msgid "Preview unavailable"
+msgstr "Preview unavailable"
+
+msgid "Private notes for your reference..."
+msgstr "Private notes for your reference..."
+
+msgid "Processing"
+msgstr "Processing"
+
+msgid "Puerto Rico"
+msgstr "Puerto Rico"
+
+msgid "Qatar"
+msgstr "Qatar"
+
+msgid "Qty"
+msgstr "Qtà"
+
+msgid "Quick Actions"
+msgstr "Azioni rapide"
+
+msgid "Recent Clients"
+msgstr "Clienti recenti"
+
+msgid "Recent Invoices"
+msgstr "Fatture recenti"
+
+msgid "Reminder sent successfully."
+msgstr "Reminder sent successfully."
+
+msgid "Remove"
+msgstr "Remove"
+
+msgid "Remove Image"
+msgstr "Remove Image"
+
+msgid "Required for EU VAT reverse charge and tax compliance."
+msgstr "Required for EU VAT reverse charge and tax compliance."
+
+msgid "Reset Invoice Counter"
+msgstr "Reset Invoice Counter"
+
+msgid "Right"
+msgstr "Right"
+
+msgid "Right Column Title"
+msgstr "Right Column Title"
+
+msgid "Romania"
+msgstr "Romania"
+
+msgid "Russia"
+msgstr "Russia"
+
+msgid "SELLER"
+msgstr "VENDITORE"
+
+msgid "Saudi Arabia"
+msgstr "Saudi Arabia"
+
+msgid "Save Changes"
+msgstr "Salva modifiche"
+
+msgid "Save Settings"
+msgstr "Salva impostazioni"
+
+msgid "Saved!"
+msgstr "Salvato!"
+
+msgid "Saving..."
+msgstr "Salvataggio..."
+
+msgid "Search Clients"
+msgstr "Search Clients"
+
+msgid "Search Invoices"
+msgstr "Search Invoices"
+
+msgid "Search clients..."
+msgstr "Search clients..."
+
+msgid "Search invoices..."
+msgstr "Search invoices..."
+
+msgid "Section Order"
+msgstr "Section Order"
+
+msgid "Section Visibility"
+msgstr "Section Visibility"
+
+msgid "Security Error"
+msgstr "Security Error"
+
+msgid "Security check failed."
+msgstr "Verifica di sicurezza non riuscita."
+
+msgid "Security check failed. Please refresh the page and try again."
+msgstr "Security check failed. Please refresh the page and try again."
+
+msgid "Security check failed. Please try again."
+msgstr "Security check failed. Please try again."
+
+msgid "Select Existing Client"
+msgstr "Seleziona cliente esistente"
+
+msgid "Select Image"
+msgstr "Select Image"
+
+msgid "Select a client..."
+msgstr "Seleziona un cliente..."
+
+msgid "Select a country..."
+msgstr "Seleziona un paese..."
+
+msgid "Select a logo from the media library (JPG, PNG, SVG). Recommended size: 300x100px."
+msgstr "Select a logo from the media library (JPG, PNG, SVG). Recommended size: 300x100px."
+
+msgid "Select..."
+msgstr "Seleziona..."
+
+msgid "Send Email"
+msgstr "Send Email"
+
+msgid "Send to Client"
+msgstr "Send to Client"
+
+msgid "Sent"
+msgstr "Inviata"
+
+msgid "Serbia"
+msgstr "Serbia"
+
+msgid "Set Counter"
+msgstr "Set Counter"
+
+msgid "Set Invoice Counter"
+msgstr "Set Invoice Counter"
+
+msgid "Settings"
+msgstr "Impostazioni"
+
+msgid "Signature"
+msgstr "Signature"
+
+msgid "Signature Fields"
+msgstr "Signature Fields"
+
+msgid "Signature block"
+msgstr "Signature block"
 
 msgid "Signatures"
 msgstr "Firme"
 
-msgid "Amount Due"
-msgstr "Importo dovuto"
+msgid "Singapore"
+msgstr "Singapore"
 
-msgid "Pay Invoice"
-msgstr "Paga fattura"
+msgid "Slovakia"
+msgstr "Slovakia"
 
-msgid "Account Holder"
-msgstr "Intestatario del conto"
+msgid "Slovenia"
+msgstr "Slovenia"
+
+msgid "South Africa"
+msgstr "South Africa"
+
+msgid "South Korea"
+msgstr "South Korea"
+
+msgid "Spain"
+msgstr "Spain"
+
+msgid "Sri Lanka"
+msgstr "Sri Lanka"
+
+msgid "State / Province"
+msgstr "Regione / Provincia"
+
+msgid "Statistics"
+msgstr "Statistiche"
+
+msgid "Status"
+msgstr "Stato"
+
+msgid "Street Address"
+msgstr "Via"
+
+msgid "Subtotal"
+msgstr "Subtotale"
+
+msgid "Sweden"
+msgstr "Sweden"
+
+msgid "Switzerland"
+msgstr "Switzerland"
+
+msgid "TOTAL"
+msgstr "TOTALE"
+
+msgid "Taiwan"
+msgstr "Taiwan"
+
+msgid "Tanzania"
+msgstr "Tanzania"
+
+msgid "Tax"
+msgstr "IVA"
+
+msgid "Tax %"
+msgstr "IVA %"
+
+msgid "Tax Amt"
+msgstr "Imp.IVA"
+
+msgid "Tax ID / VAT Number"
+msgstr "Codice fiscale / P.IVA"
+
+msgid "Tax rate deleted successfully."
+msgstr "Tax rate deleted successfully."
+
+msgid "Tax rate name is required."
+msgstr "Tax rate name is required."
+
+msgid "Tax rate not found."
+msgstr "Tax rate not found."
+
+msgid "Tax rate saved successfully."
+msgstr "Tax rate saved successfully."
+
+msgid "Terms & Conditions"
+msgstr "Terms & Conditions"
+
+msgid "Thailand"
+msgstr "Thailand"
+
+msgid "These actions can affect your invoice data. Use with caution."
+msgstr "These actions can affect your invoice data. Use with caution."
+
+msgid "These notes will appear on the invoice."
+msgstr "These notes will appear on the invoice."
+
+msgid "This field is required."
+msgstr "This field is required."
+
+msgid "This is a friendly reminder that invoice %1$s for %2$s %3$s is overdue."
+msgstr "This is a friendly reminder that invoice %1$s for %2$s %3$s is overdue."
+
+msgid "Total"
+msgstr "Totale"
+
+msgid "Total Amount"
+msgstr "Importo totale"
+
+msgid "Total Clients"
+msgstr "Clienti totali"
+
+msgid "Total Invoices"
+msgstr "Fatture totali"
+
+msgid "Total Revenue"
+msgstr "Fatturato totale"
+
+msgid "Totals"
+msgstr "Totals"
+
+msgid "Trigger on Order Status"
+msgstr "Trigger on Order Status"
+
+msgid "Tunisia"
+msgstr "Tunisia"
+
+msgid "Turkey"
+msgstr "Turkey"
+
+msgid "Ukraine"
+msgstr "Ukraine"
+
+msgid "Unauthorized."
+msgstr "Unauthorized."
+
+msgid "Unit Price"
+msgstr "Prezzo unit."
+
+msgid "United Arab Emirates"
+msgstr "United Arab Emirates"
+
+msgid "United Kingdom"
+msgstr "Regno Unito"
+
+msgid "United States"
+msgstr "Stati Uniti"
+
+msgid "Unknown Client"
+msgstr "Unknown Client"
+
+msgid "Unnamed Client"
+msgstr "Unnamed Client"
+
+msgid "Up to date"
+msgstr "Up to date"
+
+msgid "Updating..."
+msgstr "Updating..."
+
+msgid "Uruguay"
+msgstr "Uruguay"
+
+msgid "Use this image"
+msgstr "Use this image"
+
+msgid "Used when \"WooCommerce Order Number\" format is selected (e.g. ORD-1234)."
+msgstr "Used when \"WooCommerce Order Number\" format is selected (e.g. ORD-1234)."
+
+msgid "Uzbekistan"
+msgstr "Uzbekistan"
+
+msgid "VAT 0%"
+msgstr "VAT 0%"
+
+msgid "VAT 20%"
+msgstr "VAT 20%"
+
+msgid "VAT 9%"
+msgstr "VAT 9%"
+
+msgid "VAT exempt — Article 70 VATA."
+msgstr "Esente IVA — Articolo 70 VATA."
+
+msgid "Value"
+msgstr "Value"
+
+msgid "Venezuela"
+msgstr "Venezuela"
+
+msgid "Vietnam"
+msgstr "Vietnam"
+
+msgid "View All"
+msgstr "View All"
+
+msgid "View All Invoices"
+msgstr "View All Invoices"
+
+msgid "View Client"
+msgstr "View Client"
+
+msgid "View Invoice"
+msgstr "View Invoice"
+
+msgid "Visible Sections"
+msgstr "Visible Sections"
+
+msgid "WooCommerce Integration"
+msgstr "WooCommerce Integration"
+
+msgid "WooCommerce Order Number with Prefix (e.g. ORD-1234)"
+msgstr "WooCommerce Order Number with Prefix (e.g. ORD-1234)"
+
+msgid "WooCommerce Orders"
+msgstr "WooCommerce Orders"
+
+msgid "WooCommerce is not active."
+msgstr "WooCommerce is not active."
+
+msgid "WooCommerce is not installed or activated. Install WooCommerce to use these integration settings."
+msgstr "WooCommerce is not installed or activated. Install WooCommerce to use these integration settings."
+
+msgid "Yemen"
+msgstr "Yemen"
+
+msgid "You do not have permission to access this page."
+msgstr "You do not have permission to access this page."
+
+msgid "You do not have permission to delete clients."
+msgstr "You do not have permission to delete clients."
+
+msgid "You do not have permission to delete invoices."
+msgstr "You do not have permission to delete invoices."
+
+msgid "You do not have permission to edit clients."
+msgstr "You do not have permission to edit clients."
+
+msgid "You do not have permission to edit invoices."
+msgstr "You do not have permission to edit invoices."
+
+msgid "You do not have permission to manage InvoiceForge settings."
+msgstr "You do not have permission to manage InvoiceForge settings."
+
+msgid "You do not have permission to manage clients."
+msgstr "You do not have permission to manage clients."
+
+msgid "You do not have permission to manage invoices."
+msgstr "You do not have permission to manage invoices."
+
+msgid "You do not have permission to manage tax rates."
+msgstr "You do not have permission to manage tax rates."
+
+msgid "You do not have permission to perform this action."
+msgstr "You do not have permission to perform this action."
+
+msgid "You do not have permission to preview invoices."
+msgstr "You do not have permission to preview invoices."
+
+msgid "You do not have permission to view clients."
+msgstr "You do not have permission to view clients."
+
+msgid "You do not have permission to view invoices."
+msgstr "You do not have permission to view invoices."
+
+msgid "ZIP / Postal Code"
+msgstr "CAP"
+
+msgid "Zimbabwe"
+msgstr "Zimbabwe"
+
+msgctxt "Add New on Toolbar"
+msgid "Zimbabwe"
+msgstr "Zimbabwe"
+
+msgctxt "Add New on Toolbar"
+msgid "Client"
+msgstr "Client"
+
+msgctxt "Add New on Toolbar"
+msgid "Invoice"
+msgstr "Invoice"
+
+msgctxt "Admin Menu text"
+msgid "Invoice"
+msgstr "Invoice"
+
+msgctxt "Admin Menu text"
+msgid "Clients"
+msgstr "Clients"
+
+msgctxt "Admin Menu text"
+msgid "Invoices"
+msgstr "Invoices"
+
+msgctxt "Overrides the \"Featured Image\" phrase"
+msgid "Invoices"
+msgstr "Invoices"
+
+msgctxt "Overrides the \"Featured Image\" phrase"
+msgid "Client Photo"
+msgstr "Client Photo"
+
+msgctxt "Overrides the \"Featured Image\" phrase"
+msgid "Invoice Logo"
+msgstr "Invoice Logo"
+
+msgctxt "Overrides the \"Insert into post\" phrase"
+msgid "Invoice Logo"
+msgstr "Invoice Logo"
+
+msgctxt "Overrides the \"Insert into post\" phrase"
+msgid "Insert into client"
+msgstr "Insert into client"
+
+msgctxt "Overrides the \"Insert into post\" phrase"
+msgid "Insert into invoice"
+msgstr "Insert into invoice"
+
+msgctxt "Overrides the \"Remove featured image\" phrase"
+msgid "Insert into invoice"
+msgstr "Insert into invoice"
+
+msgctxt "Overrides the \"Remove featured image\" phrase"
+msgid "Remove client photo"
+msgstr "Remove client photo"
+
+msgctxt "Overrides the \"Remove featured image\" phrase"
+msgid "Remove invoice logo"
+msgstr "Remove invoice logo"
+
+msgctxt "Overrides the \"Set featured image\" phrase"
+msgid "Remove invoice logo"
+msgstr "Remove invoice logo"
+
+msgctxt "Overrides the \"Set featured image\" phrase"
+msgid "Set client photo"
+msgstr "Set client photo"
+
+msgctxt "Overrides the \"Set featured image\" phrase"
+msgid "Set invoice logo"
+msgstr "Set invoice logo"
+
+msgctxt "Overrides the \"Uploaded to this post\" phrase"
+msgid "Set invoice logo"
+msgstr "Set invoice logo"
+
+msgctxt "Overrides the \"Uploaded to this post\" phrase"
+msgid "Uploaded to this client"
+msgstr "Uploaded to this client"
+
+msgctxt "Overrides the \"Uploaded to this post\" phrase"
+msgid "Uploaded to this invoice"
+msgstr "Uploaded to this invoice"
+
+msgctxt "Overrides the \"Use as featured image\" phrase"
+msgid "Uploaded to this invoice"
+msgstr "Uploaded to this invoice"
+
+msgctxt "Overrides the \"Use as featured image\" phrase"
+msgid "Use as client photo"
+msgstr "Use as client photo"
+
+msgctxt "Overrides the \"Use as featured image\" phrase"
+msgid "Use as invoice logo"
+msgstr "Use as invoice logo"
+
+msgctxt "Post type general name"
+msgid "Use as invoice logo"
+msgstr "Use as invoice logo"
+
+msgctxt "Post type general name"
+msgid "Clients"
+msgstr "Clients"
+
+msgctxt "Post type general name"
+msgid "Invoices"
+msgstr "Invoices"
+
+msgctxt "Post type singular name"
+msgid "Invoices"
+msgstr "Invoices"
+
+msgctxt "Post type singular name"
+msgid "Client"
+msgstr "Client"
+
+msgctxt "Post type singular name"
+msgid "Invoice"
+msgstr "Invoice"
+
+msgctxt "Screen reader text"
+msgid "Invoice"
+msgstr "Invoice"
+
+msgctxt "Screen reader text"
+msgid "Clients list"
+msgstr "Clients list"
+
+msgctxt "Screen reader text"
+msgid "Clients list navigation"
+msgstr "Clients list navigation"
+
+msgctxt "Screen reader text"
+msgid "Filter clients list"
+msgstr "Filter clients list"
+
+msgctxt "Screen reader text"
+msgid "Filter invoices list"
+msgstr "Filter invoices list"
+
+msgctxt "Screen reader text"
+msgid "Invoices list"
+msgstr "Invoices list"
+
+msgctxt "Screen reader text"
+msgid "Invoices list navigation"
+msgstr "Invoices list navigation"
+
+msgctxt "The post type archive label"
+msgid "Invoices list navigation"
+msgstr "Invoices list navigation"
+
+msgctxt "The post type archive label"
+msgid "Client archives"
+msgstr "Client archives"
+
+msgctxt "The post type archive label"
+msgid "Invoice archives"
+msgstr "Invoice archives"
+
+msgid "Invoice archives"
+msgstr "Invoice archives"
+
+msgid "e.g., 100"
+msgstr "e.g., 100"
+
+msgid "e.g., 123456789"
+msgstr "e.g., 123456789"
+
+msgid "e.g., GB123456789"
+msgstr "e.g., GB123456789"
+
+msgid "e.g., HQ, Branch 1"
+msgstr "e.g., HQ, Branch 1"
+
+msgid "e.g., Issued by"
+msgstr "e.g., Issued by"
+
+msgid "e.g., Received by"
+msgstr "e.g., Received by"
+
+msgid "e.g., Website Development - March 2025"
+msgstr "e.g., Website Development - March 2025"
+
+msgid "email@example.com"
+msgstr "email@example.com"
+

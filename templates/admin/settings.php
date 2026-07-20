@@ -354,31 +354,40 @@ $numberingService = new NumberingService(new \InvoiceForge\Utilities\Logger());
                             </td>
                         </tr>
                     </table>
-                    <div id="if-signature-fields-list">
-                        <?php foreach ($tmpl_sig_fields as $sig_field) : ?>
-                            <div class="if-repeater-row if-sig-field-row" style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-                                <input type="text" name="invoiceforge_settings[template][signature_fields][][label]"
-                                       value="<?php echo esc_attr($sig_field['label'] ?? ''); ?>"
-                                       class="regular-text" placeholder="<?php esc_attr_e('Field label', 'invoiceforge'); ?>">
-                                <label style="display:inline-flex;align-items:center;gap:4px;">
-                                    <input type="radio" name="if_sig_col_<?php echo esc_attr($sig_field['label'] ?? uniqid()); ?>_tmp"
-                                           value="left" <?php checked(($sig_field['col'] ?? 'left'), 'left'); ?>>
-                                    <?php esc_html_e('Left', 'invoiceforge'); ?>
-                                </label>
-                                <label style="display:inline-flex;align-items:center;gap:4px;">
-                                    <input type="radio" name="if_sig_col_<?php echo esc_attr($sig_field['label'] ?? uniqid()); ?>_tmp"
-                                           value="right" <?php checked(($sig_field['col'] ?? 'left'), 'right'); ?>>
-                                    <?php esc_html_e('Right', 'invoiceforge'); ?>
-                                </label>
-                                <input type="hidden" name="invoiceforge_settings[template][signature_fields][][col]"
-                                       value="<?php echo esc_attr($sig_field['col'] ?? 'left'); ?>" class="if-sig-col-hidden">
-                                <button type="button" class="button if-remove-sig-field"><?php esc_html_e('Remove', 'invoiceforge'); ?></button>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                    <button type="button" id="if-add-sig-field" class="button">
-                        <?php esc_html_e('+ Add Signature Field', 'invoiceforge'); ?>
-                    </button>
+                    <table class="form-table" role="presentation">
+                        <tr>
+                            <th scope="row"><?php esc_html_e('Signature Fields', 'invoiceforge'); ?></th>
+                            <td>
+                                <p class="description" style="margin-bottom:8px;"><?php esc_html_e('Configure the fields that appear in the signature block.', 'invoiceforge'); ?></p>
+                                <div id="if-signature-fields-list">
+                                    <?php foreach ($tmpl_sig_fields as $sig_idx => $sig_field) : ?>
+                                        <div class="if-repeater-row if-sig-field-row" style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+                                            <input type="text" name="invoiceforge_settings[template][signature_fields][][label]"
+                                                   value="<?php echo esc_attr($sig_field['label'] ?? ''); ?>"
+                                                   class="regular-text" placeholder="<?php esc_attr_e('Field label', 'invoiceforge'); ?>">
+                                            <?php $sig_radio_name = 'if_sig_col_' . $sig_idx . '_' . md5($sig_field['label'] ?? ''); ?>
+                                            <label style="display:inline-flex;align-items:center;gap:4px;flex-shrink:0;">
+                                                <input type="radio" name="<?php echo esc_attr($sig_radio_name); ?>"
+                                                       value="left" <?php checked(($sig_field['col'] ?? 'left'), 'left'); ?>>
+                                                <?php esc_html_e('Left', 'invoiceforge'); ?>
+                                            </label>
+                                            <label style="display:inline-flex;align-items:center;gap:4px;flex-shrink:0;">
+                                                <input type="radio" name="<?php echo esc_attr($sig_radio_name); ?>"
+                                                       value="right" <?php checked(($sig_field['col'] ?? 'left'), 'right'); ?>>
+                                                <?php esc_html_e('Right', 'invoiceforge'); ?>
+                                            </label>
+                                            <input type="hidden" name="invoiceforge_settings[template][signature_fields][][col]"
+                                                   value="<?php echo esc_attr($sig_field['col'] ?? 'left'); ?>" class="if-sig-col-hidden">
+                                            <button type="button" class="button if-remove-sig-field"><?php esc_html_e('Remove', 'invoiceforge'); ?></button>
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                                <button type="button" id="if-add-sig-field" class="button">
+                                    <?php esc_html_e('+ Add Signature Field', 'invoiceforge'); ?>
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
 
                 <?php endif; ?>
             </div>

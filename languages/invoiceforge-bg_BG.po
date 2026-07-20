@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: InvoiceForge 1.0.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-05 12:00+0000\n"
-"PO-Revision-Date: 2026-03-05 12:00+0000\n"
+"Project-Id-Version: InvoiceForge 1.2.9\n"
+"Report-Msgid-Bugs-To: https://github.com/konchetobe/Invoice-Forge/issues\n"
+"POT-Creation-Date: 2026-07-20 11:03:25+0000\n"
+"PO-Revision-Date: 2026-07-20 11:03:25+0000\n"
 "Last-Translator: InvoiceForge Team\n"
 "Language-Team: Bulgarian\n"
 "Language: bg_BG\n"
@@ -16,379 +16,398 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-# Dashboard
-msgid "Dashboard"
-msgstr "Табло"
+msgid "%1$s must be after %2$s."
+msgstr "%1$s must be after %2$s."
 
-msgid "Total Revenue"
-msgstr "Общ приход"
+msgid "%1$s must be at least %2$d characters."
+msgstr "%1$s must be at least %2$d characters."
 
-msgid "Outstanding"
-msgstr "Неизплатени"
+msgid "%1$s must be at least %2$s."
+msgstr "%1$s must be at least %2$s."
 
-msgid "Total Invoices"
-msgstr "Общо фактури"
+msgid "%1$s must not exceed %2$d characters."
+msgstr "%1$s must not exceed %2$d characters."
 
-msgid "Total Clients"
-msgstr "Общо клиенти"
+msgid "%1$s must not exceed %2$s."
+msgstr "%1$s must not exceed %2$s."
 
-msgid "Quick Actions"
-msgstr "Бързи действия"
+msgid "%s cannot be negative."
+msgstr "%s cannot be negative."
 
-msgid "Recent Invoices"
-msgstr "Скорошни фактури"
+msgid "%s is required."
+msgstr "%s is required."
 
-msgid "Recent Clients"
-msgstr "Скорошни клиенти"
+msgid "%s must be a positive number."
+msgstr "%s must be a positive number."
 
-# Invoices
-msgid "Invoices"
-msgstr "Фактури"
+msgid "(Not yet assigned)"
+msgstr "(Not yet assigned)"
 
-msgid "Invoice"
-msgstr "Фактура"
-
-msgid "New Invoice"
-msgstr "Нова фактура"
-
-msgid "Edit Invoice"
-msgstr "Редактиране на фактура"
-
-msgid "Invoice Details"
-msgstr "Детайли на фактурата"
-
-msgid "Invoice Title"
-msgstr "Заглавие на фактура"
-
-msgid "Invoice Date"
-msgstr "Дата на фактура"
-
-msgid "Due Date"
-msgstr "Падеж"
-
-msgid "Total Amount"
-msgstr "Обща сума"
-
-msgid "Currency"
-msgstr "Валута"
-
-msgid "Notes"
-msgstr "Бележки"
-
-msgid "Create Invoice"
-msgstr "Създай фактура"
-
-msgid "Delete Invoice"
-msgstr "Изтрий фактура"
-
-msgid "Invoice Info"
-msgstr "Информация за фактурата"
-
-msgid "Invoice #:"
-msgstr "Фактура №:"
-
-msgid "Created:"
-msgstr "Създадена:"
-
-# Invoice Statuses
-msgid "Status"
-msgstr "Статус"
-
-msgid "Draft"
-msgstr "Чернова"
-
-msgid "Sent"
-msgstr "Изпратена"
-
-msgid "Paid"
-msgstr "Платена"
-
-msgid "Overdue"
-msgstr "Просрочена"
-
-msgid "Cancelled"
-msgstr "Анулирана"
-
-msgid "All"
-msgstr "Всички"
-
-# Clients
-msgid "Clients"
-msgstr "Клиенти"
-
-msgid "Client"
-msgstr "Клиент"
-
-msgid "New Client"
-msgstr "Нов клиент"
-
-msgid "Edit Client"
-msgstr "Редактиране на клиент"
-
-msgid "Add New Client"
-msgstr "Добави нов клиент"
-
-msgid "Select Existing Client"
-msgstr "Избери съществуващ клиент"
-
-msgid "Select a client..."
-msgstr "Изберете клиент..."
-
-msgid "New Client Details"
-msgstr "Данни за нов клиент"
-
-msgid "Personal Information"
-msgstr "Лична информация"
-
-msgid "First Name"
-msgstr "Име"
-
-msgid "Last Name"
-msgstr "Фамилия"
-
-msgid "Company"
-msgstr "Фирма"
-
-msgid "Email"
-msgstr "Имейл"
-
-msgid "Phone"
-msgstr "Телефон"
-
-msgid "Create Client"
-msgstr "Създай клиент"
-
-msgid "Delete Client"
-msgstr "Изтрий клиент"
-
-# Address
-msgid "Address"
-msgstr "Адрес"
-
-msgid "Street Address"
-msgstr "Улица"
-
-msgid "City"
-msgstr "Град"
-
-msgid "State / Province"
-msgstr "Област"
-
-msgid "ZIP / Postal Code"
-msgstr "Пощенски код"
-
-msgid "Country"
-msgstr "Държава"
-
-msgid "Select a country..."
-msgstr "Изберете държава..."
+msgid "(not visible on invoice)"
+msgstr "(not visible on invoice)"
 
 msgid "+ Add Address (Optional)"
 msgstr "+ Добави адрес (по желание)"
 
-# Billing
-msgid "Billing Information"
-msgstr "Информация за фактуриране"
+msgid "+ Add Method"
+msgstr "+ Добавяне на метод"
 
-msgid "Tax ID / VAT Number"
-msgstr "ЕИК / ДДС номер"
+msgid "+ Add Signature Field"
+msgstr "+ Добавяне на поле за подпис"
 
-# Statistics
-msgid "Statistics"
-msgstr "Статистика"
+msgid "+1 (555) 123-4567"
+msgstr "+1 (555) 123-4567"
 
-# Settings
-msgid "Settings"
-msgstr "Настройки"
+msgid "123 Main Street"
+msgstr "123 Main Street"
 
-msgid "General"
-msgstr "Общи"
+msgid "123 Main Street, Suite 100"
+msgstr "123 Main Street, Suite 100"
 
-msgid "Advanced"
-msgstr "Разширени"
+msgid "Accent Color"
+msgstr "Акцентен цвят"
 
-msgid "Company Information"
-msgstr "Информация за фирмата"
+msgid "Access Denied"
+msgstr "Access Denied"
 
-msgid "Company Name"
-msgstr "Име на фирма"
+msgid "Account Holder"
+msgstr "Титуляр на сметка"
 
-msgid "Company Email"
-msgstr "Имейл на фирма"
+msgid "Actions"
+msgstr "Действия"
 
-msgid "Company Phone"
-msgstr "Телефон на фирма"
+msgid "Add Client"
+msgstr "Добавяне на клиент"
 
-msgid "Company Address"
-msgstr "Адрес на фирма"
+msgid "Add Item"
+msgstr "Добавяне на артикул"
 
-msgid "Company Logo"
-msgstr "Лого на фирма"
+msgid "Add New"
+msgstr "Добавяне на нов"
 
-msgid "Language"
-msgstr "Език"
+msgid "Add New Client"
+msgstr "Добави нов клиент"
 
-msgid "Default (Site Language)"
-msgstr "По подразбиране (Език на сайта)"
+msgid "Add New Invoice"
+msgstr "Добавяне на нова фактура"
 
-msgid "English (US)"
-msgstr "Английски (САЩ)"
+msgid "Add a client first"
+msgstr "Add a client first"
 
-msgid "English (UK)"
-msgstr "Английски (Великобритания)"
+msgid "Add any notes or terms for this invoice..."
+msgstr "Add any notes or terms for this invoice..."
 
-msgid "Bulgarian (Български)"
-msgstr "Български"
+msgid "Add your first client to start creating invoices."
+msgstr "Add your first client to start creating invoices."
 
-msgid "Save Settings"
-msgstr "Запази настройките"
+msgid "Address"
+msgstr "Адрес"
 
-# Actions
-msgid "Save"
-msgstr "Запази"
+msgid "Afghanistan"
+msgstr "Afghanistan"
 
-msgid "Save Changes"
-msgstr "Запази промените"
+msgid "Albania"
+msgstr "Albania"
 
-msgid "Cancel"
-msgstr "Отказ"
+msgid "Algeria"
+msgstr "Algeria"
 
-msgid "Delete"
-msgstr "Изтрий"
+msgid "All"
+msgstr "Всички"
 
-msgid "Edit"
-msgstr "Редактирай"
+msgid "All Clients"
+msgstr "Всички клиенти"
 
-msgid "View"
-msgstr "Преглед"
+msgid "All Invoices"
+msgstr "Всички фактури"
 
-msgid "Search"
-msgstr "Търсене"
+msgid "Amount"
+msgstr "Сума"
 
-msgid "Back to List"
-msgstr "Обратно към списъка"
+msgid "Amount Due"
+msgstr "Дължима сума"
 
-# Messages
-msgid "Saving..."
-msgstr "Запазване..."
+msgid "Amount Due:"
+msgstr "Дължима сума:"
 
-msgid "Saved!"
-msgstr "Запазено!"
+msgid "An error occurred while generating the PDF."
+msgstr "An error occurred while generating the PDF."
+
+msgid "An error occurred while previewing the PDF."
+msgstr "An error occurred while previewing the PDF."
 
 msgid "An error occurred. Please try again."
 msgstr "Възникна грешка. Моля, опитайте отново."
 
-msgid "Network error. Please try again."
-msgstr "Мрежова грешка. Моля, опитайте отново."
+msgid "An unexpected error occurred."
+msgstr "An unexpected error occurred."
 
-msgid "Security check failed."
-msgstr "Проверката за сигурност не бе успешна."
+msgid "An unexpected error occurred. Please try again."
+msgstr "An unexpected error occurred. Please try again."
 
-msgid "Please fill in all required fields."
-msgstr "Моля, попълнете всички задължителни полета."
+msgid "Andorra"
+msgstr "Andorra"
 
-msgid "Please enter a valid email address."
-msgstr "Моля, въведете валиден имейл адрес."
+msgid "Angola"
+msgstr "Angola"
+
+msgid "Appearance"
+msgstr "Appearance"
+
+msgid "Are you sure you want to delete this client?"
+msgstr "Сигурни ли сте, че искате да изтриете този клиент?"
+
+msgid "Are you sure you want to delete this invoice?"
+msgstr "Сигурни ли сте, че искате да изтриете тази фактура?"
 
 msgid "Are you sure you want to delete this item?"
 msgstr "Сигурни ли сте, че искате да изтриете този елемент?"
 
-msgid "Client created successfully."
-msgstr "Клиентът е създаден успешно."
+msgid "Are you sure you want to reset the invoice counter? This cannot be undone."
+msgstr "Сигурни ли сте, че искате да нулирате брояча на фактурите? Това не може да бъде отменено."
 
-msgid "Client updated successfully."
-msgstr "Клиентът е обновен успешно."
+msgid "Are you sure you want to send this invoice to the client via email?"
+msgstr "Сигурни ли сте, че искате да изпратите тази фактура на клиента по имейл?"
 
-msgid "Client deleted successfully."
-msgstr "Клиентът е изтрит успешно."
+msgid "Argentina"
+msgstr "Argentina"
 
-msgid "Invoice created successfully."
-msgstr "Фактурата е създадена успешно."
-
-msgid "Invoice updated successfully."
-msgstr "Фактурата е обновена успешно."
-
-msgid "Invoice deleted successfully."
-msgstr "Фактурата е изтрита успешно."
-
-# Countries (Bulgaria highlighted)
-msgid "Bulgaria"
-msgstr "България"
-
-msgid "United States"
-msgstr "САЩ"
-
-msgid "United Kingdom"
-msgstr "Великобритания"
-
-msgid "Germany"
-msgstr "Германия"
-
-msgid "France"
-msgstr "Франция"
-
-# Empty states
-msgid "No invoices found."
-msgstr "Няма намерени фактури."
-
-msgid "No clients found."
-msgstr "Няма намерени клиенти."
-
-msgid "Create your first invoice"
-msgstr "Създайте първата си фактура"
-
-msgid "Add your first client"
-msgstr "Добавете първия си клиент"
-
-# Misc
-msgid "required"
-msgstr "задължително"
-
-msgid "Optional"
-msgstr "По желание"
-
-msgid "Loading..."
-msgstr "Зареждане..."
-
-msgid "Line items will be available in a future update."
-msgstr "Позициите ще бъдат налични в бъдеща версия."
-
-msgid "Select..."
-msgstr "Изберете..."
-
-# Invoice/Email Template
-msgid "BUYER"
-msgstr "ПОЛУЧАТЕЛ"
-
-msgid "SELLER"
-msgstr "ДОСТАВЧИК"
-
-msgid "INVOICE"
-msgstr "ФАКТУРА"
-
-msgid "No."
-msgstr "No."
-
-msgid "Date"
-msgstr "Дата"
-
-msgid "Due"
-msgstr "Срок"
-
-msgid "Office"
-msgstr "Офис"
+msgid "Armenia"
+msgstr "Armenia"
 
 msgid "Att To"
 msgstr "МОЛ"
 
+msgid "Attention To"
+msgstr "Внимание към"
+
+msgid "Australia"
+msgstr "Australia"
+
+msgid "Austria"
+msgstr "Austria"
+
+msgid "Auto-Send Invoice Email"
+msgstr "Автоматично изпращане на фактура по имейл"
+
+msgid "Auto-generated on save"
+msgstr "Auto-generated on save"
+
+msgid "Automatically email the PDF invoice to the customer when generated"
+msgstr "Automatically email the PDF invoice to the customer when generated"
+
+msgid "Automatically generate invoices from WooCommerce orders"
+msgstr "Automatically generate invoices from WooCommerce orders"
+
+msgid "Available Methods"
+msgstr "Налични методи"
+
+msgid "Azerbaijan"
+msgstr "Azerbaijan"
+
+msgid "BIC"
+msgstr "BIC"
+
+msgid "BUYER"
+msgstr "ПОЛУЧАТЕЛ"
+
+msgid "Back to List"
+msgstr "Обратно към списъка"
+
+msgid "Bahrain"
+msgstr "Bahrain"
+
+msgid "Bangladesh"
+msgstr "Bangladesh"
+
+msgid "Bank"
+msgstr "Банка"
+
+msgid "Bank Details"
+msgstr "Банкови данни"
+
+msgid "Belarus"
+msgstr "Belarus"
+
+msgid "Belgium"
+msgstr "Belgium"
+
+msgid "Belize"
+msgstr "Belize"
+
+msgid "Billing Information"
+msgstr "Информация за фактуриране"
+
+msgid "Bolivia"
+msgstr "Bolivia"
+
+msgid "Bosnia and Herzegovina"
+msgstr "Bosnia and Herzegovina"
+
+msgid "Botswana"
+msgstr "Botswana"
+
+msgid "Brazil"
+msgstr "Brazil"
+
+msgid "Brunei"
+msgstr "Brunei"
+
+msgid "Bulgaria"
+msgstr "България"
+
+msgid "Cambodia"
+msgstr "Cambodia"
+
+msgid "Cameroon"
+msgstr "Cameroon"
+
+msgid "Canada"
+msgstr "Canada"
+
+msgid "Cancelled"
+msgstr "Анулирана"
+
+msgid "Cannot delete client with %d invoice(s). Please delete or reassign the invoices first."
+msgstr "Не може да се изтрие клиент с %d фактура(и). Моля, първо изтрийте или пренасочете фактурите."
+
+msgid "Chile"
+msgstr "Chile"
+
+msgid "China"
+msgstr "China"
+
+msgid "City"
+msgstr "Град"
+
+msgid "Client"
+msgstr "Клиент"
+
+msgid "Client Information"
+msgstr "Информация за клиента"
+
+msgid "Client Name"
+msgstr "Име на клиента"
+
+msgid "Client created successfully."
+msgstr "Клиентът е създаден успешно."
+
+msgid "Client deleted successfully."
+msgstr "Клиентът е изтрит успешно."
+
+msgid "Client is required. Select an existing client or add new client details."
+msgstr "Клиентът е задължителен. Изберете съществуващ клиент или добавете данни за нов."
+
+msgid "Client not found."
+msgstr "Клиентът не е намерен."
+
+msgid "Client updated successfully."
+msgstr "Клиентът е обновен успешно."
+
+msgid "Clients"
+msgstr "Клиенти"
+
+msgid "Colombia"
+msgstr "Colombia"
+
+msgid "Company"
+msgstr "Фирма"
+
+msgid "Company name is required for company clients."
+msgstr "Името на фирмата е задължително за корпоративни клиенти."
+
+msgid "Company or Organization (Optional)"
+msgstr "Company or Organization (Optional)"
+
+msgid "Company or Organization name"
+msgstr "Име на фирма или организация"
+
+msgid "Completed"
+msgstr "Завършено"
+
+msgid "Configure the fields that appear in the signature block."
+msgstr "Конфигурирайте полетата, които се показват в блока за подпис."
+
+msgid "Contact Information"
+msgstr "Информация за контакт"
+
+msgid "Contact person (МОЛ) for company clients. For individuals, this can be left empty."
+msgstr "Лице за контакт (МОЛ) за корпоративни клиенти. За физически лица може да остане празно."
+
+msgid "Contact person name"
+msgstr "Име на лице за контакт"
+
+msgid "Costa Rica"
+msgstr "Costa Rica"
+
+msgid "Country"
+msgstr "Държава"
+
+msgid "Create Client"
+msgstr "Създай клиент"
+
+msgid "Create Invoice"
+msgstr "Създай фактура"
+
+msgid "Create your first invoice to get started."
+msgstr "Създайте първата си фактура, за да започнете."
+
+msgid "Created:"
+msgstr "Създадена:"
+
+msgid "Croatia"
+msgstr "Croatia"
+
+msgid "Cuba"
+msgstr "Cuba"
+
+msgid "Currency"
+msgstr "Валута"
+
+msgid "Current counter: %d"
+msgstr "Current counter: %d"
+
+msgid "Custom Invoices"
+msgstr "Потребителски фактури"
+
+msgid "Customer Notes"
+msgstr "Бележки за клиента"
+
+msgid "Cyprus"
+msgstr "Cyprus"
+
+msgid "Czech Republic"
+msgstr "Czech Republic"
+
+msgid "Danger Zone"
+msgstr "Опасна зона"
+
+msgid "Dashboard"
+msgstr "Табло"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Date cannot be in the past."
+msgstr "Date cannot be in the past."
+
+msgid "Dear %s,"
+msgstr "Dear %s,"
+
+msgid "Delete"
+msgstr "Изтрий"
+
+msgid "Delete Client"
+msgstr "Изтрий клиент"
+
+msgid "Delete Invoice"
+msgstr "Изтрий фактура"
+
+msgid "Denmark"
+msgstr "Denmark"
+
 msgid "Description"
 msgstr "Описание"
-
-msgid "Qty"
-msgstr "Кол."
-
-msgid "Unit Price"
-msgstr "Ед. цена"
 
 msgid "Disc.%"
 msgstr "Отст.%"
@@ -396,29 +415,587 @@ msgstr "Отст.%"
 msgid "Disc.Amt"
 msgstr "Отст.ст."
 
-msgid "Tax %"
-msgstr "ДДС %"
-
-msgid "Tax Amt"
-msgstr "ДДС ст."
-
-msgid "Total"
-msgstr "Общо"
-
-msgid "Subtotal"
-msgstr "Междинна сума"
-
 msgid "Discount"
 msgstr "Отстъпка"
 
-msgid "Tax"
-msgstr "Данък"
+msgid "Discount row in totals"
+msgstr "Ред за отстъпка в общото"
 
-msgid "TOTAL"
-msgstr "ОБЩО"
+msgid "Doe"
+msgstr "Иванов"
 
-msgid "VAT exempt — Article 70 VATA."
-msgstr "Освободена от ДДС — Член 70 от ЗДДС."
+msgid "Dominican Republic"
+msgstr "Dominican Republic"
+
+msgid "Download PDF"
+msgstr "Изтегляне на PDF"
+
+msgid "Draft"
+msgstr "Чернова"
+
+msgid "Drag sections to reorder them on the invoice PDF."
+msgstr "Drag sections to reorder them on the invoice PDF."
+
+msgid "Drag to reorder"
+msgstr "Плъзнете за пренареждане"
+
+msgid "Due"
+msgstr "Срок"
+
+msgid "Due Date"
+msgstr "Падеж"
+
+msgid "Due date cannot be before invoice date."
+msgstr "Датата на падеж не може да е преди датата на фактурата."
+
+msgid "Ecuador"
+msgstr "Ecuador"
+
+msgid "Edit"
+msgstr "Редактирай"
+
+msgid "Edit Client"
+msgstr "Редактиране на клиент"
+
+msgid "Edit Invoice"
+msgstr "Редактиране на фактура"
+
+msgid "Egypt"
+msgstr "Egypt"
+
+msgid "El Salvador"
+msgstr "El Salvador"
+
+msgid "Email"
+msgstr "Имейл"
+
+msgid "Email Address"
+msgstr "Email Address"
+
+msgid "Email Preview"
+msgstr "Преглед на имейл"
+
+msgid "Email is required for new clients."
+msgstr "Имейлът е задължителен за нови клиенти."
+
+msgid "Email sending functionality will be available in a future update. Configure your SMTP settings now to be ready."
+msgstr "Email sending functionality will be available in a future update. Configure your SMTP settings now to be ready."
+
+msgid "Email sent successfully."
+msgstr "Имейлът е изпратен успешно."
+
+msgid "Enable Integration"
+msgstr "Активиране на интеграция"
+
+msgid "Estonia"
+msgstr "Estonia"
+
+msgid "Ethiopia"
+msgstr "Ethiopia"
+
+msgid "Failed to create new client. Please check the client details."
+msgstr "Неуспешно създаване на нов клиент. Моля, проверете данните."
+
+msgid "Failed to delete client."
+msgstr "Неуспешно изтриване на клиент."
+
+msgid "Failed to delete invoice."
+msgstr "Неуспешно изтриване на фактура."
+
+msgid "Failed to delete tax rate."
+msgstr "Неуспешно изтриване на данъчна ставка."
+
+msgid "Failed to generate invoice. Check logs for details."
+msgstr "Неуспешно генериране на фактура. Проверете логовете."
+
+msgid "Failed to reset counter."
+msgstr "Неуспешно нулиране на брояча."
+
+msgid "Failed to reset invoice counter."
+msgstr "Неуспешно нулиране на брояча на фактурите."
+
+msgid "Failed to save. Please try again."
+msgstr "Неуспешно запазване. Моля, опитайте отново."
+
+msgid "Failed to send email."
+msgstr "Неуспешно изпращане на имейл."
+
+msgid "Failed to send email. Check error logs for more details."
+msgstr "Неуспешно изпращане на имейл. Проверете логовете за грешки."
+
+msgid "Failed to send reminder. Check error logs for more details."
+msgstr "Неуспешно изпращане на напомняне. Проверете логовете за грешки."
+
+msgid "Failed to set counter."
+msgstr "Неуспешно задаване на брояч."
+
+msgid "Failed to set invoice counter."
+msgstr "Неуспешно задаване на брояч на фактури."
+
+msgid "Field label"
+msgstr "Етикет на полето"
+
+msgid "Finland"
+msgstr "Finland"
+
+msgid "First Name"
+msgstr "Име"
+
+msgid "Fixed Amount"
+msgstr "Фиксирана сума"
+
+msgid "For EU VAT reverse charge and tax compliance."
+msgstr "За обратно начисляване на ДДС в ЕС и данъчно съответствие."
+
+msgid "For Phase 1A, enter the total manually. Line items will be added in Phase 1B."
+msgstr "For Phase 1A, enter the total manually. Line items will be added in Phase 1B."
+
+msgid "For new clients, first name, last name and email are required."
+msgstr "За нови клиенти са задължителни име, фамилия и имейл."
+
+msgid "Format:"
+msgstr "Format:"
+
+msgid "France"
+msgstr "Франция"
+
+msgid "Georgia"
+msgstr "Georgia"
+
+msgid "Germany"
+msgstr "Германия"
+
+msgid "Ghana"
+msgstr "Ghana"
+
+msgid "Greece"
+msgstr "Greece"
+
+msgid "Guatemala"
+msgstr "Guatemala"
+
+msgid "Header (Company + Client)"
+msgstr "Заглавие (Фирма + Клиент)"
+
+msgid "Hex color used for headings and accents on the invoice PDF."
+msgstr "Hex color used for headings and accents on the invoice PDF."
+
+msgid "Hold Ctrl/Cmd to select multiple statuses."
+msgstr "Задръжте Ctrl/Cmd за избор на няколко статуса."
+
+msgid "Honduras"
+msgstr "Honduras"
+
+msgid "Hong Kong"
+msgstr "Hong Kong"
+
+msgid "Hungary"
+msgstr "Hungary"
+
+msgid "IBAN"
+msgstr "IBAN"
+
+msgid "ID No (EIK/BULSTAT/Reg No)"
+msgstr "ИД № (ЕИК/БУЛСТАТ/Рег. №)"
+
+msgid "ID No Label"
+msgstr "Етикет на ИД №"
+
+msgid "INVOICE"
+msgstr "ФАКТУРА"
+
+msgid "Iceland"
+msgstr "Iceland"
+
+msgid "India"
+msgstr "India"
+
+msgid "Individual"
+msgstr "Физическо лице"
+
+msgid "Indonesia"
+msgstr "Indonesia"
+
+msgid "Internal Notes"
+msgstr "Вътрешни бележки"
+
+msgid "Invalid client ID."
+msgstr "Невалиден клиентски ID."
+
+msgid "Invalid client."
+msgstr "Невалиден клиент."
+
+msgid "Invalid invoice ID."
+msgstr "Невалиден ID на фактура."
+
+msgid "Invalid invoice."
+msgstr "Невалидна фактура."
+
+msgid "Invalid order ID."
+msgstr "Невалиден ID на поръчка."
+
+msgid "Invalid tax rate ID."
+msgstr "Невалиден ID на данъчна ставка."
+
+msgid "Invoice"
+msgstr "Фактура"
+
+msgid "Invoice #"
+msgstr "Фактура №"
+
+msgid "Invoice #:"
+msgstr "Фактура №:"
+
+msgid "Invoice %s from %s"
+msgstr "Invoice %s from %s"
+
+msgid "Invoice Date"
+msgstr "Дата на фактура"
+
+msgid "Invoice Details"
+msgstr "Детайли на фактурата"
+
+msgid "Invoice Info"
+msgstr "Информация за фактурата"
+
+msgid "Invoice Logo"
+msgstr "Лого на фактура"
+
+msgid "Invoice Notes"
+msgstr "Бележки към фактура"
+
+msgid "Invoice Number"
+msgstr "Номер на фактура"
+
+msgid "Invoice Number Format"
+msgstr "Формат на номер на фактура"
+
+msgid "Invoice Status"
+msgstr "Статус на фактура"
+
+msgid "Invoice Title"
+msgstr "Заглавие на фактура"
+
+msgid "Invoice counter has been reset."
+msgstr "Броячът на фактурите е нулиран."
+
+msgid "Invoice counter set to %1$d. Next invoice: %2$s"
+msgstr "Броячът на фактурите е зададен на %1$d. Следваща фактура: %2$s"
+
+msgid "Invoice created successfully."
+msgstr "Фактурата е създадена успешно."
+
+msgid "Invoice deleted successfully."
+msgstr "Фактурата е изтрита успешно."
+
+msgid "Invoice generated successfully."
+msgstr "Фактурата е генерирана успешно."
+
+msgid "Invoice not found."
+msgstr "Фактурата не е намерена."
+
+msgid "Invoice number is automatically generated."
+msgstr "Номерът на фактурата се генерира автоматично."
+
+msgid "Invoice title is required."
+msgstr "Заглавието на фактурата е задължително."
+
+msgid "Invoice updated successfully."
+msgstr "Фактурата е обновена успешно."
+
+msgid "InvoiceForge"
+msgstr "InvoiceForge"
+
+msgid "InvoiceForge Sequential (e.g. INV-2026-0001)"
+msgstr "InvoiceForge Sequential (e.g. INV-2026-0001)"
+
+msgid "InvoiceForge requires Composer dependencies. Please run \"composer install\" first."
+msgstr "InvoiceForge requires Composer dependencies. Please run \"composer install\" first."
+
+msgid "InvoiceForge requires Composer dependencies. Please run \"composer install\" in the plugin directory."
+msgstr "InvoiceForge requires Composer dependencies. Please run \"composer install\" in the plugin directory."
+
+msgid "InvoiceForge requires PHP %s or higher."
+msgstr "InvoiceForge requires PHP %s or higher."
+
+msgid "InvoiceForge requires PHP version %1$s or higher. Your current version is %2$s. Please upgrade PHP to use this plugin."
+msgstr "InvoiceForge requires PHP version %1$s or higher. Your current version is %2$s. Please upgrade PHP to use this plugin."
+
+msgid "InvoiceForge requires WordPress version %1$s or higher. Your current version is %2$s. Please upgrade WordPress to use this plugin."
+msgstr "InvoiceForge requires WordPress version %1$s or higher. Your current version is %2$s. Please upgrade WordPress to use this plugin."
+
+msgid "Invoices"
+msgstr "Фактури"
+
+msgid "Iran"
+msgstr "Iran"
+
+msgid "Iraq"
+msgstr "Iraq"
+
+msgid "Ireland"
+msgstr "Ireland"
+
+msgid "Israel"
+msgstr "Israel"
+
+msgid "Italy"
+msgstr "Italy"
+
+msgid "Item description"
+msgstr "Описание на артикул"
+
+msgid "Jamaica"
+msgstr "Jamaica"
+
+msgid "Japan"
+msgstr "Japan"
+
+msgid "John"
+msgstr "Иван"
+
+msgid "Jordan"
+msgstr "Jordan"
+
+msgid "Kazakhstan"
+msgstr "Kazakhstan"
+
+msgid "Kenya"
+msgstr "Kenya"
+
+msgid "Kuwait"
+msgstr "Kuwait"
+
+msgid "Label used for the company/client ID number field (e.g. EIK, BULSTAT, Reg No)."
+msgstr "Етикет, използван за полето за ИД номер на фирма/клиент (напр. ЕИК, БУЛСТАТ, Рег. №)."
+
+msgid "Last Name"
+msgstr "Фамилия"
+
+msgid "Latvia"
+msgstr "Latvia"
+
+msgid "Lebanon"
+msgstr "Lebanon"
+
+msgid "Left"
+msgstr "Ляво"
+
+msgid "Left Column Title"
+msgstr "Заглавие на лявата колона"
+
+msgid "Libya"
+msgstr "Libya"
+
+msgid "Liechtenstein"
+msgstr "Liechtenstein"
+
+msgid "Line Items"
+msgstr "Редове"
+
+msgid "Lithuania"
+msgstr "Lithuania"
+
+msgid "Loading preview..."
+msgstr "Loading preview..."
+
+msgid "Loading..."
+msgstr "Зареждане..."
+
+msgid "Location"
+msgstr "Местоположение"
+
+msgid "Logo"
+msgstr "Лого"
+
+msgid "Luxembourg"
+msgstr "Luxembourg"
+
+msgid "Macau"
+msgstr "Macau"
+
+msgid "Malaysia"
+msgstr "Malaysia"
+
+msgid "Maldives"
+msgstr "Maldives"
+
+msgid "Malta"
+msgstr "Malta"
+
+msgid "Manually set the next invoice number counter. The next invoice created will use this number."
+msgstr "Manually set the next invoice number counter. The next invoice created will use this number."
+
+msgid "Mauritius"
+msgstr "Mauritius"
+
+msgid "Mexico"
+msgstr "Mexico"
+
+msgid "Moldova"
+msgstr "Moldova"
+
+msgid "Monaco"
+msgstr "Monaco"
+
+msgid "Mongolia"
+msgstr "Mongolia"
+
+msgid "Montenegro"
+msgstr "Montenegro"
+
+msgid "Morocco"
+msgstr "Morocco"
+
+msgid "Multi-currency support will be expanded in Phase 4."
+msgstr "Multi-currency support will be expanded in Phase 4."
+
+msgid "Myanmar"
+msgstr "Myanmar"
+
+msgid "Name"
+msgstr "Име"
+
+msgid "Nepal"
+msgstr "Nepal"
+
+msgid "Netherlands"
+msgstr "Netherlands"
+
+msgid "Network error. Please try again."
+msgstr "Мрежова грешка. Моля, опитайте отново."
+
+msgid "New Client"
+msgstr "Нов клиент"
+
+msgid "New Client Details"
+msgstr "Данни за нов клиент"
+
+msgid "New Invoice"
+msgstr "Нова фактура"
+
+msgid "New Zealand"
+msgstr "New Zealand"
+
+msgid "Next Invoice Number:"
+msgstr "Следващ номер на фактура:"
+
+msgid "Nicaragua"
+msgstr "Nicaragua"
+
+msgid "Nigeria"
+msgstr "Nigeria"
+
+msgid "No Discount"
+msgstr "Без отстъпка"
+
+msgid "No Tax"
+msgstr "Без ДДС"
+
+msgid "No clients found in Trash."
+msgstr "No clients found in Trash."
+
+msgid "No clients found."
+msgstr "Няма намерени клиенти."
+
+msgid "No clients found. Switch to \"Add New Client\" to create one inline."
+msgstr "No clients found. Switch to \"Add New Client\" to create one inline."
+
+msgid "No clients yet"
+msgstr "Все още няма клиенти"
+
+msgid "No clients yet. Add your first client to start invoicing!"
+msgstr "Все още няма клиенти. Добавете първия си клиент, за да започнете да фактурирате!"
+
+msgid "No invoices found in Trash."
+msgstr "No invoices found in Trash."
+
+msgid "No invoices found."
+msgstr "Няма намерени фактури."
+
+msgid "No invoices yet"
+msgstr "Все още няма фактури"
+
+msgid "No invoices yet. Create your first invoice to get started!"
+msgstr "Все още няма фактури. Създайте първата си фактура, за да започнете!"
+
+msgid "No line items yet. Click \"Add Item\" to get started."
+msgstr "Все още няма редове. Натиснете \"Добавяне на артикул\", за да започнете."
+
+msgid "No."
+msgstr "No."
+
+msgid "North Macedonia"
+msgstr "North Macedonia"
+
+msgid "Norway"
+msgstr "Norway"
+
+msgid "Notes"
+msgstr "Бележки"
+
+msgid "Notes & Terms"
+msgstr "Бележки и условия"
+
+msgid "Notes visible to the customer on the invoice..."
+msgstr "Notes visible to the customer on the invoice..."
+
+msgid "Office"
+msgstr "Офис"
+
+msgid "Office / Branch"
+msgstr "Офис / Клон"
+
+msgid "Oman"
+msgstr "Oman"
+
+msgid "Optional for individuals."
+msgstr "По избор за физически лица."
+
+msgid "Optional. Leave blank for individual clients."
+msgstr "По избор. Оставете празно за физически лица."
+
+msgid "Order Invoice Prefix"
+msgstr "Order Invoice Prefix"
+
+msgid "Original due date: %s"
+msgstr "Първоначална дата на падеж: %s"
+
+msgid "Outstanding"
+msgstr "Неизплатени"
+
+msgid "Overdue"
+msgstr "Просрочена"
+
+msgid "PDF"
+msgstr "PDF"
+
+msgid "PDF Preview"
+msgstr "PDF Preview"
+
+msgid "PDF generation is currently unavailable. The mPDF library is missing. Please ensure you are using the correct release ZIP or run \"composer install\"."
+msgstr "PDF generation is currently unavailable. The mPDF library is missing. Please ensure you are using the correct release ZIP or run \"composer install\"."
+
+msgid "Paid"
+msgstr "Платена"
+
+msgid "Pakistan"
+msgstr "Pakistan"
+
+msgid "Panama"
+msgstr "Panama"
+
+msgid "Paraguay"
+msgstr "Paraguay"
+
+msgid "Parent Clients:"
+msgstr "Parent Clients:"
+
+msgid "Parent Invoices:"
+msgstr "Parent Invoices:"
+
+msgid "Pay Invoice"
+msgstr "Плати фактура"
 
 msgid "Payment Details"
 msgstr "Данни за плащане"
@@ -426,51 +1003,688 @@ msgstr "Данни за плащане"
 msgid "Payment Method"
 msgstr "Начин на плащане"
 
-msgid "Bank"
-msgstr "Банка"
+msgid "Payment Methods"
+msgstr "Методи на плащане"
 
-msgid "IBAN"
-msgstr "IBAN"
+msgid "Payment Reminder: Invoice %s"
+msgstr "Напомняне за плащане: Фактура %s"
 
-msgid "BIC"
-msgstr "BIC"
+msgid "Payment methods available to select on each invoice."
+msgstr "Payment methods available to select on each invoice."
+
+msgid "Payment terms, late fees, etc."
+msgstr "Условия за плащане, неустойки за забава и др."
+
+msgid "Pending payment"
+msgstr "Чакащо плащане"
+
+msgid "Percentage (%)"
+msgstr "Процент (%)"
+
+msgid "Peru"
+msgstr "Peru"
+
+msgid "Philippines"
+msgstr "Philippines"
+
+msgid "Phone"
+msgstr "Телефон"
+
+msgid "Phone Number"
+msgstr "Телефонен номер"
+
+msgid "Please arrange payment at your earliest convenience."
+msgstr "Моля, организирайте плащането при първа възможност."
+
+msgid "Please enter a valid URL."
+msgstr "Моля, въведете валиден URL."
+
+msgid "Please enter a valid counter value (minimum 1)."
+msgstr "Моля, въведете валидна стойност на брояч (минимум 1)."
+
+msgid "Please enter a valid counter value."
+msgstr "Моля, въведете валидна стойност на брояч."
+
+msgid "Please enter a valid date."
+msgstr "Моля, въведете валидна дата."
+
+msgid "Please enter a valid email address."
+msgstr "Моля, въведете валиден имейл адрес."
+
+msgid "Please enter a valid number."
+msgstr "Моля, въведете валидно число."
+
+msgid "Please enter a valid value."
+msgstr "Моля, въведете валидна стойност."
+
+msgid "Please fill in all required fields."
+msgstr "Моля, попълнете всички задължителни полета."
+
+msgid "Please find your invoice %s attached."
+msgstr "Моля, намерете приложената ви фактура %s."
+
+msgid "Please select a client."
+msgstr "Моля, изберете клиент."
+
+msgid "Please select a valid option."
+msgstr "Моля, изберете валидна опция."
+
+msgid "Plugin Activation Error"
+msgstr "Plugin Activation Error"
+
+msgid "Poland"
+msgstr "Poland"
+
+msgid "Portugal"
+msgstr "Portugal"
+
+msgid "Preview"
+msgstr "Преглед"
+
+msgid "Preview failed — invoice not found or template missing."
+msgstr "Прегледът е неуспешен — фактурата не е намерена или липсва шаблон."
+
+msgid "Preview failed."
+msgstr "Прегледът е неуспешен."
+
+msgid "Preview unavailable"
+msgstr "Прегледът не е наличен"
+
+msgid "Private notes for your reference..."
+msgstr "Лични бележки за ваша справка..."
+
+msgid "Processing"
+msgstr "Обработване"
+
+msgid "Puerto Rico"
+msgstr "Puerto Rico"
+
+msgid "Qatar"
+msgstr "Qatar"
+
+msgid "Qty"
+msgstr "Кол."
+
+msgid "Quick Actions"
+msgstr "Бързи действия"
+
+msgid "Recent Clients"
+msgstr "Скорошни клиенти"
+
+msgid "Recent Invoices"
+msgstr "Скорошни фактури"
+
+msgid "Reminder sent successfully."
+msgstr "Напомнянето е изпратено успешно."
+
+msgid "Remove"
+msgstr "Премахване"
+
+msgid "Remove Image"
+msgstr "Премахване на изображение"
+
+msgid "Required for EU VAT reverse charge and tax compliance."
+msgstr "Required for EU VAT reverse charge and tax compliance."
+
+msgid "Reset Invoice Counter"
+msgstr "Нулиране на брояч на фактури"
+
+msgid "Right"
+msgstr "Дясно"
+
+msgid "Right Column Title"
+msgstr "Заглавие на дясната колона"
+
+msgid "Romania"
+msgstr "Romania"
+
+msgid "Russia"
+msgstr "Russia"
+
+msgid "SELLER"
+msgstr "ДОСТАВЧИК"
+
+msgid "Saudi Arabia"
+msgstr "Saudi Arabia"
+
+msgid "Save Changes"
+msgstr "Запази промените"
+
+msgid "Save Settings"
+msgstr "Запази настройките"
+
+msgid "Saved!"
+msgstr "Запазено!"
+
+msgid "Saving..."
+msgstr "Запазване..."
+
+msgid "Search Clients"
+msgstr "Търсене на клиенти"
+
+msgid "Search Invoices"
+msgstr "Търсене на фактури"
+
+msgid "Search clients..."
+msgstr "Търсене на клиенти..."
+
+msgid "Search invoices..."
+msgstr "Търсене на фактури..."
+
+msgid "Section Order"
+msgstr "Ред на секциите"
+
+msgid "Section Visibility"
+msgstr "Видимост на секциите"
+
+msgid "Security Error"
+msgstr "Security Error"
+
+msgid "Security check failed."
+msgstr "Проверката за сигурност не бе успешна."
+
+msgid "Security check failed. Please refresh the page and try again."
+msgstr "Проверката за сигурност е неуспешна. Моля, опреснете страницата и опитайте отново."
+
+msgid "Security check failed. Please try again."
+msgstr "Security check failed. Please try again."
+
+msgid "Select Existing Client"
+msgstr "Избери съществуващ клиент"
+
+msgid "Select Image"
+msgstr "Избор на изображение"
+
+msgid "Select a client..."
+msgstr "Изберете клиент..."
+
+msgid "Select a country..."
+msgstr "Изберете държава..."
+
+msgid "Select a logo from the media library (JPG, PNG, SVG). Recommended size: 300x100px."
+msgstr "Select a logo from the media library (JPG, PNG, SVG). Recommended size: 300x100px."
+
+msgid "Select..."
+msgstr "Изберете..."
+
+msgid "Send Email"
+msgstr "Изпращане на имейл"
+
+msgid "Send to Client"
+msgstr "Изпращане на клиент"
+
+msgid "Sent"
+msgstr "Изпратена"
+
+msgid "Serbia"
+msgstr "Serbia"
+
+msgid "Set Counter"
+msgstr "Задаване на брояч"
+
+msgid "Set Invoice Counter"
+msgstr "Задаване на брояч на фактури"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "Signature"
+msgstr "Подпис"
+
+msgid "Signature Fields"
+msgstr "Полета за подпис"
+
+msgid "Signature block"
+msgstr "Блок за подпис"
 
 msgid "Signatures"
 msgstr "Подписи"
 
-msgid "Amount Due"
-msgstr "Дължима сума"
+msgid "Singapore"
+msgstr "Singapore"
 
-msgid "Pay Invoice"
-msgstr "Плати фактура"
+msgid "Slovakia"
+msgstr "Slovakia"
 
-# Language names (in Bulgarian)
-msgid "German (Deutsch)"
-msgstr "Немски (Deutsch)"
+msgid "Slovenia"
+msgstr "Slovenia"
 
-msgid "French (Français)"
-msgstr "Френски (Français)"
+msgid "South Africa"
+msgstr "South Africa"
 
-msgid "Spanish (Español)"
-msgstr "Испански (Español)"
+msgid "South Korea"
+msgstr "South Korea"
 
-msgid "Italian (Italiano)"
-msgstr "Италиански (Italiano)"
+msgid "Spain"
+msgstr "Spain"
 
-msgid "Dutch (Nederlands)"
-msgstr "Холандски (Nederlands)"
+msgid "Sri Lanka"
+msgstr "Sri Lanka"
 
-msgid "Polish (Polski)"
-msgstr "Полски (Polski)"
+msgid "State / Province"
+msgstr "Област"
 
-msgid "Portuguese (Português)"
-msgstr "Португалски (Português)"
+msgid "Statistics"
+msgstr "Статистика"
 
-msgid "Romanian (Română)"
-msgstr "Румънски (Română)"
+msgid "Status"
+msgstr "Статус"
 
-msgid "Russian (Русский)"
-msgstr "Руски (Русский)"
+msgid "Street Address"
+msgstr "Улица"
 
-msgid "Account Holder"
-msgstr "Титуляр на сметка"
+msgid "Subtotal"
+msgstr "Междинна сума"
+
+msgid "Sweden"
+msgstr "Sweden"
+
+msgid "Switzerland"
+msgstr "Switzerland"
+
+msgid "TOTAL"
+msgstr "ОБЩО"
+
+msgid "Taiwan"
+msgstr "Taiwan"
+
+msgid "Tanzania"
+msgstr "Tanzania"
+
+msgid "Tax"
+msgstr "Данък"
+
+msgid "Tax %"
+msgstr "ДДС %"
+
+msgid "Tax Amt"
+msgstr "ДДС ст."
+
+msgid "Tax ID / VAT Number"
+msgstr "ЕИК / ДДС номер"
+
+msgid "Tax rate deleted successfully."
+msgstr "Данъчната ставка е изтрита успешно."
+
+msgid "Tax rate name is required."
+msgstr "Името на данъчната ставка е задължително."
+
+msgid "Tax rate not found."
+msgstr "Данъчната ставка не е намерена."
+
+msgid "Tax rate saved successfully."
+msgstr "Данъчната ставка е запазена успешно."
+
+msgid "Terms & Conditions"
+msgstr "Общи условия"
+
+msgid "Thailand"
+msgstr "Thailand"
+
+msgid "These actions can affect your invoice data. Use with caution."
+msgstr "Тези действия могат да засегнат данните ви за фактури. Използвайте с повишено внимание."
+
+msgid "These notes will appear on the invoice."
+msgstr "Тези бележки ще се показват на фактурата."
+
+msgid "This field is required."
+msgstr "Това поле е задължително."
+
+msgid "This is a friendly reminder that invoice %1$s for %2$s %3$s is overdue."
+msgstr "Това е любезно напомняне, че фактура %1$s за %2$s %3$s е просрочена."
+
+msgid "Total"
+msgstr "Общо"
+
+msgid "Total Amount"
+msgstr "Обща сума"
+
+msgid "Total Clients"
+msgstr "Общо клиенти"
+
+msgid "Total Invoices"
+msgstr "Общо фактури"
+
+msgid "Total Revenue"
+msgstr "Общ приход"
+
+msgid "Totals"
+msgstr "Общо"
+
+msgid "Trigger on Order Status"
+msgstr "Задействане при статус на поръчка"
+
+msgid "Tunisia"
+msgstr "Tunisia"
+
+msgid "Turkey"
+msgstr "Turkey"
+
+msgid "Ukraine"
+msgstr "Ukraine"
+
+msgid "Unauthorized."
+msgstr "Неоторизиран достъп."
+
+msgid "Unit Price"
+msgstr "Ед. цена"
+
+msgid "United Arab Emirates"
+msgstr "United Arab Emirates"
+
+msgid "United Kingdom"
+msgstr "Великобритания"
+
+msgid "United States"
+msgstr "САЩ"
+
+msgid "Unknown Client"
+msgstr "Неизвестен клиент"
+
+msgid "Unnamed Client"
+msgstr "Неименуван клиент"
+
+msgid "Up to date"
+msgstr "Актуално"
+
+msgid "Updating..."
+msgstr "Обновяване..."
+
+msgid "Uruguay"
+msgstr "Uruguay"
+
+msgid "Use this image"
+msgstr "Използване на това изображение"
+
+msgid "Used when \"WooCommerce Order Number\" format is selected (e.g. ORD-1234)."
+msgstr "Used when \"WooCommerce Order Number\" format is selected (e.g. ORD-1234)."
+
+msgid "Uzbekistan"
+msgstr "Uzbekistan"
+
+msgid "VAT 0%"
+msgstr "ДДС 0%"
+
+msgid "VAT 20%"
+msgstr "ДДС 20%"
+
+msgid "VAT 9%"
+msgstr "ДДС 9%"
+
+msgid "VAT exempt — Article 70 VATA."
+msgstr "Освободена от ДДС — Член 70 от ЗДДС."
+
+msgid "Value"
+msgstr "Стойност"
+
+msgid "Venezuela"
+msgstr "Venezuela"
+
+msgid "Vietnam"
+msgstr "Vietnam"
+
+msgid "View All"
+msgstr "Преглед на всички"
+
+msgid "View All Invoices"
+msgstr "Преглед на всички фактури"
+
+msgid "View Client"
+msgstr "Преглед на клиент"
+
+msgid "View Invoice"
+msgstr "Преглед на фактура"
+
+msgid "Visible Sections"
+msgstr "Видими секции"
+
+msgid "WooCommerce Integration"
+msgstr "WooCommerce интеграция"
+
+msgid "WooCommerce Order Number with Prefix (e.g. ORD-1234)"
+msgstr "WooCommerce Order Number with Prefix (e.g. ORD-1234)"
+
+msgid "WooCommerce Orders"
+msgstr "WooCommerce поръчки"
+
+msgid "WooCommerce is not active."
+msgstr "WooCommerce не е активен."
+
+msgid "WooCommerce is not installed or activated. Install WooCommerce to use these integration settings."
+msgstr "WooCommerce is not installed or activated. Install WooCommerce to use these integration settings."
+
+msgid "Yemen"
+msgstr "Yemen"
+
+msgid "You do not have permission to access this page."
+msgstr "Нямате разрешение за достъп до тази страница."
+
+msgid "You do not have permission to delete clients."
+msgstr "Нямате разрешение за изтриване на клиенти."
+
+msgid "You do not have permission to delete invoices."
+msgstr "Нямате разрешение за изтриване на фактури."
+
+msgid "You do not have permission to edit clients."
+msgstr "Нямате разрешение за редактиране на клиенти."
+
+msgid "You do not have permission to edit invoices."
+msgstr "Нямате разрешение за редактиране на фактури."
+
+msgid "You do not have permission to manage InvoiceForge settings."
+msgstr "You do not have permission to manage InvoiceForge settings."
+
+msgid "You do not have permission to manage clients."
+msgstr "Нямате разрешение за управление на клиенти."
+
+msgid "You do not have permission to manage invoices."
+msgstr "Нямате разрешение за управление на фактури."
+
+msgid "You do not have permission to manage tax rates."
+msgstr "Нямате разрешение за управление на данъчни ставки."
+
+msgid "You do not have permission to perform this action."
+msgstr "Нямате разрешение за извършване на това действие."
+
+msgid "You do not have permission to preview invoices."
+msgstr "Нямате разрешение за преглед на фактури."
+
+msgid "You do not have permission to view clients."
+msgstr "Нямате разрешение за преглед на клиенти."
+
+msgid "You do not have permission to view invoices."
+msgstr "Нямате разрешение за преглед на фактури."
+
+msgid "ZIP / Postal Code"
+msgstr "Пощенски код"
+
+msgid "Zimbabwe"
+msgstr "Zimbabwe"
+
+msgctxt "Add New on Toolbar"
+msgid "Zimbabwe"
+msgstr "Zimbabwe"
+
+msgctxt "Add New on Toolbar"
+msgid "Client"
+msgstr "Клиент"
+
+msgctxt "Add New on Toolbar"
+msgid "Invoice"
+msgstr "Фактура"
+
+msgctxt "Admin Menu text"
+msgid "Invoice"
+msgstr "Фактура"
+
+msgctxt "Admin Menu text"
+msgid "Clients"
+msgstr "Клиенти"
+
+msgctxt "Admin Menu text"
+msgid "Invoices"
+msgstr "Фактури"
+
+msgctxt "Overrides the \"Featured Image\" phrase"
+msgid "Invoices"
+msgstr "Фактури"
+
+msgctxt "Overrides the \"Featured Image\" phrase"
+msgid "Client Photo"
+msgstr "Client Photo"
+
+msgctxt "Overrides the \"Featured Image\" phrase"
+msgid "Invoice Logo"
+msgstr "Лого на фактура"
+
+msgctxt "Overrides the \"Insert into post\" phrase"
+msgid "Invoice Logo"
+msgstr "Лого на фактура"
+
+msgctxt "Overrides the \"Insert into post\" phrase"
+msgid "Insert into client"
+msgstr "Insert into client"
+
+msgctxt "Overrides the \"Insert into post\" phrase"
+msgid "Insert into invoice"
+msgstr "Insert into invoice"
+
+msgctxt "Overrides the \"Remove featured image\" phrase"
+msgid "Insert into invoice"
+msgstr "Insert into invoice"
+
+msgctxt "Overrides the \"Remove featured image\" phrase"
+msgid "Remove client photo"
+msgstr "Remove client photo"
+
+msgctxt "Overrides the \"Remove featured image\" phrase"
+msgid "Remove invoice logo"
+msgstr "Remove invoice logo"
+
+msgctxt "Overrides the \"Set featured image\" phrase"
+msgid "Remove invoice logo"
+msgstr "Remove invoice logo"
+
+msgctxt "Overrides the \"Set featured image\" phrase"
+msgid "Set client photo"
+msgstr "Set client photo"
+
+msgctxt "Overrides the \"Set featured image\" phrase"
+msgid "Set invoice logo"
+msgstr "Set invoice logo"
+
+msgctxt "Overrides the \"Uploaded to this post\" phrase"
+msgid "Set invoice logo"
+msgstr "Set invoice logo"
+
+msgctxt "Overrides the \"Uploaded to this post\" phrase"
+msgid "Uploaded to this client"
+msgstr "Uploaded to this client"
+
+msgctxt "Overrides the \"Uploaded to this post\" phrase"
+msgid "Uploaded to this invoice"
+msgstr "Uploaded to this invoice"
+
+msgctxt "Overrides the \"Use as featured image\" phrase"
+msgid "Uploaded to this invoice"
+msgstr "Uploaded to this invoice"
+
+msgctxt "Overrides the \"Use as featured image\" phrase"
+msgid "Use as client photo"
+msgstr "Use as client photo"
+
+msgctxt "Overrides the \"Use as featured image\" phrase"
+msgid "Use as invoice logo"
+msgstr "Use as invoice logo"
+
+msgctxt "Post type general name"
+msgid "Use as invoice logo"
+msgstr "Use as invoice logo"
+
+msgctxt "Post type general name"
+msgid "Clients"
+msgstr "Клиенти"
+
+msgctxt "Post type general name"
+msgid "Invoices"
+msgstr "Фактури"
+
+msgctxt "Post type singular name"
+msgid "Invoices"
+msgstr "Фактури"
+
+msgctxt "Post type singular name"
+msgid "Client"
+msgstr "Клиент"
+
+msgctxt "Post type singular name"
+msgid "Invoice"
+msgstr "Фактура"
+
+msgctxt "Screen reader text"
+msgid "Invoice"
+msgstr "Фактура"
+
+msgctxt "Screen reader text"
+msgid "Clients list"
+msgstr "Clients list"
+
+msgctxt "Screen reader text"
+msgid "Clients list navigation"
+msgstr "Clients list navigation"
+
+msgctxt "Screen reader text"
+msgid "Filter clients list"
+msgstr "Filter clients list"
+
+msgctxt "Screen reader text"
+msgid "Filter invoices list"
+msgstr "Filter invoices list"
+
+msgctxt "Screen reader text"
+msgid "Invoices list"
+msgstr "Invoices list"
+
+msgctxt "Screen reader text"
+msgid "Invoices list navigation"
+msgstr "Invoices list navigation"
+
+msgctxt "The post type archive label"
+msgid "Invoices list navigation"
+msgstr "Invoices list navigation"
+
+msgctxt "The post type archive label"
+msgid "Client archives"
+msgstr "Client archives"
+
+msgctxt "The post type archive label"
+msgid "Invoice archives"
+msgstr "Invoice archives"
+
+msgid "Invoice archives"
+msgstr "Invoice archives"
+
+msgid "e.g., 100"
+msgstr "e.g., 100"
+
+msgid "e.g., 123456789"
+msgstr "e.g., 123456789"
+
+msgid "e.g., GB123456789"
+msgstr "e.g., GB123456789"
+
+msgid "e.g., HQ, Branch 1"
+msgstr "e.g., HQ, Branch 1"
+
+msgid "e.g., Issued by"
+msgstr "e.g., Issued by"
+
+msgid "e.g., Received by"
+msgstr "e.g., Received by"
+
+msgid "e.g., Website Development - March 2025"
+msgstr "e.g., Website Development - March 2025"
+
+msgid "email@example.com"
+msgstr "email@example.com"
+

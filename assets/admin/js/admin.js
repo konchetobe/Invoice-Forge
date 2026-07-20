@@ -190,7 +190,7 @@
             
             // Validate other required fields
             if (!$form.find('[name="title"]').val()) {
-                this.showToast('error', 'Invoice title is required.');
+                this.showToast('error', InvoiceForge.i18n.invoiceTitleRequired || 'Invoice title is required.');
                 return;
             }
             
@@ -243,6 +243,11 @@
                 formData.new_client_state = $form.find('[name="new_client_state"]').val();
                 formData.new_client_zip = $form.find('[name="new_client_zip"]').val();
                 formData.new_client_country = $form.find('[name="new_client_country"]').val();
+                formData.new_client_type = $form.find('[name="new_client_type"]').val() || 'individual';
+                formData.new_client_tax_id = $form.find('[name="new_client_tax_id"]').val() || '';
+                formData.new_client_id_no = $form.find('[name="new_client_id_no"]').val() || '';
+                formData.new_client_office = $form.find('[name="new_client_office"]').val() || '';
+                formData.new_client_att_to = $form.find('[name="new_client_att_to"]').val() || '';
             }
             
             // Send AJAX request
@@ -273,7 +278,9 @@
 
                         // If new client was created, switch to existing mode and update dropdown
                         if (clientMode === 'new' && response.data.invoice && response.data.invoice.client_id) {
-                            const clientName = formData.new_client_first_name + ' ' + formData.new_client_last_name;
+                            const clientName = formData.new_client_type === 'company'
+                                ? (formData.new_client_company || '')
+                                : (formData.new_client_first_name + ' ' + formData.new_client_last_name);
                             const $clientSelect = $form.find('[name="client_id"]');
                             // Use DOM API to prevent XSS from user-supplied client name
                             $('<option>').val(response.data.invoice.client_id).text(clientName).appendTo($clientSelect);
@@ -377,7 +384,7 @@
             const $btn = $(e.target).closest('.invoiceforge-delete-invoice');
             const invoiceId = $btn.data('id');
             
-            if (!confirm(InvoiceForge.i18n.confirmDelete || 'Are you sure you want to delete this invoice?')) {
+            if (!confirm(InvoiceForge.i18n.confirmDeleteInvoice || InvoiceForge.i18n.confirmDelete || 'Are you sure you want to delete this invoice?')) {
                 return;
             }
             
@@ -403,7 +410,7 @@
                     }
                 },
                 error: function() {
-                    InvoiceForgeAdmin.showToast('error', InvoiceForge.i18n.networkError);
+                    InvoiceForgeAdmin.showToast('error', InvoiceForge.i18n.networkError || 'Network error. Please try again.');
                 },
                 complete: function() {
                     $btn.prop('disabled', false).removeClass('invoiceforge-loading');
@@ -448,9 +455,9 @@
                 },
                 success: function(response) {
                     if (response.success) {
-                        InvoiceForgeAdmin.showToast('success', response.data.message || 'Email sent successfully.');
+                        InvoiceForgeAdmin.showToast('success', response.data.message || InvoiceForge.i18n.emailSent || 'Email sent successfully.');
                     } else {
-                        InvoiceForgeAdmin.showToast('error', response.data.message || 'Failed to send email.');
+                        InvoiceForgeAdmin.showToast('error', response.data.message || InvoiceForge.i18n.emailFailed || 'Failed to send email.');
                     }
                 },
                 error: function(xhr) {
@@ -478,7 +485,7 @@
             const $btn = $(e.target).closest('.invoiceforge-delete-client');
             const clientId = $btn.data('id');
             
-            if (!confirm(InvoiceForge.i18n.confirmDelete || 'Are you sure you want to delete this client?')) {
+            if (!confirm(InvoiceForge.i18n.confirmDeleteClient || InvoiceForge.i18n.confirmDelete || 'Are you sure you want to delete this client?')) {
                 return;
             }
             
@@ -503,7 +510,7 @@
                     }
                 },
                 error: function() {
-                    InvoiceForgeAdmin.showToast('error', InvoiceForge.i18n.networkError);
+                    InvoiceForgeAdmin.showToast('error', InvoiceForge.i18n.networkError || 'Network error. Please try again.');
                 },
                 complete: function() {
                     $btn.prop('disabled', false).removeClass('invoiceforge-loading');
@@ -582,7 +589,7 @@
             const fullName = (firstName + ' ' + lastName).trim();
             
             // Update title preview if exists
-            $('.invoiceforge-client-name-preview').text(fullName || 'Client Name');
+            $('.invoiceforge-client-name-preview').text(fullName || (InvoiceForge.i18n.clientName || 'Client Name'));
         },
 
         /**
@@ -654,11 +661,11 @@
                             );
                         }
                     } else {
-                        InvoiceForgeAdmin.showToast('error', (response.data && response.data.message) || 'Failed to reset counter.');
+                        InvoiceForgeAdmin.showToast('error', (response.data && response.data.message) || InvoiceForge.i18n.counterResetFailed || 'Failed to reset counter.');
                     }
                 },
                 error: function() {
-                    InvoiceForgeAdmin.showToast('error', 'Network error. Please try again.');
+                    InvoiceForgeAdmin.showToast('error', InvoiceForge.i18n.networkError || 'Network error. Please try again.');
                 },
                 complete: function() {
                     $btn.prop('disabled', false);
@@ -674,7 +681,7 @@
 
             var value = parseInt($('#manual-counter-value').val(), 10);
             if (!value || value < 1) {
-                InvoiceForgeAdmin.showToast('error', 'Please enter a valid counter value (minimum 1).');
+                InvoiceForgeAdmin.showToast('error', InvoiceForge.i18n.counterValueInvalid || 'Please enter a valid counter value (minimum 1).');
                 return;
             }
 
@@ -704,11 +711,11 @@
                             );
                         }
                     } else {
-                        InvoiceForgeAdmin.showToast('error', (response.data && response.data.message) || 'Failed to set counter.');
+                        InvoiceForgeAdmin.showToast('error', (response.data && response.data.message) || InvoiceForge.i18n.counterSetFailed || 'Failed to set counter.');
                     }
                 },
                 error: function() {
-                    InvoiceForgeAdmin.showToast('error', 'Network error. Please try again.');
+                    InvoiceForgeAdmin.showToast('error', InvoiceForge.i18n.networkError || 'Network error. Please try again.');
                 },
                 complete: function() {
                     $btn.prop('disabled', false);
@@ -852,7 +859,7 @@
             $(document).on('click', '#if-add-payment-method', function() {
                 var row = '<div class="if-repeater-row" style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">' +
                     '<input type="text" name="invoiceforge_settings[template][payment_methods][]" value="" class="regular-text">' +
-                    '<button type="button" class="button if-remove-payment-method">Remove</button>' +
+                    '<button type="button" class="button if-remove-payment-method">' + (InvoiceForge.i18n.remove || 'Remove') + '</button>' +
                     '</div>';
                 $('#if-payment-methods-list').append(row);
             });
@@ -872,15 +879,15 @@
                 sigIndex++;
                 var uniqueId = 'if_sig_col_new_' + sigIndex;
                 var row = '<div class="if-repeater-row if-sig-field-row" style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">' +
-                    '<input type="text" name="invoiceforge_settings[template][signature_fields][][label]" value="" class="regular-text" placeholder="Field label">' +
-                    '<label style="display:inline-flex;align-items:center;gap:4px;">' +
-                        '<input type="radio" name="' + uniqueId + '" value="left" checked> Left' +
+                    '<input type="text" name="invoiceforge_settings[template][signature_fields][][label]" value="" class="regular-text" placeholder="' + (InvoiceForge.i18n.fieldLabel || 'Field label') + '">' +
+                    '<label style="display:inline-flex;align-items:center;gap:4px;flex-shrink:0;">' +
+                        '<input type="radio" name="' + uniqueId + '" value="left" checked> ' + (InvoiceForge.i18n.left || 'Left') +
                     '</label>' +
-                    '<label style="display:inline-flex;align-items:center;gap:4px;">' +
-                        '<input type="radio" name="' + uniqueId + '" value="right"> Right' +
+                    '<label style="display:inline-flex;align-items:center;gap:4px;flex-shrink:0;">' +
+                        '<input type="radio" name="' + uniqueId + '" value="right"> ' + (InvoiceForge.i18n.right || 'Right') +
                     '</label>' +
                     '<input type="hidden" name="invoiceforge_settings[template][signature_fields][][col]" value="left" class="if-sig-col-hidden">' +
-                    '<button type="button" class="button if-remove-sig-field">Remove</button>' +
+                    '<button type="button" class="button if-remove-sig-field">' + (InvoiceForge.i18n.remove || 'Remove') + '</button>' +
                     '</div>';
                 $('#if-signature-fields-list').append(row);
             });
@@ -969,7 +976,7 @@
                 this._previewXhr.abort();
             }
 
-            $status.text('Updating...');
+            $status.text(InvoiceForge.i18n.updating || 'Updating...');
 
             // Collect line items from the DOM
             var lineItems = [];
@@ -1014,15 +1021,15 @@
                 success: function(response) {
                     if (response.success && response.data && response.data.html) {
                         $frame.html(response.data.html);
-                        $status.text('Up to date');
+                        $status.text(InvoiceForge.i18n.upToDate || 'Up to date');
                         setTimeout(function() { $status.fadeOut(400, function() { $(this).text('').show(); }); }, 2000);
                     } else {
-                        $status.text('Preview unavailable');
+                        $status.text(InvoiceForge.i18n.previewUnavailable || 'Preview unavailable');
                     }
                 },
                 error: function(xhr, status) {
                     if (status !== 'abort') {
-                        $status.text('Preview unavailable');
+                        $status.text(InvoiceForge.i18n.previewUnavailable || 'Preview unavailable');
                     }
                 }
             });
@@ -1046,12 +1053,12 @@
                         if (successCallback) successCallback(response.data);
                     } else {
                         if (errorCallback) errorCallback(response.data);
-                        else InvoiceForgeAdmin.showToast('error', response.data.message || 'An error occurred.');
+                        else InvoiceForgeAdmin.showToast('error', response.data.message || (InvoiceForge.i18n.error || 'An error occurred.'));
                     }
                 },
                 error: function(xhr, status, error) {
                     if (errorCallback) errorCallback({ message: error });
-                    else InvoiceForgeAdmin.showToast('error', 'Network error. Please try again.');
+                    else InvoiceForgeAdmin.showToast('error', InvoiceForge.i18n.networkError || 'Network error. Please try again.');
                 }
             });
         }
@@ -1069,5 +1076,61 @@
 
     // Expose to global scope for external access
     window.InvoiceForgeAdmin = InvoiceForgeAdmin;
+
+    /**
+     * Toggle between Individual and Company client type.
+     * Controls visibility of billing fields and required attribute toggling.
+     *
+     * @param {string} type 'individual' or 'company'
+     */
+    window.toggleClientType = function(type) {
+        var isCompany = (type === 'company');
+
+        // Update hidden field
+        var typeField = document.getElementById('client_type');
+        if (typeField) {
+            typeField.value = type;
+        }
+
+        // Toggle billing info card visibility
+        document.querySelectorAll('.if-company-field').forEach(function(el) {
+            el.style.display = isCompany ? '' : 'none';
+        });
+
+        // Toggle individual-only fields (first/last name fields and their help text)
+        document.querySelectorAll('.if-individual-field').forEach(function(el) {
+            el.style.display = isCompany ? 'none' : '';
+        });
+
+        // Toggle required markers
+        document.querySelectorAll('.if-individual-required').forEach(function(el) {
+            el.style.display = isCompany ? 'none' : '';
+        });
+        document.querySelectorAll('.if-company-required').forEach(function(el) {
+            el.style.display = isCompany ? '' : 'none';
+        });
+
+        // Update toggle button styling
+        document.querySelectorAll('.invoiceforge-client-type-toggle label').forEach(function(label) {
+            var radio = label.querySelector('input[type="radio"]');
+            if (radio && radio.checked) {
+                label.style.background = 'var(--if-primary)';
+                label.style.color = '#fff';
+            } else {
+                label.style.background = '';
+                label.style.color = '';
+            }
+        });
+
+        // Update first/last name required attributes
+        var firstName = document.getElementById('client_first_name') || document.getElementById('new_client_first_name');
+        var lastName = document.getElementById('client_last_name') || document.getElementById('new_client_last_name');
+        if (firstName) {
+            if (isCompany) { firstName.removeAttribute('required'); } else { firstName.setAttribute('required', ''); }
+        }
+        if (lastName) {
+            if (isCompany) { lastName.removeAttribute('required'); } else { lastName.setAttribute('required', ''); }
+        }
+    };
 
 })(jQuery);

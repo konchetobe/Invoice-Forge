@@ -41,6 +41,10 @@ if ($is_new) {
     ];
 }
 
+// Determine client type: company if company field is filled, otherwise individual
+$is_company = !empty($client['company']);
+$client_type = $is_company ? 'company' : 'individual';
+
 $clientsPage = new \InvoiceForge\Admin\Pages\ClientsPage();
 ?>
 <div class="invoiceforge-wrap">
@@ -65,6 +69,7 @@ $clientsPage = new \InvoiceForge\Admin\Pages\ClientsPage();
     <!-- Client Form -->
     <form id="invoiceforge-client-form" class="invoiceforge-form">
         <input type="hidden" name="client_id" value="<?php echo esc_attr($client['id']); ?>">
+        <input type="hidden" name="client_type" id="client_type" value="<?php echo esc_attr($client_type); ?>">
 
         <div class="invoiceforge-editor-layout">
             <!-- Main Content -->
@@ -72,37 +77,51 @@ $clientsPage = new \InvoiceForge\Admin\Pages\ClientsPage();
                 <!-- Personal Information -->
                 <div class="invoiceforge-card">
                     <div class="invoiceforge-card-header">
-                        <h3 class="invoiceforge-card-title"><?php esc_html_e('Personal Information', 'invoiceforge'); ?></h3>
+                        <h3 class="invoiceforge-card-title"><?php esc_html_e('Client Information', 'invoiceforge'); ?></h3>
                     </div>
                     <div class="invoiceforge-card-body">
+                        <!-- Person / Company Toggle -->
+                        <div class="invoiceforge-client-type-toggle" style="display:flex;gap:0;margin-bottom:var(--if-space-4);border:1px solid var(--if-gray-300);border-radius:var(--if-radius);overflow:hidden;width:fit-content;">
+                            <label style="flex:1;cursor:pointer;padding:var(--if-space-2) var(--if-space-4);text-align:center;<?php echo !$is_company ? 'background:var(--if-primary);color:#fff;' : ''; ?>">
+                                <input type="radio" name="client_type_radio" value="individual" <?php checked(!$is_company); ?> onchange="toggleClientType('individual')" style="display:none;">
+                                <?php esc_html_e('Individual', 'invoiceforge'); ?>
+                            </label>
+                            <label style="flex:1;cursor:pointer;padding:var(--if-space-2) var(--if-space-4);text-align:center;border-left:1px solid var(--if-gray-300);<?php echo $is_company ? 'background:var(--if-primary);color:#fff;' : ''; ?>">
+                                <input type="radio" name="client_type_radio" value="company" <?php checked($is_company); ?> onchange="toggleClientType('company')" style="display:none;">
+                                <?php esc_html_e('Company', 'invoiceforge'); ?>
+                            </label>
+                        </div>
+
                         <div class="invoiceforge-form-grid">
-                            <div class="invoiceforge-form-group">
+                            <!-- Individual fields (shown when type=individual) -->
+                            <div class="if-individual-field invoiceforge-form-group">
                                 <label class="invoiceforge-form-label" for="client_first_name">
-                                    <?php esc_html_e('First Name', 'invoiceforge'); ?>
+                                    <?php esc_html_e('First Name', 'invoiceforge'); ?> <span class="if-individual-required required">*</span>
                                 </label>
                                 <input type="text" id="client_first_name" name="first_name" class="invoiceforge-form-input"
                                        value="<?php echo esc_attr($client['first_name']); ?>"
                                        placeholder="<?php esc_attr_e('John', 'invoiceforge'); ?>">
                             </div>
 
-                            <div class="invoiceforge-form-group">
+                            <div class="if-individual-field invoiceforge-form-group">
                                 <label class="invoiceforge-form-label" for="client_last_name">
-                                    <?php esc_html_e('Last Name', 'invoiceforge'); ?>
+                                    <?php esc_html_e('Last Name', 'invoiceforge'); ?> <span class="if-individual-required required">*</span>
                                 </label>
                                 <input type="text" id="client_last_name" name="last_name" class="invoiceforge-form-input"
                                        value="<?php echo esc_attr($client['last_name']); ?>"
                                        placeholder="<?php esc_attr_e('Doe', 'invoiceforge'); ?>">
                             </div>
 
+                            <!-- Company field (always visible but required when type=company) -->
                             <div class="invoiceforge-form-group full-width">
                                 <label class="invoiceforge-form-label" for="company">
-                                    <?php esc_html_e('Company', 'invoiceforge'); ?>
+                                    <?php esc_html_e('Company', 'invoiceforge'); ?> <span class="if-company-required required" style="display:none;">*</span>
                                 </label>
                                 <input type="text" id="company" name="company" class="invoiceforge-form-input"
                                        value="<?php echo esc_attr($client['company']); ?>"
-                                       placeholder="<?php esc_attr_e('Company or Organization (Optional)', 'invoiceforge'); ?>">
-                                <p class="invoiceforge-form-help">
-                                    <?php esc_html_e('Optional. Leave blank for individual clients.', 'invoiceforge'); ?>
+                                       placeholder="<?php esc_attr_e('Company or Organization name', 'invoiceforge'); ?>">
+                                <p class="if-individual-field invoiceforge-form-help" style="margin:0;">
+                                    <?php esc_html_e('Optional for individuals.', 'invoiceforge'); ?>
                                 </p>
                             </div>
 
@@ -203,8 +222,8 @@ $clientsPage = new \InvoiceForge\Admin\Pages\ClientsPage();
                     </div>
                 </div>
 
-                <!-- Billing Info Card -->
-                <div class="invoiceforge-card">
+                <!-- Billing Info Card (shown only for company clients) -->
+                <div class="invoiceforge-card if-company-field" <?php echo !$is_company ? 'style="display:none;"' : ''; ?>>
                     <div class="invoiceforge-card-header">
                         <h3 class="invoiceforge-card-title"><?php esc_html_e('Billing Information', 'invoiceforge'); ?></h3>
                     </div>
