@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: InvoiceForge 1.2.9\n"
+"Project-Id-Version: InvoiceForge 1.3.2\n"
 "Report-Msgid-Bugs-To: https://github.com/konchetobe/Invoice-Forge/issues\n"
-"POT-Creation-Date: 2026-08-24 11:42:18+0000\n"
-"PO-Revision-Date: 2026-08-24 11:42:18+0000\n"
+"POT-Creation-Date: 2026-08-24 16:18:56+0000\n"
+"PO-Revision-Date: 2026-08-24 16:18:56+0000\n"
 "Last-Translator: InvoiceForge Team\n"
 "Language-Team: Bulgarian\n"
 "Language: bg_BG\n"
@@ -104,13 +104,13 @@ msgid "Address"
 msgstr "Адрес"
 
 msgid "Afghanistan"
-msgstr "Afghanistan"
+msgstr "Афганистан"
 
 msgid "Albania"
-msgstr "Albania"
+msgstr "Албания"
 
 msgid "Algeria"
-msgstr "Algeria"
+msgstr "Алжир"
 
 msgid "All"
 msgstr "Всички"
@@ -146,10 +146,10 @@ msgid "An unexpected error occurred. Please try again."
 msgstr "Възникна неочаквана грешка. Моля, опитайте отново."
 
 msgid "Andorra"
-msgstr "Andorra"
+msgstr "Андора"
 
 msgid "Angola"
-msgstr "Angola"
+msgstr "Ангола"
 
 msgid "Appearance"
 msgstr "Външен вид"
@@ -170,10 +170,10 @@ msgid "Are you sure you want to send this invoice to the client via email?"
 msgstr "Сигурни ли сте, че искате да изпратите тази фактура на клиента по имейл?"
 
 msgid "Argentina"
-msgstr "Argentina"
+msgstr "Аржентина"
 
 msgid "Armenia"
-msgstr "Armenia"
+msgstr "Армения"
 
 msgid "Att To"
 msgstr "МОЛ"
@@ -182,10 +182,10 @@ msgid "Attention To"
 msgstr "Внимание към"
 
 msgid "Australia"
-msgstr "Australia"
+msgstr "Австралия"
 
 msgid "Austria"
-msgstr "Austria"
+msgstr "Австрия"
 
 msgid "Auto-Send Invoice Email"
 msgstr "Автоматично изпращане на фактура по имейл"
@@ -203,7 +203,7 @@ msgid "Available Methods"
 msgstr "Налични методи"
 
 msgid "Azerbaijan"
-msgstr "Azerbaijan"
+msgstr "Азербайджан"
 
 msgid "BIC"
 msgstr "BIC"
@@ -215,10 +215,10 @@ msgid "Back to List"
 msgstr "Обратно към списъка"
 
 msgid "Bahrain"
-msgstr "Bahrain"
+msgstr "Бахрейн"
 
 msgid "Bangladesh"
-msgstr "Bangladesh"
+msgstr "Бангладеш"
 
 msgid "Bank"
 msgstr "Банка"
@@ -227,43 +227,43 @@ msgid "Bank Details"
 msgstr "Банкови данни"
 
 msgid "Belarus"
-msgstr "Belarus"
+msgstr "Беларус"
 
 msgid "Belgium"
-msgstr "Belgium"
+msgstr "Белгия"
 
 msgid "Belize"
-msgstr "Belize"
+msgstr "Белиз"
 
 msgid "Billing Information"
 msgstr "Информация за фактуриране"
 
 msgid "Bolivia"
-msgstr "Bolivia"
+msgstr "Боливия"
 
 msgid "Bosnia and Herzegovina"
-msgstr "Bosnia and Herzegovina"
+msgstr "Босна и Херцеговина"
 
 msgid "Botswana"
-msgstr "Botswana"
+msgstr "Ботсвана"
 
 msgid "Brazil"
-msgstr "Brazil"
+msgstr "Бразилия"
 
 msgid "Brunei"
-msgstr "Brunei"
+msgstr "Бруней"
 
 msgid "Bulgaria"
 msgstr "България"
 
 msgid "Cambodia"
-msgstr "Cambodia"
+msgstr "Камбоджа"
 
 msgid "Cameroon"
-msgstr "Cameroon"
+msgstr "Камерун"
 
 msgid "Canada"
-msgstr "Canada"
+msgstr "Канада"
 
 msgid "Cancelled"
 msgstr "Анулирана"
@@ -272,10 +272,10 @@ msgid "Cannot delete client with %d invoice(s). Please delete or reassign the in
 msgstr "Не може да се изтрие клиент с %d фактура(и). Моля, първо изтрийте или пренасочете фактурите."
 
 msgid "Chile"
-msgstr "Chile"
+msgstr "Чили"
 
 msgid "China"
-msgstr "China"
+msgstr "Китай"
 
 msgid "City"
 msgstr "Град"
@@ -308,7 +308,7 @@ msgid "Clients"
 msgstr "Клиенти"
 
 msgid "Colombia"
-msgstr "Colombia"
+msgstr "Колумбия"
 
 msgid "Company"
 msgstr "Фирма"
@@ -338,7 +338,7 @@ msgid "Contact person name"
 msgstr "Име на лице за контакт"
 
 msgid "Costa Rica"
-msgstr "Costa Rica"
+msgstr "Коста Рика"
 
 msgid "Country"
 msgstr "Държава"
@@ -356,10 +356,10 @@ msgid "Created:"
 msgstr "Създадена:"
 
 msgid "Croatia"
-msgstr "Croatia"
+msgstr "Хърватия"
 
 msgid "Cuba"
-msgstr "Cuba"
+msgstr "Куба"
 
 msgid "Currency"
 msgstr "Валута"
@@ -374,10 +374,10 @@ msgid "Customer Notes"
 msgstr "Бележки за клиента"
 
 msgid "Cyprus"
-msgstr "Cyprus"
+msgstr "Кипър"
 
 msgid "Czech Republic"
-msgstr "Czech Republic"
+msgstr "Чехия"
 
 msgid "Danger Zone"
 msgstr "Опасна зона"
@@ -404,7 +404,7 @@ msgid "Delete Invoice"
 msgstr "Изтрий фактура"
 
 msgid "Denmark"
-msgstr "Denmark"
+msgstr "Дания"
 
 msgid "Description"
 msgstr "Описание"
@@ -425,7 +425,7 @@ msgid "Doe"
 msgstr "Иванов"
 
 msgid "Dominican Republic"
-msgstr "Dominican Republic"
+msgstr "Доминиканска република"
 
 msgid "Download PDF"
 msgstr "Изтегляне на PDF"
@@ -449,7 +449,7 @@ msgid "Due date cannot be before invoice date."
 msgstr "Датата на падеж не може да е преди датата на фактурата."
 
 msgid "Ecuador"
-msgstr "Ecuador"
+msgstr "Еквадор"
 
 msgid "Edit"
 msgstr "Редактирай"
@@ -461,10 +461,10 @@ msgid "Edit Invoice"
 msgstr "Редактиране на фактура"
 
 msgid "Egypt"
-msgstr "Egypt"
+msgstr "Египет"
 
 msgid "El Salvador"
-msgstr "El Salvador"
+msgstr "Салвадор"
 
 msgid "Email"
 msgstr "Имейл"
@@ -488,10 +488,10 @@ msgid "Enable Integration"
 msgstr "Активиране на интеграция"
 
 msgid "Estonia"
-msgstr "Estonia"
+msgstr "Естония"
 
 msgid "Ethiopia"
-msgstr "Ethiopia"
+msgstr "Етиопия"
 
 msgid "Failed to create new client. Please check the client details."
 msgstr "Неуспешно създаване на нов клиент. Моля, проверете данните."
@@ -536,7 +536,7 @@ msgid "Field label"
 msgstr "Етикет на полето"
 
 msgid "Finland"
-msgstr "Finland"
+msgstr "Финландия"
 
 msgid "First Name"
 msgstr "Име"
@@ -548,49 +548,49 @@ msgid "For EU VAT reverse charge and tax compliance."
 msgstr "За обратно начисляване на ДДС в ЕС и данъчно съответствие."
 
 msgid "For Phase 1A, enter the total manually. Line items will be added in Phase 1B."
-msgstr "For Phase 1A, enter the total manually. Line items will be added in Phase 1B."
+msgstr "За фаза 1А въведете общата сума ръчно. Позициите ще бъдат добавени във фаза 1Б."
 
 msgid "For new clients, first name, last name and email are required."
 msgstr "За нови клиенти са задължителни име, фамилия и имейл."
 
 msgid "Format:"
-msgstr "Format:"
+msgstr "Формат:"
 
 msgid "France"
 msgstr "Франция"
 
 msgid "Georgia"
-msgstr "Georgia"
+msgstr "Грузия"
 
 msgid "Germany"
 msgstr "Германия"
 
 msgid "Ghana"
-msgstr "Ghana"
+msgstr "Гана"
 
 msgid "Greece"
-msgstr "Greece"
+msgstr "Гърция"
 
 msgid "Guatemala"
-msgstr "Guatemala"
+msgstr "Гватемала"
 
 msgid "Header (Company + Client)"
 msgstr "Заглавие (Фирма + Клиент)"
 
 msgid "Hex color used for headings and accents on the invoice PDF."
-msgstr "Hex color used for headings and accents on the invoice PDF."
+msgstr "Цвят в шестнадесетичен формат, използван за заглавията и акцентите в PDF на фактурата."
 
 msgid "Hold Ctrl/Cmd to select multiple statuses."
 msgstr "Задръжте Ctrl/Cmd за избор на няколко статуса."
 
 msgid "Honduras"
-msgstr "Honduras"
+msgstr "Хондурас"
 
 msgid "Hong Kong"
-msgstr "Hong Kong"
+msgstr "Хонконг"
 
 msgid "Hungary"
-msgstr "Hungary"
+msgstr "Унгария"
 
 msgid "IBAN"
 msgstr "IBAN"
@@ -605,16 +605,16 @@ msgid "INVOICE"
 msgstr "ФАКТУРА"
 
 msgid "Iceland"
-msgstr "Iceland"
+msgstr "Исландия"
 
 msgid "India"
-msgstr "India"
+msgstr "Индия"
 
 msgid "Individual"
 msgstr "Физическо лице"
 
 msgid "Indonesia"
-msgstr "Indonesia"
+msgstr "Индонезия"
 
 msgid "Internal Notes"
 msgstr "Вътрешни бележки"
@@ -647,7 +647,7 @@ msgid "Invoice #:"
 msgstr "Фактура №:"
 
 msgid "Invoice %s from %s"
-msgstr "Invoice %s from %s"
+msgstr "Фактура %s от %s"
 
 msgid "Invoice Date"
 msgstr "Дата на фактура"
@@ -707,64 +707,64 @@ msgid "InvoiceForge"
 msgstr "InvoiceForge"
 
 msgid "InvoiceForge Sequential (e.g. INV-2026-0001)"
-msgstr "InvoiceForge Sequential (e.g. INV-2026-0001)"
+msgstr "Последователно номериране на InvoiceForge (напр. INV-2026-0001)"
 
 msgid "InvoiceForge requires Composer dependencies. Please run \"composer install\" first."
-msgstr "InvoiceForge requires Composer dependencies. Please run \"composer install\" first."
+msgstr "InvoiceForge изисква зависимости от Composer. Моля, първо изпълнете „composer install“."
 
 msgid "InvoiceForge requires Composer dependencies. Please run \"composer install\" in the plugin directory."
-msgstr "InvoiceForge requires Composer dependencies. Please run \"composer install\" in the plugin directory."
+msgstr "InvoiceForge изисква зависимости от Composer. Моля, изпълнете „composer install“ в директорията на разширението."
 
 msgid "InvoiceForge requires PHP %s or higher."
-msgstr "InvoiceForge requires PHP %s or higher."
+msgstr "InvoiceForge изисква PHP %s или по-нова версия."
 
 msgid "InvoiceForge requires PHP version %1$s or higher. Your current version is %2$s. Please upgrade PHP to use this plugin."
-msgstr "InvoiceForge requires PHP version %1$s or higher. Your current version is %2$s. Please upgrade PHP to use this plugin."
+msgstr "InvoiceForge изисква PHP версия %1$s или по-нова. Вашата текуща версия е %2$s. Моля, надградете PHP, за да използвате това разширение."
 
 msgid "InvoiceForge requires WordPress version %1$s or higher. Your current version is %2$s. Please upgrade WordPress to use this plugin."
-msgstr "InvoiceForge requires WordPress version %1$s or higher. Your current version is %2$s. Please upgrade WordPress to use this plugin."
+msgstr "InvoiceForge изисква WordPress версия %1$s или по-нова. Вашата текуща версия е %2$s. Моля, надградете WordPress, за да използвате това разширение."
 
 msgid "Invoices"
 msgstr "Фактури"
 
 msgid "Iran"
-msgstr "Iran"
+msgstr "Иран"
 
 msgid "Iraq"
-msgstr "Iraq"
+msgstr "Ирак"
 
 msgid "Ireland"
-msgstr "Ireland"
+msgstr "Ирландия"
 
 msgid "Israel"
-msgstr "Israel"
+msgstr "Израел"
 
 msgid "Italy"
-msgstr "Italy"
+msgstr "Италия"
 
 msgid "Item description"
 msgstr "Описание на артикул"
 
 msgid "Jamaica"
-msgstr "Jamaica"
+msgstr "Ямайка"
 
 msgid "Japan"
-msgstr "Japan"
+msgstr "Япония"
 
 msgid "John"
 msgstr "Иван"
 
 msgid "Jordan"
-msgstr "Jordan"
+msgstr "Йордания"
 
 msgid "Kazakhstan"
-msgstr "Kazakhstan"
+msgstr "Казахстан"
 
 msgid "Kenya"
-msgstr "Kenya"
+msgstr "Кения"
 
 msgid "Kuwait"
-msgstr "Kuwait"
+msgstr "Кувейт"
 
 msgid "Label used for the company/client ID number field (e.g. EIK, BULSTAT, Reg No)."
 msgstr "Етикет, използван за полето за ИД номер на фирма/клиент (напр. ЕИК, БУЛСТАТ, Рег. №)."
@@ -773,10 +773,10 @@ msgid "Last Name"
 msgstr "Фамилия"
 
 msgid "Latvia"
-msgstr "Latvia"
+msgstr "Латвия"
 
 msgid "Lebanon"
-msgstr "Lebanon"
+msgstr "Ливан"
 
 msgid "Left"
 msgstr "Ляво"
@@ -785,19 +785,19 @@ msgid "Left Column Title"
 msgstr "Заглавие на лявата колона"
 
 msgid "Libya"
-msgstr "Libya"
+msgstr "Либия"
 
 msgid "Liechtenstein"
-msgstr "Liechtenstein"
+msgstr "Лихтенщайн"
 
 msgid "Line Items"
 msgstr "Редове"
 
 msgid "Lithuania"
-msgstr "Lithuania"
+msgstr "Литва"
 
 msgid "Loading preview..."
-msgstr "Loading preview..."
+msgstr "Зареждане на преглед..."
 
 msgid "Loading..."
 msgstr "Зареждане..."
@@ -809,58 +809,58 @@ msgid "Logo"
 msgstr "Лого"
 
 msgid "Luxembourg"
-msgstr "Luxembourg"
+msgstr "Люксембург"
 
 msgid "Macau"
-msgstr "Macau"
+msgstr "Макао"
 
 msgid "Malaysia"
-msgstr "Malaysia"
+msgstr "Малайзия"
 
 msgid "Maldives"
-msgstr "Maldives"
+msgstr "Малдиви"
 
 msgid "Malta"
-msgstr "Malta"
+msgstr "Малта"
 
 msgid "Manually set the next invoice number counter. The next invoice created will use this number."
-msgstr "Manually set the next invoice number counter. The next invoice created will use this number."
+msgstr "Задайте ръчно брояча на следващия номер на фактура. Следващата създадена фактура ще използва този номер."
 
 msgid "Mauritius"
-msgstr "Mauritius"
+msgstr "Мавриций"
 
 msgid "Mexico"
-msgstr "Mexico"
+msgstr "Мексико"
 
 msgid "Moldova"
-msgstr "Moldova"
+msgstr "Молдова"
 
 msgid "Monaco"
-msgstr "Monaco"
+msgstr "Монако"
 
 msgid "Mongolia"
-msgstr "Mongolia"
+msgstr "Монголия"
 
 msgid "Montenegro"
-msgstr "Montenegro"
+msgstr "Черна гора"
 
 msgid "Morocco"
-msgstr "Morocco"
+msgstr "Мароко"
 
 msgid "Multi-currency support will be expanded in Phase 4."
-msgstr "Multi-currency support will be expanded in Phase 4."
+msgstr "Поддръжката на няколко валути ще бъде разширена във фаза 4."
 
 msgid "Myanmar"
-msgstr "Myanmar"
+msgstr "Мианмар"
 
 msgid "Name"
 msgstr "Име"
 
 msgid "Nepal"
-msgstr "Nepal"
+msgstr "Непал"
 
 msgid "Netherlands"
-msgstr "Netherlands"
+msgstr "Нидерландия"
 
 msgid "Network error. Please try again."
 msgstr "Мрежова грешка. Моля, опитайте отново."
@@ -875,16 +875,16 @@ msgid "New Invoice"
 msgstr "Нова фактура"
 
 msgid "New Zealand"
-msgstr "New Zealand"
+msgstr "Нова Зеландия"
 
 msgid "Next Invoice Number:"
 msgstr "Следващ номер на фактура:"
 
 msgid "Nicaragua"
-msgstr "Nicaragua"
+msgstr "Никарагуа"
 
 msgid "Nigeria"
-msgstr "Nigeria"
+msgstr "Нигерия"
 
 msgid "No Discount"
 msgstr "Без отстъпка"
@@ -893,13 +893,13 @@ msgid "No Tax"
 msgstr "Без ДДС"
 
 msgid "No clients found in Trash."
-msgstr "No clients found in Trash."
+msgstr "Няма намерени клиенти в кошчето."
 
 msgid "No clients found."
 msgstr "Няма намерени клиенти."
 
 msgid "No clients found. Switch to \"Add New Client\" to create one inline."
-msgstr "No clients found. Switch to \"Add New Client\" to create one inline."
+msgstr "Няма намерени клиенти. Преминете към „Добавяне на нов клиент“, за да създадете такъв директно."
 
 msgid "No clients yet"
 msgstr "Все още няма клиенти"
@@ -908,7 +908,7 @@ msgid "No clients yet. Add your first client to start invoicing!"
 msgstr "Все още няма клиенти. Добавете първия си клиент, за да започнете да фактурирате!"
 
 msgid "No invoices found in Trash."
-msgstr "No invoices found in Trash."
+msgstr "Няма намерени фактури в кошчето."
 
 msgid "No invoices found."
 msgstr "Няма намерени фактури."
@@ -923,13 +923,13 @@ msgid "No line items yet. Click \"Add Item\" to get started."
 msgstr "Все още няма редове. Натиснете \"Добавяне на артикул\", за да започнете."
 
 msgid "No."
-msgstr "No."
+msgstr "№"
 
 msgid "North Macedonia"
-msgstr "North Macedonia"
+msgstr "Северна Македония"
 
 msgid "Norway"
-msgstr "Norway"
+msgstr "Норвегия"
 
 msgid "Notes"
 msgstr "Бележки"
@@ -938,7 +938,7 @@ msgid "Notes & Terms"
 msgstr "Бележки и условия"
 
 msgid "Notes visible to the customer on the invoice..."
-msgstr "Notes visible to the customer on the invoice..."
+msgstr "Бележки, видими за клиента върху фактурата..."
 
 msgid "Office"
 msgstr "Офис"
@@ -947,7 +947,7 @@ msgid "Office / Branch"
 msgstr "Офис / Клон"
 
 msgid "Oman"
-msgstr "Oman"
+msgstr "Оман"
 
 msgid "Optional for individuals."
 msgstr "По избор за физически лица."
@@ -956,7 +956,7 @@ msgid "Optional. Leave blank for individual clients."
 msgstr "По избор. Оставете празно за физически лица."
 
 msgid "Order Invoice Prefix"
-msgstr "Order Invoice Prefix"
+msgstr "Префикс за фактура по поръчка"
 
 msgid "Original due date: %s"
 msgstr "Първоначална дата на падеж: %s"
@@ -971,28 +971,28 @@ msgid "PDF"
 msgstr "PDF"
 
 msgid "PDF Preview"
-msgstr "PDF Preview"
+msgstr "PDF преглед"
 
 msgid "PDF generation is currently unavailable. The mPDF library is missing. Please ensure you are using the correct release ZIP or run \"composer install\"."
-msgstr "PDF generation is currently unavailable. The mPDF library is missing. Please ensure you are using the correct release ZIP or run \"composer install\"."
+msgstr "Генерирането на PDF в момента не е налично. Липсва библиотеката mPDF. Моля, уверете се, че използвате правилния ZIP файл на изданието, или изпълнете „composer install“."
 
 msgid "Paid"
 msgstr "Платена"
 
 msgid "Pakistan"
-msgstr "Pakistan"
+msgstr "Пакистан"
 
 msgid "Panama"
-msgstr "Panama"
+msgstr "Панама"
 
 msgid "Paraguay"
-msgstr "Paraguay"
+msgstr "Парагвай"
 
 msgid "Parent Clients:"
-msgstr "Parent Clients:"
+msgstr "Родителски клиенти:"
 
 msgid "Parent Invoices:"
-msgstr "Parent Invoices:"
+msgstr "Родителски фактури:"
 
 msgid "Pay Invoice"
 msgstr "Плати фактура"
@@ -1010,7 +1010,7 @@ msgid "Payment Reminder: Invoice %s"
 msgstr "Напомняне за плащане: Фактура %s"
 
 msgid "Payment methods available to select on each invoice."
-msgstr "Payment methods available to select on each invoice."
+msgstr "Начини на плащане, налични за избор във всяка фактура."
 
 msgid "Payment terms, late fees, etc."
 msgstr "Условия за плащане, неустойки за забава и др."
@@ -1022,10 +1022,10 @@ msgid "Percentage (%)"
 msgstr "Процент (%)"
 
 msgid "Peru"
-msgstr "Peru"
+msgstr "Перу"
 
 msgid "Philippines"
-msgstr "Philippines"
+msgstr "Филипини"
 
 msgid "Phone"
 msgstr "Телефон"
@@ -1070,13 +1070,13 @@ msgid "Please select a valid option."
 msgstr "Моля, изберете валидна опция."
 
 msgid "Plugin Activation Error"
-msgstr "Plugin Activation Error"
+msgstr "Грешка при активиране на разширението"
 
 msgid "Poland"
-msgstr "Poland"
+msgstr "Полша"
 
 msgid "Portugal"
-msgstr "Portugal"
+msgstr "Португалия"
 
 msgid "Preview"
 msgstr "Преглед"
@@ -1097,10 +1097,10 @@ msgid "Processing"
 msgstr "Обработване"
 
 msgid "Puerto Rico"
-msgstr "Puerto Rico"
+msgstr "Пуерто Рико"
 
 msgid "Qatar"
-msgstr "Qatar"
+msgstr "Катар"
 
 msgid "Qty"
 msgstr "Кол."
@@ -1124,7 +1124,7 @@ msgid "Remove Image"
 msgstr "Премахване на изображение"
 
 msgid "Required for EU VAT reverse charge and tax compliance."
-msgstr "Required for EU VAT reverse charge and tax compliance."
+msgstr "Изисква се за обратно начисляване на ДДС в ЕС и за данъчното съответствие."
 
 msgid "Reset Invoice Counter"
 msgstr "Нулиране на брояч на фактури"
@@ -1136,16 +1136,16 @@ msgid "Right Column Title"
 msgstr "Заглавие на дясната колона"
 
 msgid "Romania"
-msgstr "Romania"
+msgstr "Румъния"
 
 msgid "Russia"
-msgstr "Russia"
+msgstr "Русия"
 
 msgid "SELLER"
 msgstr "ДОСТАВЧИК"
 
 msgid "Saudi Arabia"
-msgstr "Saudi Arabia"
+msgstr "Саудитска Арабия"
 
 msgid "Save Changes"
 msgstr "Запази промените"
@@ -1178,7 +1178,7 @@ msgid "Section Visibility"
 msgstr "Видимост на секциите"
 
 msgid "Security Error"
-msgstr "Security Error"
+msgstr "Грешка в сигурността"
 
 msgid "Security check failed."
 msgstr "Проверката за сигурност не бе успешна."
@@ -1187,7 +1187,7 @@ msgid "Security check failed. Please refresh the page and try again."
 msgstr "Проверката за сигурност е неуспешна. Моля, опреснете страницата и опитайте отново."
 
 msgid "Security check failed. Please try again."
-msgstr "Security check failed. Please try again."
+msgstr "Проверката за сигурност не бе успешна. Моля, опитайте отново."
 
 msgid "Select Existing Client"
 msgstr "Избери съществуващ клиент"
@@ -1202,7 +1202,7 @@ msgid "Select a country..."
 msgstr "Изберете държава..."
 
 msgid "Select a logo from the media library (JPG, PNG, SVG). Recommended size: 300x100px."
-msgstr "Select a logo from the media library (JPG, PNG, SVG). Recommended size: 300x100px."
+msgstr "Изберете лого от медиатеката (JPG, PNG, SVG). Препоръчителен размер: 300x100px."
 
 msgid "Select..."
 msgstr "Изберете..."
@@ -1217,7 +1217,7 @@ msgid "Sent"
 msgstr "Изпратена"
 
 msgid "Serbia"
-msgstr "Serbia"
+msgstr "Сърбия"
 
 msgid "Set Counter"
 msgstr "Задаване на брояч"
@@ -1241,25 +1241,25 @@ msgid "Signatures"
 msgstr "Подписи"
 
 msgid "Singapore"
-msgstr "Singapore"
+msgstr "Сингапур"
 
 msgid "Slovakia"
-msgstr "Slovakia"
+msgstr "Словакия"
 
 msgid "Slovenia"
-msgstr "Slovenia"
+msgstr "Словения"
 
 msgid "South Africa"
-msgstr "South Africa"
+msgstr "Южна Африка"
 
 msgid "South Korea"
-msgstr "South Korea"
+msgstr "Южна Корея"
 
 msgid "Spain"
-msgstr "Spain"
+msgstr "Испания"
 
 msgid "Sri Lanka"
-msgstr "Sri Lanka"
+msgstr "Шри Ланка"
 
 msgid "State / Province"
 msgstr "Област"
@@ -1277,19 +1277,19 @@ msgid "Subtotal"
 msgstr "Междинна сума"
 
 msgid "Sweden"
-msgstr "Sweden"
+msgstr "Швеция"
 
 msgid "Switzerland"
-msgstr "Switzerland"
+msgstr "Швейцария"
 
 msgid "TOTAL"
 msgstr "ОБЩО"
 
 msgid "Taiwan"
-msgstr "Taiwan"
+msgstr "Тайван"
 
 msgid "Tanzania"
-msgstr "Tanzania"
+msgstr "Танзания"
 
 msgid "Tax"
 msgstr "Данък"
@@ -1319,7 +1319,7 @@ msgid "Terms & Conditions"
 msgstr "Общи условия"
 
 msgid "Thailand"
-msgstr "Thailand"
+msgstr "Тайланд"
 
 msgid "These actions can affect your invoice data. Use with caution."
 msgstr "Тези действия могат да засегнат данните ви за фактури. Използвайте с повишено внимание."
@@ -1355,13 +1355,13 @@ msgid "Trigger on Order Status"
 msgstr "Задействане при статус на поръчка"
 
 msgid "Tunisia"
-msgstr "Tunisia"
+msgstr "Тунис"
 
 msgid "Turkey"
-msgstr "Turkey"
+msgstr "Турция"
 
 msgid "Ukraine"
-msgstr "Ukraine"
+msgstr "Украйна"
 
 msgid "Unauthorized."
 msgstr "Неоторизиран достъп."
@@ -1370,7 +1370,7 @@ msgid "Unit Price"
 msgstr "Ед. цена"
 
 msgid "United Arab Emirates"
-msgstr "United Arab Emirates"
+msgstr "Обединени арабски емирства"
 
 msgid "United Kingdom"
 msgstr "Великобритания"
@@ -1391,16 +1391,16 @@ msgid "Updating..."
 msgstr "Обновяване..."
 
 msgid "Uruguay"
-msgstr "Uruguay"
+msgstr "Уругвай"
 
 msgid "Use this image"
 msgstr "Използване на това изображение"
 
 msgid "Used when \"WooCommerce Order Number\" format is selected (e.g. ORD-1234)."
-msgstr "Used when \"WooCommerce Order Number\" format is selected (e.g. ORD-1234)."
+msgstr "Използва се, когато е избран форматът „Номер на поръчка от WooCommerce“ (напр. ORD-1234)."
 
 msgid "Uzbekistan"
-msgstr "Uzbekistan"
+msgstr "Узбекистан"
 
 msgid "VAT 0%"
 msgstr "ДДС 0%"
@@ -1418,10 +1418,10 @@ msgid "Value"
 msgstr "Стойност"
 
 msgid "Venezuela"
-msgstr "Venezuela"
+msgstr "Венецуела"
 
 msgid "Vietnam"
-msgstr "Vietnam"
+msgstr "Виетнам"
 
 msgid "View All"
 msgstr "Преглед на всички"
@@ -1442,7 +1442,7 @@ msgid "WooCommerce Integration"
 msgstr "WooCommerce интеграция"
 
 msgid "WooCommerce Order Number with Prefix (e.g. ORD-1234)"
-msgstr "WooCommerce Order Number with Prefix (e.g. ORD-1234)"
+msgstr "Номер на поръчка от WooCommerce с префикс (напр. ORD-1234)"
 
 msgid "WooCommerce Orders"
 msgstr "WooCommerce поръчки"
@@ -1451,10 +1451,10 @@ msgid "WooCommerce is not active."
 msgstr "WooCommerce не е активен."
 
 msgid "WooCommerce is not installed or activated. Install WooCommerce to use these integration settings."
-msgstr "WooCommerce is not installed or activated. Install WooCommerce to use these integration settings."
+msgstr "WooCommerce не е инсталиран или активиран. Инсталирайте WooCommerce, за да използвате тези настройки за интеграция."
 
 msgid "Yemen"
-msgstr "Yemen"
+msgstr "Йемен"
 
 msgid "You do not have permission to access this page."
 msgstr "Нямате разрешение за достъп до тази страница."
@@ -1472,7 +1472,7 @@ msgid "You do not have permission to edit invoices."
 msgstr "Нямате разрешение за редактиране на фактури."
 
 msgid "You do not have permission to manage InvoiceForge settings."
-msgstr "You do not have permission to manage InvoiceForge settings."
+msgstr "Нямате право да управлявате настройките на InvoiceForge."
 
 msgid "You do not have permission to manage clients."
 msgstr "Нямате разрешение за управление на клиенти."
@@ -1499,11 +1499,7 @@ msgid "ZIP / Postal Code"
 msgstr "Пощенски код"
 
 msgid "Zimbabwe"
-msgstr "Zimbabwe"
-
-msgctxt "Add New on Toolbar"
-msgid "Zimbabwe"
-msgstr "Zimbabwe"
+msgstr "Зимбабве"
 
 msgctxt "Add New on Toolbar"
 msgid "Client"
@@ -1514,102 +1510,66 @@ msgid "Invoice"
 msgstr "Фактура"
 
 msgctxt "Admin Menu text"
-msgid "Invoice"
-msgstr "Фактура"
-
-msgctxt "Admin Menu text"
 msgid "Clients"
 msgstr "Клиенти"
 
 msgctxt "Admin Menu text"
-msgid "Invoices"
-msgstr "Фактури"
-
-msgctxt "Overrides the \"Featured Image\" phrase"
 msgid "Invoices"
 msgstr "Фактури"
 
 msgctxt "Overrides the \"Featured Image\" phrase"
 msgid "Client Photo"
-msgstr "Client Photo"
+msgstr "Снимка на клиента"
 
 msgctxt "Overrides the \"Featured Image\" phrase"
 msgid "Invoice Logo"
 msgstr "Лого на фактура"
 
 msgctxt "Overrides the \"Insert into post\" phrase"
-msgid "Invoice Logo"
-msgstr "Лого на фактура"
-
-msgctxt "Overrides the \"Insert into post\" phrase"
 msgid "Insert into client"
-msgstr "Insert into client"
+msgstr "Вмъкване в клиента"
 
 msgctxt "Overrides the \"Insert into post\" phrase"
 msgid "Insert into invoice"
-msgstr "Insert into invoice"
-
-msgctxt "Overrides the \"Remove featured image\" phrase"
-msgid "Insert into invoice"
-msgstr "Insert into invoice"
+msgstr "Вмъкване във фактурата"
 
 msgctxt "Overrides the \"Remove featured image\" phrase"
 msgid "Remove client photo"
-msgstr "Remove client photo"
+msgstr "Премахване на снимката на клиента"
 
 msgctxt "Overrides the \"Remove featured image\" phrase"
 msgid "Remove invoice logo"
-msgstr "Remove invoice logo"
-
-msgctxt "Overrides the \"Set featured image\" phrase"
-msgid "Remove invoice logo"
-msgstr "Remove invoice logo"
+msgstr "Премахване на логото на фактурата"
 
 msgctxt "Overrides the \"Set featured image\" phrase"
 msgid "Set client photo"
-msgstr "Set client photo"
+msgstr "Задаване на снимка на клиента"
 
 msgctxt "Overrides the \"Set featured image\" phrase"
 msgid "Set invoice logo"
-msgstr "Set invoice logo"
-
-msgctxt "Overrides the \"Uploaded to this post\" phrase"
-msgid "Set invoice logo"
-msgstr "Set invoice logo"
+msgstr "Задаване на лого на фактурата"
 
 msgctxt "Overrides the \"Uploaded to this post\" phrase"
 msgid "Uploaded to this client"
-msgstr "Uploaded to this client"
+msgstr "Качено в този клиент"
 
 msgctxt "Overrides the \"Uploaded to this post\" phrase"
 msgid "Uploaded to this invoice"
-msgstr "Uploaded to this invoice"
-
-msgctxt "Overrides the \"Use as featured image\" phrase"
-msgid "Uploaded to this invoice"
-msgstr "Uploaded to this invoice"
+msgstr "Качено в тази фактура"
 
 msgctxt "Overrides the \"Use as featured image\" phrase"
 msgid "Use as client photo"
-msgstr "Use as client photo"
+msgstr "Използване като снимка на клиента"
 
 msgctxt "Overrides the \"Use as featured image\" phrase"
 msgid "Use as invoice logo"
-msgstr "Use as invoice logo"
-
-msgctxt "Post type general name"
-msgid "Use as invoice logo"
-msgstr "Use as invoice logo"
+msgstr "Използване като лого на фактурата"
 
 msgctxt "Post type general name"
 msgid "Clients"
 msgstr "Клиенти"
 
 msgctxt "Post type general name"
-msgid "Invoices"
-msgstr "Фактури"
-
-msgctxt "Post type singular name"
 msgid "Invoices"
 msgstr "Фактури"
 
@@ -1622,68 +1582,57 @@ msgid "Invoice"
 msgstr "Фактура"
 
 msgctxt "Screen reader text"
-msgid "Invoice"
-msgstr "Фактура"
-
-msgctxt "Screen reader text"
 msgid "Clients list"
-msgstr "Clients list"
+msgstr "Списък с клиенти"
 
 msgctxt "Screen reader text"
 msgid "Clients list navigation"
-msgstr "Clients list navigation"
+msgstr "Навигация в списъка с клиенти"
 
 msgctxt "Screen reader text"
 msgid "Filter clients list"
-msgstr "Filter clients list"
+msgstr "Филтриране на списъка с клиенти"
 
 msgctxt "Screen reader text"
 msgid "Filter invoices list"
-msgstr "Filter invoices list"
+msgstr "Филтриране на списъка с фактури"
 
 msgctxt "Screen reader text"
 msgid "Invoices list"
-msgstr "Invoices list"
+msgstr "Списък с фактури"
 
 msgctxt "Screen reader text"
 msgid "Invoices list navigation"
-msgstr "Invoices list navigation"
-
-msgctxt "The post type archive label"
-msgid "Invoices list navigation"
-msgstr "Invoices list navigation"
+msgstr "Навигация в списъка с фактури"
 
 msgctxt "The post type archive label"
 msgid "Client archives"
-msgstr "Client archives"
+msgstr "Архиви на клиенти"
 
 msgctxt "The post type archive label"
 msgid "Invoice archives"
-msgstr "Invoice archives"
-
-msgid "Invoice archives"
-msgstr "Invoice archives"
+msgstr "Архиви на фактури"
 
 msgid "e.g., 100"
-msgstr "e.g., 100"
+msgstr "напр. 100"
 
 msgid "e.g., 123456789"
-msgstr "e.g., 123456789"
+msgstr "напр. 123456789"
 
 msgid "e.g., GB123456789"
-msgstr "e.g., GB123456789"
+msgstr "напр. GB123456789"
 
 msgid "e.g., HQ, Branch 1"
-msgstr "e.g., HQ, Branch 1"
+msgstr "напр. Централа, Клон 1"
 
 msgid "e.g., Issued by"
-msgstr "e.g., Issued by"
+msgstr "напр. Изготвил"
 
 msgid "e.g., Received by"
-msgstr "e.g., Received by"
+msgstr "напр. Приел"
 
 msgid "e.g., Website Development - March 2025"
-msgstr "e.g., Website Development - March 2025"
+msgstr "напр. Разработка на уебсайт - март 2025"
 
 msgid "email@example.com"
 msgstr "email@example.com"

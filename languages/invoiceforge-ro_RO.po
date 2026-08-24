@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: InvoiceForge 1.2.9\n"
+"Project-Id-Version: InvoiceForge 1.3.2\n"
 "Report-Msgid-Bugs-To: https://github.com/konchetobe/Invoice-Forge/issues\n"
-"POT-Creation-Date: 2026-08-24 11:42:19+0000\n"
-"PO-Revision-Date: 2026-08-24 11:42:19+0000\n"
+"POT-Creation-Date: 2026-08-24 16:18:56+0000\n"
+"PO-Revision-Date: 2026-08-24 16:18:56+0000\n"
 "Last-Translator: InvoiceForge Team\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
@@ -104,7 +104,7 @@ msgid "Address"
 msgstr "Adresă"
 
 msgid "Afghanistan"
-msgstr "Afghanistan"
+msgstr "Afganistan"
 
 msgid "Albania"
 msgstr "Albania"
@@ -203,7 +203,7 @@ msgid "Available Methods"
 msgstr "Metode disponibile"
 
 msgid "Azerbaijan"
-msgstr "Azerbaijan"
+msgstr "Azerbaidjan"
 
 msgid "BIC"
 msgstr "BIC"
@@ -230,7 +230,7 @@ msgid "Belarus"
 msgstr "Belarus"
 
 msgid "Belgium"
-msgstr "Belgium"
+msgstr "Belgia"
 
 msgid "Belize"
 msgstr "Belize"
@@ -242,13 +242,13 @@ msgid "Bolivia"
 msgstr "Bolivia"
 
 msgid "Bosnia and Herzegovina"
-msgstr "Bosnia and Herzegovina"
+msgstr "Bosnia și Herțegovina"
 
 msgid "Botswana"
 msgstr "Botswana"
 
 msgid "Brazil"
-msgstr "Brazil"
+msgstr "Brazilia"
 
 msgid "Brunei"
 msgstr "Brunei"
@@ -257,10 +257,10 @@ msgid "Bulgaria"
 msgstr "Bulgaria"
 
 msgid "Cambodia"
-msgstr "Cambodia"
+msgstr "Cambodgia"
 
 msgid "Cameroon"
-msgstr "Cameroon"
+msgstr "Camerun"
 
 msgid "Canada"
 msgstr "Canada"
@@ -308,7 +308,7 @@ msgid "Clients"
 msgstr "Clienți"
 
 msgid "Colombia"
-msgstr "Colombia"
+msgstr "Columbia"
 
 msgid "Company"
 msgstr "Societate"
@@ -356,7 +356,7 @@ msgid "Created:"
 msgstr "Creată:"
 
 msgid "Croatia"
-msgstr "Croatia"
+msgstr "Croația"
 
 msgid "Cuba"
 msgstr "Cuba"
@@ -374,10 +374,10 @@ msgid "Customer Notes"
 msgstr "Note client"
 
 msgid "Cyprus"
-msgstr "Cyprus"
+msgstr "Cipru"
 
 msgid "Czech Republic"
-msgstr "Czech Republic"
+msgstr "Cehia"
 
 msgid "Danger Zone"
 msgstr "Zonă de pericol"
@@ -404,7 +404,7 @@ msgid "Delete Invoice"
 msgstr "Ștergere factură"
 
 msgid "Denmark"
-msgstr "Denmark"
+msgstr "Danemarca"
 
 msgid "Description"
 msgstr "Denumire"
@@ -425,7 +425,7 @@ msgid "Doe"
 msgstr "Popescu"
 
 msgid "Dominican Republic"
-msgstr "Dominican Republic"
+msgstr "Republica Dominicană"
 
 msgid "Download PDF"
 msgstr "Descarcă PDF"
@@ -461,7 +461,7 @@ msgid "Edit Invoice"
 msgstr "Editare factură"
 
 msgid "Egypt"
-msgstr "Egypt"
+msgstr "Egipt"
 
 msgid "El Salvador"
 msgstr "El Salvador"
@@ -491,7 +491,7 @@ msgid "Estonia"
 msgstr "Estonia"
 
 msgid "Ethiopia"
-msgstr "Ethiopia"
+msgstr "Etiopia"
 
 msgid "Failed to create new client. Please check the client details."
 msgstr "Nu s-a putut crea noul client. Verifică datele clientului."
@@ -536,7 +536,7 @@ msgid "Field label"
 msgstr "Etichetă câmp"
 
 msgid "Finland"
-msgstr "Finland"
+msgstr "Finlanda"
 
 msgid "First Name"
 msgstr "Prenume"
@@ -569,7 +569,7 @@ msgid "Ghana"
 msgstr "Ghana"
 
 msgid "Greece"
-msgstr "Greece"
+msgstr "Grecia"
 
 msgid "Guatemala"
 msgstr "Guatemala"
@@ -590,7 +590,7 @@ msgid "Hong Kong"
 msgstr "Hong Kong"
 
 msgid "Hungary"
-msgstr "Hungary"
+msgstr "Ungaria"
 
 msgid "IBAN"
 msgstr "IBAN"
@@ -605,7 +605,7 @@ msgid "INVOICE"
 msgstr "FACTURĂ"
 
 msgid "Iceland"
-msgstr "Iceland"
+msgstr "Islanda"
 
 msgid "India"
 msgstr "India"
@@ -614,7 +614,7 @@ msgid "Individual"
 msgstr "Persoană fizică"
 
 msgid "Indonesia"
-msgstr "Indonesia"
+msgstr "Indonezia"
 
 msgid "Internal Notes"
 msgstr "Note interne"
@@ -731,16 +731,16 @@ msgid "Iran"
 msgstr "Iran"
 
 msgid "Iraq"
-msgstr "Iraq"
+msgstr "Irak"
 
 msgid "Ireland"
-msgstr "Ireland"
+msgstr "Irlanda"
 
 msgid "Israel"
 msgstr "Israel"
 
 msgid "Italy"
-msgstr "Italy"
+msgstr "Italia"
 
 msgid "Item description"
 msgstr "Descriere articol"
@@ -749,22 +749,22 @@ msgid "Jamaica"
 msgstr "Jamaica"
 
 msgid "Japan"
-msgstr "Japan"
+msgstr "Japonia"
 
 msgid "John"
 msgstr "Ion"
 
 msgid "Jordan"
-msgstr "Jordan"
+msgstr "Iordania"
 
 msgid "Kazakhstan"
-msgstr "Kazakhstan"
+msgstr "Kazahstan"
 
 msgid "Kenya"
 msgstr "Kenya"
 
 msgid "Kuwait"
-msgstr "Kuwait"
+msgstr "Kuweit"
 
 msgid "Label used for the company/client ID number field (e.g. EIK, BULSTAT, Reg No)."
 msgstr "Etichetă folosită pentru câmpul numărului de ID companie/client (ex. EIK, BULSTAT, nr. înregistrare)."
@@ -773,10 +773,10 @@ msgid "Last Name"
 msgstr "Nume"
 
 msgid "Latvia"
-msgstr "Latvia"
+msgstr "Letonia"
 
 msgid "Lebanon"
-msgstr "Lebanon"
+msgstr "Liban"
 
 msgid "Left"
 msgstr "Stânga"
@@ -785,7 +785,7 @@ msgid "Left Column Title"
 msgstr "Titlu coloana stângă"
 
 msgid "Libya"
-msgstr "Libya"
+msgstr "Libia"
 
 msgid "Liechtenstein"
 msgstr "Liechtenstein"
@@ -794,7 +794,7 @@ msgid "Line Items"
 msgstr "Articole"
 
 msgid "Lithuania"
-msgstr "Lithuania"
+msgstr "Lituania"
 
 msgid "Loading preview..."
 msgstr "Se încarcă previzualizarea..."
@@ -809,16 +809,16 @@ msgid "Logo"
 msgstr "Siglă"
 
 msgid "Luxembourg"
-msgstr "Luxembourg"
+msgstr "Luxemburg"
 
 msgid "Macau"
 msgstr "Macau"
 
 msgid "Malaysia"
-msgstr "Malaysia"
+msgstr "Malaezia"
 
 msgid "Maldives"
-msgstr "Maldives"
+msgstr "Maldive"
 
 msgid "Malta"
 msgstr "Malta"
@@ -830,7 +830,7 @@ msgid "Mauritius"
 msgstr "Mauritius"
 
 msgid "Mexico"
-msgstr "Mexico"
+msgstr "Mexic"
 
 msgid "Moldova"
 msgstr "Moldova"
@@ -842,10 +842,10 @@ msgid "Mongolia"
 msgstr "Mongolia"
 
 msgid "Montenegro"
-msgstr "Montenegro"
+msgstr "Muntenegru"
 
 msgid "Morocco"
-msgstr "Morocco"
+msgstr "Maroc"
 
 msgid "Multi-currency support will be expanded in Phase 4."
 msgstr "Suportul multi-monede va fi extins în Faza 4."
@@ -860,7 +860,7 @@ msgid "Nepal"
 msgstr "Nepal"
 
 msgid "Netherlands"
-msgstr "Netherlands"
+msgstr "Țările de Jos"
 
 msgid "Network error. Please try again."
 msgstr "Eroare de rețea. Vă rugăm să încercați din nou."
@@ -875,7 +875,7 @@ msgid "New Invoice"
 msgstr "Factură nouă"
 
 msgid "New Zealand"
-msgstr "New Zealand"
+msgstr "Noua Zeelandă"
 
 msgid "Next Invoice Number:"
 msgstr "Următorul număr de factură:"
@@ -926,10 +926,10 @@ msgid "No."
 msgstr "Nr."
 
 msgid "North Macedonia"
-msgstr "North Macedonia"
+msgstr "Macedonia de Nord"
 
 msgid "Norway"
-msgstr "Norway"
+msgstr "Norvegia"
 
 msgid "Notes"
 msgstr "Note"
@@ -1025,7 +1025,7 @@ msgid "Peru"
 msgstr "Peru"
 
 msgid "Philippines"
-msgstr "Philippines"
+msgstr "Filipine"
 
 msgid "Phone"
 msgstr "Telefon"
@@ -1073,10 +1073,10 @@ msgid "Plugin Activation Error"
 msgstr "Eroare de activare a pluginului"
 
 msgid "Poland"
-msgstr "Poland"
+msgstr "Polonia"
 
 msgid "Portugal"
-msgstr "Portugal"
+msgstr "Portugalia"
 
 msgid "Preview"
 msgstr "Previzualizare"
@@ -1136,16 +1136,16 @@ msgid "Right Column Title"
 msgstr "Titlu coloana dreaptă"
 
 msgid "Romania"
-msgstr "Romania"
+msgstr "România"
 
 msgid "Russia"
-msgstr "Russia"
+msgstr "Rusia"
 
 msgid "SELLER"
 msgstr "VÂNZĂTOR"
 
 msgid "Saudi Arabia"
-msgstr "Saudi Arabia"
+msgstr "Arabia Saudită"
 
 msgid "Save Changes"
 msgstr "Salvare modificări"
@@ -1244,19 +1244,19 @@ msgid "Singapore"
 msgstr "Singapore"
 
 msgid "Slovakia"
-msgstr "Slovakia"
+msgstr "Slovacia"
 
 msgid "Slovenia"
 msgstr "Slovenia"
 
 msgid "South Africa"
-msgstr "South Africa"
+msgstr "Africa de Sud"
 
 msgid "South Korea"
-msgstr "South Korea"
+msgstr "Coreea de Sud"
 
 msgid "Spain"
-msgstr "Spain"
+msgstr "Spania"
 
 msgid "Sri Lanka"
 msgstr "Sri Lanka"
@@ -1277,10 +1277,10 @@ msgid "Subtotal"
 msgstr "Subtotal"
 
 msgid "Sweden"
-msgstr "Sweden"
+msgstr "Suedia"
 
 msgid "Switzerland"
-msgstr "Switzerland"
+msgstr "Elveția"
 
 msgid "TOTAL"
 msgstr "TOTAL"
@@ -1319,7 +1319,7 @@ msgid "Terms & Conditions"
 msgstr "Termeni și condiții"
 
 msgid "Thailand"
-msgstr "Thailand"
+msgstr "Thailanda"
 
 msgid "These actions can affect your invoice data. Use with caution."
 msgstr "Aceste acțiuni pot afecta datele facturilor tale. Folosește cu prudență."
@@ -1358,10 +1358,10 @@ msgid "Tunisia"
 msgstr "Tunisia"
 
 msgid "Turkey"
-msgstr "Turkey"
+msgstr "Turcia"
 
 msgid "Ukraine"
-msgstr "Ukraine"
+msgstr "Ucraina"
 
 msgid "Unauthorized."
 msgstr "Neautorizat."
@@ -1370,7 +1370,7 @@ msgid "Unit Price"
 msgstr "Preț unit."
 
 msgid "United Arab Emirates"
-msgstr "United Arab Emirates"
+msgstr "Emiratele Arabe Unite"
 
 msgid "United Kingdom"
 msgstr "Regatul Unit"
@@ -1502,10 +1502,6 @@ msgid "Zimbabwe"
 msgstr "Zimbabwe"
 
 msgctxt "Add New on Toolbar"
-msgid "Zimbabwe"
-msgstr "Zimbabwe"
-
-msgctxt "Add New on Toolbar"
 msgid "Client"
 msgstr "Client"
 
@@ -1514,18 +1510,10 @@ msgid "Invoice"
 msgstr "Factură"
 
 msgctxt "Admin Menu text"
-msgid "Invoice"
-msgstr "Factură"
-
-msgctxt "Admin Menu text"
 msgid "Clients"
 msgstr "Clienți"
 
 msgctxt "Admin Menu text"
-msgid "Invoices"
-msgstr "Facturi"
-
-msgctxt "Overrides the \"Featured Image\" phrase"
 msgid "Invoices"
 msgstr "Facturi"
 
@@ -1538,18 +1526,10 @@ msgid "Invoice Logo"
 msgstr "Sigla facturii"
 
 msgctxt "Overrides the \"Insert into post\" phrase"
-msgid "Invoice Logo"
-msgstr "Sigla facturii"
-
-msgctxt "Overrides the \"Insert into post\" phrase"
 msgid "Insert into client"
 msgstr "Inserează în client"
 
 msgctxt "Overrides the \"Insert into post\" phrase"
-msgid "Insert into invoice"
-msgstr "Inserează în factură"
-
-msgctxt "Overrides the \"Remove featured image\" phrase"
 msgid "Insert into invoice"
 msgstr "Inserează în factură"
 
@@ -1562,18 +1542,10 @@ msgid "Remove invoice logo"
 msgstr "Elimină sigla facturii"
 
 msgctxt "Overrides the \"Set featured image\" phrase"
-msgid "Remove invoice logo"
-msgstr "Elimină sigla facturii"
-
-msgctxt "Overrides the \"Set featured image\" phrase"
 msgid "Set client photo"
 msgstr "Setează fotografia clientului"
 
 msgctxt "Overrides the \"Set featured image\" phrase"
-msgid "Set invoice logo"
-msgstr "Setează sigla facturii"
-
-msgctxt "Overrides the \"Uploaded to this post\" phrase"
 msgid "Set invoice logo"
 msgstr "Setează sigla facturii"
 
@@ -1586,18 +1558,10 @@ msgid "Uploaded to this invoice"
 msgstr "Încărcat la această factură"
 
 msgctxt "Overrides the \"Use as featured image\" phrase"
-msgid "Uploaded to this invoice"
-msgstr "Încărcat la această factură"
-
-msgctxt "Overrides the \"Use as featured image\" phrase"
 msgid "Use as client photo"
 msgstr "Folosește ca fotografie client"
 
 msgctxt "Overrides the \"Use as featured image\" phrase"
-msgid "Use as invoice logo"
-msgstr "Folosește ca siglă factură"
-
-msgctxt "Post type general name"
 msgid "Use as invoice logo"
 msgstr "Folosește ca siglă factură"
 
@@ -1610,18 +1574,10 @@ msgid "Invoices"
 msgstr "Facturi"
 
 msgctxt "Post type singular name"
-msgid "Invoices"
-msgstr "Facturi"
-
-msgctxt "Post type singular name"
 msgid "Client"
 msgstr "Client"
 
 msgctxt "Post type singular name"
-msgid "Invoice"
-msgstr "Factură"
-
-msgctxt "Screen reader text"
 msgid "Invoice"
 msgstr "Factură"
 
@@ -1650,17 +1606,10 @@ msgid "Invoices list navigation"
 msgstr "Navigare listă facturi"
 
 msgctxt "The post type archive label"
-msgid "Invoices list navigation"
-msgstr "Navigare listă facturi"
-
-msgctxt "The post type archive label"
 msgid "Client archives"
 msgstr "Arhivă clienți"
 
 msgctxt "The post type archive label"
-msgid "Invoice archives"
-msgstr "Arhivă facturi"
-
 msgid "Invoice archives"
 msgstr "Arhivă facturi"
 

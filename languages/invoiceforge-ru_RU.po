@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: InvoiceForge 1.2.9\n"
+"Project-Id-Version: InvoiceForge 1.3.2\n"
 "Report-Msgid-Bugs-To: https://github.com/konchetobe/Invoice-Forge/issues\n"
-"POT-Creation-Date: 2026-08-24 11:42:19+0000\n"
-"PO-Revision-Date: 2026-08-24 11:42:19+0000\n"
+"POT-Creation-Date: 2026-08-24 16:18:56+0000\n"
+"PO-Revision-Date: 2026-08-24 16:18:56+0000\n"
 "Last-Translator: InvoiceForge Team\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -104,13 +104,13 @@ msgid "Address"
 msgstr "Адрес"
 
 msgid "Afghanistan"
-msgstr "Afghanistan"
+msgstr "Афганистан"
 
 msgid "Albania"
-msgstr "Albania"
+msgstr "Албания"
 
 msgid "Algeria"
-msgstr "Algeria"
+msgstr "Алжир"
 
 msgid "All"
 msgstr "Все"
@@ -146,10 +146,10 @@ msgid "An unexpected error occurred. Please try again."
 msgstr "Произошла непредвиденная ошибка. Попробуйте ещё раз."
 
 msgid "Andorra"
-msgstr "Andorra"
+msgstr "Андорра"
 
 msgid "Angola"
-msgstr "Angola"
+msgstr "Ангола"
 
 msgid "Appearance"
 msgstr "Внешний вид"
@@ -170,10 +170,10 @@ msgid "Are you sure you want to send this invoice to the client via email?"
 msgstr "Вы уверены, что хотите отправить этот счёт клиенту по электронной почте?"
 
 msgid "Argentina"
-msgstr "Argentina"
+msgstr "Аргентина"
 
 msgid "Armenia"
-msgstr "Armenia"
+msgstr "Армения"
 
 msgid "Att To"
 msgstr "Вниманию"
@@ -182,10 +182,10 @@ msgid "Attention To"
 msgstr "Вниманию"
 
 msgid "Australia"
-msgstr "Australia"
+msgstr "Австралия"
 
 msgid "Austria"
-msgstr "Austria"
+msgstr "Австрия"
 
 msgid "Auto-Send Invoice Email"
 msgstr "Автоматически отправлять счёт по email"
@@ -203,7 +203,7 @@ msgid "Available Methods"
 msgstr "Доступные способы"
 
 msgid "Azerbaijan"
-msgstr "Azerbaijan"
+msgstr "Азербайджан"
 
 msgid "BIC"
 msgstr "БИК"
@@ -215,10 +215,10 @@ msgid "Back to List"
 msgstr "Вернуться к списку"
 
 msgid "Bahrain"
-msgstr "Bahrain"
+msgstr "Бахрейн"
 
 msgid "Bangladesh"
-msgstr "Bangladesh"
+msgstr "Бангладеш"
 
 msgid "Bank"
 msgstr "Банк"
@@ -227,43 +227,43 @@ msgid "Bank Details"
 msgstr "Банковские реквизиты"
 
 msgid "Belarus"
-msgstr "Belarus"
+msgstr "Беларусь"
 
 msgid "Belgium"
-msgstr "Belgium"
+msgstr "Бельгия"
 
 msgid "Belize"
-msgstr "Belize"
+msgstr "Белиз"
 
 msgid "Billing Information"
 msgstr "Платёжные реквизиты"
 
 msgid "Bolivia"
-msgstr "Bolivia"
+msgstr "Боливия"
 
 msgid "Bosnia and Herzegovina"
-msgstr "Bosnia and Herzegovina"
+msgstr "Босния и Герцеговина"
 
 msgid "Botswana"
-msgstr "Botswana"
+msgstr "Ботсвана"
 
 msgid "Brazil"
-msgstr "Brazil"
+msgstr "Бразилия"
 
 msgid "Brunei"
-msgstr "Brunei"
+msgstr "Бруней"
 
 msgid "Bulgaria"
 msgstr "Болгария"
 
 msgid "Cambodia"
-msgstr "Cambodia"
+msgstr "Камбоджа"
 
 msgid "Cameroon"
-msgstr "Cameroon"
+msgstr "Камерун"
 
 msgid "Canada"
-msgstr "Canada"
+msgstr "Канада"
 
 msgid "Cancelled"
 msgstr "Отменён"
@@ -272,10 +272,10 @@ msgid "Cannot delete client with %d invoice(s). Please delete or reassign the in
 msgstr "Невозможно удалить клиента с %d счётом(ами). Сначала удалите или переназначьте счета."
 
 msgid "Chile"
-msgstr "Chile"
+msgstr "Чили"
 
 msgid "China"
-msgstr "China"
+msgstr "Китай"
 
 msgid "City"
 msgstr "Город"
@@ -308,7 +308,7 @@ msgid "Clients"
 msgstr "Клиенты"
 
 msgid "Colombia"
-msgstr "Colombia"
+msgstr "Колумбия"
 
 msgid "Company"
 msgstr "Компания"
@@ -338,7 +338,7 @@ msgid "Contact person name"
 msgstr "Имя контактного лица"
 
 msgid "Costa Rica"
-msgstr "Costa Rica"
+msgstr "Коста-Рика"
 
 msgid "Country"
 msgstr "Страна"
@@ -356,10 +356,10 @@ msgid "Created:"
 msgstr "Создан:"
 
 msgid "Croatia"
-msgstr "Croatia"
+msgstr "Хорватия"
 
 msgid "Cuba"
-msgstr "Cuba"
+msgstr "Куба"
 
 msgid "Currency"
 msgstr "Валюта"
@@ -374,10 +374,10 @@ msgid "Customer Notes"
 msgstr "Примечания клиента"
 
 msgid "Cyprus"
-msgstr "Cyprus"
+msgstr "Кипр"
 
 msgid "Czech Republic"
-msgstr "Czech Republic"
+msgstr "Чехия"
 
 msgid "Danger Zone"
 msgstr "Опасная зона"
@@ -404,7 +404,7 @@ msgid "Delete Invoice"
 msgstr "Удалить счёт"
 
 msgid "Denmark"
-msgstr "Denmark"
+msgstr "Дания"
 
 msgid "Description"
 msgstr "Наименование"
@@ -425,7 +425,7 @@ msgid "Doe"
 msgstr "Иванов"
 
 msgid "Dominican Republic"
-msgstr "Dominican Republic"
+msgstr "Доминиканская Республика"
 
 msgid "Download PDF"
 msgstr "Скачать PDF"
@@ -449,7 +449,7 @@ msgid "Due date cannot be before invoice date."
 msgstr "Срок оплаты не может быть раньше даты счёта."
 
 msgid "Ecuador"
-msgstr "Ecuador"
+msgstr "Эквадор"
 
 msgid "Edit"
 msgstr "Редактировать"
@@ -461,10 +461,10 @@ msgid "Edit Invoice"
 msgstr "Редактировать счёт"
 
 msgid "Egypt"
-msgstr "Egypt"
+msgstr "Египет"
 
 msgid "El Salvador"
-msgstr "El Salvador"
+msgstr "Сальвадор"
 
 msgid "Email"
 msgstr "Эл. почта"
@@ -488,10 +488,10 @@ msgid "Enable Integration"
 msgstr "Включить интеграцию"
 
 msgid "Estonia"
-msgstr "Estonia"
+msgstr "Эстония"
 
 msgid "Ethiopia"
-msgstr "Ethiopia"
+msgstr "Эфиопия"
 
 msgid "Failed to create new client. Please check the client details."
 msgstr "Не удалось создать нового клиента. Проверьте данные клиента."
@@ -536,7 +536,7 @@ msgid "Field label"
 msgstr "Подпись поля"
 
 msgid "Finland"
-msgstr "Finland"
+msgstr "Финляндия"
 
 msgid "First Name"
 msgstr "Имя"
@@ -560,19 +560,19 @@ msgid "France"
 msgstr "Франция"
 
 msgid "Georgia"
-msgstr "Georgia"
+msgstr "Грузия"
 
 msgid "Germany"
 msgstr "Германия"
 
 msgid "Ghana"
-msgstr "Ghana"
+msgstr "Гана"
 
 msgid "Greece"
-msgstr "Greece"
+msgstr "Греция"
 
 msgid "Guatemala"
-msgstr "Guatemala"
+msgstr "Гватемала"
 
 msgid "Header (Company + Client)"
 msgstr "Шапка (компания + клиент)"
@@ -584,13 +584,13 @@ msgid "Hold Ctrl/Cmd to select multiple statuses."
 msgstr "Удерживайте Ctrl/Cmd для выбора нескольких статусов."
 
 msgid "Honduras"
-msgstr "Honduras"
+msgstr "Гондурас"
 
 msgid "Hong Kong"
-msgstr "Hong Kong"
+msgstr "Гонконг"
 
 msgid "Hungary"
-msgstr "Hungary"
+msgstr "Венгрия"
 
 msgid "IBAN"
 msgstr "IBAN"
@@ -605,16 +605,16 @@ msgid "INVOICE"
 msgstr "СЧЁТ-ФАКТУРА"
 
 msgid "Iceland"
-msgstr "Iceland"
+msgstr "Исландия"
 
 msgid "India"
-msgstr "India"
+msgstr "Индия"
 
 msgid "Individual"
 msgstr "Физическое лицо"
 
 msgid "Indonesia"
-msgstr "Indonesia"
+msgstr "Индонезия"
 
 msgid "Internal Notes"
 msgstr "Внутренние примечания"
@@ -728,43 +728,43 @@ msgid "Invoices"
 msgstr "Счета"
 
 msgid "Iran"
-msgstr "Iran"
+msgstr "Иран"
 
 msgid "Iraq"
-msgstr "Iraq"
+msgstr "Ирак"
 
 msgid "Ireland"
-msgstr "Ireland"
+msgstr "Ирландия"
 
 msgid "Israel"
-msgstr "Israel"
+msgstr "Израиль"
 
 msgid "Italy"
-msgstr "Italy"
+msgstr "Италия"
 
 msgid "Item description"
 msgstr "Описание позиции"
 
 msgid "Jamaica"
-msgstr "Jamaica"
+msgstr "Ямайка"
 
 msgid "Japan"
-msgstr "Japan"
+msgstr "Япония"
 
 msgid "John"
 msgstr "Иван"
 
 msgid "Jordan"
-msgstr "Jordan"
+msgstr "Иордания"
 
 msgid "Kazakhstan"
-msgstr "Kazakhstan"
+msgstr "Казахстан"
 
 msgid "Kenya"
-msgstr "Kenya"
+msgstr "Кения"
 
 msgid "Kuwait"
-msgstr "Kuwait"
+msgstr "Кувейт"
 
 msgid "Label used for the company/client ID number field (e.g. EIK, BULSTAT, Reg No)."
 msgstr "Подпись для поля ИНН компании/клиента (напр. ЕИК, БУЛСТАТ, рег. номер)."
@@ -773,10 +773,10 @@ msgid "Last Name"
 msgstr "Фамилия"
 
 msgid "Latvia"
-msgstr "Latvia"
+msgstr "Латвия"
 
 msgid "Lebanon"
-msgstr "Lebanon"
+msgstr "Ливан"
 
 msgid "Left"
 msgstr "Слева"
@@ -785,16 +785,16 @@ msgid "Left Column Title"
 msgstr "Заголовок левой колонки"
 
 msgid "Libya"
-msgstr "Libya"
+msgstr "Ливия"
 
 msgid "Liechtenstein"
-msgstr "Liechtenstein"
+msgstr "Лихтенштейн"
 
 msgid "Line Items"
 msgstr "Позиции"
 
 msgid "Lithuania"
-msgstr "Lithuania"
+msgstr "Литва"
 
 msgid "Loading preview..."
 msgstr "Загрузка предпросмотра..."
@@ -809,58 +809,58 @@ msgid "Logo"
 msgstr "Логотип"
 
 msgid "Luxembourg"
-msgstr "Luxembourg"
+msgstr "Люксембург"
 
 msgid "Macau"
-msgstr "Macau"
+msgstr "Макао"
 
 msgid "Malaysia"
-msgstr "Malaysia"
+msgstr "Малайзия"
 
 msgid "Maldives"
-msgstr "Maldives"
+msgstr "Мальдивы"
 
 msgid "Malta"
-msgstr "Malta"
+msgstr "Мальта"
 
 msgid "Manually set the next invoice number counter. The next invoice created will use this number."
 msgstr "Вручную установите счётчик следующего номера счёта. Следующий счёт будет использовать этот номер."
 
 msgid "Mauritius"
-msgstr "Mauritius"
+msgstr "Маврикий"
 
 msgid "Mexico"
-msgstr "Mexico"
+msgstr "Мексика"
 
 msgid "Moldova"
-msgstr "Moldova"
+msgstr "Молдова"
 
 msgid "Monaco"
-msgstr "Monaco"
+msgstr "Монако"
 
 msgid "Mongolia"
-msgstr "Mongolia"
+msgstr "Монголия"
 
 msgid "Montenegro"
-msgstr "Montenegro"
+msgstr "Черногория"
 
 msgid "Morocco"
-msgstr "Morocco"
+msgstr "Марокко"
 
 msgid "Multi-currency support will be expanded in Phase 4."
 msgstr "Поддержка нескольких валют будет расширена на этапе 4."
 
 msgid "Myanmar"
-msgstr "Myanmar"
+msgstr "Мьянма"
 
 msgid "Name"
 msgstr "Имя"
 
 msgid "Nepal"
-msgstr "Nepal"
+msgstr "Непал"
 
 msgid "Netherlands"
-msgstr "Netherlands"
+msgstr "Нидерланды"
 
 msgid "Network error. Please try again."
 msgstr "Ошибка сети. Пожалуйста, попробуйте снова."
@@ -875,16 +875,16 @@ msgid "New Invoice"
 msgstr "Новый счёт"
 
 msgid "New Zealand"
-msgstr "New Zealand"
+msgstr "Новая Зеландия"
 
 msgid "Next Invoice Number:"
 msgstr "Следующий номер счёта:"
 
 msgid "Nicaragua"
-msgstr "Nicaragua"
+msgstr "Никарагуа"
 
 msgid "Nigeria"
-msgstr "Nigeria"
+msgstr "Нигерия"
 
 msgid "No Discount"
 msgstr "Без скидки"
@@ -926,10 +926,10 @@ msgid "No."
 msgstr "№"
 
 msgid "North Macedonia"
-msgstr "North Macedonia"
+msgstr "Северная Македония"
 
 msgid "Norway"
-msgstr "Norway"
+msgstr "Норвегия"
 
 msgid "Notes"
 msgstr "Примечания"
@@ -947,7 +947,7 @@ msgid "Office / Branch"
 msgstr "Офис / Филиал"
 
 msgid "Oman"
-msgstr "Oman"
+msgstr "Оман"
 
 msgid "Optional for individuals."
 msgstr "Необязательно для физических лиц."
@@ -980,13 +980,13 @@ msgid "Paid"
 msgstr "Оплачен"
 
 msgid "Pakistan"
-msgstr "Pakistan"
+msgstr "Пакистан"
 
 msgid "Panama"
-msgstr "Panama"
+msgstr "Панама"
 
 msgid "Paraguay"
-msgstr "Paraguay"
+msgstr "Парагвай"
 
 msgid "Parent Clients:"
 msgstr "Родительские клиенты:"
@@ -1022,10 +1022,10 @@ msgid "Percentage (%)"
 msgstr "Процент (%)"
 
 msgid "Peru"
-msgstr "Peru"
+msgstr "Перу"
 
 msgid "Philippines"
-msgstr "Philippines"
+msgstr "Филиппины"
 
 msgid "Phone"
 msgstr "Телефон"
@@ -1073,10 +1073,10 @@ msgid "Plugin Activation Error"
 msgstr "Ошибка активации плагина"
 
 msgid "Poland"
-msgstr "Poland"
+msgstr "Польша"
 
 msgid "Portugal"
-msgstr "Portugal"
+msgstr "Португалия"
 
 msgid "Preview"
 msgstr "Предпросмотр"
@@ -1097,10 +1097,10 @@ msgid "Processing"
 msgstr "Обработка"
 
 msgid "Puerto Rico"
-msgstr "Puerto Rico"
+msgstr "Пуэрто-Рико"
 
 msgid "Qatar"
-msgstr "Qatar"
+msgstr "Катар"
 
 msgid "Qty"
 msgstr "Кол-во"
@@ -1136,16 +1136,16 @@ msgid "Right Column Title"
 msgstr "Заголовок правой колонки"
 
 msgid "Romania"
-msgstr "Romania"
+msgstr "Румыния"
 
 msgid "Russia"
-msgstr "Russia"
+msgstr "Россия"
 
 msgid "SELLER"
 msgstr "ПРОДАВЕЦ"
 
 msgid "Saudi Arabia"
-msgstr "Saudi Arabia"
+msgstr "Саудовская Аравия"
 
 msgid "Save Changes"
 msgstr "Сохранить изменения"
@@ -1217,7 +1217,7 @@ msgid "Sent"
 msgstr "Отправлен"
 
 msgid "Serbia"
-msgstr "Serbia"
+msgstr "Сербия"
 
 msgid "Set Counter"
 msgstr "Установить счётчик"
@@ -1241,25 +1241,25 @@ msgid "Signatures"
 msgstr "Подписи"
 
 msgid "Singapore"
-msgstr "Singapore"
+msgstr "Сингапур"
 
 msgid "Slovakia"
-msgstr "Slovakia"
+msgstr "Словакия"
 
 msgid "Slovenia"
-msgstr "Slovenia"
+msgstr "Словения"
 
 msgid "South Africa"
-msgstr "South Africa"
+msgstr "Южная Африка"
 
 msgid "South Korea"
-msgstr "South Korea"
+msgstr "Южная Корея"
 
 msgid "Spain"
-msgstr "Spain"
+msgstr "Испания"
 
 msgid "Sri Lanka"
-msgstr "Sri Lanka"
+msgstr "Шри-Ланка"
 
 msgid "State / Province"
 msgstr "Область / Регион"
@@ -1277,19 +1277,19 @@ msgid "Subtotal"
 msgstr "Сумма"
 
 msgid "Sweden"
-msgstr "Sweden"
+msgstr "Швеция"
 
 msgid "Switzerland"
-msgstr "Switzerland"
+msgstr "Швейцария"
 
 msgid "TOTAL"
 msgstr "ИТОГО"
 
 msgid "Taiwan"
-msgstr "Taiwan"
+msgstr "Тайвань"
 
 msgid "Tanzania"
-msgstr "Tanzania"
+msgstr "Танзания"
 
 msgid "Tax"
 msgstr "НДС"
@@ -1319,7 +1319,7 @@ msgid "Terms & Conditions"
 msgstr "Условия и положения"
 
 msgid "Thailand"
-msgstr "Thailand"
+msgstr "Таиланд"
 
 msgid "These actions can affect your invoice data. Use with caution."
 msgstr "Эти действия могут повлиять на данные счетов. Используйте с осторожностью."
@@ -1355,13 +1355,13 @@ msgid "Trigger on Order Status"
 msgstr "Срабатывать при статусе заказа"
 
 msgid "Tunisia"
-msgstr "Tunisia"
+msgstr "Тунис"
 
 msgid "Turkey"
-msgstr "Turkey"
+msgstr "Турция"
 
 msgid "Ukraine"
-msgstr "Ukraine"
+msgstr "Украина"
 
 msgid "Unauthorized."
 msgstr "Не авторизован."
@@ -1370,7 +1370,7 @@ msgid "Unit Price"
 msgstr "Цена ед."
 
 msgid "United Arab Emirates"
-msgstr "United Arab Emirates"
+msgstr "Объединённые Арабские Эмираты"
 
 msgid "United Kingdom"
 msgstr "Великобритания"
@@ -1391,7 +1391,7 @@ msgid "Updating..."
 msgstr "Обновление..."
 
 msgid "Uruguay"
-msgstr "Uruguay"
+msgstr "Уругвай"
 
 msgid "Use this image"
 msgstr "Использовать это изображение"
@@ -1400,7 +1400,7 @@ msgid "Used when \"WooCommerce Order Number\" format is selected (e.g. ORD-1234)
 msgstr "Используется при выборе формата «Номер заказа WooCommerce» (напр. ORD-1234)."
 
 msgid "Uzbekistan"
-msgstr "Uzbekistan"
+msgstr "Узбекистан"
 
 msgid "VAT 0%"
 msgstr "НДС 0%"
@@ -1418,10 +1418,10 @@ msgid "Value"
 msgstr "Значение"
 
 msgid "Venezuela"
-msgstr "Venezuela"
+msgstr "Венесуэла"
 
 msgid "Vietnam"
-msgstr "Vietnam"
+msgstr "Вьетнам"
 
 msgid "View All"
 msgstr "Показать все"
@@ -1454,7 +1454,7 @@ msgid "WooCommerce is not installed or activated. Install WooCommerce to use the
 msgstr "WooCommerce не установлен или не активирован. Установите WooCommerce, чтобы использовать эти настройки интеграции."
 
 msgid "Yemen"
-msgstr "Yemen"
+msgstr "Йемен"
 
 msgid "You do not have permission to access this page."
 msgstr "У вас нет разрешения на доступ к этой странице."
@@ -1499,11 +1499,7 @@ msgid "ZIP / Postal Code"
 msgstr "Почтовый индекс"
 
 msgid "Zimbabwe"
-msgstr "Zimbabwe"
-
-msgctxt "Add New on Toolbar"
-msgid "Zimbabwe"
-msgstr "Zimbabwe"
+msgstr "Зимбабве"
 
 msgctxt "Add New on Toolbar"
 msgid "Client"
@@ -1514,18 +1510,10 @@ msgid "Invoice"
 msgstr "Счёт"
 
 msgctxt "Admin Menu text"
-msgid "Invoice"
-msgstr "Счёт"
-
-msgctxt "Admin Menu text"
 msgid "Clients"
 msgstr "Клиенты"
 
 msgctxt "Admin Menu text"
-msgid "Invoices"
-msgstr "Счета"
-
-msgctxt "Overrides the \"Featured Image\" phrase"
 msgid "Invoices"
 msgstr "Счета"
 
@@ -1538,18 +1526,10 @@ msgid "Invoice Logo"
 msgstr "Логотип счёта"
 
 msgctxt "Overrides the \"Insert into post\" phrase"
-msgid "Invoice Logo"
-msgstr "Логотип счёта"
-
-msgctxt "Overrides the \"Insert into post\" phrase"
 msgid "Insert into client"
 msgstr "Вставить в клиента"
 
 msgctxt "Overrides the \"Insert into post\" phrase"
-msgid "Insert into invoice"
-msgstr "Вставить в счёт"
-
-msgctxt "Overrides the \"Remove featured image\" phrase"
 msgid "Insert into invoice"
 msgstr "Вставить в счёт"
 
@@ -1562,18 +1542,10 @@ msgid "Remove invoice logo"
 msgstr "Удалить логотип счёта"
 
 msgctxt "Overrides the \"Set featured image\" phrase"
-msgid "Remove invoice logo"
-msgstr "Удалить логотип счёта"
-
-msgctxt "Overrides the \"Set featured image\" phrase"
 msgid "Set client photo"
 msgstr "Установить фото клиента"
 
 msgctxt "Overrides the \"Set featured image\" phrase"
-msgid "Set invoice logo"
-msgstr "Установить логотип счёта"
-
-msgctxt "Overrides the \"Uploaded to this post\" phrase"
 msgid "Set invoice logo"
 msgstr "Установить логотип счёта"
 
@@ -1586,18 +1558,10 @@ msgid "Uploaded to this invoice"
 msgstr "Загружено для этого счёта"
 
 msgctxt "Overrides the \"Use as featured image\" phrase"
-msgid "Uploaded to this invoice"
-msgstr "Загружено для этого счёта"
-
-msgctxt "Overrides the \"Use as featured image\" phrase"
 msgid "Use as client photo"
 msgstr "Использовать как фото клиента"
 
 msgctxt "Overrides the \"Use as featured image\" phrase"
-msgid "Use as invoice logo"
-msgstr "Использовать как логотип счёта"
-
-msgctxt "Post type general name"
 msgid "Use as invoice logo"
 msgstr "Использовать как логотип счёта"
 
@@ -1610,18 +1574,10 @@ msgid "Invoices"
 msgstr "Счета"
 
 msgctxt "Post type singular name"
-msgid "Invoices"
-msgstr "Счета"
-
-msgctxt "Post type singular name"
 msgid "Client"
 msgstr "Клиент"
 
 msgctxt "Post type singular name"
-msgid "Invoice"
-msgstr "Счёт"
-
-msgctxt "Screen reader text"
 msgid "Invoice"
 msgstr "Счёт"
 
@@ -1650,17 +1606,10 @@ msgid "Invoices list navigation"
 msgstr "Навигация по списку счетов"
 
 msgctxt "The post type archive label"
-msgid "Invoices list navigation"
-msgstr "Навигация по списку счетов"
-
-msgctxt "The post type archive label"
 msgid "Client archives"
 msgstr "Архив клиентов"
 
 msgctxt "The post type archive label"
-msgid "Invoice archives"
-msgstr "Архив счетов"
-
 msgid "Invoice archives"
 msgstr "Архив счетов"
 

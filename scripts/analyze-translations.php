@@ -71,7 +71,7 @@ function parsePoFile(string $content): array
             $currentMsgctxt = unquote(substr($line, 8));
             $state = 'msgctxt';
         } elseif (strpos($line, 'msgid ') === 0) {
-            if ($currentMsgid !== null) {
+            if ($currentMsgid !== null && $currentMsgid !== '') {
                 $key = $currentMsgctxt !== null ? "ctx:" . $currentMsgctxt . "\x04" . $currentMsgid : $currentMsgid;
                 if (!isset($entries[$key])) {
                     $entries[$key] = ['msgid' => $currentMsgid, 'msgstr' => $currentMsgstr ?? '', 'context' => $currentMsgctxt];
@@ -84,13 +84,14 @@ function parsePoFile(string $content): array
             $currentMsgstr = unquote(substr($line, 7));
             $state = 'msgstr';
         } elseif ($line === '') {
-            if ($currentMsgid !== null) {
+            if ($currentMsgid !== null && $currentMsgid !== '') {
                 $key = $currentMsgctxt !== null ? "ctx:" . $currentMsgctxt . "\x04" . $currentMsgid : $currentMsgid;
                 if (!isset($entries[$key])) {
                     $entries[$key] = ['msgid' => $currentMsgid, 'msgstr' => $currentMsgstr ?? '', 'context' => $currentMsgctxt];
                 }
             }
             $currentMsgctxt = null;
+            $currentMsgid = null;
             $state = null;
         } elseif ($line[0] === '"') {
             if ($state === 'msgid') $currentMsgid .= unquote($line);
@@ -99,7 +100,7 @@ function parsePoFile(string $content): array
         }
     }
 
-    if ($currentMsgid !== null) {
+    if ($currentMsgid !== null && $currentMsgid !== '') {
         $key = $currentMsgctxt !== null ? "ctx:" . $currentMsgctxt . "\x04" . $currentMsgid : $currentMsgid;
         if (!isset($entries[$key])) {
             $entries[$key] = ['msgid' => $currentMsgid, 'msgstr' => $currentMsgstr ?? '', 'context' => $currentMsgctxt];

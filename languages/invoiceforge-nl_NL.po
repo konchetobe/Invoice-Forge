@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: InvoiceForge 1.2.9\n"
+"Project-Id-Version: InvoiceForge 1.3.2\n"
 "Report-Msgid-Bugs-To: https://github.com/konchetobe/Invoice-Forge/issues\n"
-"POT-Creation-Date: 2026-08-24 11:42:19+0000\n"
-"PO-Revision-Date: 2026-08-24 11:42:19+0000\n"
+"POT-Creation-Date: 2026-08-24 16:18:56+0000\n"
+"PO-Revision-Date: 2026-08-24 16:18:56+0000\n"
 "Last-Translator: InvoiceForge Team\n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
@@ -107,10 +107,10 @@ msgid "Afghanistan"
 msgstr "Afghanistan"
 
 msgid "Albania"
-msgstr "Albania"
+msgstr "Albanië"
 
 msgid "Algeria"
-msgstr "Algeria"
+msgstr "Algerije"
 
 msgid "All"
 msgstr "Alle"
@@ -170,10 +170,10 @@ msgid "Are you sure you want to send this invoice to the client via email?"
 msgstr "Weet je zeker dat je deze factuur per e-mail naar de klant wilt sturen?"
 
 msgid "Argentina"
-msgstr "Argentina"
+msgstr "Argentinië"
 
 msgid "Armenia"
-msgstr "Armenia"
+msgstr "Armenië"
 
 msgid "Att To"
 msgstr "T.a.v."
@@ -182,10 +182,10 @@ msgid "Attention To"
 msgstr "Ter attentie van"
 
 msgid "Australia"
-msgstr "Australia"
+msgstr "Australië"
 
 msgid "Austria"
-msgstr "Austria"
+msgstr "Oostenrijk"
 
 msgid "Auto-Send Invoice Email"
 msgstr "Factuur automatisch per e-mail versturen"
@@ -203,7 +203,7 @@ msgid "Available Methods"
 msgstr "Beschikbare methoden"
 
 msgid "Azerbaijan"
-msgstr "Azerbaijan"
+msgstr "Azerbeidzjan"
 
 msgid "BIC"
 msgstr "BIC"
@@ -215,7 +215,7 @@ msgid "Back to List"
 msgstr "Terug naar lijst"
 
 msgid "Bahrain"
-msgstr "Bahrain"
+msgstr "Bahrein"
 
 msgid "Bangladesh"
 msgstr "Bangladesh"
@@ -227,10 +227,10 @@ msgid "Bank Details"
 msgstr "Bankgegevens"
 
 msgid "Belarus"
-msgstr "Belarus"
+msgstr "Wit-Rusland"
 
 msgid "Belgium"
-msgstr "Belgium"
+msgstr "België"
 
 msgid "Belize"
 msgstr "Belize"
@@ -242,13 +242,13 @@ msgid "Bolivia"
 msgstr "Bolivia"
 
 msgid "Bosnia and Herzegovina"
-msgstr "Bosnia and Herzegovina"
+msgstr "Bosnië en Herzegovina"
 
 msgid "Botswana"
 msgstr "Botswana"
 
 msgid "Brazil"
-msgstr "Brazil"
+msgstr "Brazilië"
 
 msgid "Brunei"
 msgstr "Brunei"
@@ -257,10 +257,10 @@ msgid "Bulgaria"
 msgstr "Bulgarije"
 
 msgid "Cambodia"
-msgstr "Cambodia"
+msgstr "Cambodja"
 
 msgid "Cameroon"
-msgstr "Cameroon"
+msgstr "Kameroen"
 
 msgid "Canada"
 msgstr "Canada"
@@ -272,7 +272,7 @@ msgid "Cannot delete client with %d invoice(s). Please delete or reassign the in
 msgstr "Kan geen klant met %d factuur/facturen verwijderen. Verwijder of herwijs eerst de facturen."
 
 msgid "Chile"
-msgstr "Chile"
+msgstr "Chili"
 
 msgid "China"
 msgstr "China"
@@ -356,7 +356,7 @@ msgid "Created:"
 msgstr "Aangemaakt:"
 
 msgid "Croatia"
-msgstr "Croatia"
+msgstr "Kroatië"
 
 msgid "Cuba"
 msgstr "Cuba"
@@ -377,7 +377,7 @@ msgid "Cyprus"
 msgstr "Cyprus"
 
 msgid "Czech Republic"
-msgstr "Czech Republic"
+msgstr "Tsjechië"
 
 msgid "Danger Zone"
 msgstr "Gevarenzone"
@@ -404,7 +404,7 @@ msgid "Delete Invoice"
 msgstr "Factuur verwijderen"
 
 msgid "Denmark"
-msgstr "Denmark"
+msgstr "Denemarken"
 
 msgid "Description"
 msgstr "Omschrijving"
@@ -425,7 +425,7 @@ msgid "Doe"
 msgstr "Jansen"
 
 msgid "Dominican Republic"
-msgstr "Dominican Republic"
+msgstr "Dominicaanse Republiek"
 
 msgid "Download PDF"
 msgstr "PDF downloaden"
@@ -461,7 +461,7 @@ msgid "Edit Invoice"
 msgstr "Factuur bewerken"
 
 msgid "Egypt"
-msgstr "Egypt"
+msgstr "Egypte"
 
 msgid "El Salvador"
 msgstr "El Salvador"
@@ -488,10 +488,10 @@ msgid "Enable Integration"
 msgstr "Integratie inschakelen"
 
 msgid "Estonia"
-msgstr "Estonia"
+msgstr "Estland"
 
 msgid "Ethiopia"
-msgstr "Ethiopia"
+msgstr "Ethiopië"
 
 msgid "Failed to create new client. Please check the client details."
 msgstr "Nieuwe klant kon niet worden aangemaakt. Controleer de klantgegevens."
@@ -560,7 +560,7 @@ msgid "France"
 msgstr "Frankrijk"
 
 msgid "Georgia"
-msgstr "Georgia"
+msgstr "Georgië"
 
 msgid "Germany"
 msgstr "Duitsland"
@@ -569,7 +569,7 @@ msgid "Ghana"
 msgstr "Ghana"
 
 msgid "Greece"
-msgstr "Greece"
+msgstr "Griekenland"
 
 msgid "Guatemala"
 msgstr "Guatemala"
@@ -587,10 +587,10 @@ msgid "Honduras"
 msgstr "Honduras"
 
 msgid "Hong Kong"
-msgstr "Hong Kong"
+msgstr "Hongkong"
 
 msgid "Hungary"
-msgstr "Hungary"
+msgstr "Hongarije"
 
 msgid "IBAN"
 msgstr "IBAN"
@@ -605,7 +605,7 @@ msgid "INVOICE"
 msgstr "FACTUUR"
 
 msgid "Iceland"
-msgstr "Iceland"
+msgstr "IJsland"
 
 msgid "India"
 msgstr "India"
@@ -614,7 +614,7 @@ msgid "Individual"
 msgstr "Particulier"
 
 msgid "Indonesia"
-msgstr "Indonesia"
+msgstr "Indonesië"
 
 msgid "Internal Notes"
 msgstr "Interne notities"
@@ -731,16 +731,16 @@ msgid "Iran"
 msgstr "Iran"
 
 msgid "Iraq"
-msgstr "Iraq"
+msgstr "Irak"
 
 msgid "Ireland"
-msgstr "Ireland"
+msgstr "Ierland"
 
 msgid "Israel"
-msgstr "Israel"
+msgstr "Israël"
 
 msgid "Italy"
-msgstr "Italy"
+msgstr "Italië"
 
 msgid "Item description"
 msgstr "Itemomschrijving"
@@ -755,16 +755,16 @@ msgid "John"
 msgstr "Jan"
 
 msgid "Jordan"
-msgstr "Jordan"
+msgstr "Jordanië"
 
 msgid "Kazakhstan"
-msgstr "Kazakhstan"
+msgstr "Kazachstan"
 
 msgid "Kenya"
-msgstr "Kenya"
+msgstr "Kenia"
 
 msgid "Kuwait"
-msgstr "Kuwait"
+msgstr "Koeweit"
 
 msgid "Label used for the company/client ID number field (e.g. EIK, BULSTAT, Reg No)."
 msgstr "Label voor het ID-nummerveld bedrijf/klant (bv. EIK, BULSTAT, reg.nr.)."
@@ -773,10 +773,10 @@ msgid "Last Name"
 msgstr "Achternaam"
 
 msgid "Latvia"
-msgstr "Latvia"
+msgstr "Letland"
 
 msgid "Lebanon"
-msgstr "Lebanon"
+msgstr "Libanon"
 
 msgid "Left"
 msgstr "Links"
@@ -785,7 +785,7 @@ msgid "Left Column Title"
 msgstr "Titel linkerkolom"
 
 msgid "Libya"
-msgstr "Libya"
+msgstr "Libië"
 
 msgid "Liechtenstein"
 msgstr "Liechtenstein"
@@ -794,7 +794,7 @@ msgid "Line Items"
 msgstr "Items"
 
 msgid "Lithuania"
-msgstr "Lithuania"
+msgstr "Litouwen"
 
 msgid "Loading preview..."
 msgstr "Voorbeeld laden..."
@@ -809,16 +809,16 @@ msgid "Logo"
 msgstr "Logo"
 
 msgid "Luxembourg"
-msgstr "Luxembourg"
+msgstr "Luxemburg"
 
 msgid "Macau"
 msgstr "Macau"
 
 msgid "Malaysia"
-msgstr "Malaysia"
+msgstr "Maleisië"
 
 msgid "Maldives"
-msgstr "Maldives"
+msgstr "Maldiven"
 
 msgid "Malta"
 msgstr "Malta"
@@ -833,19 +833,19 @@ msgid "Mexico"
 msgstr "Mexico"
 
 msgid "Moldova"
-msgstr "Moldova"
+msgstr "Moldavië"
 
 msgid "Monaco"
 msgstr "Monaco"
 
 msgid "Mongolia"
-msgstr "Mongolia"
+msgstr "Mongolië"
 
 msgid "Montenegro"
 msgstr "Montenegro"
 
 msgid "Morocco"
-msgstr "Morocco"
+msgstr "Marokko"
 
 msgid "Multi-currency support will be expanded in Phase 4."
 msgstr "Ondersteuning voor meerdere valuta wordt in fase 4 uitgebreid."
@@ -860,7 +860,7 @@ msgid "Nepal"
 msgstr "Nepal"
 
 msgid "Netherlands"
-msgstr "Netherlands"
+msgstr "Nederland"
 
 msgid "Network error. Please try again."
 msgstr "Netwerkfout. Probeer het opnieuw."
@@ -875,7 +875,7 @@ msgid "New Invoice"
 msgstr "Nieuwe factuur"
 
 msgid "New Zealand"
-msgstr "New Zealand"
+msgstr "Nieuw-Zeeland"
 
 msgid "Next Invoice Number:"
 msgstr "Volgend factuurnummer:"
@@ -926,10 +926,10 @@ msgid "No."
 msgstr "Nr."
 
 msgid "North Macedonia"
-msgstr "North Macedonia"
+msgstr "Noord-Macedonië"
 
 msgid "Norway"
-msgstr "Norway"
+msgstr "Noorwegen"
 
 msgid "Notes"
 msgstr "Opmerkingen"
@@ -1025,7 +1025,7 @@ msgid "Peru"
 msgstr "Peru"
 
 msgid "Philippines"
-msgstr "Philippines"
+msgstr "Filipijnen"
 
 msgid "Phone"
 msgstr "Telefoon"
@@ -1073,7 +1073,7 @@ msgid "Plugin Activation Error"
 msgstr "Fout bij activeren plug-in"
 
 msgid "Poland"
-msgstr "Poland"
+msgstr "Polen"
 
 msgid "Portugal"
 msgstr "Portugal"
@@ -1136,16 +1136,16 @@ msgid "Right Column Title"
 msgstr "Titel rechterkolom"
 
 msgid "Romania"
-msgstr "Romania"
+msgstr "Roemenië"
 
 msgid "Russia"
-msgstr "Russia"
+msgstr "Rusland"
 
 msgid "SELLER"
 msgstr "VERKOPER"
 
 msgid "Saudi Arabia"
-msgstr "Saudi Arabia"
+msgstr "Saoedi-Arabië"
 
 msgid "Save Changes"
 msgstr "Wijzigingen opslaan"
@@ -1217,7 +1217,7 @@ msgid "Sent"
 msgstr "Verzonden"
 
 msgid "Serbia"
-msgstr "Serbia"
+msgstr "Servië"
 
 msgid "Set Counter"
 msgstr "Teller instellen"
@@ -1244,19 +1244,19 @@ msgid "Singapore"
 msgstr "Singapore"
 
 msgid "Slovakia"
-msgstr "Slovakia"
+msgstr "Slowakije"
 
 msgid "Slovenia"
-msgstr "Slovenia"
+msgstr "Slovenië"
 
 msgid "South Africa"
-msgstr "South Africa"
+msgstr "Zuid-Afrika"
 
 msgid "South Korea"
-msgstr "South Korea"
+msgstr "Zuid-Korea"
 
 msgid "Spain"
-msgstr "Spain"
+msgstr "Spanje"
 
 msgid "Sri Lanka"
 msgstr "Sri Lanka"
@@ -1277,10 +1277,10 @@ msgid "Subtotal"
 msgstr "Subtotaal"
 
 msgid "Sweden"
-msgstr "Sweden"
+msgstr "Zweden"
 
 msgid "Switzerland"
-msgstr "Switzerland"
+msgstr "Zwitserland"
 
 msgid "TOTAL"
 msgstr "TOTAAL"
@@ -1355,13 +1355,13 @@ msgid "Trigger on Order Status"
 msgstr "Activeren bij bestelstatus"
 
 msgid "Tunisia"
-msgstr "Tunisia"
+msgstr "Tunesië"
 
 msgid "Turkey"
-msgstr "Turkey"
+msgstr "Turkije"
 
 msgid "Ukraine"
-msgstr "Ukraine"
+msgstr "Oekraïne"
 
 msgid "Unauthorized."
 msgstr "Niet geautoriseerd."
@@ -1370,7 +1370,7 @@ msgid "Unit Price"
 msgstr "Eenheidsprijs"
 
 msgid "United Arab Emirates"
-msgstr "United Arab Emirates"
+msgstr "Verenigde Arabische Emiraten"
 
 msgid "United Kingdom"
 msgstr "Verenigd Koninkrijk"
@@ -1400,7 +1400,7 @@ msgid "Used when \"WooCommerce Order Number\" format is selected (e.g. ORD-1234)
 msgstr "Gebruikt wanneer het formaat \"WooCommerce-bestelnummer\" is geselecteerd (bv. ORD-1234)."
 
 msgid "Uzbekistan"
-msgstr "Uzbekistan"
+msgstr "Oezbekistan"
 
 msgid "VAT 0%"
 msgstr "Btw 0%"
@@ -1454,7 +1454,7 @@ msgid "WooCommerce is not installed or activated. Install WooCommerce to use the
 msgstr "WooCommerce is niet geïnstalleerd of geactiveerd. Installeer WooCommerce om deze integratie-instellingen te gebruiken."
 
 msgid "Yemen"
-msgstr "Yemen"
+msgstr "Jemen"
 
 msgid "You do not have permission to access this page."
 msgstr "Je hebt geen toestemming om deze pagina te openen."
@@ -1502,10 +1502,6 @@ msgid "Zimbabwe"
 msgstr "Zimbabwe"
 
 msgctxt "Add New on Toolbar"
-msgid "Zimbabwe"
-msgstr "Zimbabwe"
-
-msgctxt "Add New on Toolbar"
 msgid "Client"
 msgstr "Klant"
 
@@ -1514,18 +1510,10 @@ msgid "Invoice"
 msgstr "Factuur"
 
 msgctxt "Admin Menu text"
-msgid "Invoice"
-msgstr "Factuur"
-
-msgctxt "Admin Menu text"
 msgid "Clients"
 msgstr "Klanten"
 
 msgctxt "Admin Menu text"
-msgid "Invoices"
-msgstr "Facturen"
-
-msgctxt "Overrides the \"Featured Image\" phrase"
 msgid "Invoices"
 msgstr "Facturen"
 
@@ -1538,18 +1526,10 @@ msgid "Invoice Logo"
 msgstr "Factuurlogo"
 
 msgctxt "Overrides the \"Insert into post\" phrase"
-msgid "Invoice Logo"
-msgstr "Factuurlogo"
-
-msgctxt "Overrides the \"Insert into post\" phrase"
 msgid "Insert into client"
 msgstr "In klant invoegen"
 
 msgctxt "Overrides the \"Insert into post\" phrase"
-msgid "Insert into invoice"
-msgstr "In factuur invoegen"
-
-msgctxt "Overrides the \"Remove featured image\" phrase"
 msgid "Insert into invoice"
 msgstr "In factuur invoegen"
 
@@ -1562,18 +1542,10 @@ msgid "Remove invoice logo"
 msgstr "Factuurlogo verwijderen"
 
 msgctxt "Overrides the \"Set featured image\" phrase"
-msgid "Remove invoice logo"
-msgstr "Factuurlogo verwijderen"
-
-msgctxt "Overrides the \"Set featured image\" phrase"
 msgid "Set client photo"
 msgstr "Klantfoto instellen"
 
 msgctxt "Overrides the \"Set featured image\" phrase"
-msgid "Set invoice logo"
-msgstr "Factuurlogo instellen"
-
-msgctxt "Overrides the \"Uploaded to this post\" phrase"
 msgid "Set invoice logo"
 msgstr "Factuurlogo instellen"
 
@@ -1586,18 +1558,10 @@ msgid "Uploaded to this invoice"
 msgstr "Geüpload naar deze factuur"
 
 msgctxt "Overrides the \"Use as featured image\" phrase"
-msgid "Uploaded to this invoice"
-msgstr "Geüpload naar deze factuur"
-
-msgctxt "Overrides the \"Use as featured image\" phrase"
 msgid "Use as client photo"
 msgstr "Als klantfoto gebruiken"
 
 msgctxt "Overrides the \"Use as featured image\" phrase"
-msgid "Use as invoice logo"
-msgstr "Als factuurlogo gebruiken"
-
-msgctxt "Post type general name"
 msgid "Use as invoice logo"
 msgstr "Als factuurlogo gebruiken"
 
@@ -1610,18 +1574,10 @@ msgid "Invoices"
 msgstr "Facturen"
 
 msgctxt "Post type singular name"
-msgid "Invoices"
-msgstr "Facturen"
-
-msgctxt "Post type singular name"
 msgid "Client"
 msgstr "Klant"
 
 msgctxt "Post type singular name"
-msgid "Invoice"
-msgstr "Factuur"
-
-msgctxt "Screen reader text"
 msgid "Invoice"
 msgstr "Factuur"
 
@@ -1650,17 +1606,10 @@ msgid "Invoices list navigation"
 msgstr "Navigatie facturenlijst"
 
 msgctxt "The post type archive label"
-msgid "Invoices list navigation"
-msgstr "Navigatie facturenlijst"
-
-msgctxt "The post type archive label"
 msgid "Client archives"
 msgstr "Klantenarchief"
 
 msgctxt "The post type archive label"
-msgid "Invoice archives"
-msgstr "Factuurarchief"
-
 msgid "Invoice archives"
 msgstr "Factuurarchief"
 

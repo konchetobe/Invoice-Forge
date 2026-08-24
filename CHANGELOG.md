@@ -6,7 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
-## [1.3.1] - 2026-07-02
+## [1.3.2] - 2026-08-24
+
+### Fixed
+- **Incomplete language translations**: Country names were left in English in every language and ~95 UI strings were missing native translations. All 10 language files now carry real native translations for every user-facing string (country names included). The English-only country-name fallback in `scripts/merge-translations.php` was removed, the obsolete `scripts/countries.php` registry was deleted, and the shared `.po` parser bug that injected phantom context/msgid entries was fixed.
+- **Stale template version header**: `Project-Id-Version` in the `.pot`/`.po` generators now tracks the plugin version correctly.
+
+---
+
+## [1.3.1] - 2026-08-24
 
 ### Fixed
 - **Complete native translations for all 10 languages**: The v1.3.0 translation work used English fallback strings for hundreds of entries, leaving most languages only ~20% translated. This release adds real native translations for every user-facing string across all languages (German, Spanish, French, Italian, Dutch, Polish, Portuguese, Romanian, Russian) and completes Bulgarian coverage. Country names remain in English as proper nouns (matching the source country list), and identical-word acronyms like BIC/Bank are correctly unchanged. No empty strings remain in any language file.

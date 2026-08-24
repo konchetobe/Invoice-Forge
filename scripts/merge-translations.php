@@ -60,10 +60,6 @@ foreach ($translationFiles as $lang => $file) {
     }
 }
 
-// Load country names (shared across all languages)
-$countryFile = $root . '/scripts/countries.php';
-$countryNames = file_exists($countryFile) ? include $countryFile : [];
-echo "Country names loaded: " . count($countryNames) . "\n";
 
 foreach ($languages as $lang) {
     $poFile = $langDir . '/invoiceforge-' . $lang . '.po';
@@ -93,14 +89,6 @@ foreach ($languages as $lang) {
                 'context' => $entry['context'] ?? null,
             ];
             $newCount++;
-        } elseif (isset($countryNames[$entry['msgid']])) {
-            // Country name (kept in English, which is the source language)
-            $merged[$key] = [
-                'msgid' => $entry['msgid'],
-                'msgstr' => $entry['msgid'],
-                'context' => $entry['context'] ?? null,
-            ];
-            $fallbackCount++;
         } else {
             // No translation available — fall back to English
             $merged[$key] = [
@@ -138,7 +126,7 @@ function parsePoFile(string $content): array
             $currentMsgctxt = unquote(substr($line, 8));
             $state = 'msgctxt';
         } elseif (strpos($line, 'msgid ') === 0) {
-            if ($currentMsgid !== null) {
+            if ($currentMsgid !== null && $currentMsgid !== '') {
                 $key = $currentMsgctxt !== null ? "ctx:" . $currentMsgctxt . "\x04" . $currentMsgid : $currentMsgid;
                 if (!isset($entries[$key])) {
                     $entries[$key] = ['msgid' => $currentMsgid, 'msgstr' => $currentMsgstr ?? '', 'context' => $currentMsgctxt];
@@ -151,13 +139,14 @@ function parsePoFile(string $content): array
             $currentMsgstr = unquote(substr($line, 7));
             $state = 'msgstr';
         } elseif ($line === '') {
-            if ($currentMsgid !== null) {
+            if ($currentMsgid !== null && $currentMsgid !== '') {
                 $key = $currentMsgctxt !== null ? "ctx:" . $currentMsgctxt . "\x04" . $currentMsgid : $currentMsgid;
                 if (!isset($entries[$key])) {
                     $entries[$key] = ['msgid' => $currentMsgid, 'msgstr' => $currentMsgstr ?? '', 'context' => $currentMsgctxt];
                 }
             }
             $currentMsgctxt = null;
+            $currentMsgid = null;
             $state = null;
         } elseif ($line[0] === '"') {
             if ($state === 'msgid') $currentMsgid .= unquote($line);
@@ -166,7 +155,7 @@ function parsePoFile(string $content): array
         }
     }
 
-    if ($currentMsgid !== null) {
+    if ($currentMsgid !== null && $currentMsgid !== '') {
         $key = $currentMsgctxt !== null ? "ctx:" . $currentMsgctxt . "\x04" . $currentMsgid : $currentMsgid;
         if (!isset($entries[$key])) {
             $entries[$key] = ['msgid' => $currentMsgid, 'msgstr' => $currentMsgstr ?? '', 'context' => $currentMsgctxt];
@@ -207,7 +196,7 @@ function generatePoFile(array $entries, string $lang, array $meta): string
     $po .= "#\n";
     $po .= 'msgid ""' . "\n";
     $po .= 'msgstr ""' . "\n";
-    $po .= '"Project-Id-Version: InvoiceForge 1.2.9\n"' . "\n";
+    $po .= '"Project-Id-Version: InvoiceForge 1.3.2\n"' . "\n";
     $po .= '"Report-Msgid-Bugs-To: https://github.com/konchetobe/Invoice-Forge/issues\n"' . "\n";
     $po .= '"POT-Creation-Date: ' . date('Y-m-d H:i:s') . '+0000\n"' . "\n";
     $po .= '"PO-Revision-Date: ' . date('Y-m-d H:i:s') . '+0000\n"' . "\n";
