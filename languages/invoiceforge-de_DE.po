@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: InvoiceForge 1.2.9\n"
 "Report-Msgid-Bugs-To: https://github.com/konchetobe/Invoice-Forge/issues\n"
-"POT-Creation-Date: 2026-07-20 11:03:25+0000\n"
-"PO-Revision-Date: 2026-07-20 11:03:25+0000\n"
+"POT-Creation-Date: 2026-08-24 11:42:18+0000\n"
+"PO-Revision-Date: 2026-08-24 11:42:18+0000\n"
 "Last-Translator: InvoiceForge Team\n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -17,88 +17,88 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "%1$s must be after %2$s."
-msgstr "%1$s must be after %2$s."
+msgstr "%1$s muss nach %2$s liegen."
 
 msgid "%1$s must be at least %2$d characters."
-msgstr "%1$s must be at least %2$d characters."
+msgstr "%1$s muss mindestens %2$d Zeichen lang sein."
 
 msgid "%1$s must be at least %2$s."
-msgstr "%1$s must be at least %2$s."
+msgstr "%1$s muss mindestens %2$s betragen."
 
 msgid "%1$s must not exceed %2$d characters."
-msgstr "%1$s must not exceed %2$d characters."
+msgstr "%1$s darf %2$d Zeichen nicht überschreiten."
 
 msgid "%1$s must not exceed %2$s."
-msgstr "%1$s must not exceed %2$s."
+msgstr "%1$s darf %2$s nicht überschreiten."
 
 msgid "%s cannot be negative."
-msgstr "%s cannot be negative."
+msgstr "%s darf nicht negativ sein."
 
 msgid "%s is required."
-msgstr "%s is required."
+msgstr "%s ist erforderlich."
 
 msgid "%s must be a positive number."
-msgstr "%s must be a positive number."
+msgstr "%s muss eine positive Zahl sein."
 
 msgid "(Not yet assigned)"
-msgstr "(Not yet assigned)"
+msgstr "(Noch nicht zugewiesen)"
 
 msgid "(not visible on invoice)"
-msgstr "(not visible on invoice)"
+msgstr "(auf der Rechnung nicht sichtbar)"
 
 msgid "+ Add Address (Optional)"
 msgstr "+ Adresse hinzufügen (Optional)"
 
 msgid "+ Add Method"
-msgstr "+ Add Method"
+msgstr "+ Methode hinzufügen"
 
 msgid "+ Add Signature Field"
-msgstr "+ Add Signature Field"
+msgstr "+ Unterschriftsfeld hinzufügen"
 
 msgid "+1 (555) 123-4567"
-msgstr "+1 (555) 123-4567"
+msgstr "+49 (555) 123-4567"
 
 msgid "123 Main Street"
-msgstr "123 Main Street"
+msgstr "Hauptstraße 123"
 
 msgid "123 Main Street, Suite 100"
-msgstr "123 Main Street, Suite 100"
+msgstr "Hauptstraße 123, Suite 100"
 
 msgid "Accent Color"
-msgstr "Accent Color"
+msgstr "Akzentfarbe"
 
 msgid "Access Denied"
-msgstr "Access Denied"
+msgstr "Zugriff verweigert"
 
 msgid "Account Holder"
 msgstr "Kontoinhaber"
 
 msgid "Actions"
-msgstr "Actions"
+msgstr "Aktionen"
 
 msgid "Add Client"
-msgstr "Add Client"
+msgstr "Kunden hinzufügen"
 
 msgid "Add Item"
-msgstr "Add Item"
+msgstr "Position hinzufügen"
 
 msgid "Add New"
-msgstr "Add New"
+msgstr "Neu hinzufügen"
 
 msgid "Add New Client"
 msgstr "Neuen Kunden hinzufügen"
 
 msgid "Add New Invoice"
-msgstr "Add New Invoice"
+msgstr "Neue Rechnung hinzufügen"
 
 msgid "Add a client first"
-msgstr "Add a client first"
+msgstr "Zuerst einen Kunden hinzufügen"
 
 msgid "Add any notes or terms for this invoice..."
-msgstr "Add any notes or terms for this invoice..."
+msgstr "Notizen oder Bedingungen für diese Rechnung hinzufügen..."
 
 msgid "Add your first client to start creating invoices."
-msgstr "Add your first client to start creating invoices."
+msgstr "Fügen Sie Ihren ersten Kunden hinzu, um Rechnungen zu erstellen."
 
 msgid "Address"
 msgstr "Adresse"
@@ -116,34 +116,34 @@ msgid "All"
 msgstr "Alle"
 
 msgid "All Clients"
-msgstr "All Clients"
+msgstr "Alle Kunden"
 
 msgid "All Invoices"
-msgstr "All Invoices"
+msgstr "Alle Rechnungen"
 
 msgid "Amount"
-msgstr "Amount"
+msgstr "Betrag"
 
 msgid "Amount Due"
 msgstr "Fälliger Betrag"
 
 msgid "Amount Due:"
-msgstr "Amount Due:"
+msgstr "Fälliger Betrag:"
 
 msgid "An error occurred while generating the PDF."
-msgstr "An error occurred while generating the PDF."
+msgstr "Beim Erstellen der PDF ist ein Fehler aufgetreten."
 
 msgid "An error occurred while previewing the PDF."
-msgstr "An error occurred while previewing the PDF."
+msgstr "Beim Anzeigen der PDF ist ein Fehler aufgetreten."
 
 msgid "An error occurred. Please try again."
 msgstr "Ein Fehler ist aufgetreten. Bitte erneut versuchen."
 
 msgid "An unexpected error occurred."
-msgstr "An unexpected error occurred."
+msgstr "Ein unerwarteter Fehler ist aufgetreten."
 
 msgid "An unexpected error occurred. Please try again."
-msgstr "An unexpected error occurred. Please try again."
+msgstr "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
 
 msgid "Andorra"
 msgstr "Andorra"
@@ -152,22 +152,22 @@ msgid "Angola"
 msgstr "Angola"
 
 msgid "Appearance"
-msgstr "Appearance"
+msgstr "Erscheinungsbild"
 
 msgid "Are you sure you want to delete this client?"
-msgstr "Are you sure you want to delete this client?"
+msgstr "Möchten Sie diesen Kunden wirklich löschen?"
 
 msgid "Are you sure you want to delete this invoice?"
-msgstr "Are you sure you want to delete this invoice?"
+msgstr "Möchten Sie diese Rechnung wirklich löschen?"
 
 msgid "Are you sure you want to delete this item?"
 msgstr "Sind Sie sicher, dass Sie diesen Eintrag löschen möchten?"
 
 msgid "Are you sure you want to reset the invoice counter? This cannot be undone."
-msgstr "Are you sure you want to reset the invoice counter? This cannot be undone."
+msgstr "Möchten Sie den Rechnungszähler wirklich zurücksetzen? Dies kann nicht rückgängig gemacht werden."
 
 msgid "Are you sure you want to send this invoice to the client via email?"
-msgstr "Are you sure you want to send this invoice to the client via email?"
+msgstr "Möchten Sie diese Rechnung wirklich per E-Mail an den Kunden senden?"
 
 msgid "Argentina"
 msgstr "Argentina"
@@ -179,7 +179,7 @@ msgid "Att To"
 msgstr "z. Hd."
 
 msgid "Attention To"
-msgstr "Attention To"
+msgstr "Zu Händen"
 
 msgid "Australia"
 msgstr "Australia"
@@ -188,19 +188,19 @@ msgid "Austria"
 msgstr "Austria"
 
 msgid "Auto-Send Invoice Email"
-msgstr "Auto-Send Invoice Email"
+msgstr "Rechnung automatisch per E-Mail senden"
 
 msgid "Auto-generated on save"
-msgstr "Auto-generated on save"
+msgstr "Automatisch beim Speichern generiert"
 
 msgid "Automatically email the PDF invoice to the customer when generated"
-msgstr "Automatically email the PDF invoice to the customer when generated"
+msgstr "PDF-Rechnung automatisch an den Kunden senden, sobald sie erstellt wird"
 
 msgid "Automatically generate invoices from WooCommerce orders"
-msgstr "Automatically generate invoices from WooCommerce orders"
+msgstr "Rechnungen automatisch aus WooCommerce-Bestellungen erstellen"
 
 msgid "Available Methods"
-msgstr "Available Methods"
+msgstr "Verfügbare Methoden"
 
 msgid "Azerbaijan"
 msgstr "Azerbaijan"
@@ -224,7 +224,7 @@ msgid "Bank"
 msgstr "Bank"
 
 msgid "Bank Details"
-msgstr "Bank Details"
+msgstr "Bankverbindung"
 
 msgid "Belarus"
 msgstr "Belarus"
@@ -269,7 +269,7 @@ msgid "Cancelled"
 msgstr "Storniert"
 
 msgid "Cannot delete client with %d invoice(s). Please delete or reassign the invoices first."
-msgstr "Cannot delete client with %d invoice(s). Please delete or reassign the invoices first."
+msgstr "Kunde mit %d Rechnung(en) kann nicht gelöscht werden. Bitte löschen oder weisen Sie die Rechnungen zuerst neu zu."
 
 msgid "Chile"
 msgstr "Chile"
@@ -284,10 +284,10 @@ msgid "Client"
 msgstr "Kunde"
 
 msgid "Client Information"
-msgstr "Client Information"
+msgstr "Kundeninformationen"
 
 msgid "Client Name"
-msgstr "Client Name"
+msgstr "Kundenname"
 
 msgid "Client created successfully."
 msgstr "Kunde erfolgreich erstellt."
@@ -296,10 +296,10 @@ msgid "Client deleted successfully."
 msgstr "Kunde erfolgreich gelöscht."
 
 msgid "Client is required. Select an existing client or add new client details."
-msgstr "Client is required. Select an existing client or add new client details."
+msgstr "Kunde ist erforderlich. Wählen Sie einen bestehenden Kunden oder fügen Sie neue Kundendaten hinzu."
 
 msgid "Client not found."
-msgstr "Client not found."
+msgstr "Kunde nicht gefunden."
 
 msgid "Client updated successfully."
 msgstr "Kunde erfolgreich aktualisiert."
@@ -314,28 +314,28 @@ msgid "Company"
 msgstr "Unternehmen"
 
 msgid "Company name is required for company clients."
-msgstr "Company name is required for company clients."
+msgstr "Der Firmenname ist für Firmenkunden erforderlich."
 
 msgid "Company or Organization (Optional)"
-msgstr "Company or Organization (Optional)"
+msgstr "Firma oder Organisation (optional)"
 
 msgid "Company or Organization name"
-msgstr "Company or Organization name"
+msgstr "Name der Firma oder Organisation"
 
 msgid "Completed"
-msgstr "Completed"
+msgstr "Abgeschlossen"
 
 msgid "Configure the fields that appear in the signature block."
-msgstr "Configure the fields that appear in the signature block."
+msgstr "Konfigurieren Sie die Felder, die im Unterschriftsblock erscheinen."
 
 msgid "Contact Information"
-msgstr "Contact Information"
+msgstr "Kontaktinformationen"
 
 msgid "Contact person (МОЛ) for company clients. For individuals, this can be left empty."
-msgstr "Contact person (МОЛ) for company clients. For individuals, this can be left empty."
+msgstr "Ansprechpartner (МОЛ) für Firmenkunden. Bei Privatpersonen kann dies leer bleiben."
 
 msgid "Contact person name"
-msgstr "Contact person name"
+msgstr "Name des Ansprechpartners"
 
 msgid "Costa Rica"
 msgstr "Costa Rica"
@@ -350,7 +350,7 @@ msgid "Create Invoice"
 msgstr "Rechnung erstellen"
 
 msgid "Create your first invoice to get started."
-msgstr "Create your first invoice to get started."
+msgstr "Erstellen Sie Ihre erste Rechnung, um zu beginnen."
 
 msgid "Created:"
 msgstr "Erstellt:"
@@ -365,13 +365,13 @@ msgid "Currency"
 msgstr "Währung"
 
 msgid "Current counter: %d"
-msgstr "Current counter: %d"
+msgstr "Aktueller Zähler: %d"
 
 msgid "Custom Invoices"
-msgstr "Custom Invoices"
+msgstr "Eigene Rechnungen"
 
 msgid "Customer Notes"
-msgstr "Customer Notes"
+msgstr "Kundennotizen"
 
 msgid "Cyprus"
 msgstr "Cyprus"
@@ -380,19 +380,19 @@ msgid "Czech Republic"
 msgstr "Czech Republic"
 
 msgid "Danger Zone"
-msgstr "Danger Zone"
+msgstr "Gefahrenzone"
 
 msgid "Dashboard"
-msgstr "Dashboard"
+msgstr "Übersicht"
 
 msgid "Date"
 msgstr "Datum"
 
 msgid "Date cannot be in the past."
-msgstr "Date cannot be in the past."
+msgstr "Datum darf nicht in der Vergangenheit liegen."
 
 msgid "Dear %s,"
-msgstr "Dear %s,"
+msgstr "Sehr geehrte/r %s,"
 
 msgid "Delete"
 msgstr "Löschen"
@@ -419,25 +419,25 @@ msgid "Discount"
 msgstr "Rabatt"
 
 msgid "Discount row in totals"
-msgstr "Discount row in totals"
+msgstr "Rabattzeile in den Summen"
 
 msgid "Doe"
-msgstr "Doe"
+msgstr "Mustermann"
 
 msgid "Dominican Republic"
 msgstr "Dominican Republic"
 
 msgid "Download PDF"
-msgstr "Download PDF"
+msgstr "PDF herunterladen"
 
 msgid "Draft"
 msgstr "Entwurf"
 
 msgid "Drag sections to reorder them on the invoice PDF."
-msgstr "Drag sections to reorder them on the invoice PDF."
+msgstr "Ziehen Sie Abschnitte, um sie in der Rechnungs-PDF neu anzuordnen."
 
 msgid "Drag to reorder"
-msgstr "Drag to reorder"
+msgstr "Zum Neuanordnen ziehen"
 
 msgid "Due"
 msgstr "Fällig"
@@ -446,7 +446,7 @@ msgid "Due Date"
 msgstr "Fälligkeitsdatum"
 
 msgid "Due date cannot be before invoice date."
-msgstr "Due date cannot be before invoice date."
+msgstr "Das Fälligkeitsdatum darf nicht vor dem Rechnungsdatum liegen."
 
 msgid "Ecuador"
 msgstr "Ecuador"
@@ -470,22 +470,22 @@ msgid "Email"
 msgstr "E-Mail"
 
 msgid "Email Address"
-msgstr "Email Address"
+msgstr "E-Mail-Adresse"
 
 msgid "Email Preview"
-msgstr "Email Preview"
+msgstr "E-Mail-Vorschau"
 
 msgid "Email is required for new clients."
-msgstr "Email is required for new clients."
+msgstr "E-Mail ist für neue Kunden erforderlich."
 
 msgid "Email sending functionality will be available in a future update. Configure your SMTP settings now to be ready."
-msgstr "Email sending functionality will be available in a future update. Configure your SMTP settings now to be ready."
+msgstr "Die E-Mail-Funktion wird in einem zukünftigen Update verfügbar sein. Konfigurieren Sie jetzt Ihre SMTP-Einstellungen."
 
 msgid "Email sent successfully."
-msgstr "Email sent successfully."
+msgstr "E-Mail erfolgreich gesendet."
 
 msgid "Enable Integration"
-msgstr "Enable Integration"
+msgstr "Integration aktivieren"
 
 msgid "Estonia"
 msgstr "Estonia"
@@ -494,46 +494,46 @@ msgid "Ethiopia"
 msgstr "Ethiopia"
 
 msgid "Failed to create new client. Please check the client details."
-msgstr "Failed to create new client. Please check the client details."
+msgstr "Neuen Kunden konnte nicht erstellt werden. Bitte überprüfen Sie die Kundendaten."
 
 msgid "Failed to delete client."
-msgstr "Failed to delete client."
+msgstr "Kunde konnte nicht gelöscht werden."
 
 msgid "Failed to delete invoice."
-msgstr "Failed to delete invoice."
+msgstr "Rechnung konnte nicht gelöscht werden."
 
 msgid "Failed to delete tax rate."
-msgstr "Failed to delete tax rate."
+msgstr "Steuersatz konnte nicht gelöscht werden."
 
 msgid "Failed to generate invoice. Check logs for details."
-msgstr "Failed to generate invoice. Check logs for details."
+msgstr "Rechnung konnte nicht erstellt werden. Details finden Sie in den Protokollen."
 
 msgid "Failed to reset counter."
-msgstr "Failed to reset counter."
+msgstr "Zähler konnte nicht zurückgesetzt werden."
 
 msgid "Failed to reset invoice counter."
-msgstr "Failed to reset invoice counter."
+msgstr "Rechnungszähler konnte nicht zurückgesetzt werden."
 
 msgid "Failed to save. Please try again."
-msgstr "Failed to save. Please try again."
+msgstr "Speichern fehlgeschlagen. Bitte versuchen Sie es erneut."
 
 msgid "Failed to send email."
-msgstr "Failed to send email."
+msgstr "E-Mail konnte nicht gesendet werden."
 
 msgid "Failed to send email. Check error logs for more details."
-msgstr "Failed to send email. Check error logs for more details."
+msgstr "E-Mail konnte nicht gesendet werden. Details finden Sie in den Fehlerprotokollen."
 
 msgid "Failed to send reminder. Check error logs for more details."
-msgstr "Failed to send reminder. Check error logs for more details."
+msgstr "Erinnerung konnte nicht gesendet werden. Details finden Sie in den Fehlerprotokollen."
 
 msgid "Failed to set counter."
-msgstr "Failed to set counter."
+msgstr "Zähler konnte nicht gesetzt werden."
 
 msgid "Failed to set invoice counter."
-msgstr "Failed to set invoice counter."
+msgstr "Rechnungszähler konnte nicht gesetzt werden."
 
 msgid "Field label"
-msgstr "Field label"
+msgstr "Feldbezeichnung"
 
 msgid "Finland"
 msgstr "Finland"
@@ -542,16 +542,16 @@ msgid "First Name"
 msgstr "Vorname"
 
 msgid "Fixed Amount"
-msgstr "Fixed Amount"
+msgstr "Fester Betrag"
 
 msgid "For EU VAT reverse charge and tax compliance."
-msgstr "For EU VAT reverse charge and tax compliance."
+msgstr "Für EU-Umsatzsteuer-Reverse-Charge und Steuerkonformität."
 
 msgid "For Phase 1A, enter the total manually. Line items will be added in Phase 1B."
-msgstr "For Phase 1A, enter the total manually. Line items will be added in Phase 1B."
+msgstr "Für Phase 1A geben Sie die Summe manuell ein. Positionen werden in Phase 1B hinzugefügt."
 
 msgid "For new clients, first name, last name and email are required."
-msgstr "For new clients, first name, last name and email are required."
+msgstr "Für neue Kunden sind Vorname, Nachname und E-Mail erforderlich."
 
 msgid "Format:"
 msgstr "Format:"
@@ -575,13 +575,13 @@ msgid "Guatemala"
 msgstr "Guatemala"
 
 msgid "Header (Company + Client)"
-msgstr "Header (Company + Client)"
+msgstr "Kopfzeile (Firma + Kunde)"
 
 msgid "Hex color used for headings and accents on the invoice PDF."
-msgstr "Hex color used for headings and accents on the invoice PDF."
+msgstr "Hex-Farbe für Überschriften und Akzente in der Rechnungs-PDF."
 
 msgid "Hold Ctrl/Cmd to select multiple statuses."
-msgstr "Hold Ctrl/Cmd to select multiple statuses."
+msgstr "Halten Sie Strg/Cmd gedrückt, um mehrere Status auszuwählen."
 
 msgid "Honduras"
 msgstr "Honduras"
@@ -596,10 +596,10 @@ msgid "IBAN"
 msgstr "IBAN"
 
 msgid "ID No (EIK/BULSTAT/Reg No)"
-msgstr "ID No (EIK/BULSTAT/Reg No)"
+msgstr "ID-Nr. (EIK/BULSTAT/Reg.-Nr.)"
 
 msgid "ID No Label"
-msgstr "ID No Label"
+msgstr "ID-Nr.-Bezeichnung"
 
 msgid "INVOICE"
 msgstr "RECHNUNG"
@@ -611,43 +611,43 @@ msgid "India"
 msgstr "India"
 
 msgid "Individual"
-msgstr "Individual"
+msgstr "Privatperson"
 
 msgid "Indonesia"
 msgstr "Indonesia"
 
 msgid "Internal Notes"
-msgstr "Internal Notes"
+msgstr "Interne Notizen"
 
 msgid "Invalid client ID."
-msgstr "Invalid client ID."
+msgstr "Ungültige Kunden-ID."
 
 msgid "Invalid client."
-msgstr "Invalid client."
+msgstr "Ungültiger Kunde."
 
 msgid "Invalid invoice ID."
-msgstr "Invalid invoice ID."
+msgstr "Ungültige Rechnungs-ID."
 
 msgid "Invalid invoice."
-msgstr "Invalid invoice."
+msgstr "Ungültige Rechnung."
 
 msgid "Invalid order ID."
-msgstr "Invalid order ID."
+msgstr "Ungültige Bestell-ID."
 
 msgid "Invalid tax rate ID."
-msgstr "Invalid tax rate ID."
+msgstr "Ungültige Steuersatz-ID."
 
 msgid "Invoice"
 msgstr "Rechnung"
 
 msgid "Invoice #"
-msgstr "Invoice #"
+msgstr "Rechnung Nr."
 
 msgid "Invoice #:"
 msgstr "Rechnung Nr.:"
 
 msgid "Invoice %s from %s"
-msgstr "Invoice %s from %s"
+msgstr "Rechnung %s von %s"
 
 msgid "Invoice Date"
 msgstr "Rechnungsdatum"
@@ -659,28 +659,28 @@ msgid "Invoice Info"
 msgstr "Rechnungsinfo"
 
 msgid "Invoice Logo"
-msgstr "Invoice Logo"
+msgstr "Rechnungslogo"
 
 msgid "Invoice Notes"
-msgstr "Invoice Notes"
+msgstr "Rechnungsnotizen"
 
 msgid "Invoice Number"
-msgstr "Invoice Number"
+msgstr "Rechnungsnummer"
 
 msgid "Invoice Number Format"
-msgstr "Invoice Number Format"
+msgstr "Format der Rechnungsnummer"
 
 msgid "Invoice Status"
-msgstr "Invoice Status"
+msgstr "Rechnungsstatus"
 
 msgid "Invoice Title"
 msgstr "Rechnungstitel"
 
 msgid "Invoice counter has been reset."
-msgstr "Invoice counter has been reset."
+msgstr "Rechnungszähler wurde zurückgesetzt."
 
 msgid "Invoice counter set to %1$d. Next invoice: %2$s"
-msgstr "Invoice counter set to %1$d. Next invoice: %2$s"
+msgstr "Rechnungszähler auf %1$d gesetzt. Nächste Rechnung: %2$s"
 
 msgid "Invoice created successfully."
 msgstr "Rechnung erfolgreich erstellt."
@@ -689,16 +689,16 @@ msgid "Invoice deleted successfully."
 msgstr "Rechnung erfolgreich gelöscht."
 
 msgid "Invoice generated successfully."
-msgstr "Invoice generated successfully."
+msgstr "Rechnung erfolgreich erstellt."
 
 msgid "Invoice not found."
-msgstr "Invoice not found."
+msgstr "Rechnung nicht gefunden."
 
 msgid "Invoice number is automatically generated."
-msgstr "Invoice number is automatically generated."
+msgstr "Die Rechnungsnummer wird automatisch generiert."
 
 msgid "Invoice title is required."
-msgstr "Invoice title is required."
+msgstr "Der Rechnungstitel ist erforderlich."
 
 msgid "Invoice updated successfully."
 msgstr "Rechnung erfolgreich aktualisiert."
@@ -707,22 +707,22 @@ msgid "InvoiceForge"
 msgstr "InvoiceForge"
 
 msgid "InvoiceForge Sequential (e.g. INV-2026-0001)"
-msgstr "InvoiceForge Sequential (e.g. INV-2026-0001)"
+msgstr "InvoiceForge fortlaufend (z. B. INV-2026-0001)"
 
 msgid "InvoiceForge requires Composer dependencies. Please run \"composer install\" first."
-msgstr "InvoiceForge requires Composer dependencies. Please run \"composer install\" first."
+msgstr "InvoiceForge benötigt Composer-Abhängigkeiten. Bitte führen Sie zuerst \"composer install\" aus."
 
 msgid "InvoiceForge requires Composer dependencies. Please run \"composer install\" in the plugin directory."
-msgstr "InvoiceForge requires Composer dependencies. Please run \"composer install\" in the plugin directory."
+msgstr "InvoiceForge benötigt Composer-Abhängigkeiten. Bitte führen Sie \"composer install\" im Plugin-Verzeichnis aus."
 
 msgid "InvoiceForge requires PHP %s or higher."
-msgstr "InvoiceForge requires PHP %s or higher."
+msgstr "InvoiceForge benötigt PHP %s oder höher."
 
 msgid "InvoiceForge requires PHP version %1$s or higher. Your current version is %2$s. Please upgrade PHP to use this plugin."
-msgstr "InvoiceForge requires PHP version %1$s or higher. Your current version is %2$s. Please upgrade PHP to use this plugin."
+msgstr "InvoiceForge benötigt PHP-Version %1$s oder höher. Ihre aktuelle Version ist %2$s. Bitte aktualisieren Sie PHP, um dieses Plugin zu verwenden."
 
 msgid "InvoiceForge requires WordPress version %1$s or higher. Your current version is %2$s. Please upgrade WordPress to use this plugin."
-msgstr "InvoiceForge requires WordPress version %1$s or higher. Your current version is %2$s. Please upgrade WordPress to use this plugin."
+msgstr "InvoiceForge benötigt WordPress-Version %1$s oder höher. Ihre aktuelle Version ist %2$s. Bitte aktualisieren Sie WordPress, um dieses Plugin zu verwenden."
 
 msgid "Invoices"
 msgstr "Rechnungen"
@@ -743,7 +743,7 @@ msgid "Italy"
 msgstr "Italy"
 
 msgid "Item description"
-msgstr "Item description"
+msgstr "Positionsbeschreibung"
 
 msgid "Jamaica"
 msgstr "Jamaica"
@@ -752,7 +752,7 @@ msgid "Japan"
 msgstr "Japan"
 
 msgid "John"
-msgstr "John"
+msgstr "Max"
 
 msgid "Jordan"
 msgstr "Jordan"
@@ -767,7 +767,7 @@ msgid "Kuwait"
 msgstr "Kuwait"
 
 msgid "Label used for the company/client ID number field (e.g. EIK, BULSTAT, Reg No)."
-msgstr "Label used for the company/client ID number field (e.g. EIK, BULSTAT, Reg No)."
+msgstr "Bezeichnung für das Feld der Firmen-/Kunden-ID-Nummer (z. B. EIK, BULSTAT, Reg.-Nr.)."
 
 msgid "Last Name"
 msgstr "Nachname"
@@ -779,10 +779,10 @@ msgid "Lebanon"
 msgstr "Lebanon"
 
 msgid "Left"
-msgstr "Left"
+msgstr "Links"
 
 msgid "Left Column Title"
-msgstr "Left Column Title"
+msgstr "Titel der linken Spalte"
 
 msgid "Libya"
 msgstr "Libya"
@@ -791,19 +791,19 @@ msgid "Liechtenstein"
 msgstr "Liechtenstein"
 
 msgid "Line Items"
-msgstr "Line Items"
+msgstr "Positionen"
 
 msgid "Lithuania"
 msgstr "Lithuania"
 
 msgid "Loading preview..."
-msgstr "Loading preview..."
+msgstr "Vorschau wird geladen..."
 
 msgid "Loading..."
 msgstr "Laden..."
 
 msgid "Location"
-msgstr "Location"
+msgstr "Ort"
 
 msgid "Logo"
 msgstr "Logo"
@@ -824,7 +824,7 @@ msgid "Malta"
 msgstr "Malta"
 
 msgid "Manually set the next invoice number counter. The next invoice created will use this number."
-msgstr "Manually set the next invoice number counter. The next invoice created will use this number."
+msgstr "Setzen Sie den Zähler der nächsten Rechnungsnummer manuell. Die nächste erstellte Rechnung verwendet diese Nummer."
 
 msgid "Mauritius"
 msgstr "Mauritius"
@@ -848,7 +848,7 @@ msgid "Morocco"
 msgstr "Morocco"
 
 msgid "Multi-currency support will be expanded in Phase 4."
-msgstr "Multi-currency support will be expanded in Phase 4."
+msgstr "Die Mehrwährungsunterstützung wird in Phase 4 erweitert."
 
 msgid "Myanmar"
 msgstr "Myanmar"
@@ -878,7 +878,7 @@ msgid "New Zealand"
 msgstr "New Zealand"
 
 msgid "Next Invoice Number:"
-msgstr "Next Invoice Number:"
+msgstr "Nächste Rechnungsnummer:"
 
 msgid "Nicaragua"
 msgstr "Nicaragua"
@@ -887,40 +887,40 @@ msgid "Nigeria"
 msgstr "Nigeria"
 
 msgid "No Discount"
-msgstr "No Discount"
+msgstr "Kein Rabatt"
 
 msgid "No Tax"
-msgstr "No Tax"
+msgstr "Keine Steuer"
 
 msgid "No clients found in Trash."
-msgstr "No clients found in Trash."
+msgstr "Keine Kunden im Papierkorb gefunden."
 
 msgid "No clients found."
 msgstr "Keine Kunden gefunden."
 
 msgid "No clients found. Switch to \"Add New Client\" to create one inline."
-msgstr "No clients found. Switch to \"Add New Client\" to create one inline."
+msgstr "Keine Kunden gefunden. Wechseln Sie zu \"Neuen Kunden hinzufügen\", um direkt einen zu erstellen."
 
 msgid "No clients yet"
-msgstr "No clients yet"
+msgstr "Noch keine Kunden"
 
 msgid "No clients yet. Add your first client to start invoicing!"
-msgstr "No clients yet. Add your first client to start invoicing!"
+msgstr "Noch keine Kunden. Fügen Sie Ihren ersten Kunden hinzu, um mit der Rechnungsstellung zu beginnen!"
 
 msgid "No invoices found in Trash."
-msgstr "No invoices found in Trash."
+msgstr "Keine Rechnungen im Papierkorb gefunden."
 
 msgid "No invoices found."
 msgstr "Keine Rechnungen gefunden."
 
 msgid "No invoices yet"
-msgstr "No invoices yet"
+msgstr "Noch keine Rechnungen"
 
 msgid "No invoices yet. Create your first invoice to get started!"
-msgstr "No invoices yet. Create your first invoice to get started!"
+msgstr "Noch keine Rechnungen. Erstellen Sie Ihre erste Rechnung, um zu beginnen!"
 
 msgid "No line items yet. Click \"Add Item\" to get started."
-msgstr "No line items yet. Click \"Add Item\" to get started."
+msgstr "Noch keine Positionen. Klicken Sie auf \"Position hinzufügen\", um zu beginnen."
 
 msgid "No."
 msgstr "Nr."
@@ -935,31 +935,31 @@ msgid "Notes"
 msgstr "Anmerkungen"
 
 msgid "Notes & Terms"
-msgstr "Notes & Terms"
+msgstr "Notizen & Bedingungen"
 
 msgid "Notes visible to the customer on the invoice..."
-msgstr "Notes visible to the customer on the invoice..."
+msgstr "Für den Kunden sichtbare Notizen auf der Rechnung..."
 
 msgid "Office"
 msgstr "Büro"
 
 msgid "Office / Branch"
-msgstr "Office / Branch"
+msgstr "Büro / Niederlassung"
 
 msgid "Oman"
 msgstr "Oman"
 
 msgid "Optional for individuals."
-msgstr "Optional for individuals."
+msgstr "Optional für Privatpersonen."
 
 msgid "Optional. Leave blank for individual clients."
-msgstr "Optional. Leave blank for individual clients."
+msgstr "Optional. Für Privatkunden leer lassen."
 
 msgid "Order Invoice Prefix"
-msgstr "Order Invoice Prefix"
+msgstr "Präfix der Bestellrechnung"
 
 msgid "Original due date: %s"
-msgstr "Original due date: %s"
+msgstr "Ursprüngliches Fälligkeitsdatum: %s"
 
 msgid "Outstanding"
 msgstr "Ausstehend"
@@ -971,10 +971,10 @@ msgid "PDF"
 msgstr "PDF"
 
 msgid "PDF Preview"
-msgstr "PDF Preview"
+msgstr "PDF-Vorschau"
 
 msgid "PDF generation is currently unavailable. The mPDF library is missing. Please ensure you are using the correct release ZIP or run \"composer install\"."
-msgstr "PDF generation is currently unavailable. The mPDF library is missing. Please ensure you are using the correct release ZIP or run \"composer install\"."
+msgstr "Die PDF-Erstellung ist derzeit nicht verfügbar. Die mPDF-Bibliothek fehlt. Stellen Sie sicher, dass Sie das richtige Release-ZIP verwenden oder führen Sie \"composer install\" aus."
 
 msgid "Paid"
 msgstr "Bezahlt"
@@ -989,10 +989,10 @@ msgid "Paraguay"
 msgstr "Paraguay"
 
 msgid "Parent Clients:"
-msgstr "Parent Clients:"
+msgstr "Übergeordnete Kunden:"
 
 msgid "Parent Invoices:"
-msgstr "Parent Invoices:"
+msgstr "Übergeordnete Rechnungen:"
 
 msgid "Pay Invoice"
 msgstr "Rechnung bezahlen"
@@ -1004,22 +1004,22 @@ msgid "Payment Method"
 msgstr "Zahlungsmethode"
 
 msgid "Payment Methods"
-msgstr "Payment Methods"
+msgstr "Zahlungsmethoden"
 
 msgid "Payment Reminder: Invoice %s"
-msgstr "Payment Reminder: Invoice %s"
+msgstr "Zahlungserinnerung: Rechnung %s"
 
 msgid "Payment methods available to select on each invoice."
-msgstr "Payment methods available to select on each invoice."
+msgstr "Zahlungsmethoden, die bei jeder Rechnung ausgewählt werden können."
 
 msgid "Payment terms, late fees, etc."
-msgstr "Payment terms, late fees, etc."
+msgstr "Zahlungsbedingungen, Mahngebühren usw."
 
 msgid "Pending payment"
-msgstr "Pending payment"
+msgstr "Zahlung ausstehend"
 
 msgid "Percentage (%)"
-msgstr "Percentage (%)"
+msgstr "Prozentsatz (%)"
 
 msgid "Peru"
 msgstr "Peru"
@@ -1031,46 +1031,46 @@ msgid "Phone"
 msgstr "Telefon"
 
 msgid "Phone Number"
-msgstr "Phone Number"
+msgstr "Telefonnummer"
 
 msgid "Please arrange payment at your earliest convenience."
-msgstr "Please arrange payment at your earliest convenience."
+msgstr "Bitte veranlassen Sie die Zahlung baldmöglichst."
 
 msgid "Please enter a valid URL."
-msgstr "Please enter a valid URL."
+msgstr "Bitte geben Sie eine gültige URL ein."
 
 msgid "Please enter a valid counter value (minimum 1)."
-msgstr "Please enter a valid counter value (minimum 1)."
+msgstr "Bitte geben Sie einen gültigen Zählerwert ein (mindestens 1)."
 
 msgid "Please enter a valid counter value."
-msgstr "Please enter a valid counter value."
+msgstr "Bitte geben Sie einen gültigen Zählerwert ein."
 
 msgid "Please enter a valid date."
-msgstr "Please enter a valid date."
+msgstr "Bitte geben Sie ein gültiges Datum ein."
 
 msgid "Please enter a valid email address."
 msgstr "Bitte eine gültige E-Mail-Adresse eingeben."
 
 msgid "Please enter a valid number."
-msgstr "Please enter a valid number."
+msgstr "Bitte geben Sie eine gültige Zahl ein."
 
 msgid "Please enter a valid value."
-msgstr "Please enter a valid value."
+msgstr "Bitte geben Sie einen gültigen Wert ein."
 
 msgid "Please fill in all required fields."
 msgstr "Bitte alle Pflichtfelder ausfüllen."
 
 msgid "Please find your invoice %s attached."
-msgstr "Please find your invoice %s attached."
+msgstr "Ihre Rechnung %s finden Sie im Anhang."
 
 msgid "Please select a client."
-msgstr "Please select a client."
+msgstr "Bitte wählen Sie einen Kunden aus."
 
 msgid "Please select a valid option."
-msgstr "Please select a valid option."
+msgstr "Bitte wählen Sie eine gültige Option."
 
 msgid "Plugin Activation Error"
-msgstr "Plugin Activation Error"
+msgstr "Fehler bei der Plugin-Aktivierung"
 
 msgid "Poland"
 msgstr "Poland"
@@ -1079,22 +1079,22 @@ msgid "Portugal"
 msgstr "Portugal"
 
 msgid "Preview"
-msgstr "Preview"
+msgstr "Vorschau"
 
 msgid "Preview failed — invoice not found or template missing."
-msgstr "Preview failed — invoice not found or template missing."
+msgstr "Vorschau fehlgeschlagen – Rechnung nicht gefunden oder Vorlage fehlt."
 
 msgid "Preview failed."
-msgstr "Preview failed."
+msgstr "Vorschau fehlgeschlagen."
 
 msgid "Preview unavailable"
-msgstr "Preview unavailable"
+msgstr "Vorschau nicht verfügbar"
 
 msgid "Private notes for your reference..."
-msgstr "Private notes for your reference..."
+msgstr "Private Notizen für Ihre Unterlagen..."
 
 msgid "Processing"
-msgstr "Processing"
+msgstr "In Bearbeitung"
 
 msgid "Puerto Rico"
 msgstr "Puerto Rico"
@@ -1115,25 +1115,25 @@ msgid "Recent Invoices"
 msgstr "Aktuelle Rechnungen"
 
 msgid "Reminder sent successfully."
-msgstr "Reminder sent successfully."
+msgstr "Erinnerung erfolgreich gesendet."
 
 msgid "Remove"
-msgstr "Remove"
+msgstr "Entfernen"
 
 msgid "Remove Image"
-msgstr "Remove Image"
+msgstr "Bild entfernen"
 
 msgid "Required for EU VAT reverse charge and tax compliance."
-msgstr "Required for EU VAT reverse charge and tax compliance."
+msgstr "Erforderlich für EU-Umsatzsteuer-Reverse-Charge und Steuerkonformität."
 
 msgid "Reset Invoice Counter"
-msgstr "Reset Invoice Counter"
+msgstr "Rechnungszähler zurücksetzen"
 
 msgid "Right"
-msgstr "Right"
+msgstr "Rechts"
 
 msgid "Right Column Title"
-msgstr "Right Column Title"
+msgstr "Titel der rechten Spalte"
 
 msgid "Romania"
 msgstr "Romania"
@@ -1160,40 +1160,40 @@ msgid "Saving..."
 msgstr "Speichern..."
 
 msgid "Search Clients"
-msgstr "Search Clients"
+msgstr "Kunden suchen"
 
 msgid "Search Invoices"
-msgstr "Search Invoices"
+msgstr "Rechnungen suchen"
 
 msgid "Search clients..."
-msgstr "Search clients..."
+msgstr "Kunden suchen..."
 
 msgid "Search invoices..."
-msgstr "Search invoices..."
+msgstr "Rechnungen suchen..."
 
 msgid "Section Order"
-msgstr "Section Order"
+msgstr "Abschnittsreihenfolge"
 
 msgid "Section Visibility"
-msgstr "Section Visibility"
+msgstr "Abschnittssichtbarkeit"
 
 msgid "Security Error"
-msgstr "Security Error"
+msgstr "Sicherheitsfehler"
 
 msgid "Security check failed."
 msgstr "Sicherheitsprüfung fehlgeschlagen."
 
 msgid "Security check failed. Please refresh the page and try again."
-msgstr "Security check failed. Please refresh the page and try again."
+msgstr "Sicherheitsprüfung fehlgeschlagen. Bitte aktualisieren Sie die Seite und versuchen Sie es erneut."
 
 msgid "Security check failed. Please try again."
-msgstr "Security check failed. Please try again."
+msgstr "Sicherheitsprüfung fehlgeschlagen. Bitte versuchen Sie es erneut."
 
 msgid "Select Existing Client"
 msgstr "Vorhandenen Kunden auswählen"
 
 msgid "Select Image"
-msgstr "Select Image"
+msgstr "Bild auswählen"
 
 msgid "Select a client..."
 msgstr "Kunden auswählen..."
@@ -1202,16 +1202,16 @@ msgid "Select a country..."
 msgstr "Land auswählen..."
 
 msgid "Select a logo from the media library (JPG, PNG, SVG). Recommended size: 300x100px."
-msgstr "Select a logo from the media library (JPG, PNG, SVG). Recommended size: 300x100px."
+msgstr "Wählen Sie ein Logo aus der Medienbibliothek (JPG, PNG, SVG). Empfohlene Größe: 300x100px."
 
 msgid "Select..."
 msgstr "Auswählen..."
 
 msgid "Send Email"
-msgstr "Send Email"
+msgstr "E-Mail senden"
 
 msgid "Send to Client"
-msgstr "Send to Client"
+msgstr "An Kunden senden"
 
 msgid "Sent"
 msgstr "Gesendet"
@@ -1220,22 +1220,22 @@ msgid "Serbia"
 msgstr "Serbia"
 
 msgid "Set Counter"
-msgstr "Set Counter"
+msgstr "Zähler setzen"
 
 msgid "Set Invoice Counter"
-msgstr "Set Invoice Counter"
+msgstr "Rechnungszähler setzen"
 
 msgid "Settings"
 msgstr "Einstellungen"
 
 msgid "Signature"
-msgstr "Signature"
+msgstr "Unterschrift"
 
 msgid "Signature Fields"
-msgstr "Signature Fields"
+msgstr "Unterschriftsfelder"
 
 msgid "Signature block"
-msgstr "Signature block"
+msgstr "Unterschriftsblock"
 
 msgid "Signatures"
 msgstr "Unterschriften"
@@ -1304,34 +1304,34 @@ msgid "Tax ID / VAT Number"
 msgstr "Steuer-ID / USt-IdNr."
 
 msgid "Tax rate deleted successfully."
-msgstr "Tax rate deleted successfully."
+msgstr "Steuersatz erfolgreich gelöscht."
 
 msgid "Tax rate name is required."
-msgstr "Tax rate name is required."
+msgstr "Der Name des Steuersatzes ist erforderlich."
 
 msgid "Tax rate not found."
-msgstr "Tax rate not found."
+msgstr "Steuersatz nicht gefunden."
 
 msgid "Tax rate saved successfully."
-msgstr "Tax rate saved successfully."
+msgstr "Steuersatz erfolgreich gespeichert."
 
 msgid "Terms & Conditions"
-msgstr "Terms & Conditions"
+msgstr "Allgemeine Geschäftsbedingungen"
 
 msgid "Thailand"
 msgstr "Thailand"
 
 msgid "These actions can affect your invoice data. Use with caution."
-msgstr "These actions can affect your invoice data. Use with caution."
+msgstr "Diese Aktionen können Ihre Rechnungsdaten beeinflussen. Mit Vorsicht verwenden."
 
 msgid "These notes will appear on the invoice."
-msgstr "These notes will appear on the invoice."
+msgstr "Diese Notizen erscheinen auf der Rechnung."
 
 msgid "This field is required."
-msgstr "This field is required."
+msgstr "Dieses Feld ist erforderlich."
 
 msgid "This is a friendly reminder that invoice %1$s for %2$s %3$s is overdue."
-msgstr "This is a friendly reminder that invoice %1$s for %2$s %3$s is overdue."
+msgstr "Dies ist eine freundliche Erinnerung, dass die Rechnung %1$s über %2$s %3$s überfällig ist."
 
 msgid "Total"
 msgstr "Gesamt"
@@ -1349,10 +1349,10 @@ msgid "Total Revenue"
 msgstr "Gesamtumsatz"
 
 msgid "Totals"
-msgstr "Totals"
+msgstr "Summen"
 
 msgid "Trigger on Order Status"
-msgstr "Trigger on Order Status"
+msgstr "Auslösen bei Bestellstatus"
 
 msgid "Tunisia"
 msgstr "Tunisia"
@@ -1364,7 +1364,7 @@ msgid "Ukraine"
 msgstr "Ukraine"
 
 msgid "Unauthorized."
-msgstr "Unauthorized."
+msgstr "Nicht autorisiert."
 
 msgid "Unit Price"
 msgstr "Einzelpreis"
@@ -1379,43 +1379,43 @@ msgid "United States"
 msgstr "Vereinigte Staaten"
 
 msgid "Unknown Client"
-msgstr "Unknown Client"
+msgstr "Unbekannter Kunde"
 
 msgid "Unnamed Client"
-msgstr "Unnamed Client"
+msgstr "Unbenannter Kunde"
 
 msgid "Up to date"
-msgstr "Up to date"
+msgstr "Aktuell"
 
 msgid "Updating..."
-msgstr "Updating..."
+msgstr "Wird aktualisiert..."
 
 msgid "Uruguay"
 msgstr "Uruguay"
 
 msgid "Use this image"
-msgstr "Use this image"
+msgstr "Dieses Bild verwenden"
 
 msgid "Used when \"WooCommerce Order Number\" format is selected (e.g. ORD-1234)."
-msgstr "Used when \"WooCommerce Order Number\" format is selected (e.g. ORD-1234)."
+msgstr "Wird verwendet, wenn das Format \"WooCommerce-Bestellnummer\" ausgewählt ist (z. B. ORD-1234)."
 
 msgid "Uzbekistan"
 msgstr "Uzbekistan"
 
 msgid "VAT 0%"
-msgstr "VAT 0%"
+msgstr "MwSt. 0%"
 
 msgid "VAT 20%"
-msgstr "VAT 20%"
+msgstr "MwSt. 20%"
 
 msgid "VAT 9%"
-msgstr "VAT 9%"
+msgstr "MwSt. 9%"
 
 msgid "VAT exempt — Article 70 VATA."
 msgstr "MwSt.-befreit — Artikel 70 VATA."
 
 msgid "Value"
-msgstr "Value"
+msgstr "Wert"
 
 msgid "Venezuela"
 msgstr "Venezuela"
@@ -1424,76 +1424,76 @@ msgid "Vietnam"
 msgstr "Vietnam"
 
 msgid "View All"
-msgstr "View All"
+msgstr "Alle anzeigen"
 
 msgid "View All Invoices"
-msgstr "View All Invoices"
+msgstr "Alle Rechnungen anzeigen"
 
 msgid "View Client"
-msgstr "View Client"
+msgstr "Kunden anzeigen"
 
 msgid "View Invoice"
-msgstr "View Invoice"
+msgstr "Rechnung anzeigen"
 
 msgid "Visible Sections"
-msgstr "Visible Sections"
+msgstr "Sichtbare Abschnitte"
 
 msgid "WooCommerce Integration"
-msgstr "WooCommerce Integration"
+msgstr "WooCommerce-Integration"
 
 msgid "WooCommerce Order Number with Prefix (e.g. ORD-1234)"
-msgstr "WooCommerce Order Number with Prefix (e.g. ORD-1234)"
+msgstr "WooCommerce-Bestellnummer mit Präfix (z. B. ORD-1234)"
 
 msgid "WooCommerce Orders"
-msgstr "WooCommerce Orders"
+msgstr "WooCommerce-Bestellungen"
 
 msgid "WooCommerce is not active."
-msgstr "WooCommerce is not active."
+msgstr "WooCommerce ist nicht aktiv."
 
 msgid "WooCommerce is not installed or activated. Install WooCommerce to use these integration settings."
-msgstr "WooCommerce is not installed or activated. Install WooCommerce to use these integration settings."
+msgstr "WooCommerce ist nicht installiert oder aktiviert. Installieren Sie WooCommerce, um diese Integrationseinstellungen zu verwenden."
 
 msgid "Yemen"
 msgstr "Yemen"
 
 msgid "You do not have permission to access this page."
-msgstr "You do not have permission to access this page."
+msgstr "Sie haben keine Berechtigung, auf diese Seite zuzugreifen."
 
 msgid "You do not have permission to delete clients."
-msgstr "You do not have permission to delete clients."
+msgstr "Sie haben keine Berechtigung, Kunden zu löschen."
 
 msgid "You do not have permission to delete invoices."
-msgstr "You do not have permission to delete invoices."
+msgstr "Sie haben keine Berechtigung, Rechnungen zu löschen."
 
 msgid "You do not have permission to edit clients."
-msgstr "You do not have permission to edit clients."
+msgstr "Sie haben keine Berechtigung, Kunden zu bearbeiten."
 
 msgid "You do not have permission to edit invoices."
-msgstr "You do not have permission to edit invoices."
+msgstr "Sie haben keine Berechtigung, Rechnungen zu bearbeiten."
 
 msgid "You do not have permission to manage InvoiceForge settings."
-msgstr "You do not have permission to manage InvoiceForge settings."
+msgstr "Sie haben keine Berechtigung, InvoiceForge-Einstellungen zu verwalten."
 
 msgid "You do not have permission to manage clients."
-msgstr "You do not have permission to manage clients."
+msgstr "Sie haben keine Berechtigung, Kunden zu verwalten."
 
 msgid "You do not have permission to manage invoices."
-msgstr "You do not have permission to manage invoices."
+msgstr "Sie haben keine Berechtigung, Rechnungen zu verwalten."
 
 msgid "You do not have permission to manage tax rates."
-msgstr "You do not have permission to manage tax rates."
+msgstr "Sie haben keine Berechtigung, Steuersätze zu verwalten."
 
 msgid "You do not have permission to perform this action."
-msgstr "You do not have permission to perform this action."
+msgstr "Sie haben keine Berechtigung, diese Aktion auszuführen."
 
 msgid "You do not have permission to preview invoices."
-msgstr "You do not have permission to preview invoices."
+msgstr "Sie haben keine Berechtigung, Rechnungen in der Vorschau anzuzeigen."
 
 msgid "You do not have permission to view clients."
-msgstr "You do not have permission to view clients."
+msgstr "Sie haben keine Berechtigung, Kunden anzuzeigen."
 
 msgid "You do not have permission to view invoices."
-msgstr "You do not have permission to view invoices."
+msgstr "Sie haben keine Berechtigung, Rechnungen anzuzeigen."
 
 msgid "ZIP / Postal Code"
 msgstr "Postleitzahl"
@@ -1507,184 +1507,184 @@ msgstr "Zimbabwe"
 
 msgctxt "Add New on Toolbar"
 msgid "Client"
-msgstr "Client"
+msgstr "Kunde"
 
 msgctxt "Add New on Toolbar"
 msgid "Invoice"
-msgstr "Invoice"
+msgstr "Rechnung"
 
 msgctxt "Admin Menu text"
 msgid "Invoice"
-msgstr "Invoice"
+msgstr "Rechnung"
 
 msgctxt "Admin Menu text"
 msgid "Clients"
-msgstr "Clients"
+msgstr "Kunden"
 
 msgctxt "Admin Menu text"
 msgid "Invoices"
-msgstr "Invoices"
+msgstr "Rechnungen"
 
 msgctxt "Overrides the \"Featured Image\" phrase"
 msgid "Invoices"
-msgstr "Invoices"
+msgstr "Rechnungen"
 
 msgctxt "Overrides the \"Featured Image\" phrase"
 msgid "Client Photo"
-msgstr "Client Photo"
+msgstr "Kundenfoto"
 
 msgctxt "Overrides the \"Featured Image\" phrase"
 msgid "Invoice Logo"
-msgstr "Invoice Logo"
+msgstr "Rechnungslogo"
 
 msgctxt "Overrides the \"Insert into post\" phrase"
 msgid "Invoice Logo"
-msgstr "Invoice Logo"
+msgstr "Rechnungslogo"
 
 msgctxt "Overrides the \"Insert into post\" phrase"
 msgid "Insert into client"
-msgstr "Insert into client"
+msgstr "In Kunden einfügen"
 
 msgctxt "Overrides the \"Insert into post\" phrase"
 msgid "Insert into invoice"
-msgstr "Insert into invoice"
+msgstr "In Rechnung einfügen"
 
 msgctxt "Overrides the \"Remove featured image\" phrase"
 msgid "Insert into invoice"
-msgstr "Insert into invoice"
+msgstr "In Rechnung einfügen"
 
 msgctxt "Overrides the \"Remove featured image\" phrase"
 msgid "Remove client photo"
-msgstr "Remove client photo"
+msgstr "Kundenfoto entfernen"
 
 msgctxt "Overrides the \"Remove featured image\" phrase"
 msgid "Remove invoice logo"
-msgstr "Remove invoice logo"
+msgstr "Rechnungslogo entfernen"
 
 msgctxt "Overrides the \"Set featured image\" phrase"
 msgid "Remove invoice logo"
-msgstr "Remove invoice logo"
+msgstr "Rechnungslogo entfernen"
 
 msgctxt "Overrides the \"Set featured image\" phrase"
 msgid "Set client photo"
-msgstr "Set client photo"
+msgstr "Kundenfoto festlegen"
 
 msgctxt "Overrides the \"Set featured image\" phrase"
 msgid "Set invoice logo"
-msgstr "Set invoice logo"
+msgstr "Rechnungslogo festlegen"
 
 msgctxt "Overrides the \"Uploaded to this post\" phrase"
 msgid "Set invoice logo"
-msgstr "Set invoice logo"
+msgstr "Rechnungslogo festlegen"
 
 msgctxt "Overrides the \"Uploaded to this post\" phrase"
 msgid "Uploaded to this client"
-msgstr "Uploaded to this client"
+msgstr "Zu diesem Kunden hochgeladen"
 
 msgctxt "Overrides the \"Uploaded to this post\" phrase"
 msgid "Uploaded to this invoice"
-msgstr "Uploaded to this invoice"
+msgstr "Zu dieser Rechnung hochgeladen"
 
 msgctxt "Overrides the \"Use as featured image\" phrase"
 msgid "Uploaded to this invoice"
-msgstr "Uploaded to this invoice"
+msgstr "Zu dieser Rechnung hochgeladen"
 
 msgctxt "Overrides the \"Use as featured image\" phrase"
 msgid "Use as client photo"
-msgstr "Use as client photo"
+msgstr "Als Kundenfoto verwenden"
 
 msgctxt "Overrides the \"Use as featured image\" phrase"
 msgid "Use as invoice logo"
-msgstr "Use as invoice logo"
+msgstr "Als Rechnungslogo verwenden"
 
 msgctxt "Post type general name"
 msgid "Use as invoice logo"
-msgstr "Use as invoice logo"
+msgstr "Als Rechnungslogo verwenden"
 
 msgctxt "Post type general name"
 msgid "Clients"
-msgstr "Clients"
+msgstr "Kunden"
 
 msgctxt "Post type general name"
 msgid "Invoices"
-msgstr "Invoices"
+msgstr "Rechnungen"
 
 msgctxt "Post type singular name"
 msgid "Invoices"
-msgstr "Invoices"
+msgstr "Rechnungen"
 
 msgctxt "Post type singular name"
 msgid "Client"
-msgstr "Client"
+msgstr "Kunde"
 
 msgctxt "Post type singular name"
 msgid "Invoice"
-msgstr "Invoice"
+msgstr "Rechnung"
 
 msgctxt "Screen reader text"
 msgid "Invoice"
-msgstr "Invoice"
+msgstr "Rechnung"
 
 msgctxt "Screen reader text"
 msgid "Clients list"
-msgstr "Clients list"
+msgstr "Kundenliste"
 
 msgctxt "Screen reader text"
 msgid "Clients list navigation"
-msgstr "Clients list navigation"
+msgstr "Navigation der Kundenliste"
 
 msgctxt "Screen reader text"
 msgid "Filter clients list"
-msgstr "Filter clients list"
+msgstr "Kundenliste filtern"
 
 msgctxt "Screen reader text"
 msgid "Filter invoices list"
-msgstr "Filter invoices list"
+msgstr "Rechnungsliste filtern"
 
 msgctxt "Screen reader text"
 msgid "Invoices list"
-msgstr "Invoices list"
+msgstr "Rechnungsliste"
 
 msgctxt "Screen reader text"
 msgid "Invoices list navigation"
-msgstr "Invoices list navigation"
+msgstr "Navigation der Rechnungsliste"
 
 msgctxt "The post type archive label"
 msgid "Invoices list navigation"
-msgstr "Invoices list navigation"
+msgstr "Navigation der Rechnungsliste"
 
 msgctxt "The post type archive label"
 msgid "Client archives"
-msgstr "Client archives"
+msgstr "Kundenarchiv"
 
 msgctxt "The post type archive label"
 msgid "Invoice archives"
-msgstr "Invoice archives"
+msgstr "Rechnungsarchiv"
 
 msgid "Invoice archives"
-msgstr "Invoice archives"
+msgstr "Rechnungsarchiv"
 
 msgid "e.g., 100"
-msgstr "e.g., 100"
+msgstr "z. B. 100"
 
 msgid "e.g., 123456789"
-msgstr "e.g., 123456789"
+msgstr "z. B. 123456789"
 
 msgid "e.g., GB123456789"
-msgstr "e.g., GB123456789"
+msgstr "z. B. DE123456789"
 
 msgid "e.g., HQ, Branch 1"
-msgstr "e.g., HQ, Branch 1"
+msgstr "z. B. Zentrale, Niederlassung 1"
 
 msgid "e.g., Issued by"
-msgstr "e.g., Issued by"
+msgstr "z. B. Ausgestellt von"
 
 msgid "e.g., Received by"
-msgstr "e.g., Received by"
+msgstr "z. B. Empfangen von"
 
 msgid "e.g., Website Development - March 2025"
-msgstr "e.g., Website Development - March 2025"
+msgstr "z. B. Webentwicklung - März 2025"
 
 msgid "email@example.com"
-msgstr "email@example.com"
+msgstr "email@beispiel.de"
 

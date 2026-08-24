@@ -34,14 +34,36 @@ $potContent = file_get_contents($langDir . '/invoiceforge.pot');
 $potStrings = parsePoFile($potContent);
 echo "POT: " . count($potStrings) . " strings\n";
 
-// Load Bulgarian translations (the primary non-English language)
-$bgTranslations = [];
-$bgFile = $root . '/scripts/translations-bg_BG.php';
-if (file_exists($bgFile)) {
-    $bgTranslations = include $bgFile;
-    $bgTranslations = $bgTranslations['bg_BG'] ?? [];
-    echo "Bulgarian translations loaded: " . count($bgTranslations) . " strings\n";
+// Load all translation data files
+$translationFiles = [
+    'bg_BG' => $root . '/scripts/translations-bg_BG.php',
+    'de_DE' => $root . '/scripts/translations-de_DE.php',
+    'es_ES' => $root . '/scripts/translations-es_ES.php',
+    'fr_FR' => $root . '/scripts/translations-fr_FR.php',
+    'it_IT' => $root . '/scripts/translations-it_IT.php',
+    'nl_NL' => $root . '/scripts/translations-nl_NL.php',
+    'pl_PL' => $root . '/scripts/translations-pl_PL.php',
+    'pt_PT' => $root . '/scripts/translations-pt_PT.php',
+    'ro_RO' => $root . '/scripts/translations-ro_RO.php',
+    'ru_RU' => $root . '/scripts/translations-ru_RU.php',
+];
+
+$allTranslations = [];
+foreach ($translationFiles as $lang => $file) {
+    if (file_exists($file)) {
+        $data = include $file;
+        $allTranslations[$lang] = $data[$lang] ?? [];
+        echo "$lang translations loaded: " . count($allTranslations[$lang]) . "\n";
+    } else {
+        $allTranslations[$lang] = [];
+        echo "$lang translations file MISSING\n";
+    }
 }
+
+// Load country names (shared across all languages)
+$countryFile = $root . '/scripts/countries.php';
+$countryNames = file_exists($countryFile) ? include $countryFile : [];
+echo "Country names loaded: " . count($countryNames) . "\n";
 
 foreach ($languages as $lang) {
     $poFile = $langDir . '/invoiceforge-' . $lang . '.po';
@@ -59,18 +81,28 @@ foreach ($languages as $lang) {
     $fallbackCount = 0;
 
     foreach ($potStrings as $key => $entry) {
-        if (isset($existingStrings[$key]) && !empty($existingStrings[$key]['msgstr'])) {
+        if (isset($existingStrings[$key]) && !empty($existingStrings[$key]['msgstr']) && $existingStrings[$key]['msgstr'] !== $entry['msgid']) {
+            // Keep existing native translation
             $merged[$key] = $existingStrings[$key];
             $preservedCount++;
-        } elseif ($lang === 'bg_BG' && isset($bgTranslations[$entry['msgid']])) {
+        } elseif (isset($allTranslations[$lang][$entry['msgid']])) {
+            // Use provided native translation
             $merged[$key] = [
                 'msgid' => $entry['msgid'],
-                'msgstr' => $bgTranslations[$entry['msgid']],
+                'msgstr' => $allTranslations[$lang][$entry['msgid']],
                 'context' => $entry['context'] ?? null,
             ];
             $newCount++;
+        } elseif (isset($countryNames[$entry['msgid']])) {
+            // Country name (kept in English, which is the source language)
+            $merged[$key] = [
+                'msgid' => $entry['msgid'],
+                'msgstr' => $entry['msgid'],
+                'context' => $entry['context'] ?? null,
+            ];
+            $fallbackCount++;
         } else {
-            // Fallback to English
+            // No translation available — fall back to English
             $merged[$key] = [
                 'msgid' => $entry['msgid'],
                 'msgstr' => $entry['msgid'],

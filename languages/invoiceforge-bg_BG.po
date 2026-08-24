@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: InvoiceForge 1.2.9\n"
 "Report-Msgid-Bugs-To: https://github.com/konchetobe/Invoice-Forge/issues\n"
-"POT-Creation-Date: 2026-07-20 11:03:25+0000\n"
-"PO-Revision-Date: 2026-07-20 11:03:25+0000\n"
+"POT-Creation-Date: 2026-08-24 11:42:18+0000\n"
+"PO-Revision-Date: 2026-08-24 11:42:18+0000\n"
 "Last-Translator: InvoiceForge Team\n"
 "Language-Team: Bulgarian\n"
 "Language: bg_BG\n"
@@ -17,34 +17,34 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "%1$s must be after %2$s."
-msgstr "%1$s must be after %2$s."
+msgstr "%1$s трябва да е след %2$s."
 
 msgid "%1$s must be at least %2$d characters."
-msgstr "%1$s must be at least %2$d characters."
+msgstr "%1$s трябва да е поне %2$d знака."
 
 msgid "%1$s must be at least %2$s."
-msgstr "%1$s must be at least %2$s."
+msgstr "%1$s трябва да е поне %2$s."
 
 msgid "%1$s must not exceed %2$d characters."
-msgstr "%1$s must not exceed %2$d characters."
+msgstr "%1$s не трябва да надвишава %2$d знака."
 
 msgid "%1$s must not exceed %2$s."
-msgstr "%1$s must not exceed %2$s."
+msgstr "%1$s не трябва да надвишава %2$s."
 
 msgid "%s cannot be negative."
-msgstr "%s cannot be negative."
+msgstr "%s не може да е отрицателно."
 
 msgid "%s is required."
-msgstr "%s is required."
+msgstr "%s е задължително."
 
 msgid "%s must be a positive number."
-msgstr "%s must be a positive number."
+msgstr "%s трябва да е положително число."
 
 msgid "(Not yet assigned)"
-msgstr "(Not yet assigned)"
+msgstr "(Още не е зададено)"
 
 msgid "(not visible on invoice)"
-msgstr "(not visible on invoice)"
+msgstr "(не се вижда на фактурата)"
 
 msgid "+ Add Address (Optional)"
 msgstr "+ Добави адрес (по желание)"
@@ -56,19 +56,19 @@ msgid "+ Add Signature Field"
 msgstr "+ Добавяне на поле за подпис"
 
 msgid "+1 (555) 123-4567"
-msgstr "+1 (555) 123-4567"
+msgstr "+359 555 123 456"
 
 msgid "123 Main Street"
-msgstr "123 Main Street"
+msgstr "ул. Главна 123"
 
 msgid "123 Main Street, Suite 100"
-msgstr "123 Main Street, Suite 100"
+msgstr "ул. Главна 123, ап. 100"
 
 msgid "Accent Color"
 msgstr "Акцентен цвят"
 
 msgid "Access Denied"
-msgstr "Access Denied"
+msgstr "Достъпът е отказан"
 
 msgid "Account Holder"
 msgstr "Титуляр на сметка"
@@ -92,13 +92,13 @@ msgid "Add New Invoice"
 msgstr "Добавяне на нова фактура"
 
 msgid "Add a client first"
-msgstr "Add a client first"
+msgstr "Първо добавете клиент"
 
 msgid "Add any notes or terms for this invoice..."
-msgstr "Add any notes or terms for this invoice..."
+msgstr "Добавете бележки или условия към тази фактура..."
 
 msgid "Add your first client to start creating invoices."
-msgstr "Add your first client to start creating invoices."
+msgstr "Добавете първия си клиент, за да започнете да създавате фактури."
 
 msgid "Address"
 msgstr "Адрес"
@@ -131,19 +131,19 @@ msgid "Amount Due:"
 msgstr "Дължима сума:"
 
 msgid "An error occurred while generating the PDF."
-msgstr "An error occurred while generating the PDF."
+msgstr "Възникна грешка при генерирането на PDF."
 
 msgid "An error occurred while previewing the PDF."
-msgstr "An error occurred while previewing the PDF."
+msgstr "Възникна грешка при прегледа на PDF."
 
 msgid "An error occurred. Please try again."
 msgstr "Възникна грешка. Моля, опитайте отново."
 
 msgid "An unexpected error occurred."
-msgstr "An unexpected error occurred."
+msgstr "Възникна неочаквана грешка."
 
 msgid "An unexpected error occurred. Please try again."
-msgstr "An unexpected error occurred. Please try again."
+msgstr "Възникна неочаквана грешка. Моля, опитайте отново."
 
 msgid "Andorra"
 msgstr "Andorra"
@@ -152,7 +152,7 @@ msgid "Angola"
 msgstr "Angola"
 
 msgid "Appearance"
-msgstr "Appearance"
+msgstr "Външен вид"
 
 msgid "Are you sure you want to delete this client?"
 msgstr "Сигурни ли сте, че искате да изтриете този клиент?"
@@ -191,13 +191,13 @@ msgid "Auto-Send Invoice Email"
 msgstr "Автоматично изпращане на фактура по имейл"
 
 msgid "Auto-generated on save"
-msgstr "Auto-generated on save"
+msgstr "Автоматично генериран при запазване"
 
 msgid "Automatically email the PDF invoice to the customer when generated"
-msgstr "Automatically email the PDF invoice to the customer when generated"
+msgstr "Автоматично изпращане на PDF фактурата до клиента при генериране"
 
 msgid "Automatically generate invoices from WooCommerce orders"
-msgstr "Automatically generate invoices from WooCommerce orders"
+msgstr "Автоматично генериране на фактури от поръчки на WooCommerce"
 
 msgid "Available Methods"
 msgstr "Налични методи"
@@ -317,7 +317,7 @@ msgid "Company name is required for company clients."
 msgstr "Името на фирмата е задължително за корпоративни клиенти."
 
 msgid "Company or Organization (Optional)"
-msgstr "Company or Organization (Optional)"
+msgstr "Фирма или организация (по избор)"
 
 msgid "Company or Organization name"
 msgstr "Име на фирма или организация"
@@ -365,7 +365,7 @@ msgid "Currency"
 msgstr "Валута"
 
 msgid "Current counter: %d"
-msgstr "Current counter: %d"
+msgstr "Текущ брояч: %d"
 
 msgid "Custom Invoices"
 msgstr "Потребителски фактури"
@@ -389,10 +389,10 @@ msgid "Date"
 msgstr "Дата"
 
 msgid "Date cannot be in the past."
-msgstr "Date cannot be in the past."
+msgstr "Датата не може да е в миналото."
 
 msgid "Dear %s,"
-msgstr "Dear %s,"
+msgstr "Уважаеми(а) %s,"
 
 msgid "Delete"
 msgstr "Изтрий"
@@ -434,7 +434,7 @@ msgid "Draft"
 msgstr "Чернова"
 
 msgid "Drag sections to reorder them on the invoice PDF."
-msgstr "Drag sections to reorder them on the invoice PDF."
+msgstr "Плъзнете секциите, за да ги пренаредите в PDF на фактурата."
 
 msgid "Drag to reorder"
 msgstr "Плъзнете за пренареждане"
@@ -470,7 +470,7 @@ msgid "Email"
 msgstr "Имейл"
 
 msgid "Email Address"
-msgstr "Email Address"
+msgstr "Имейл адрес"
 
 msgid "Email Preview"
 msgstr "Преглед на имейл"
@@ -479,7 +479,7 @@ msgid "Email is required for new clients."
 msgstr "Имейлът е задължителен за нови клиенти."
 
 msgid "Email sending functionality will be available in a future update. Configure your SMTP settings now to be ready."
-msgstr "Email sending functionality will be available in a future update. Configure your SMTP settings now to be ready."
+msgstr "Функцията за изпращане на имейли ще бъде налична в бъдеща актуализация. Конфигурирайте сега настройките си за SMTP."
 
 msgid "Email sent successfully."
 msgstr "Имейлът е изпратен успешно."

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: InvoiceForge 1.2.9\n"
 "Report-Msgid-Bugs-To: https://github.com/konchetobe/Invoice-Forge/issues\n"
-"POT-Creation-Date: 2026-07-20 11:03:25+0000\n"
-"PO-Revision-Date: 2026-07-20 11:03:25+0000\n"
+"POT-Creation-Date: 2026-08-24 11:42:19+0000\n"
+"PO-Revision-Date: 2026-08-24 11:42:19+0000\n"
 "Last-Translator: InvoiceForge Team\n"
 "Language-Team: Romanian\n"
 "Language: ro_RO\n"
@@ -17,88 +17,88 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
 
 msgid "%1$s must be after %2$s."
-msgstr "%1$s must be after %2$s."
+msgstr "%1$s trebuie să fie după %2$s."
 
 msgid "%1$s must be at least %2$d characters."
-msgstr "%1$s must be at least %2$d characters."
+msgstr "%1$s trebuie să aibă cel puțin %2$d caractere."
 
 msgid "%1$s must be at least %2$s."
-msgstr "%1$s must be at least %2$s."
+msgstr "%1$s trebuie să fie cel puțin %2$s."
 
 msgid "%1$s must not exceed %2$d characters."
-msgstr "%1$s must not exceed %2$d characters."
+msgstr "%1$s nu trebuie să depășească %2$d caractere."
 
 msgid "%1$s must not exceed %2$s."
-msgstr "%1$s must not exceed %2$s."
+msgstr "%1$s nu trebuie să depășească %2$s."
 
 msgid "%s cannot be negative."
-msgstr "%s cannot be negative."
+msgstr "%s nu poate fi negativ."
 
 msgid "%s is required."
-msgstr "%s is required."
+msgstr "%s este obligatoriu."
 
 msgid "%s must be a positive number."
-msgstr "%s must be a positive number."
+msgstr "%s trebuie să fie un număr pozitiv."
 
 msgid "(Not yet assigned)"
-msgstr "(Not yet assigned)"
+msgstr "(Nealocat încă)"
 
 msgid "(not visible on invoice)"
-msgstr "(not visible on invoice)"
+msgstr "(nu este vizibil pe factură)"
 
 msgid "+ Add Address (Optional)"
 msgstr "+ Adăugare adresă (opțional)"
 
 msgid "+ Add Method"
-msgstr "+ Add Method"
+msgstr "+ Adaugă metodă"
 
 msgid "+ Add Signature Field"
-msgstr "+ Add Signature Field"
+msgstr "+ Adaugă câmp de semnătură"
 
 msgid "+1 (555) 123-4567"
-msgstr "+1 (555) 123-4567"
+msgstr "+40 555 123 456"
 
 msgid "123 Main Street"
-msgstr "123 Main Street"
+msgstr "Str. Principală 123"
 
 msgid "123 Main Street, Suite 100"
-msgstr "123 Main Street, Suite 100"
+msgstr "Str. Principală 123, Suite 100"
 
 msgid "Accent Color"
-msgstr "Accent Color"
+msgstr "Culoare de accent"
 
 msgid "Access Denied"
-msgstr "Access Denied"
+msgstr "Acces interzis"
 
 msgid "Account Holder"
 msgstr "Titular cont"
 
 msgid "Actions"
-msgstr "Actions"
+msgstr "Acțiuni"
 
 msgid "Add Client"
-msgstr "Add Client"
+msgstr "Adaugă client"
 
 msgid "Add Item"
-msgstr "Add Item"
+msgstr "Adaugă articol"
 
 msgid "Add New"
-msgstr "Add New"
+msgstr "Adaugă nou"
 
 msgid "Add New Client"
 msgstr "Adăugare client nou"
 
 msgid "Add New Invoice"
-msgstr "Add New Invoice"
+msgstr "Adaugă factură nouă"
 
 msgid "Add a client first"
-msgstr "Add a client first"
+msgstr "Adaugă mai întâi un client"
 
 msgid "Add any notes or terms for this invoice..."
-msgstr "Add any notes or terms for this invoice..."
+msgstr "Adaugă note sau termeni pentru această factură..."
 
 msgid "Add your first client to start creating invoices."
-msgstr "Add your first client to start creating invoices."
+msgstr "Adaugă primul client pentru a începe să creezi facturi."
 
 msgid "Address"
 msgstr "Adresă"
@@ -116,34 +116,34 @@ msgid "All"
 msgstr "Toate"
 
 msgid "All Clients"
-msgstr "All Clients"
+msgstr "Toți clienții"
 
 msgid "All Invoices"
-msgstr "All Invoices"
+msgstr "Toate facturile"
 
 msgid "Amount"
-msgstr "Amount"
+msgstr "Sumă"
 
 msgid "Amount Due"
 msgstr "Sumă de plată"
 
 msgid "Amount Due:"
-msgstr "Amount Due:"
+msgstr "Sumă de plată:"
 
 msgid "An error occurred while generating the PDF."
-msgstr "An error occurred while generating the PDF."
+msgstr "A apărut o eroare la generarea PDF-ului."
 
 msgid "An error occurred while previewing the PDF."
-msgstr "An error occurred while previewing the PDF."
+msgstr "A apărut o eroare la previzualizarea PDF-ului."
 
 msgid "An error occurred. Please try again."
 msgstr "A apărut o eroare. Vă rugăm să încercați din nou."
 
 msgid "An unexpected error occurred."
-msgstr "An unexpected error occurred."
+msgstr "A apărut o eroare neașteptată."
 
 msgid "An unexpected error occurred. Please try again."
-msgstr "An unexpected error occurred. Please try again."
+msgstr "A apărut o eroare neașteptată. Încearcă din nou."
 
 msgid "Andorra"
 msgstr "Andorra"
@@ -152,22 +152,22 @@ msgid "Angola"
 msgstr "Angola"
 
 msgid "Appearance"
-msgstr "Appearance"
+msgstr "Aspect"
 
 msgid "Are you sure you want to delete this client?"
-msgstr "Are you sure you want to delete this client?"
+msgstr "Sigur dorești să ștergi acest client?"
 
 msgid "Are you sure you want to delete this invoice?"
-msgstr "Are you sure you want to delete this invoice?"
+msgstr "Sigur dorești să ștergi această factură?"
 
 msgid "Are you sure you want to delete this item?"
 msgstr "Sunteți sigur că doriți să ștergeți acest element?"
 
 msgid "Are you sure you want to reset the invoice counter? This cannot be undone."
-msgstr "Are you sure you want to reset the invoice counter? This cannot be undone."
+msgstr "Sigur dorești să resetezi contorul de facturi? Această acțiune nu poate fi anulată."
 
 msgid "Are you sure you want to send this invoice to the client via email?"
-msgstr "Are you sure you want to send this invoice to the client via email?"
+msgstr "Sigur dorești să trimiți această factură clientului prin e-mail?"
 
 msgid "Argentina"
 msgstr "Argentina"
@@ -179,7 +179,7 @@ msgid "Att To"
 msgstr "În atenția"
 
 msgid "Attention To"
-msgstr "Attention To"
+msgstr "În atenția"
 
 msgid "Australia"
 msgstr "Australia"
@@ -188,19 +188,19 @@ msgid "Austria"
 msgstr "Austria"
 
 msgid "Auto-Send Invoice Email"
-msgstr "Auto-Send Invoice Email"
+msgstr "Trimite factura prin e-mail automat"
 
 msgid "Auto-generated on save"
-msgstr "Auto-generated on save"
+msgstr "Generat automat la salvare"
 
 msgid "Automatically email the PDF invoice to the customer when generated"
-msgstr "Automatically email the PDF invoice to the customer when generated"
+msgstr "Trimite automat factura PDF clientului când este generată"
 
 msgid "Automatically generate invoices from WooCommerce orders"
-msgstr "Automatically generate invoices from WooCommerce orders"
+msgstr "Generează automat facturi din comenzile WooCommerce"
 
 msgid "Available Methods"
-msgstr "Available Methods"
+msgstr "Metode disponibile"
 
 msgid "Azerbaijan"
 msgstr "Azerbaijan"
@@ -224,7 +224,7 @@ msgid "Bank"
 msgstr "Bancă"
 
 msgid "Bank Details"
-msgstr "Bank Details"
+msgstr "Detalii bancare"
 
 msgid "Belarus"
 msgstr "Belarus"
@@ -269,7 +269,7 @@ msgid "Cancelled"
 msgstr "Anulată"
 
 msgid "Cannot delete client with %d invoice(s). Please delete or reassign the invoices first."
-msgstr "Cannot delete client with %d invoice(s). Please delete or reassign the invoices first."
+msgstr "Nu poți șterge un client cu %d factură(i). Șterge sau realocă mai întâi facturile."
 
 msgid "Chile"
 msgstr "Chile"
@@ -284,10 +284,10 @@ msgid "Client"
 msgstr "Client"
 
 msgid "Client Information"
-msgstr "Client Information"
+msgstr "Informații despre client"
 
 msgid "Client Name"
-msgstr "Client Name"
+msgstr "Nume client"
 
 msgid "Client created successfully."
 msgstr "Clientul a fost creat cu succes."
@@ -296,10 +296,10 @@ msgid "Client deleted successfully."
 msgstr "Clientul a fost șters cu succes."
 
 msgid "Client is required. Select an existing client or add new client details."
-msgstr "Client is required. Select an existing client or add new client details."
+msgstr "Clientul este obligatoriu. Selectează un client existent sau adaugă datele unui client nou."
 
 msgid "Client not found."
-msgstr "Client not found."
+msgstr "Client negăsit."
 
 msgid "Client updated successfully."
 msgstr "Clientul a fost actualizat cu succes."
@@ -314,28 +314,28 @@ msgid "Company"
 msgstr "Societate"
 
 msgid "Company name is required for company clients."
-msgstr "Company name is required for company clients."
+msgstr "Numele companiei este obligatoriu pentru clienții companii."
 
 msgid "Company or Organization (Optional)"
-msgstr "Company or Organization (Optional)"
+msgstr "Companie sau organizație (opțional)"
 
 msgid "Company or Organization name"
-msgstr "Company or Organization name"
+msgstr "Numele companiei sau organizației"
 
 msgid "Completed"
-msgstr "Completed"
+msgstr "Finalizat"
 
 msgid "Configure the fields that appear in the signature block."
-msgstr "Configure the fields that appear in the signature block."
+msgstr "Configurează câmpurile care apar în blocul de semnătură."
 
 msgid "Contact Information"
-msgstr "Contact Information"
+msgstr "Informații de contact"
 
 msgid "Contact person (МОЛ) for company clients. For individuals, this can be left empty."
-msgstr "Contact person (МОЛ) for company clients. For individuals, this can be left empty."
+msgstr "Persoană de contact (МОЛ) pentru clienții companii. Pentru persoane fizice poate rămâne gol."
 
 msgid "Contact person name"
-msgstr "Contact person name"
+msgstr "Numele persoanei de contact"
 
 msgid "Costa Rica"
 msgstr "Costa Rica"
@@ -350,7 +350,7 @@ msgid "Create Invoice"
 msgstr "Creare factură"
 
 msgid "Create your first invoice to get started."
-msgstr "Create your first invoice to get started."
+msgstr "Creează prima factură pentru a începe."
 
 msgid "Created:"
 msgstr "Creată:"
@@ -365,13 +365,13 @@ msgid "Currency"
 msgstr "Monedă"
 
 msgid "Current counter: %d"
-msgstr "Current counter: %d"
+msgstr "Contor curent: %d"
 
 msgid "Custom Invoices"
-msgstr "Custom Invoices"
+msgstr "Facturi personalizate"
 
 msgid "Customer Notes"
-msgstr "Customer Notes"
+msgstr "Note client"
 
 msgid "Cyprus"
 msgstr "Cyprus"
@@ -380,7 +380,7 @@ msgid "Czech Republic"
 msgstr "Czech Republic"
 
 msgid "Danger Zone"
-msgstr "Danger Zone"
+msgstr "Zonă de pericol"
 
 msgid "Dashboard"
 msgstr "Tablou de bord"
@@ -389,10 +389,10 @@ msgid "Date"
 msgstr "Data"
 
 msgid "Date cannot be in the past."
-msgstr "Date cannot be in the past."
+msgstr "Data nu poate fi în trecut."
 
 msgid "Dear %s,"
-msgstr "Dear %s,"
+msgstr "Stimate/Stimată %s,"
 
 msgid "Delete"
 msgstr "Ștergere"
@@ -410,34 +410,34 @@ msgid "Description"
 msgstr "Denumire"
 
 msgid "Disc.%"
-msgstr "Disc.%"
+msgstr "Red. %"
 
 msgid "Disc.Amt"
 msgstr "Val.disc."
 
 msgid "Discount"
-msgstr "Discount"
+msgstr "Reducere"
 
 msgid "Discount row in totals"
-msgstr "Discount row in totals"
+msgstr "Rând de reducere în totaluri"
 
 msgid "Doe"
-msgstr "Doe"
+msgstr "Popescu"
 
 msgid "Dominican Republic"
 msgstr "Dominican Republic"
 
 msgid "Download PDF"
-msgstr "Download PDF"
+msgstr "Descarcă PDF"
 
 msgid "Draft"
 msgstr "Ciornă"
 
 msgid "Drag sections to reorder them on the invoice PDF."
-msgstr "Drag sections to reorder them on the invoice PDF."
+msgstr "Trage secțiunile pentru a le reordona în PDF-ul facturii."
 
 msgid "Drag to reorder"
-msgstr "Drag to reorder"
+msgstr "Trage pentru a reordona"
 
 msgid "Due"
 msgstr "Scadent"
@@ -446,7 +446,7 @@ msgid "Due Date"
 msgstr "Data scadenței"
 
 msgid "Due date cannot be before invoice date."
-msgstr "Due date cannot be before invoice date."
+msgstr "Data scadenței nu poate fi înaintea datei facturii."
 
 msgid "Ecuador"
 msgstr "Ecuador"
@@ -470,22 +470,22 @@ msgid "Email"
 msgstr "E-mail"
 
 msgid "Email Address"
-msgstr "Email Address"
+msgstr "Adresă de e-mail"
 
 msgid "Email Preview"
-msgstr "Email Preview"
+msgstr "Previzualizare e-mail"
 
 msgid "Email is required for new clients."
-msgstr "Email is required for new clients."
+msgstr "E-mailul este obligatoriu pentru clienții noi."
 
 msgid "Email sending functionality will be available in a future update. Configure your SMTP settings now to be ready."
-msgstr "Email sending functionality will be available in a future update. Configure your SMTP settings now to be ready."
+msgstr "Funcția de trimitere e-mail va fi disponibilă într-o actualizare viitoare. Configurează acum setările SMTP."
 
 msgid "Email sent successfully."
-msgstr "Email sent successfully."
+msgstr "E-mail trimis cu succes."
 
 msgid "Enable Integration"
-msgstr "Enable Integration"
+msgstr "Activează integrarea"
 
 msgid "Estonia"
 msgstr "Estonia"
@@ -494,46 +494,46 @@ msgid "Ethiopia"
 msgstr "Ethiopia"
 
 msgid "Failed to create new client. Please check the client details."
-msgstr "Failed to create new client. Please check the client details."
+msgstr "Nu s-a putut crea noul client. Verifică datele clientului."
 
 msgid "Failed to delete client."
-msgstr "Failed to delete client."
+msgstr "Nu s-a putut șterge clientul."
 
 msgid "Failed to delete invoice."
-msgstr "Failed to delete invoice."
+msgstr "Nu s-a putut șterge factura."
 
 msgid "Failed to delete tax rate."
-msgstr "Failed to delete tax rate."
+msgstr "Nu s-a putut șterge cota de impozitare."
 
 msgid "Failed to generate invoice. Check logs for details."
-msgstr "Failed to generate invoice. Check logs for details."
+msgstr "Nu s-a putut genera factura. Verifică jurnalele pentru detalii."
 
 msgid "Failed to reset counter."
-msgstr "Failed to reset counter."
+msgstr "Nu s-a putut reseta contorul."
 
 msgid "Failed to reset invoice counter."
-msgstr "Failed to reset invoice counter."
+msgstr "Nu s-a putut reseta contorul de facturi."
 
 msgid "Failed to save. Please try again."
-msgstr "Failed to save. Please try again."
+msgstr "Salvarea a eșuat. Încearcă din nou."
 
 msgid "Failed to send email."
-msgstr "Failed to send email."
+msgstr "Nu s-a putut trimite e-mailul."
 
 msgid "Failed to send email. Check error logs for more details."
-msgstr "Failed to send email. Check error logs for more details."
+msgstr "Nu s-a putut trimite e-mailul. Verifică jurnalele de erori pentru mai multe detalii."
 
 msgid "Failed to send reminder. Check error logs for more details."
-msgstr "Failed to send reminder. Check error logs for more details."
+msgstr "Nu s-a putut trimite memento-ul. Verifică jurnalele de erori pentru mai multe detalii."
 
 msgid "Failed to set counter."
-msgstr "Failed to set counter."
+msgstr "Nu s-a putut seta contorul."
 
 msgid "Failed to set invoice counter."
-msgstr "Failed to set invoice counter."
+msgstr "Nu s-a putut seta contorul de facturi."
 
 msgid "Field label"
-msgstr "Field label"
+msgstr "Etichetă câmp"
 
 msgid "Finland"
 msgstr "Finland"
@@ -542,16 +542,16 @@ msgid "First Name"
 msgstr "Prenume"
 
 msgid "Fixed Amount"
-msgstr "Fixed Amount"
+msgstr "Sumă fixă"
 
 msgid "For EU VAT reverse charge and tax compliance."
-msgstr "For EU VAT reverse charge and tax compliance."
+msgstr "Pentru taxare inversă TVA UE și conformitate fiscală."
 
 msgid "For Phase 1A, enter the total manually. Line items will be added in Phase 1B."
-msgstr "For Phase 1A, enter the total manually. Line items will be added in Phase 1B."
+msgstr "Pentru Faza 1A, introdu totalul manual. Articolele vor fi adăugate în Faza 1B."
 
 msgid "For new clients, first name, last name and email are required."
-msgstr "For new clients, first name, last name and email are required."
+msgstr "Pentru clienții noi, prenumele, numele și e-mailul sunt obligatorii."
 
 msgid "Format:"
 msgstr "Format:"
@@ -575,13 +575,13 @@ msgid "Guatemala"
 msgstr "Guatemala"
 
 msgid "Header (Company + Client)"
-msgstr "Header (Company + Client)"
+msgstr "Antet (companie + client)"
 
 msgid "Hex color used for headings and accents on the invoice PDF."
-msgstr "Hex color used for headings and accents on the invoice PDF."
+msgstr "Culoare hex folosită pentru titluri și accente în PDF-ul facturii."
 
 msgid "Hold Ctrl/Cmd to select multiple statuses."
-msgstr "Hold Ctrl/Cmd to select multiple statuses."
+msgstr "Ține apăsat Ctrl/Cmd pentru a selecta mai multe statusuri."
 
 msgid "Honduras"
 msgstr "Honduras"
@@ -596,10 +596,10 @@ msgid "IBAN"
 msgstr "IBAN"
 
 msgid "ID No (EIK/BULSTAT/Reg No)"
-msgstr "ID No (EIK/BULSTAT/Reg No)"
+msgstr "Nr. ID (EIK/BULSTAT/Nr. înregistrare)"
 
 msgid "ID No Label"
-msgstr "ID No Label"
+msgstr "Etichetă nr. ID"
 
 msgid "INVOICE"
 msgstr "FACTURĂ"
@@ -611,43 +611,43 @@ msgid "India"
 msgstr "India"
 
 msgid "Individual"
-msgstr "Individual"
+msgstr "Persoană fizică"
 
 msgid "Indonesia"
 msgstr "Indonesia"
 
 msgid "Internal Notes"
-msgstr "Internal Notes"
+msgstr "Note interne"
 
 msgid "Invalid client ID."
-msgstr "Invalid client ID."
+msgstr "ID client invalid."
 
 msgid "Invalid client."
-msgstr "Invalid client."
+msgstr "Client invalid."
 
 msgid "Invalid invoice ID."
-msgstr "Invalid invoice ID."
+msgstr "ID factură invalid."
 
 msgid "Invalid invoice."
-msgstr "Invalid invoice."
+msgstr "Factură invalidă."
 
 msgid "Invalid order ID."
-msgstr "Invalid order ID."
+msgstr "ID comandă invalid."
 
 msgid "Invalid tax rate ID."
-msgstr "Invalid tax rate ID."
+msgstr "ID cotă de impozitare invalid."
 
 msgid "Invoice"
 msgstr "Factură"
 
 msgid "Invoice #"
-msgstr "Invoice #"
+msgstr "Factura nr."
 
 msgid "Invoice #:"
 msgstr "Factură nr.:"
 
 msgid "Invoice %s from %s"
-msgstr "Invoice %s from %s"
+msgstr "Factura %s de la %s"
 
 msgid "Invoice Date"
 msgstr "Data facturii"
@@ -659,28 +659,28 @@ msgid "Invoice Info"
 msgstr "Info factură"
 
 msgid "Invoice Logo"
-msgstr "Invoice Logo"
+msgstr "Sigla facturii"
 
 msgid "Invoice Notes"
-msgstr "Invoice Notes"
+msgstr "Note factură"
 
 msgid "Invoice Number"
-msgstr "Invoice Number"
+msgstr "Număr factură"
 
 msgid "Invoice Number Format"
-msgstr "Invoice Number Format"
+msgstr "Format număr factură"
 
 msgid "Invoice Status"
-msgstr "Invoice Status"
+msgstr "Status factură"
 
 msgid "Invoice Title"
 msgstr "Titlu factură"
 
 msgid "Invoice counter has been reset."
-msgstr "Invoice counter has been reset."
+msgstr "Contorul de facturi a fost resetat."
 
 msgid "Invoice counter set to %1$d. Next invoice: %2$s"
-msgstr "Invoice counter set to %1$d. Next invoice: %2$s"
+msgstr "Contor de facturi setat la %1$d. Următoarea factură: %2$s"
 
 msgid "Invoice created successfully."
 msgstr "Factura a fost creată cu succes."
@@ -689,16 +689,16 @@ msgid "Invoice deleted successfully."
 msgstr "Factura a fost ștearsă cu succes."
 
 msgid "Invoice generated successfully."
-msgstr "Invoice generated successfully."
+msgstr "Factură generată cu succes."
 
 msgid "Invoice not found."
-msgstr "Invoice not found."
+msgstr "Factură negăsită."
 
 msgid "Invoice number is automatically generated."
-msgstr "Invoice number is automatically generated."
+msgstr "Numărul facturii este generat automat."
 
 msgid "Invoice title is required."
-msgstr "Invoice title is required."
+msgstr "Titlul facturii este obligatoriu."
 
 msgid "Invoice updated successfully."
 msgstr "Factura a fost actualizată cu succes."
@@ -707,22 +707,22 @@ msgid "InvoiceForge"
 msgstr "InvoiceForge"
 
 msgid "InvoiceForge Sequential (e.g. INV-2026-0001)"
-msgstr "InvoiceForge Sequential (e.g. INV-2026-0001)"
+msgstr "InvoiceForge secvențial (ex. INV-2026-0001)"
 
 msgid "InvoiceForge requires Composer dependencies. Please run \"composer install\" first."
-msgstr "InvoiceForge requires Composer dependencies. Please run \"composer install\" first."
+msgstr "InvoiceForge necesită dependențe Composer. Rulează mai întâi \"composer install\"."
 
 msgid "InvoiceForge requires Composer dependencies. Please run \"composer install\" in the plugin directory."
-msgstr "InvoiceForge requires Composer dependencies. Please run \"composer install\" in the plugin directory."
+msgstr "InvoiceForge necesită dependențe Composer. Rulează \"composer install\" în directorul pluginului."
 
 msgid "InvoiceForge requires PHP %s or higher."
-msgstr "InvoiceForge requires PHP %s or higher."
+msgstr "InvoiceForge necesită PHP %s sau mai mare."
 
 msgid "InvoiceForge requires PHP version %1$s or higher. Your current version is %2$s. Please upgrade PHP to use this plugin."
-msgstr "InvoiceForge requires PHP version %1$s or higher. Your current version is %2$s. Please upgrade PHP to use this plugin."
+msgstr "InvoiceForge necesită PHP versiunea %1$s sau mai mare. Versiunea ta actuală este %2$s. Actualizează PHP pentru a folosi acest plugin."
 
 msgid "InvoiceForge requires WordPress version %1$s or higher. Your current version is %2$s. Please upgrade WordPress to use this plugin."
-msgstr "InvoiceForge requires WordPress version %1$s or higher. Your current version is %2$s. Please upgrade WordPress to use this plugin."
+msgstr "InvoiceForge necesită WordPress versiunea %1$s sau mai mare. Versiunea ta actuală este %2$s. Actualizează WordPress pentru a folosi acest plugin."
 
 msgid "Invoices"
 msgstr "Facturi"
@@ -743,7 +743,7 @@ msgid "Italy"
 msgstr "Italy"
 
 msgid "Item description"
-msgstr "Item description"
+msgstr "Descriere articol"
 
 msgid "Jamaica"
 msgstr "Jamaica"
@@ -752,7 +752,7 @@ msgid "Japan"
 msgstr "Japan"
 
 msgid "John"
-msgstr "John"
+msgstr "Ion"
 
 msgid "Jordan"
 msgstr "Jordan"
@@ -767,7 +767,7 @@ msgid "Kuwait"
 msgstr "Kuwait"
 
 msgid "Label used for the company/client ID number field (e.g. EIK, BULSTAT, Reg No)."
-msgstr "Label used for the company/client ID number field (e.g. EIK, BULSTAT, Reg No)."
+msgstr "Etichetă folosită pentru câmpul numărului de ID companie/client (ex. EIK, BULSTAT, nr. înregistrare)."
 
 msgid "Last Name"
 msgstr "Nume"
@@ -779,10 +779,10 @@ msgid "Lebanon"
 msgstr "Lebanon"
 
 msgid "Left"
-msgstr "Left"
+msgstr "Stânga"
 
 msgid "Left Column Title"
-msgstr "Left Column Title"
+msgstr "Titlu coloana stângă"
 
 msgid "Libya"
 msgstr "Libya"
@@ -791,22 +791,22 @@ msgid "Liechtenstein"
 msgstr "Liechtenstein"
 
 msgid "Line Items"
-msgstr "Line Items"
+msgstr "Articole"
 
 msgid "Lithuania"
 msgstr "Lithuania"
 
 msgid "Loading preview..."
-msgstr "Loading preview..."
+msgstr "Se încarcă previzualizarea..."
 
 msgid "Loading..."
 msgstr "Se încarcă..."
 
 msgid "Location"
-msgstr "Location"
+msgstr "Locație"
 
 msgid "Logo"
-msgstr "Logo"
+msgstr "Siglă"
 
 msgid "Luxembourg"
 msgstr "Luxembourg"
@@ -824,7 +824,7 @@ msgid "Malta"
 msgstr "Malta"
 
 msgid "Manually set the next invoice number counter. The next invoice created will use this number."
-msgstr "Manually set the next invoice number counter. The next invoice created will use this number."
+msgstr "Setează manual contorul următorului număr de factură. Următoarea factură va folosi acest număr."
 
 msgid "Mauritius"
 msgstr "Mauritius"
@@ -848,13 +848,13 @@ msgid "Morocco"
 msgstr "Morocco"
 
 msgid "Multi-currency support will be expanded in Phase 4."
-msgstr "Multi-currency support will be expanded in Phase 4."
+msgstr "Suportul multi-monede va fi extins în Faza 4."
 
 msgid "Myanmar"
 msgstr "Myanmar"
 
 msgid "Name"
-msgstr "Name"
+msgstr "Nume"
 
 msgid "Nepal"
 msgstr "Nepal"
@@ -878,7 +878,7 @@ msgid "New Zealand"
 msgstr "New Zealand"
 
 msgid "Next Invoice Number:"
-msgstr "Next Invoice Number:"
+msgstr "Următorul număr de factură:"
 
 msgid "Nicaragua"
 msgstr "Nicaragua"
@@ -887,40 +887,40 @@ msgid "Nigeria"
 msgstr "Nigeria"
 
 msgid "No Discount"
-msgstr "No Discount"
+msgstr "Fără reducere"
 
 msgid "No Tax"
-msgstr "No Tax"
+msgstr "Fără taxă"
 
 msgid "No clients found in Trash."
-msgstr "No clients found in Trash."
+msgstr "Niciun client găsit în coșul de gunoi."
 
 msgid "No clients found."
 msgstr "Nu s-au găsit clienți."
 
 msgid "No clients found. Switch to \"Add New Client\" to create one inline."
-msgstr "No clients found. Switch to \"Add New Client\" to create one inline."
+msgstr "Niciun client găsit. Comută la \"Adaugă client nou\" pentru a crea unul direct."
 
 msgid "No clients yet"
-msgstr "No clients yet"
+msgstr "Încă nu există clienți"
 
 msgid "No clients yet. Add your first client to start invoicing!"
-msgstr "No clients yet. Add your first client to start invoicing!"
+msgstr "Încă nu există clienți. Adaugă primul client pentru a începe facturarea!"
 
 msgid "No invoices found in Trash."
-msgstr "No invoices found in Trash."
+msgstr "Nicio factură găsită în coșul de gunoi."
 
 msgid "No invoices found."
 msgstr "Nu s-au găsit facturi."
 
 msgid "No invoices yet"
-msgstr "No invoices yet"
+msgstr "Încă nu există facturi"
 
 msgid "No invoices yet. Create your first invoice to get started!"
-msgstr "No invoices yet. Create your first invoice to get started!"
+msgstr "Încă nu există facturi. Creează prima factură pentru a începe!"
 
 msgid "No line items yet. Click \"Add Item\" to get started."
-msgstr "No line items yet. Click \"Add Item\" to get started."
+msgstr "Încă nu există articole. Apasă \"Adaugă articol\" pentru a începe."
 
 msgid "No."
 msgstr "Nr."
@@ -935,31 +935,31 @@ msgid "Notes"
 msgstr "Note"
 
 msgid "Notes & Terms"
-msgstr "Notes & Terms"
+msgstr "Note și termeni"
 
 msgid "Notes visible to the customer on the invoice..."
-msgstr "Notes visible to the customer on the invoice..."
+msgstr "Note vizibile clientului pe factură..."
 
 msgid "Office"
 msgstr "Sediu"
 
 msgid "Office / Branch"
-msgstr "Office / Branch"
+msgstr "Birou / Sucursală"
 
 msgid "Oman"
 msgstr "Oman"
 
 msgid "Optional for individuals."
-msgstr "Optional for individuals."
+msgstr "Opțional pentru persoane fizice."
 
 msgid "Optional. Leave blank for individual clients."
-msgstr "Optional. Leave blank for individual clients."
+msgstr "Opțional. Lasă gol pentru clienții persoane fizice."
 
 msgid "Order Invoice Prefix"
-msgstr "Order Invoice Prefix"
+msgstr "Prefix factură comandă"
 
 msgid "Original due date: %s"
-msgstr "Original due date: %s"
+msgstr "Data scadenței inițiale: %s"
 
 msgid "Outstanding"
 msgstr "Neachitate"
@@ -971,10 +971,10 @@ msgid "PDF"
 msgstr "PDF"
 
 msgid "PDF Preview"
-msgstr "PDF Preview"
+msgstr "Previzualizare PDF"
 
 msgid "PDF generation is currently unavailable. The mPDF library is missing. Please ensure you are using the correct release ZIP or run \"composer install\"."
-msgstr "PDF generation is currently unavailable. The mPDF library is missing. Please ensure you are using the correct release ZIP or run \"composer install\"."
+msgstr "Generarea PDF nu este disponibilă momentan. Bibliotecile mPDF lipsesc. Asigură-te că folosești ZIP-ul de lansare corect sau rulează \"composer install\"."
 
 msgid "Paid"
 msgstr "Plătită"
@@ -989,10 +989,10 @@ msgid "Paraguay"
 msgstr "Paraguay"
 
 msgid "Parent Clients:"
-msgstr "Parent Clients:"
+msgstr "Clienți superiori:"
 
 msgid "Parent Invoices:"
-msgstr "Parent Invoices:"
+msgstr "Facturi superioare:"
 
 msgid "Pay Invoice"
 msgstr "Plătește factura"
@@ -1004,22 +1004,22 @@ msgid "Payment Method"
 msgstr "Metodă de plată"
 
 msgid "Payment Methods"
-msgstr "Payment Methods"
+msgstr "Metode de plată"
 
 msgid "Payment Reminder: Invoice %s"
-msgstr "Payment Reminder: Invoice %s"
+msgstr "Memento de plată: Factura %s"
 
 msgid "Payment methods available to select on each invoice."
-msgstr "Payment methods available to select on each invoice."
+msgstr "Metode de plată disponibile pentru selectare pe fiecare factură."
 
 msgid "Payment terms, late fees, etc."
-msgstr "Payment terms, late fees, etc."
+msgstr "Termeni de plată, penalități de întârziere etc."
 
 msgid "Pending payment"
-msgstr "Pending payment"
+msgstr "Plată în așteptare"
 
 msgid "Percentage (%)"
-msgstr "Percentage (%)"
+msgstr "Procent (%)"
 
 msgid "Peru"
 msgstr "Peru"
@@ -1031,46 +1031,46 @@ msgid "Phone"
 msgstr "Telefon"
 
 msgid "Phone Number"
-msgstr "Phone Number"
+msgstr "Număr de telefon"
 
 msgid "Please arrange payment at your earliest convenience."
-msgstr "Please arrange payment at your earliest convenience."
+msgstr "Te rugăm să efectuezi plata cât mai curând posibil."
 
 msgid "Please enter a valid URL."
-msgstr "Please enter a valid URL."
+msgstr "Introdu un URL valid."
 
 msgid "Please enter a valid counter value (minimum 1)."
-msgstr "Please enter a valid counter value (minimum 1)."
+msgstr "Introdu o valoare de contor validă (minim 1)."
 
 msgid "Please enter a valid counter value."
-msgstr "Please enter a valid counter value."
+msgstr "Introdu o valoare de contor validă."
 
 msgid "Please enter a valid date."
-msgstr "Please enter a valid date."
+msgstr "Introdu o dată validă."
 
 msgid "Please enter a valid email address."
 msgstr "Vă rugăm să introduceți o adresă de e-mail validă."
 
 msgid "Please enter a valid number."
-msgstr "Please enter a valid number."
+msgstr "Introdu un număr valid."
 
 msgid "Please enter a valid value."
-msgstr "Please enter a valid value."
+msgstr "Introdu o valoare validă."
 
 msgid "Please fill in all required fields."
 msgstr "Vă rugăm să completați toate câmpurile obligatorii."
 
 msgid "Please find your invoice %s attached."
-msgstr "Please find your invoice %s attached."
+msgstr "Găsești factura %s atașată."
 
 msgid "Please select a client."
-msgstr "Please select a client."
+msgstr "Selectează un client."
 
 msgid "Please select a valid option."
-msgstr "Please select a valid option."
+msgstr "Selectează o opțiune validă."
 
 msgid "Plugin Activation Error"
-msgstr "Plugin Activation Error"
+msgstr "Eroare de activare a pluginului"
 
 msgid "Poland"
 msgstr "Poland"
@@ -1079,22 +1079,22 @@ msgid "Portugal"
 msgstr "Portugal"
 
 msgid "Preview"
-msgstr "Preview"
+msgstr "Previzualizare"
 
 msgid "Preview failed — invoice not found or template missing."
-msgstr "Preview failed — invoice not found or template missing."
+msgstr "Previzualizare eșuată — factură negăsită sau șablon lipsă."
 
 msgid "Preview failed."
-msgstr "Preview failed."
+msgstr "Previzualizare eșuată."
 
 msgid "Preview unavailable"
-msgstr "Preview unavailable"
+msgstr "Previzualizare indisponibilă"
 
 msgid "Private notes for your reference..."
-msgstr "Private notes for your reference..."
+msgstr "Note private pentru referință..."
 
 msgid "Processing"
-msgstr "Processing"
+msgstr "În procesare"
 
 msgid "Puerto Rico"
 msgstr "Puerto Rico"
@@ -1115,25 +1115,25 @@ msgid "Recent Invoices"
 msgstr "Facturi recente"
 
 msgid "Reminder sent successfully."
-msgstr "Reminder sent successfully."
+msgstr "Memento trimis cu succes."
 
 msgid "Remove"
-msgstr "Remove"
+msgstr "Elimină"
 
 msgid "Remove Image"
-msgstr "Remove Image"
+msgstr "Elimină imaginea"
 
 msgid "Required for EU VAT reverse charge and tax compliance."
-msgstr "Required for EU VAT reverse charge and tax compliance."
+msgstr "Necesar pentru taxare inversă TVA UE și conformitate fiscală."
 
 msgid "Reset Invoice Counter"
-msgstr "Reset Invoice Counter"
+msgstr "Resetează contorul de facturi"
 
 msgid "Right"
-msgstr "Right"
+msgstr "Dreapta"
 
 msgid "Right Column Title"
-msgstr "Right Column Title"
+msgstr "Titlu coloana dreaptă"
 
 msgid "Romania"
 msgstr "Romania"
@@ -1160,40 +1160,40 @@ msgid "Saving..."
 msgstr "Se salvează..."
 
 msgid "Search Clients"
-msgstr "Search Clients"
+msgstr "Caută clienți"
 
 msgid "Search Invoices"
-msgstr "Search Invoices"
+msgstr "Caută facturi"
 
 msgid "Search clients..."
-msgstr "Search clients..."
+msgstr "Caută clienți..."
 
 msgid "Search invoices..."
-msgstr "Search invoices..."
+msgstr "Caută facturi..."
 
 msgid "Section Order"
-msgstr "Section Order"
+msgstr "Ordinea secțiunilor"
 
 msgid "Section Visibility"
-msgstr "Section Visibility"
+msgstr "Vizibilitatea secțiunilor"
 
 msgid "Security Error"
-msgstr "Security Error"
+msgstr "Eroare de securitate"
 
 msgid "Security check failed."
 msgstr "Verificarea de securitate a eșuat."
 
 msgid "Security check failed. Please refresh the page and try again."
-msgstr "Security check failed. Please refresh the page and try again."
+msgstr "Verificarea de securitate a eșuat. Reîmprospătează pagina și încearcă din nou."
 
 msgid "Security check failed. Please try again."
-msgstr "Security check failed. Please try again."
+msgstr "Verificarea de securitate a eșuat. Încearcă din nou."
 
 msgid "Select Existing Client"
 msgstr "Selectare client existent"
 
 msgid "Select Image"
-msgstr "Select Image"
+msgstr "Selectează imaginea"
 
 msgid "Select a client..."
 msgstr "Selectați un client..."
@@ -1202,16 +1202,16 @@ msgid "Select a country..."
 msgstr "Selectați o țară..."
 
 msgid "Select a logo from the media library (JPG, PNG, SVG). Recommended size: 300x100px."
-msgstr "Select a logo from the media library (JPG, PNG, SVG). Recommended size: 300x100px."
+msgstr "Selectează o siglă din biblioteca media (JPG, PNG, SVG). Dimensiune recomandată: 300x100 px."
 
 msgid "Select..."
 msgstr "Selectați..."
 
 msgid "Send Email"
-msgstr "Send Email"
+msgstr "Trimite e-mail"
 
 msgid "Send to Client"
-msgstr "Send to Client"
+msgstr "Trimite către client"
 
 msgid "Sent"
 msgstr "Trimisă"
@@ -1220,22 +1220,22 @@ msgid "Serbia"
 msgstr "Serbia"
 
 msgid "Set Counter"
-msgstr "Set Counter"
+msgstr "Setează contor"
 
 msgid "Set Invoice Counter"
-msgstr "Set Invoice Counter"
+msgstr "Setează contorul de facturi"
 
 msgid "Settings"
 msgstr "Setări"
 
 msgid "Signature"
-msgstr "Signature"
+msgstr "Semnătură"
 
 msgid "Signature Fields"
-msgstr "Signature Fields"
+msgstr "Câmpuri de semnătură"
 
 msgid "Signature block"
-msgstr "Signature block"
+msgstr "Bloc de semnătură"
 
 msgid "Signatures"
 msgstr "Semnături"
@@ -1304,34 +1304,34 @@ msgid "Tax ID / VAT Number"
 msgstr "CUI / Nr. TVA"
 
 msgid "Tax rate deleted successfully."
-msgstr "Tax rate deleted successfully."
+msgstr "Cota de impozitare ștearsă cu succes."
 
 msgid "Tax rate name is required."
-msgstr "Tax rate name is required."
+msgstr "Numele cotei de impozitare este obligatoriu."
 
 msgid "Tax rate not found."
-msgstr "Tax rate not found."
+msgstr "Cota de impozitare negăsită."
 
 msgid "Tax rate saved successfully."
-msgstr "Tax rate saved successfully."
+msgstr "Cota de impozitare salvată cu succes."
 
 msgid "Terms & Conditions"
-msgstr "Terms & Conditions"
+msgstr "Termeni și condiții"
 
 msgid "Thailand"
 msgstr "Thailand"
 
 msgid "These actions can affect your invoice data. Use with caution."
-msgstr "These actions can affect your invoice data. Use with caution."
+msgstr "Aceste acțiuni pot afecta datele facturilor tale. Folosește cu prudență."
 
 msgid "These notes will appear on the invoice."
-msgstr "These notes will appear on the invoice."
+msgstr "Aceste note vor apărea pe factură."
 
 msgid "This field is required."
-msgstr "This field is required."
+msgstr "Acest câmp este obligatoriu."
 
 msgid "This is a friendly reminder that invoice %1$s for %2$s %3$s is overdue."
-msgstr "This is a friendly reminder that invoice %1$s for %2$s %3$s is overdue."
+msgstr "Acesta este un memento că factura %1$s în valoare de %2$s %3$s este depășită."
 
 msgid "Total"
 msgstr "Total"
@@ -1349,10 +1349,10 @@ msgid "Total Revenue"
 msgstr "Venituri totale"
 
 msgid "Totals"
-msgstr "Totals"
+msgstr "Totaluri"
 
 msgid "Trigger on Order Status"
-msgstr "Trigger on Order Status"
+msgstr "Declanșează la statusul comenzii"
 
 msgid "Tunisia"
 msgstr "Tunisia"
@@ -1364,7 +1364,7 @@ msgid "Ukraine"
 msgstr "Ukraine"
 
 msgid "Unauthorized."
-msgstr "Unauthorized."
+msgstr "Neautorizat."
 
 msgid "Unit Price"
 msgstr "Preț unit."
@@ -1379,43 +1379,43 @@ msgid "United States"
 msgstr "Statele Unite"
 
 msgid "Unknown Client"
-msgstr "Unknown Client"
+msgstr "Client necunoscut"
 
 msgid "Unnamed Client"
-msgstr "Unnamed Client"
+msgstr "Client fără nume"
 
 msgid "Up to date"
-msgstr "Up to date"
+msgstr "Actualizat"
 
 msgid "Updating..."
-msgstr "Updating..."
+msgstr "Se actualizează..."
 
 msgid "Uruguay"
 msgstr "Uruguay"
 
 msgid "Use this image"
-msgstr "Use this image"
+msgstr "Folosește această imagine"
 
 msgid "Used when \"WooCommerce Order Number\" format is selected (e.g. ORD-1234)."
-msgstr "Used when \"WooCommerce Order Number\" format is selected (e.g. ORD-1234)."
+msgstr "Folosit când este selectat formatul \"Număr comandă WooCommerce\" (ex. ORD-1234)."
 
 msgid "Uzbekistan"
 msgstr "Uzbekistan"
 
 msgid "VAT 0%"
-msgstr "VAT 0%"
+msgstr "TVA 0%"
 
 msgid "VAT 20%"
-msgstr "VAT 20%"
+msgstr "TVA 20%"
 
 msgid "VAT 9%"
-msgstr "VAT 9%"
+msgstr "TVA 9%"
 
 msgid "VAT exempt — Article 70 VATA."
 msgstr "Scutit de TVA — Articolul 70 VATA."
 
 msgid "Value"
-msgstr "Value"
+msgstr "Valoare"
 
 msgid "Venezuela"
 msgstr "Venezuela"
@@ -1424,76 +1424,76 @@ msgid "Vietnam"
 msgstr "Vietnam"
 
 msgid "View All"
-msgstr "View All"
+msgstr "Vezi tot"
 
 msgid "View All Invoices"
-msgstr "View All Invoices"
+msgstr "Vezi toate facturile"
 
 msgid "View Client"
-msgstr "View Client"
+msgstr "Vezi client"
 
 msgid "View Invoice"
-msgstr "View Invoice"
+msgstr "Vezi factură"
 
 msgid "Visible Sections"
-msgstr "Visible Sections"
+msgstr "Secțiuni vizibile"
 
 msgid "WooCommerce Integration"
-msgstr "WooCommerce Integration"
+msgstr "Integrare WooCommerce"
 
 msgid "WooCommerce Order Number with Prefix (e.g. ORD-1234)"
-msgstr "WooCommerce Order Number with Prefix (e.g. ORD-1234)"
+msgstr "Număr comandă WooCommerce cu prefix (ex. ORD-1234)"
 
 msgid "WooCommerce Orders"
-msgstr "WooCommerce Orders"
+msgstr "Comenzi WooCommerce"
 
 msgid "WooCommerce is not active."
-msgstr "WooCommerce is not active."
+msgstr "WooCommerce nu este activ."
 
 msgid "WooCommerce is not installed or activated. Install WooCommerce to use these integration settings."
-msgstr "WooCommerce is not installed or activated. Install WooCommerce to use these integration settings."
+msgstr "WooCommerce nu este instalat sau activat. Instalează WooCommerce pentru a folosi aceste setări de integrare."
 
 msgid "Yemen"
 msgstr "Yemen"
 
 msgid "You do not have permission to access this page."
-msgstr "You do not have permission to access this page."
+msgstr "Nu ai permisiunea de a accesa această pagină."
 
 msgid "You do not have permission to delete clients."
-msgstr "You do not have permission to delete clients."
+msgstr "Nu ai permisiunea de a șterge clienți."
 
 msgid "You do not have permission to delete invoices."
-msgstr "You do not have permission to delete invoices."
+msgstr "Nu ai permisiunea de a șterge facturi."
 
 msgid "You do not have permission to edit clients."
-msgstr "You do not have permission to edit clients."
+msgstr "Nu ai permisiunea de a edita clienți."
 
 msgid "You do not have permission to edit invoices."
-msgstr "You do not have permission to edit invoices."
+msgstr "Nu ai permisiunea de a edita facturi."
 
 msgid "You do not have permission to manage InvoiceForge settings."
-msgstr "You do not have permission to manage InvoiceForge settings."
+msgstr "Nu ai permisiunea de a gestiona setările InvoiceForge."
 
 msgid "You do not have permission to manage clients."
-msgstr "You do not have permission to manage clients."
+msgstr "Nu ai permisiunea de a gestiona clienți."
 
 msgid "You do not have permission to manage invoices."
-msgstr "You do not have permission to manage invoices."
+msgstr "Nu ai permisiunea de a gestiona facturi."
 
 msgid "You do not have permission to manage tax rates."
-msgstr "You do not have permission to manage tax rates."
+msgstr "Nu ai permisiunea de a gestiona cotele de impozitare."
 
 msgid "You do not have permission to perform this action."
-msgstr "You do not have permission to perform this action."
+msgstr "Nu ai permisiunea de a efectua această acțiune."
 
 msgid "You do not have permission to preview invoices."
-msgstr "You do not have permission to preview invoices."
+msgstr "Nu ai permisiunea de a previzualiza facturi."
 
 msgid "You do not have permission to view clients."
-msgstr "You do not have permission to view clients."
+msgstr "Nu ai permisiunea de a vizualiza clienți."
 
 msgid "You do not have permission to view invoices."
-msgstr "You do not have permission to view invoices."
+msgstr "Nu ai permisiunea de a vizualiza facturi."
 
 msgid "ZIP / Postal Code"
 msgstr "Cod poștal"
@@ -1511,107 +1511,107 @@ msgstr "Client"
 
 msgctxt "Add New on Toolbar"
 msgid "Invoice"
-msgstr "Invoice"
+msgstr "Factură"
 
 msgctxt "Admin Menu text"
 msgid "Invoice"
-msgstr "Invoice"
+msgstr "Factură"
 
 msgctxt "Admin Menu text"
 msgid "Clients"
-msgstr "Clients"
+msgstr "Clienți"
 
 msgctxt "Admin Menu text"
 msgid "Invoices"
-msgstr "Invoices"
+msgstr "Facturi"
 
 msgctxt "Overrides the \"Featured Image\" phrase"
 msgid "Invoices"
-msgstr "Invoices"
+msgstr "Facturi"
 
 msgctxt "Overrides the \"Featured Image\" phrase"
 msgid "Client Photo"
-msgstr "Client Photo"
+msgstr "Fotografie client"
 
 msgctxt "Overrides the \"Featured Image\" phrase"
 msgid "Invoice Logo"
-msgstr "Invoice Logo"
+msgstr "Sigla facturii"
 
 msgctxt "Overrides the \"Insert into post\" phrase"
 msgid "Invoice Logo"
-msgstr "Invoice Logo"
+msgstr "Sigla facturii"
 
 msgctxt "Overrides the \"Insert into post\" phrase"
 msgid "Insert into client"
-msgstr "Insert into client"
+msgstr "Inserează în client"
 
 msgctxt "Overrides the \"Insert into post\" phrase"
 msgid "Insert into invoice"
-msgstr "Insert into invoice"
+msgstr "Inserează în factură"
 
 msgctxt "Overrides the \"Remove featured image\" phrase"
 msgid "Insert into invoice"
-msgstr "Insert into invoice"
+msgstr "Inserează în factură"
 
 msgctxt "Overrides the \"Remove featured image\" phrase"
 msgid "Remove client photo"
-msgstr "Remove client photo"
+msgstr "Elimină fotografia clientului"
 
 msgctxt "Overrides the \"Remove featured image\" phrase"
 msgid "Remove invoice logo"
-msgstr "Remove invoice logo"
+msgstr "Elimină sigla facturii"
 
 msgctxt "Overrides the \"Set featured image\" phrase"
 msgid "Remove invoice logo"
-msgstr "Remove invoice logo"
+msgstr "Elimină sigla facturii"
 
 msgctxt "Overrides the \"Set featured image\" phrase"
 msgid "Set client photo"
-msgstr "Set client photo"
+msgstr "Setează fotografia clientului"
 
 msgctxt "Overrides the \"Set featured image\" phrase"
 msgid "Set invoice logo"
-msgstr "Set invoice logo"
+msgstr "Setează sigla facturii"
 
 msgctxt "Overrides the \"Uploaded to this post\" phrase"
 msgid "Set invoice logo"
-msgstr "Set invoice logo"
+msgstr "Setează sigla facturii"
 
 msgctxt "Overrides the \"Uploaded to this post\" phrase"
 msgid "Uploaded to this client"
-msgstr "Uploaded to this client"
+msgstr "Încărcat la acest client"
 
 msgctxt "Overrides the \"Uploaded to this post\" phrase"
 msgid "Uploaded to this invoice"
-msgstr "Uploaded to this invoice"
+msgstr "Încărcat la această factură"
 
 msgctxt "Overrides the \"Use as featured image\" phrase"
 msgid "Uploaded to this invoice"
-msgstr "Uploaded to this invoice"
+msgstr "Încărcat la această factură"
 
 msgctxt "Overrides the \"Use as featured image\" phrase"
 msgid "Use as client photo"
-msgstr "Use as client photo"
+msgstr "Folosește ca fotografie client"
 
 msgctxt "Overrides the \"Use as featured image\" phrase"
 msgid "Use as invoice logo"
-msgstr "Use as invoice logo"
+msgstr "Folosește ca siglă factură"
 
 msgctxt "Post type general name"
 msgid "Use as invoice logo"
-msgstr "Use as invoice logo"
+msgstr "Folosește ca siglă factură"
 
 msgctxt "Post type general name"
 msgid "Clients"
-msgstr "Clients"
+msgstr "Clienți"
 
 msgctxt "Post type general name"
 msgid "Invoices"
-msgstr "Invoices"
+msgstr "Facturi"
 
 msgctxt "Post type singular name"
 msgid "Invoices"
-msgstr "Invoices"
+msgstr "Facturi"
 
 msgctxt "Post type singular name"
 msgid "Client"
@@ -1619,72 +1619,72 @@ msgstr "Client"
 
 msgctxt "Post type singular name"
 msgid "Invoice"
-msgstr "Invoice"
+msgstr "Factură"
 
 msgctxt "Screen reader text"
 msgid "Invoice"
-msgstr "Invoice"
+msgstr "Factură"
 
 msgctxt "Screen reader text"
 msgid "Clients list"
-msgstr "Clients list"
+msgstr "Listă clienți"
 
 msgctxt "Screen reader text"
 msgid "Clients list navigation"
-msgstr "Clients list navigation"
+msgstr "Navigare listă clienți"
 
 msgctxt "Screen reader text"
 msgid "Filter clients list"
-msgstr "Filter clients list"
+msgstr "Filtrează lista de clienți"
 
 msgctxt "Screen reader text"
 msgid "Filter invoices list"
-msgstr "Filter invoices list"
+msgstr "Filtrează lista de facturi"
 
 msgctxt "Screen reader text"
 msgid "Invoices list"
-msgstr "Invoices list"
+msgstr "Listă facturi"
 
 msgctxt "Screen reader text"
 msgid "Invoices list navigation"
-msgstr "Invoices list navigation"
+msgstr "Navigare listă facturi"
 
 msgctxt "The post type archive label"
 msgid "Invoices list navigation"
-msgstr "Invoices list navigation"
+msgstr "Navigare listă facturi"
 
 msgctxt "The post type archive label"
 msgid "Client archives"
-msgstr "Client archives"
+msgstr "Arhivă clienți"
 
 msgctxt "The post type archive label"
 msgid "Invoice archives"
-msgstr "Invoice archives"
+msgstr "Arhivă facturi"
 
 msgid "Invoice archives"
-msgstr "Invoice archives"
+msgstr "Arhivă facturi"
 
 msgid "e.g., 100"
-msgstr "e.g., 100"
+msgstr "ex. 100"
 
 msgid "e.g., 123456789"
-msgstr "e.g., 123456789"
+msgstr "ex. 123456789"
 
 msgid "e.g., GB123456789"
-msgstr "e.g., GB123456789"
+msgstr "ex. RO123456789"
 
 msgid "e.g., HQ, Branch 1"
-msgstr "e.g., HQ, Branch 1"
+msgstr "ex. Sediu central, Sucursala 1"
 
 msgid "e.g., Issued by"
-msgstr "e.g., Issued by"
+msgstr "ex. Emis de"
 
 msgid "e.g., Received by"
-msgstr "e.g., Received by"
+msgstr "ex. Primit de"
 
 msgid "e.g., Website Development - March 2025"
-msgstr "e.g., Website Development - March 2025"
+msgstr "ex. Dezvoltare site web - martie 2025"
 
 msgid "email@example.com"
-msgstr "email@example.com"
+msgstr "email@exemplu.ro"
 
