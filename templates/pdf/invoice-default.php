@@ -62,6 +62,10 @@
  *   @var array  $section_visibility assoc: signature|notes|discount_row => bool
  *   @var array  $signature_fields   [{label, col}]
  *
+ * Cancelled-invoice treatment:
+ *   @var bool   $is_cancelled       true when the invoice status is 'cancelled'
+ *   @var string $cancelled_stamp_text uppercase translated stamp word (empty unless cancelled)
+ *
  * Computed helpers:
  *   @var bool   $has_discount       true if any line item has a non-zero discount
  *
@@ -71,6 +75,13 @@
 
 if (!defined('ABSPATH')) {
     exit;
+}
+
+// Cancelled invoices render fully grayscale with a red diagonal stamp.
+$is_cancelled = ($status ?? '') === 'cancelled';
+if ($is_cancelled) {
+    // Neutralize the accent colour so every accent-derived element renders gray.
+    $accent_color = '#555555';
 }
 
 // ─── PDF MODE ────────────────────────────────────────────────────────────────
@@ -276,7 +287,7 @@ foreach ($section_order as $section) :
                 $tax_rate_display = $rate !== null ? number_format((float)$rate, 2) . '%' : '';
             }
             ?>
-            <tr style="background: <?php echo ($i % 2 === 0) ? '#fff' : '#f7f7f7'; ?>;">
+            <tr style="background: <?php echo (($i % 2 === 0) || $is_cancelled) ? '#ffffff' : '#f7f7f7'; ?>;">
                 <td class="center"><?php echo esc_html((string)($i + 1)); ?></td>
                 <td><?php echo esc_html($item['description'] ?? ''); ?></td>
                 <td class="center"><?php echo esc_html(number_format((float)($item['quantity'] ?? 0), 2)); ?></td>
@@ -458,6 +469,7 @@ elseif ($render_mode === 'email') :
 <html>
 <head><meta charset="UTF-8"></head>
 <body style="font-family:Arial,sans-serif; font-size:13px; color:#333; background:#f4f4f4; margin:0; padding:20px;">
+<div style="position:relative;">
 <table style="table-layout:fixed; width:600px; max-width:100%; margin:0 auto; background:#ffffff; border:1px solid #dddddd;">
     <tr>
         <td style="padding:20px; background-color:<?php echo esc_attr($accent_color); ?>; color:#ffffff;">
@@ -485,7 +497,7 @@ elseif ($render_mode === 'email') :
                 <?php endif; ?>
                 <tr>
                     <td style="<?php echo $td_style; ?>"><?php echo esc_html(__('Status', 'invoiceforge')); ?></td>
-                    <td style="<?php echo $td_right; ?>"><?php echo esc_html(ucfirst($status)); ?></td>
+                    <td style="<?php echo $td_right; ?>"><?php echo esc_html($is_cancelled ? __('Cancelled', 'invoiceforge') : ucfirst($status)); ?></td>
                 </tr>
                 <tr>
                     <td style="<?php echo $td_style; ?> font-weight:bold;"><?php echo esc_html(__('Amount Due', 'invoiceforge')); ?></td>
@@ -543,6 +555,15 @@ elseif ($render_mode === 'email') :
         </td>
     </tr>
 </table>
+<?php if ($is_cancelled) : ?>
+<!-- Diagonal red "cancelled" stamp overlay -->
+<div style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; overflow:hidden;">
+    <div style="border:6px solid #cc2222; border-radius:8px; color:#cc2222; opacity:0.5; font-family:Arial,sans-serif; font-size:42px; font-weight:bold; letter-spacing:6px; text-transform:uppercase; padding:14px 26px; display:inline-block; white-space:nowrap; transform:translate(-50%, -50%) rotate(-24deg); -webkit-transform:translate(-50%, -50%) rotate(-24deg); position:absolute; top:50%; left:50%;">
+        <?php echo esc_html($cancelled_stamp_text); ?>
+    </div>
+</div>
+<?php endif; ?>
+</div>
 </body>
 </html>
 <?php

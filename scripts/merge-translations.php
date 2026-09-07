@@ -196,7 +196,7 @@ function generatePoFile(array $entries, string $lang, array $meta): string
     $po .= "#\n";
     $po .= 'msgid ""' . "\n";
     $po .= 'msgstr ""' . "\n";
-    $po .= '"Project-Id-Version: InvoiceForge 1.3.2\n"' . "\n";
+    $po .= '"Project-Id-Version: InvoiceForge 1.3.3\n"' . "\n";
     $po .= '"Report-Msgid-Bugs-To: https://github.com/konchetobe/Invoice-Forge/issues\n"' . "\n";
     $po .= '"POT-Creation-Date: ' . date('Y-m-d H:i:s') . '+0000\n"' . "\n";
     $po .= '"PO-Revision-Date: ' . date('Y-m-d H:i:s') . '+0000\n"' . "\n";

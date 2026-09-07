@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ---
 
+## [1.3.3] - 2026-09-07
+
+### Changed
+- **Cancelled invoices render grayscale with a red diagonal stamp**: PDFs, HTML email bodies, and the editor live preview now show cancelled invoices fully grayed out (accent color neutralized to gray, zebra striping removed) with a red diagonal stamp — the translated word for "Cancelled" (e.g. STORNIERT, ANNULLATA, АНУЛИРАНА) inside a red rectangle outline — across every page. The email summary Status row now shows the translated status label instead of the raw slug. The stamp wording reuses the existing `Cancelled` translations, so all 10 languages are covered with no new strings.
+
+---
+
 ## [1.3.2] - 2026-08-24
 
 ### Fixed

@@ -1,0 +1,33 @@
+# ── Composer / PHP ────────────────────────────────────────────────────────────
+# Dependencies are NOT committed: run `composer install` (see INSTALLATION.md).
+# The GitHub release workflow (`.github/workflows/release.yml`) runs
+# `composer update --no-dev` itself and builds the installable ZIP in CI.
+vendor/
+composer.lock
+composer.phar
+
+# ── Local agent / editor state ────────────────────────────────────────────────
+.commandcode/
+.claude/
+
+# ── OS / editor noise ──────────────────────────────────────────────────────────
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+*.swo
+*~
+
+# ── Build / packaging ─────────────────────────────────────────────────────────
+*.zip
+*.tar.gz
+dist/
+build/
+release/
+
+# ── Logs ───────────────────────────────────────────────────────────────────────
+*.log
+wp-content/debug.log
+
+# ── Local WordPress test fixtures ──────────────────────────────────────────────
+local-db-credentials.txt

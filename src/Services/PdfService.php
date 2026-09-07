@@ -104,14 +104,17 @@ class PdfService
                 return $html;
             }
 
-            $mpdf = new \Mpdf\Mpdf([
+            $is_cancelled = ($invoice['status'] ?? '') === 'cancelled';
+            $stamp_text   = $is_cancelled ? $this->getCancelledStampText() : '';
+
+            $mpdf = $this->createMpdfInstance([
                 'mode'          => 'utf-8',
                 'format'        => 'A4',
                 'margin_top'    => 15,
                 'margin_right'  => 15,
                 'margin_bottom' => 15,
                 'margin_left'   => 15,
-            ]);
+            ], $stamp_text);
 
             // Apply table-layout:fixed as default CSS so mPDF renders tables predictably
             $mpdf->WriteHTML('<style>table{table-layout:fixed;}td,th{word-wrap:break-word;}</style>', \Mpdf\HTMLParserMode::HEADER_CSS);
@@ -442,7 +445,139 @@ class PdfService
             'payment_method'  => $payment_method,
             'has_discount'    => $has_discount,
             'currency_symbol' => $currency_symbol,
+
+            // Cancelled-invoice stamp wording (empty when not cancelled)
+            'cancelled_stamp_text' => ($invoice['status'] ?? '') === 'cancelled' ? $this->getCancelledStampText() : '',
         ]);
+    }
+
+    /**
+     * Get the uppercase, translated word shown on cancelled-invoice stamps.
+     *
+     * Uses mb_strtoupper to properly handle multibyte UTF-8 locales (e.g. Cyrillic, accented).
+     *
+     * @since 1.3.3
+     *
+     * @return string Stamp text in the active locale (e.g. "CANCELLED", "STORNIERT", "АНУЛИРАНА").
+     */
+    private function getCancelledStampText(): string
+    {
+        return mb_strtoupper((string) __('Cancelled', 'invoiceforge'), 'UTF-8');
+    }
+
+    /**
+     * Create an mPDF instance, configuring a Footer hook to draw a full-diagonal
+     * red cancelled stamp on every page when the invoice is cancelled.
+     *
+     * @since 1.3.3
+     *
+     * @param array<string, mixed> $config               mPDF configuration options.
+     * @param string               $cancelled_stamp_text Uppercase stamp text (empty if not cancelled).
+     * @return \Mpdf\Mpdf Configured mPDF instance.
+     */
+    private function createMpdfInstance(array $config, string $cancelled_stamp_text = ''): \Mpdf\Mpdf
+    {
+        if ($cancelled_stamp_text !== '') {
+            return new class($config, $cancelled_stamp_text) extends \Mpdf\Mpdf {
+                private string $cancelledStampText;
+
+                public function __construct(array $config, string $cancelledStampText)
+                {
+                    parent::__construct($config);
+                    $this->cancelledStampText = $cancelledStampText;
+                }
+
+                public function Footer()
+                {
+                    parent::Footer();
+
+                    if ($this->cancelledStampText === '') {
+                        return;
+                    }
+
+                    $page_w = (float) $this->w;
+                    $page_h = (float) $this->h;
+                    $center_x = $page_w / 2;
+                    $center_y = $page_h / 2;
+
+                    // The stamp runs along the "/" diagonal (bottom-left to top-right).
+                    // A4 aspect ratio atan(297 / 210) is 54.7 deg, approx 55 deg.
+                    $angle = 55.0;
+                    $rad   = deg2rad($angle);
+                    $cos_a = cos($rad);
+                    $sin_a = sin($rad);
+
+                    // Direction vector of text (runs bottom-left to top-right "/")
+                    $dir_x = $cos_a;
+                    $dir_y = -$sin_a;
+
+                    // Perpendicular vector pointing to the top of glyphs (up and left)
+                    $perp_x = $dir_y; // -sin(a)
+                    $perp_y = -$dir_x; // -cos(a)
+
+                    // Target box spans ~78% of the diagonal to fill the page without clipping margins
+                    $diag = hypot($page_w, $page_h);
+                    $target_box_w = $diag * 0.78;
+                    $pad_x = 14.0;
+                    $pad_y = 10.0;
+
+                    $target_text_w = $target_box_w - 2 * $pad_x;
+
+                    $test_font_size = 100.0;
+                    $this->SetFont('dejavusans', 'B', $test_font_size, false);
+                    $base_str_w = (float) $this->GetStringWidth($this->cancelledStampText);
+
+                    $font_size = max(16.0, $test_font_size * ($target_text_w / max(1.0, $base_str_w)));
+                    $cap_h = $font_size * 0.70 * (25.4 / 72);
+                    if ($cap_h > 35.0) {
+                        $font_size = 35.0 / (0.70 * (25.4 / 72));
+                        $cap_h = 35.0;
+                    }
+
+                    $this->SetFont('dejavusans', 'B', $font_size, false);
+                    $text_w = (float) $this->GetStringWidth($this->cancelledStampText);
+                    $cap_h = $font_size * 0.70 * (25.4 / 72);
+
+                    // Center the text bounding box on the page center
+                    $start_x = $center_x - ($text_w / 2) * $dir_x - ($cap_h / 2) * $perp_x;
+                    $start_y = $center_y - ($text_w / 2) * $dir_y - ($cap_h / 2) * $perp_y;
+
+                    // Compute 4 rectangle corners with padding
+                    $back_x  = $start_x - $pad_x * $dir_x;
+                    $back_y  = $start_y - $pad_x * $dir_y;
+                    $front_x = $start_x + ($text_w + $pad_x) * $dir_x;
+                    $front_y = $start_y + ($text_w + $pad_x) * $dir_y;
+
+                    $top_off = $cap_h + $pad_y;
+                    $bot_off = -$pad_y;
+
+                    $c1 = [$back_x + $top_off * $perp_x, $back_y + $top_off * $perp_y];
+                    $c2 = [$front_x + $top_off * $perp_x, $front_y + $top_off * $perp_y];
+                    $c3 = [$front_x + $bot_off * $perp_x, $front_y + $bot_off * $perp_y];
+                    $c4 = [$back_x + $bot_off * $perp_x, $back_y + $bot_off * $perp_y];
+
+                    // Draw red rectangle outline
+                    $red = [204, 34, 34];
+                    $this->SetAlpha(0.5);
+                    $this->SetDrawColor($red[0], $red[1], $red[2]);
+                    $this->SetLineWidth(2.8);
+                    $this->Line($c1[0], $c1[1], $c2[0], $c2[1]);
+                    $this->Line($c2[0], $c2[1], $c3[0], $c3[1]);
+                    $this->Line($c3[0], $c3[1], $c4[0], $c4[1]);
+                    $this->Line($c4[0], $c4[1], $c1[0], $c1[1]);
+
+                    // Draw rotated bold text (force-write font operator so size applies)
+                    $this->SetFont('dejavusans', 'B', $font_size, true, true);
+                    $this->SetTextColor($red[0], $red[1], $red[2]);
+                    $this->Rotate($angle, $start_x, $start_y);
+                    $this->Text($start_x, $start_y, $this->cancelledStampText);
+                    $this->Rotate(0);
+                    $this->SetAlpha(1);
+                }
+            };
+        }
+
+        return new \Mpdf\Mpdf($config);
     }
 
     /**
